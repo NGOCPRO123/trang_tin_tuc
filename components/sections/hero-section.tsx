@@ -1,8 +1,9 @@
 "use client"
 
 import { motion } from "framer-motion"
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
-import { ArrowDown, Newspaper, FolderOpen, Star, List, Search } from "lucide-react"
+import { ArrowDown, FolderOpen, Star, List, Search } from "lucide-react"
 import { useState } from "react"
 
 export function HeroSection({ onSearch }: { onSearch?: (q: string) => void } = {}) {
@@ -37,13 +38,16 @@ export function HeroSection({ onSearch }: { onSearch?: (q: string) => void } = {
   }
 
   return (
-    <section className="relative bg-gradient-to-br from-yellow-200 via-yellow-100 to-yellow-50 text-yellow-900 py-16 overflow-hidden">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute inset-0 bg-[url('/placeholder.svg?height=400&width=800&text=News+Pattern')] bg-repeat opacity-20"></div>
-      </div>
+    <section className="relative text-white py-16 overflow-hidden">
+      {/* Background image + overlay */}
+      <div className="absolute inset-0 z-0" style={{
+        backgroundImage: "url('https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=1200&q=80')",
+        backgroundSize: "cover",
+        backgroundPosition: "center"
+      }} />
+      <div className="absolute inset-0 z-10 bg-black/60" />
 
-      <div className="container relative z-10">
+      <div className="container relative z-20">
         <motion.div
           className="text-center max-w-4xl mx-auto"
           initial={{ opacity: 0, y: 30 }}
@@ -56,8 +60,14 @@ export function HeroSection({ onSearch }: { onSearch?: (q: string) => void } = {
             animate={{ scale: 1 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            <div className="p-4 bg-yellow-100/60 rounded-full backdrop-blur-sm">
-              <Newspaper className="h-12 w-12 text-yellow-600" />
+            <div className="p-6 bg-yellow-100/60 rounded-full backdrop-blur-sm">
+              <Image
+                src="logo.png"
+                alt="Tin Tức ACTA Logo"
+                width={80}
+                height={80}
+                className="h-20 w-20"
+              />
             </div>
           </motion.div>
 
@@ -68,13 +78,13 @@ export function HeroSection({ onSearch }: { onSearch?: (q: string) => void } = {
             transition={{ duration: 0.8, delay: 0.3 }}
           >
             Chào mừng đến với{" "}
-            <span className="bg-gradient-to-r from-yellow-400 to-orange-400 bg-clip-text text-transparent">
-              Tin Tức VN
+            <span className="text-amber-300">
+              Tin Tức ACTA
             </span>
           </motion.h1>
 
           <motion.p
-            className="text-lg md:text-xl mb-8 text-yellow-700 leading-relaxed"
+            className="text-lg md:text-xl mb-8 text-white/90 leading-relaxed"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}

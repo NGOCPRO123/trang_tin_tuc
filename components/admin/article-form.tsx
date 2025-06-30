@@ -9,8 +9,9 @@ import { Textarea } from "@/components/ui/textarea"
 import { Label } from "@/components/ui/label"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { MediaUpload } from "@/components/admin/media-upload"
 import type { Article } from "@/types/article"
-import { FileText, User as UserIcon, Image as ImageIcon, BookOpen, Tag } from "lucide-react"
+import { FileText, User as UserIcon, BookOpen, Tag } from "lucide-react"
 
 interface ArticleFormProps {
   article?: Article
@@ -27,7 +28,9 @@ export function ArticleForm({ article, onSubmit, onCancel }: ArticleFormProps) {
     content: article?.content || "",
     category: article?.category || "",
     image: article?.image || "",
+    video: article?.video || "",
     author: article?.author || "Admin",
+    viewCount: article?.viewCount || 0,
   })
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -102,17 +105,18 @@ export function ArticleForm({ article, onSubmit, onCancel }: ArticleFormProps) {
             </div>
 
             <div>
-              <Label htmlFor="image" className="text-blue-900 flex items-center gap-1">
-                <ImageIcon className="h-4 w-4 text-blue-400" /> URL hình ảnh
+              <Label className="text-blue-900 flex items-center gap-1 mb-3">
+                <BookOpen className="h-4 w-4 text-blue-400" /> Hình ảnh & Video
               </Label>
-              <Input
-                id="image"
-                value={formData.image}
-                onChange={(e) => setFormData({ ...formData, image: e.target.value })}
-                placeholder="https://example.com/image.jpg"
-                className="bg-white/80 border-blue-200 focus:ring-2 focus:ring-blue-400 rounded-xl mt-1"
+              <MediaUpload
+                imageUrl={formData.image}
+                videoUrl={formData.video}
+                onImageChange={(url) => setFormData({ ...formData, image: url })}
+                onVideoChange={(url) => setFormData({ ...formData, video: url })}
               />
-              <p className="text-xs text-muted-foreground mt-1">Dán link ảnh hoặc để trống để dùng ảnh mặc định.</p>
+              <p className="text-xs text-muted-foreground mt-2">
+                Upload ảnh hoặc video để hiển thị trên trang chủ. Video sẽ được ưu tiên hiển thị nếu có.
+              </p>
             </div>
 
             <div>

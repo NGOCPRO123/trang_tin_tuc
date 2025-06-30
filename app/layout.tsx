@@ -8,9 +8,9 @@ import { Toaster } from "@/components/ui/toaster"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Tin Tức VN - Quản lý tin tức",
+  title: "Tin Tức ACTA - Quản lý tin tức",
   description: "Hệ thống quản lý tin tức với admin panel",
-    generator: 'v0.dev'
+  
 }
 
 export default function RootLayout({
@@ -19,8 +19,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="vi" className={inter.className}>
-      <body>
+    <html lang="vi" className={inter.className} suppressHydrationWarning>
+      <body suppressHydrationWarning>
         <ArticleProvider>{children}</ArticleProvider>
         <Toaster />
       </body>

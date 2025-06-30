@@ -5,7 +5,7 @@ import Link from "next/link"
 import Image from "next/image"
 import { Card } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Calendar, User } from "lucide-react"
+import { Calendar, User, Play } from "lucide-react"
 import type { Article } from "@/types/article"
 import { formatDate } from "@/lib/utils"
 
@@ -14,6 +14,9 @@ interface FeaturedArticleProps {
 }
 
 export function FeaturedArticle({ article }: FeaturedArticleProps) {
+  // Luôn hiển thị ảnh ở trang chủ, video chỉ hiển thị ở trang chi tiết
+  const hasVideo = article.video && article.video.trim() !== ""
+
   return (
     <motion.div 
       initial={{ opacity: 0, scale: 0.95 }} 
@@ -30,6 +33,14 @@ export function FeaturedArticle({ article }: FeaturedArticleProps) {
               fill 
               className="object-cover group-hover:scale-105 transition-transform duration-300" 
             />
+            {/* Hiển thị icon video nếu bài viết có video */}
+            {hasVideo && (
+              <div className="absolute top-4 right-4">
+                <div className="bg-white/20 backdrop-blur-sm rounded-full p-2">
+                  <Play className="h-4 w-4 text-white fill-white" />
+                </div>
+              </div>
+            )}
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
             <div className="absolute bottom-4 left-4 right-4 text-white">
               <Badge variant="secondary" className="mb-3 text-xs font-medium px-2 py-1 bg-white/20 backdrop-blur-sm">

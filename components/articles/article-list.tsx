@@ -32,7 +32,7 @@ export function ArticleList({ articles, title, columns = 3 }: ArticleListProps) 
       )}
       <div className={`grid ${gridCols[columns]} gap-4 md:gap-6 lg:gap-8`}>
         {articles.map((article, index) => (
-          <ArticleCard key={article.id} article={article} index={index} />
+          <ArticleCard key={article._id || article.id} article={article} index={index} />
         ))}
       </div>
     </div>

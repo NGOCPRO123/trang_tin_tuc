@@ -11,6 +11,7 @@ import { NewsArticleCard } from "@/components/articles/news-article-card"
 import { useArticles } from "@/contexts/article-context"
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
+import { BackToTop } from "@/components/ui/back-to-top"
 import { Newspaper, ChevronDown, Plus } from "lucide-react"
 import useSWR from "swr"
 import { removeVietnameseTones } from "@/lib/utils"
@@ -20,6 +21,7 @@ const fetcher = (url: string) => fetch(url).then(res => res.json())
 export function HomePage() {
   const { data: articles = [], isLoading } = useSWR("/api/articles", fetcher)
   const [allVisibleCount, setAllVisibleCount] = useState(9)
+  const [latestVisibleCount, setLatestVisibleCount] = useState(6)
   const [search, setSearch] = useState("")
 
   // Hàm lọc bài viết theo nhiều trường, không phân biệt hoa thường, có dấu/không dấu
@@ -36,18 +38,20 @@ export function HomePage() {
   const filteredArticles = filterArticles(articles)
 
   const loadMoreAll = () => setAllVisibleCount((prev) => Math.min(prev + 9, articles.length))
+  const loadMoreLatest = () => setLatestVisibleCount((prev) => Math.min(prev + 6, articles.length))
 
   // Tin nổi bật: 5 bài có viewCount cao nhất
   const featuredArticles = [...filteredArticles]
     .sort((a, b) => (b.viewCount || 0) - (a.viewCount || 0))
     .slice(0, 5)
-  // Tin mới nhất: 5 bài mới nhất theo ngày đăng
-  const latestArticles = [...filteredArticles]
+  // Tin mới nhất: tất cả bài viết sắp xếp theo ngày đăng
+  const allLatestArticles = [...filteredArticles]
     .sort((a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime())
-    .slice(0, 5)
+  const latestArticles = allLatestArticles.slice(0, latestVisibleCount)
 
   const visibleAllArticles = filteredArticles.slice(0, allVisibleCount)
   const hasMoreAll = allVisibleCount < filteredArticles.length
+  const hasMoreLatest = latestVisibleCount < allLatestArticles.length
 
   if (isLoading) return <div className="text-center py-16">Đang tải dữ liệu...</div>
   return (
@@ -119,6 +123,26 @@ export function HomePage() {
                         <NewsArticleCard key={`${article.id || article._id}-latest-${index}`} article={article} index={index} />
                       ))}
                     </div>
+                    {hasMoreLatest && (
+                      <motion.div
+                        className="text-center mb-12"
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.5 }}
+                      >
+                        <Button
+                          onClick={loadMoreLatest}
+                          size="lg"
+                          className="px-8 py-3 text-base font-semibold bg-yellow-400 hover:bg-yellow-500 text-yellow-900"
+                        >
+                          Xem thêm tin tức mới nhất
+                          <ChevronDown className="ml-2 h-5 w-5 text-yellow-700" />
+                        </Button>
+                        <p className="text-sm text-gray-500 mt-3">
+                          Hiển thị {Math.min(latestVisibleCount, allLatestArticles.length)} / {allLatestArticles.length} bài viết mới nhất
+                        </p>
+                      </motion.div>
+                    )}
                   </div>
                 )}
 
@@ -165,6 +189,9 @@ export function HomePage() {
 
       {/* Categories Section */}
       <CategoriesSection />
+
+      {/* Back to Top Button */}
+      <BackToTop />
     </MainLayout>
   )
 }

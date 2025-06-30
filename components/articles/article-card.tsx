@@ -4,7 +4,7 @@ import { motion } from "framer-motion"
 import Image from "next/image"
 import { Card, CardContent, CardHeader } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Calendar, User } from "lucide-react"
+import { Calendar, User, Play } from "lucide-react"
 import type { Article } from "@/types/article"
 import { formatRelativeTime } from "@/lib/utils"
 
@@ -14,6 +14,9 @@ interface ArticleCardProps {
 }
 
 export function ArticleCard({ article, index = 0 }: ArticleCardProps) {
+  // Luôn hiển thị ảnh ở danh sách bài viết, video chỉ hiển thị ở trang chi tiết
+  const hasVideo = article.video && article.video.trim() !== ""
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -30,6 +33,14 @@ export function ArticleCard({ article, index = 0 }: ArticleCardProps) {
             fill
             className="object-cover"
           />
+          {/* Hiển thị icon video nếu bài viết có video */}
+          {hasVideo && (
+            <div className="absolute top-3 right-3">
+              <div className="bg-white/90 backdrop-blur-sm rounded-full p-1">
+                <Play className="h-3 w-3 text-gray-700 fill-gray-700" />
+              </div>
+            </div>
+          )}
           <div className="absolute top-3 left-3">
             <Badge variant="secondary" className="text-xs font-medium px-2 py-1 bg-white/90 backdrop-blur-sm">
               {article.category}

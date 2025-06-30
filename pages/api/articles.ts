@@ -7,13 +7,14 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
   if (req.method === "POST") {
     try {
-      const { title, summary, content, category, image, author, publishedAt } = req.body;
+      const { title, summary, content, category, image, video, author, publishedAt } = req.body;
       const result = await db.collection("acta").insertOne({
         title,
         summary,
         content,
         category,
         image,
+        video: video || "",
         author,
         publishedAt: new Date(publishedAt),
         viewCount: 0,
@@ -28,6 +29,10 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   // GET: trả về toàn bộ bài viết
   const articles = await db.collection("acta").find({}).toArray()
   // Đảm bảo mỗi bài đều có viewCount (nếu thiếu thì gán 0)
-  const articlesWithViewCount = articles.map(article => ({ ...article, viewCount: typeof article.viewCount === 'number' ? article.viewCount : 0 }))
+  const articlesWithViewCount = articles.map(article => ({ 
+    ...article, 
+    viewCount: typeof article.viewCount === 'number' ? article.viewCount : 0,
+    video: article.video || ""
+  }))
   res.status(200).json(articlesWithViewCount)
 } 

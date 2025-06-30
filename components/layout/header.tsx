@@ -2,140 +2,163 @@
 
 import { useState } from "react"
 import Link from "next/link"
+import Image from "next/image"
 import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
-import { Menu, Newspaper, Settings } from "lucide-react"
+import { Menu, Settings, ChevronDown } from "lucide-react"
+import {
+  DropdownMenu,
+  DropdownMenuTrigger,
+  DropdownMenuContent,
+  DropdownMenuItem
+} from "@/components/ui/dropdown-menu";
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <motion.header
-      className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60"
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      transition={{ duration: 0.5 }}
-    >
-      <div className="container flex h-16 items-center justify-between">
-        {/* Logo */}
-        <Link href="/" className="flex items-center space-x-2">
-          <Newspaper className="h-8 w-8 text-primary" />
-          <span className="text-2xl font-bold bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent">
-            Tin Tức VN
-          </span>
-        </Link>
-
-        {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center space-x-8">
-          <Link href="/" className="text-sm font-medium hover:text-primary transition-colors">
-            Trang chủ
-          </Link>
-          <Link href="/danh-muc/the-thao" className="text-sm font-medium hover:text-primary transition-colors">
-            Thể thao
-          </Link>
-          <Link href="/danh-muc/thoi-su" className="text-sm font-medium hover:text-primary transition-colors">
-            Thời sự
-          </Link>
-          <Link href="/danh-muc/cong-nghe" className="text-sm font-medium hover:text-primary transition-colors">
-            Công nghệ
-          </Link>
-          <Link href="/danh-muc/giai-tri" className="text-sm font-medium hover:text-primary transition-colors">
-            Giải trí
-          </Link>
-          <Link href="/danh-muc/kinh-te" className="text-sm font-medium hover:text-primary transition-colors">
-            Kinh tế
-          </Link>
-          <Link href="/danh-muc/xa-hoi" className="text-sm font-medium hover:text-primary transition-colors">
-            Xã hội
-          </Link>
-          <Link href="/danh-muc/thong-bao" className="text-sm font-medium hover:text-primary transition-colors">
-            Thông báo
-          </Link>
-          <Link href="/admin">
-            <Button variant="outline" size="sm">
-              <Settings className="h-4 w-4 mr-2" />
-              Đăng nhập
-            </Button>
-          </Link>
-        </nav>
-
-        {/* Mobile Navigation */}
-        <Sheet open={isOpen} onOpenChange={setIsOpen}>
-          <SheetTrigger asChild className="md:hidden">
-            <Button variant="ghost" size="icon">
-              <Menu className="h-5 w-5" />
-            </Button>
-          </SheetTrigger>
-          <SheetContent side="right">
-            <nav className="flex flex-col space-y-4 mt-8">
-              <Link
-                href="/"
-                className="text-sm font-medium hover:text-primary transition-colors"
-                onClick={() => setIsOpen(false)}
-              >
-                Trang chủ
-              </Link>
-              <Link
-                href="/danh-muc/the-thao"
-                className="text-sm font-medium hover:text-primary transition-colors"
-                onClick={() => setIsOpen(false)}
-              >
-                Thể thao
-              </Link>
-              <Link
-                href="/danh-muc/thoi-su"
-                className="text-sm font-medium hover:text-primary transition-colors"
-                onClick={() => setIsOpen(false)}
-              >
-                Thời sự
-              </Link>
-              <Link
-                href="/danh-muc/cong-nghe"
-                className="text-sm font-medium hover:text-primary transition-colors"
-                onClick={() => setIsOpen(false)}
-              >
-                Công nghệ
-              </Link>
-              <Link
-                href="/danh-muc/giai-tri"
-                className="text-sm font-medium hover:text-primary transition-colors"
-                onClick={() => setIsOpen(false)}
-              >
-                Giải trí
-              </Link>
-              <Link
-                href="/danh-muc/kinh-te"
-                className="text-sm font-medium hover:text-primary transition-colors"
-                onClick={() => setIsOpen(false)}
-              >
-                Kinh tế
-              </Link>
-              <Link
-                href="/danh-muc/xa-hoi"
-                className="text-sm font-medium hover:text-primary transition-colors"
-                onClick={() => setIsOpen(false)}
-              >
-                Xã hội
-              </Link>
-              <Link
-                href="/danh-muc/thong-bao"
-                className="text-sm font-medium hover:text-primary transition-colors"
-                onClick={() => setIsOpen(false)}
-              >
-                Thông báo
-              </Link>
-              <Link
-                href="/admin"
-                className="text-sm font-medium hover:text-primary transition-colors"
-                onClick={() => setIsOpen(false)}
-              >
-                Đăng nhập
-              </Link>
-            </nav>
-          </SheetContent>
-        </Sheet>
+    <>
+      {/* Top Info Header */}
+      <div className="w-full border-b bg-white">
+        <div className="container mx-auto flex flex-col md:flex-row items-center justify-center py-2 gap-2 md:gap-0">
+          {/* Left: Logo + HLCC */}
+          <div className="flex items-center gap-2 min-w-[120px] justify-center md:justify-start w-full md:w-auto">
+            <Image src="/logo.png" alt="HLCC Logo" width={70} height={70} className="h-16 w-16 object-contain max-h-12 max-w-12" />
+            <span className="text-xl font-bold text-yellow-600">ACTA</span>
+          </div>
+          {/* Center: Title + Subtitle */}
+          <div className="flex flex-col items-center justify-center text-center flex-1 px-4">
+            <span className="text-2xl md:text-3xl font-bold text-black leading-tight text-center">LIÊN MINH CỘNG ĐỒNG AFFILIATE THỰC CHIẾN</span>
+            <span className="text-lg md:text-xl font-semibold text-yellow-800 mt-4 text-center">KẾT NỐI ĐỈNH CAO, LỢI NHUẬN BỀN VỮNG</span>
+          </div>
+          {/* Right: Hotline */}
+          <div className="flex items-center justify-center md:justify-end min-w-[200px] w-full md:w-auto">
+            <span className="bg-yellow-400 text-white font-bold rounded-xl px-6 py-3 text-lg md:text-xl shadow">Hotline: 028 5555 8879</span>
+          </div>
+        </div>
       </div>
-    </motion.header>
+      <motion.header
+        className="sticky top-0 z-50 w-full border-b bg-gray-50/95 backdrop-blur supports-[backdrop-filter]:bg-gray-50/60"
+        initial={{ y: -100 }}
+        animate={{ y: 0 }}
+        transition={{ duration: 0.5 }}
+      >
+        <div className="container flex h-16 items-center justify-center">
+          {/* Logo */}
+          <div className="flex items-center">
+            <Link href="/" className="flex items-center space-x-2">
+              {/* Logo có thể thêm lại ở đây nếu muốn */}
+            </Link>
+          </div>
+          {/* Desktop Navigation */}
+          <nav className="hidden md:flex items-center space-x-8 mx-auto">
+            <Link href="/" className="text-lg font-bold hover:text-yellow-600 transition-colors">
+              TRANG CHỦ
+            </Link>
+            <div className="relative flex items-center group">
+              <Link href="/tin-tuc" className="text-lg font-bold hover:text-yellow-600 transition-colors px-2">
+                TIN TỨC
+              </Link>
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <button className="ml-1 p-1 rounded hover:bg-gray-100 transition-colors flex items-center" aria-label="Xem danh mục tin tức">
+                    <ChevronDown className="w-5 h-5" />
+                  </button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent align="start">
+                  <DropdownMenuItem asChild>
+                    <Link href="/danh-muc/the-thao" className="font-bold text-base md:text-lg hover:text-yellow-600">Thể thao</Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem asChild>
+                    <Link href="/danh-muc/thoi-su" className="font-bold text-base md:text-lg hover:text-yellow-600">Thời sự</Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem asChild>
+                    <Link href="/danh-muc/cong-nghe" className="font-bold text-base md:text-lg hover:text-yellow-600">Công nghệ</Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem asChild>
+                    <Link href="/danh-muc/giai-tri" className="font-bold text-base md:text-lg hover:text-yellow-600">Giải trí</Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem asChild>
+                    <Link href="/danh-muc/kinh-te" className="font-bold text-base md:text-lg hover:text-yellow-600">Kinh tế</Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem asChild>
+                    <Link href="/danh-muc/xa-hoi" className="font-bold text-base md:text-lg hover:text-yellow-600">Xã hội</Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem asChild>
+                    <Link href="/danh-muc/thong-bao" className="font-bold text-base md:text-lg hover:text-yellow-600">Thông báo</Link>
+                  </DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
+            </div>
+            <Link href="/gioi-thieu" className="text-lg font-bold hover:text-yellow-600 transition-colors">
+              GIỚI THIỆU
+            </Link>
+            <Link href="/lien-he" className="text-lg font-bold hover:text-yellow-600 transition-colors">
+              LIÊN HỆ
+            </Link>
+          </nav>
+          {/* Nút bên phải */}
+          <div className="hidden md:flex items-center">
+            {/* Đã xóa nút Đăng nhập */}
+          </div>
+
+          {/* Mobile Navigation */}
+          <Sheet open={isOpen} onOpenChange={setIsOpen}>
+            <SheetTrigger asChild className="md:hidden">
+              <Button variant="ghost" size="icon">
+                <Menu className="h-5 w-5" />
+              </Button>
+            </SheetTrigger>
+            <SheetContent side="right">
+              <nav className="flex flex-col space-y-4 mt-8">
+                <Link
+                  href="/trangchu-1"
+                  className="text-sm font-medium hover:text-yellow-600 transition-colors"
+                  onClick={() => setIsOpen(false)}
+                >
+                    TRANG CHỦ
+                </Link>
+                <div>
+                  <span className="text-sm font-medium hover:text-yellow-600 transition-colors cursor-pointer select-none">Tin Tức</span>
+                  <div className="ml-4 flex flex-col space-y-2 mt-2">
+           <Link href="/danh-muc/the-thao" className="text-sm text-slate-600 hover:text-yellow-600" onClick={() => setIsOpen(false)}>Thể thao</Link>
+<Link href="/danh-muc/thoi-su" className="text-sm text-slate-600 hover:text-yellow-600" onClick={() => setIsOpen(false)}>Thời sự</Link>
+<Link href="/danh-muc/cong-nghe" className="text-sm text-slate-600 hover:text-yellow-600" onClick={() => setIsOpen(false)}>Công nghệ</Link>
+<Link href="/danh-muc/giai-tri" className="text-sm text-slate-600 hover:text-yellow-600" onClick={() => setIsOpen(false)}>Giải trí</Link>
+<Link href="/danh-muc/kinh-te" className="text-sm text-slate-600 hover:text-yellow-600" onClick={() => setIsOpen(false)}>Kinh tế</Link>
+<Link href="/danh-muc/xa-hoi" className="text-sm text-slate-600 hover:text-yellow-600" onClick={() => setIsOpen(false)}>Xã hội</Link>
+<Link href="/danh-muc/thong-bao" className="text-sm text-slate-600 hover:text-yellow-600" onClick={() => setIsOpen(false)}>Thông báo</Link>
+
+                  </div>
+                </div>
+                <Link
+                  href="/gioi-thieu"
+                  className="text-sm font-medium hover:text-yellow-600 transition-colors"
+                  onClick={() => setIsOpen(false)}
+                >
+                  Giới thiệu
+                </Link>
+                <Link
+                  href="/lien-he"
+                  className="text-sm font-medium hover:text-yellow-600 transition-colors"
+                  onClick={() => setIsOpen(false)}
+                >
+                  Liên hệ
+                </Link>
+                {/* Xóa link Đăng nhập ở menu mobile */}
+                {/* <Link
+                  href="/admin"
+                  className="text-sm font-medium hover:text-yellow-600 transition-colors"
+                  onClick={() => setIsOpen(false)}
+                >
+                  Đăng nhập
+                </Link> */}
+              </nav>
+            </SheetContent>
+          </Sheet>
+        </div>
+      </motion.header>
+    </>
   )
 }

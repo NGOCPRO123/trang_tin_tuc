@@ -74,10 +74,6 @@ export function NewsArticleCard({ article, index = 0 }: NewsArticleCardProps) {
                   <span>{article.viewCount ?? 0}</span>
                 </div>
               </div>
-              <div className="flex items-center font-medium group-hover:text-yellow-600 transition-colors">
-                <span className="text-sm md:text-base">Đọc thêm</span>
-                <ArrowRight className="h-4 w-4 md:h-5 md:w-5 ml-1 group-hover:translate-x-1 transition-transform" />
-              </div>
             </div>
           </CardContent>
         </Card>

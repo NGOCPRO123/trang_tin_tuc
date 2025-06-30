@@ -34,7 +34,7 @@ export function ArticleList({ articles, onEdit, onDelete }: ArticleListProps) {
     <div className="space-y-4">
       {articles.map((article, index) => (
         <motion.div
-          key={article.id}
+          key={article._id || article.id}
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.3, delay: index * 0.1 }}
@@ -60,7 +60,7 @@ export function ArticleList({ articles, onEdit, onDelete }: ArticleListProps) {
                   <Button size="sm" variant="outline" onClick={() => onEdit(article)}>
                     <Edit className="h-4 w-4" />
                   </Button>
-                  <Button size="sm" variant="outline" onClick={() => handleDelete(article.id, article.title)}>
+                  <Button size="sm" variant="outline" onClick={() => handleDelete(article._id || article.id, article.title)}>
                     <Trash2 className="h-4 w-4" />
                   </Button>
                 </div>

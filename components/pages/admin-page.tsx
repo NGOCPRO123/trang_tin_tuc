@@ -8,10 +8,11 @@ import { ArticleList } from "@/components/admin/article-list"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Plus, ArrowLeft, FileText, TrendingUp, Calendar } from "lucide-react"
+import { Plus, ArrowLeft, FileText, TrendingUp, Calendar, LogOut } from "lucide-react"
 import useSWR, { mutate } from "swr"
 import type { Article } from "@/types/article"
 import { Input } from "@/components/ui/input"
+import { useAuth } from "@/contexts/auth-context"
 
 export function AdminPage() {
   const fetcher = (url: string) => fetch(url).then((res) => res.json())
@@ -19,6 +20,7 @@ export function AdminPage() {
   const [editingArticle, setEditingArticle] = useState<Article | null>(null)
   const [showForm, setShowForm] = useState(false)
   const [search, setSearch] = useState("")
+  const { logout } = useAuth()
 
   const handleSubmit = async (articleData: Omit<Article, "id" | "publishedAt">) => {
     if (editingArticle) {
@@ -83,6 +85,17 @@ export function AdminPage() {
           <motion.div variants={containerVariants} initial="hidden" animate="visible" className="space-y-8">
             {/* Header Section */}
             <motion.div variants={itemVariants} className="text-center space-y-4">
+              <div className="flex justify-between items-start mb-4">
+                <div></div>
+                <Button
+                  onClick={logout}
+                  variant="outline"
+                  className="border-red-200 text-red-600 hover:bg-red-50 hover:border-red-300 rounded-xl"
+                >
+                  <LogOut className="h-4 w-4 mr-2" />
+                  Đăng xuất
+                </Button>
+              </div>
               <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl shadow-lg mb-4">
                 <FileText className="h-8 w-8 text-white" />
               </div>
