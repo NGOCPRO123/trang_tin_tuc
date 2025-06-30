@@ -2,6 +2,7 @@ import type React from "react"
 import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 import { ArticleProvider } from "@/contexts/article-context"
+import { AuthProvider } from "@/contexts/auth-context"
 import "./globals.css"
 import { Toaster } from "@/components/ui/toaster"
 
@@ -21,7 +22,9 @@ export default function RootLayout({
   return (
     <html lang="vi" className={inter.className} suppressHydrationWarning>
       <body suppressHydrationWarning>
-        <ArticleProvider>{children}</ArticleProvider>
+        <AuthProvider>
+          <ArticleProvider>{children}</ArticleProvider>
+        </AuthProvider>
         <Toaster />
       </body>
     </html>
