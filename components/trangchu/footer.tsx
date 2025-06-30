@@ -38,15 +38,16 @@ export function Footer() {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <div className="flex items-center gap-3 mb-6">
+         <div className="flex items-center gap-3 mb-6 -mt-5">
+
               <Image
                 src="/logo.png"
                 alt="ACTA Logo"
-                width={40}
-                height={40}
-                className="w-10 h-10 object-contain"
+                width={80}
+                height={80}
+                className="w-20 h-20 object-contain"
               />
-              <h3 className="text-2xl font-bold">ACTA</h3>
+          
             </div>
             <p className="text-gray-300 leading-relaxed mb-6">
               Đối tác tin cậy cho sự phát triển bền vững của doanh nghiệp. Chúng tôi cam kết mang đến những giải pháp

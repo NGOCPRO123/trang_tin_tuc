@@ -21,16 +21,17 @@ export function Header() {
     <>
       {/* Top Info Header */}
       <div className="w-full border-b bg-white">
-        <div className="container mx-auto flex flex-col md:flex-row items-center justify-center py-2 gap-2 md:gap-0">
+        <div className="container mx-auto flex flex-col md:flex-row items-start justify-center pt-4 pb-0 gap-0 md:gap-0">
           {/* Left: Logo + HLCC */}
-          <div className="flex items-center gap-2 min-w-[120px] justify-center md:justify-start w-full md:w-auto">
-            <Image src="/logo.png" alt="HLCC Logo" width={70} height={70} className="h-16 w-16 object-contain max-h-12 max-w-12" />
-            <span className="text-xl font-bold text-yellow-600">ACTA</span>
+          <div className="flex items-start gap-2 min-w-[120px] justify-center md:justify-start w-full md:w-auto m-0 p-0 self-start">
+            <Image src="/logo.png" alt="HLCC Logo" width={100} height={100} className="h-[100px] w-[100px] object-contain max-h-[100px] max-w-[100px] m-0 p-0 align-top -mt-5" />
           </div>
           {/* Center: Title + Subtitle */}
-          <div className="flex flex-col items-center justify-center text-center flex-1 px-4">
-            <span className="text-2xl md:text-3xl font-bold text-black leading-tight text-center">LIÊN MINH CỘNG ĐỒNG AFFILIATE THỰC CHIẾN</span>
-            <span className="text-lg md:text-xl font-semibold text-yellow-800 mt-4 text-center">KẾT NỐI ĐỈNH CAO, LỢI NHUẬN BỀN VỮNG</span>
+          <div className="flex flex-col items-center justify-center text-center flex-1 px-5 transform translate-x-20">
+
+
+            <span className="text-2xl md:text-3xl font-bold text-black leading-tight text-center">DỊCH VỤ QUẢN TRỊ DOANH NGHIỆP</span>
+            <span className="text-lg md:text-xl font-semibold text-yellow-800 mt-4 text-center">VỰC DẬY TÀI CHÍNH - BỨT PHÁ DOANH THU</span>
           </div>
           {/* Right: Hotline */}
           <div className="flex items-center justify-center md:justify-end min-w-[200px] w-full md:w-auto">

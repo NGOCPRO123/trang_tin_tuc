@@ -52,14 +52,11 @@ export function Footer() {
                 <Image
                   src="/logo.png"
                   alt="Tin Tức ACTA Logo"
-                  width={24}
-                  height={24}
-                  className="h-6 w-6"
+                  width={40}
+                  height={40}
+                  className="h-10 w-10"
                 />
               </div>
-              <span className="text-2xl font-bold bg-gradient-to-r from-yellow-400 via-orange-400 to-red-400 bg-clip-text text-transparent">
-                Tin Tức ACTA
-              </span>
             </motion.div>
             <p className="text-gray-300 text-sm leading-relaxed mb-6">
               Nguồn tin tức đáng tin cậy, cập nhật thông tin nhanh chóng và chính xác nhất tại Việt Nam.
