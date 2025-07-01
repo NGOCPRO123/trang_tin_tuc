@@ -7,19 +7,42 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
   if (req.method === "POST") {
     try {
-      const { title, summary, content, category, image, video, author, publishedAt } = req.body;
+      const {
+        title, summary, content, category, tags, author, status, slug,
+        featuredImage, altText, metaTitle, metaDescription, canonicalUrl,
+        noIndex, noFollow, ogTitle, ogDescription, ogImage,
+        publishedAt, scheduledDate, viewCount, video, image, keywords
+      } = req.body;
+
       const result = await db.collection("acta").insertOne({
         title,
         summary,
         content,
         category,
-        image,
-        video: video || "",
+        tags,
+        keywords: keywords && keywords.length > 0 ? keywords : tags,
         author,
-        publishedAt: new Date(publishedAt),
-        viewCount: 0,
+        status,
+        slug,
+        featuredImage,
+        altText,
+        metaTitle,
+        metaDescription,
+        canonicalUrl,
+        noIndex,
+        noFollow,
+        ogTitle,
+        ogDescription,
+        ogImage,
+        publishedAt: publishedAt ? new Date(publishedAt) : new Date(),
+        scheduledDate: scheduledDate ? new Date(scheduledDate) : null,
+        viewCount: viewCount ?? 0,
+        video: video || "",
+        image: image || "",
+        createdAt: new Date(),
+        updatedAt: new Date(),
       });
-      res.status(201).json({ _id: result.insertedId, ...req.body, viewCount: 0 });
+      res.status(201).json({ _id: result.insertedId, ...req.body, viewCount: viewCount ?? 0 });
     } catch (error) {
       res.status(500).json({ error: (error as Error).message });
     }

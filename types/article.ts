@@ -1,13 +1,28 @@
 export interface Article {
   id: string
-  title: string
-  summary: string
-  content: string
-  category: string
-  image: string
-  video?: string
-  author: string
-  publishedAt: string
-  viewCount: number
   _id?: string
+  title: string
+  slug: string
+  content: string
+  summary: string
+  category: string
+  tags: string[]
+  author: string
+  status: "draft" | "pending" | "published" | "private"
+  publishedAt: string
+  scheduledDate?: string
+  featuredImage: string
+  altText: string
+  metaTitle: string
+  metaDescription: string
+  canonicalUrl: string
+  noIndex: boolean
+  noFollow: boolean
+  ogTitle: string
+  ogDescription: string
+  ogImage: string
+  viewCount: number
+  video?: string
+  image?: string
+  keywords?: string[]
 }

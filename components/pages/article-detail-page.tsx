@@ -4,17 +4,19 @@ import { motion } from "framer-motion"
 import Image from "next/image"
 import { MainLayout } from "@/components/layout/main-layout"
 import { Badge } from "@/components/ui/badge"
-import { Calendar, User, ArrowLeft, Play, Clock, Eye, Share2, Bookmark, ChevronUp, X, ZoomIn } from "lucide-react"
+import { Calendar, User, ArrowLeft, Play, Clock, Eye, Share2, Bookmark, ChevronUp, X, ZoomIn, Facebook, Instagram } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Separator } from "@/components/ui/separator"
-import { Dialog, DialogContent } from "@/components/ui/dialog"
+import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog"
+import { VisuallyHidden } from "@radix-ui/react-visually-hidden"
 import Link from "next/link"
 import useSWR from "swr"
 import { formatRelativeTime } from "@/lib/utils"
 import { useEffect, useState } from "react"
 import { PartnersSection } from "@/components/pages/partners-section"
 import { WeatherWidget } from "@/components/pages/weather-widget"
+import { usePathname } from "next/navigation"
 
 interface ArticleDetailPageProps {
   articleId: string
@@ -29,6 +31,9 @@ export function ArticleDetailPage({ articleId }: ArticleDetailPageProps) {
   const [showScrollTop, setShowScrollTop] = useState(false)
   const [activeSection, setActiveSection] = useState("")
   const [isImageModalOpen, setIsImageModalOpen] = useState(false)
+  const pathname = typeof window !== "undefined" ? window.location.pathname : ""
+  const origin = typeof window !== "undefined" ? window.location.origin : ""
+  const shareUrl = origin + pathname
 
   useEffect(() => {
     setIsClient(true)
@@ -137,6 +142,18 @@ export function ArticleDetailPage({ articleId }: ArticleDetailPageProps) {
                     {article.category}
                   </Badge>
                   <h1 className="text-2xl md:text-3xl font-bold mb-4 leading-tight">{article.title}</h1>
+                  {article.tags && article.tags.length > 0 && (
+                    <div className="mb-4 flex flex-wrap gap-2">
+                      {article.tags.map((tag: string) => (
+                        <Badge key={tag} variant="outline" className="text-xs">{tag}</Badge>
+                      ))}
+                    </div>
+                  )}
+                  {article.status && (
+                    <div className="mb-2">
+                      <Badge variant="secondary" className="text-xs">Trạng thái: {article.status}</Badge>
+                    </div>
+                  )}
                   <p className="text-lg text-muted-foreground mb-6">{article.summary}</p>
 
                   <div className="flex items-center justify-between mb-6">
@@ -156,13 +173,7 @@ export function ArticleDetailPage({ articleId }: ArticleDetailPageProps) {
                     </div>
 
                     <div className="flex items-center space-x-2">
-                      <Button variant="outline" size="sm">
-                        <Share2 className="h-4 w-4 mr-1" />
-                        Chia sẻ
-                      </Button>
-                      <Button variant="outline" size="sm">
-                        <Bookmark className="h-4 w-4" />
-                      </Button>
+                      {/* Đã xóa nút Chia sẻ và Bookmark theo yêu cầu */}
                     </div>
                   </div>
                 </header>
@@ -176,7 +187,7 @@ export function ArticleDetailPage({ articleId }: ArticleDetailPageProps) {
                         src={article.video}
                         className="w-full h-full object-cover"
                         controls
-                        poster={article.image || "/placeholder.svg"}
+                        poster={article.image || article.featuredImage || "/placeholder.svg"}
                         onError={handleVideoError}
                       />
                       <div className="absolute top-4 right-4">
@@ -188,7 +199,7 @@ export function ArticleDetailPage({ articleId }: ArticleDetailPageProps) {
                   ) : (
                     <div className="relative w-full h-96 md:h-[500px] lg:h-[600px]">
                       <Image
-                        src={article.image || "/placeholder.svg"}
+                        src={article.image || article.featuredImage || "/placeholder.svg"}
                         alt={article.title}
                         fill
                         className="object-cover transition-transform duration-300 group-hover:scale-105"
@@ -221,14 +232,20 @@ export function ArticleDetailPage({ articleId }: ArticleDetailPageProps) {
                     <span>Chia sẻ bài viết:</span>
                   </div>
                   <div className="flex items-center space-x-2">
-                    <Button variant="outline" size="sm">
-                      Facebook
+                    <Button variant="outline" size="sm" asChild className="bg-[#1877f2] hover:bg-[#145db2] text-white flex items-center gap-1">
+                      <a href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}`} target="_blank" rel="noopener noreferrer">
+                        <Facebook className="w-4 h-4" /> Facebook
+                      </a>
                     </Button>
-                    <Button variant="outline" size="sm">
-                      Twitter
+                    <Button variant="outline" size="sm" asChild className="bg-[#0084ff] hover:bg-[#005ecb] text-white flex items-center gap-1">
+                      <a href={`https://zalo.me/share?url=${encodeURIComponent(shareUrl)}`} target="_blank" rel="noopener noreferrer">
+                        <span className="font-bold">Z</span> Zalo
+                      </a>
                     </Button>
-                    <Button variant="outline" size="sm">
-                      LinkedIn
+                    <Button variant="outline" size="sm" asChild className="bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 hover:from-pink-600 hover:via-red-600 hover:to-yellow-600 text-white flex items-center gap-1">
+                      <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">
+                        <Instagram className="w-4 h-4" /> Instagram
+                      </a>
                     </Button>
                   </div>
                 </div>
@@ -314,10 +331,13 @@ export function ArticleDetailPage({ articleId }: ArticleDetailPageProps) {
           {/* Image Modal */}
           <Dialog open={isImageModalOpen} onOpenChange={setIsImageModalOpen}>
             <DialogContent className="max-w-[95vw] max-h-[95vh] p-0 bg-transparent border-none">
+              <VisuallyHidden>
+                <DialogTitle>Ảnh bài viết</DialogTitle>
+              </VisuallyHidden>
               <div className="relative w-full h-full flex items-center justify-center">
                 <div className="relative max-w-full max-h-full">
                   <Image
-                    src={article.image || "/placeholder.svg"}
+                    src={article.image || article.featuredImage || "/placeholder.svg"}
                     alt={article.title}
                     width={1200}
                     height={800}

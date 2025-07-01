@@ -3,7 +3,6 @@
 import { useState } from "react"
 import { motion } from "framer-motion"
 import { MainLayout } from "@/components/layout/main-layout"
-import { ArticleForm } from "@/components/admin/article-form"
 import { ArticleList } from "@/components/admin/article-list"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
@@ -13,6 +12,7 @@ import useSWR, { mutate } from "swr"
 import type { Article } from "@/types/article"
 import { Input } from "@/components/ui/input"
 import { useAuth } from "@/contexts/auth-context"
+import { AdvancedArticleForm } from "@/components/admin/admin-article-form"
 
 export function AdminPage() {
   const fetcher = (url: string) => fetch(url).then((res) => res.json())
@@ -22,9 +22,8 @@ export function AdminPage() {
   const [search, setSearch] = useState("")
   const { logout } = useAuth()
 
-  const handleSubmit = async (articleData: Omit<Article, "id" | "publishedAt">) => {
+  const handleSubmit = async (articleData: any) => {
     if (editingArticle) {
-      // Gọi API cập nhật bài viết
       await fetch(`/api/articles/${editingArticle._id}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
@@ -37,7 +36,7 @@ export function AdminPage() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ ...articleData, publishedAt: new Date().toISOString() }),
       })
-      mutate("/api/articles") // refetch lại danh sách bài viết
+      mutate("/api/articles")
     }
     setShowForm(false)
     setEditingArticle(null)
@@ -129,10 +128,12 @@ export function AdminPage() {
                     </div>
                   </CardHeader>
                   <CardContent>
-                    <ArticleForm
+                    <AdvancedArticleForm
                       article={editingArticle || undefined}
                       onSubmit={handleSubmit}
                       onCancel={handleCancel}
+                      onSaveDraft={() => {}}
+                      onPreview={() => {}}
                     />
                   </CardContent>
                 </Card>
