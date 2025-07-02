@@ -6,7 +6,7 @@ interface Props {
 }
 
 async function getArticleBySlug(slug: string) {
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "https://baolocmarket.vn";
   const res = await fetch(`${baseUrl}/api/articles`, { cache: "no-store" });
   const articles = await res.json();
   return articles.find((a: any) => a.slug === slug);

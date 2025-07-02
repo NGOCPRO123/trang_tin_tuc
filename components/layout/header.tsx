@@ -31,7 +31,7 @@ export function Header() {
 
 
             <span className="text-2xl md:text-3xl font-bold text-black leading-tight text-center">DỊCH VỤ QUẢN TRỊ DOANH NGHIỆP</span>
-            <span className="text-lg md:text-xl font-semibold text-yellow-800 mt-4 text-center">VỰC DẬY TÀI CHÍNH - BỨT PHÁ DOANH THU</span>
+            <span className="text-lg md:text-2xl font-extrabold font-be-vietnam-pro text-yellow-700 mt-4 text-center drop-shadow-lg bg-gradient-to-r from-yellow-400 via-yellow-600 to-yellow-800 bg-clip-text text-transparent" style={{textShadow: '1px 2px 8px rgba(0,0,0,0.12)'}}>VỰC DẬY TÀI CHÍNH - BỨT PHÁ DOANH THU</span>
           </div>
           {/* Right: Hotline */}
           <div className="flex items-center justify-center md:justify-end min-w-[200px] w-full md:w-auto">
@@ -56,6 +56,9 @@ export function Header() {
           <nav className="hidden md:flex items-center space-x-8 mx-auto">
             <Link href="/" className="text-lg font-bold hover:text-yellow-600 transition-colors">
               TRANG CHỦ
+            </Link>
+            <Link href="/dich-vu" className="text-lg font-bold hover:text-yellow-600 transition-colors">
+              DỊCH VỤ
             </Link>
             <div className="relative flex items-center group">
               <Link href="/tin-tuc" className="text-lg font-bold hover:text-yellow-600 transition-colors px-2">
@@ -92,6 +95,12 @@ export function Header() {
                 </DropdownMenuContent>
               </DropdownMenu>
             </div>
+            <Link href="/tai-nguyen" className="text-lg font-bold hover:text-yellow-600 transition-colors">
+              TÀI NGUYÊN
+            </Link>
+            <Link href="/khach-hang" className="text-lg font-bold hover:text-yellow-600 transition-colors">
+              KHÁCH HÀNG
+            </Link>
             <Link href="/gioi-thieu" className="text-lg font-bold hover:text-yellow-600 transition-colors">
               GIỚI THIỆU
             </Link>
@@ -114,25 +123,43 @@ export function Header() {
             <SheetContent side="right">
               <nav className="flex flex-col space-y-4 mt-8">
                 <Link
-                  href="/trangchu-1"
+                  href="/"
                   className="text-sm font-medium hover:text-yellow-600 transition-colors"
                   onClick={() => setIsOpen(false)}
                 >
-                    TRANG CHỦ
+                  Trang chủ
                 </Link>
-                <div>
-                  <span className="text-sm font-medium hover:text-yellow-600 transition-colors cursor-pointer select-none">Tin Tức</span>
-                  <div className="ml-4 flex flex-col space-y-2 mt-2">
-           <Link href="/danh-muc/the-thao" className="text-sm text-slate-600 hover:text-yellow-600" onClick={() => setIsOpen(false)}>Thể thao</Link>
-<Link href="/danh-muc/thoi-su" className="text-sm text-slate-600 hover:text-yellow-600" onClick={() => setIsOpen(false)}>Thời sự</Link>
-<Link href="/danh-muc/cong-nghe" className="text-sm text-slate-600 hover:text-yellow-600" onClick={() => setIsOpen(false)}>Công nghệ</Link>
-<Link href="/danh-muc/giai-tri" className="text-sm text-slate-600 hover:text-yellow-600" onClick={() => setIsOpen(false)}>Giải trí</Link>
-<Link href="/danh-muc/kinh-te" className="text-sm text-slate-600 hover:text-yellow-600" onClick={() => setIsOpen(false)}>Kinh tế</Link>
-<Link href="/danh-muc/xa-hoi" className="text-sm text-slate-600 hover:text-yellow-600" onClick={() => setIsOpen(false)}>Xã hội</Link>
-<Link href="/danh-muc/thong-bao" className="text-sm text-slate-600 hover:text-yellow-600" onClick={() => setIsOpen(false)}>Thông báo</Link>
-
-                  </div>
+                <Link
+                  href="/dich-vu"
+                  className="text-sm font-medium hover:text-yellow-600 transition-colors"
+                  onClick={() => setIsOpen(false)}
+                >
+                  Dịch vụ
+                </Link>
+                <span className="text-sm font-medium hover:text-yellow-600 transition-colors cursor-pointer select-none">Tin Tức</span>
+                <div className="ml-4 flex flex-col space-y-2 mt-2">
+                  <Link href="/danh-muc/the-thao" className="text-sm text-slate-600 hover:text-yellow-600" onClick={() => setIsOpen(false)}>Thể thao</Link>
+                  <Link href="/danh-muc/thoi-su" className="text-sm text-slate-600 hover:text-yellow-600" onClick={() => setIsOpen(false)}>Thời sự</Link>
+                  <Link href="/danh-muc/cong-nghe" className="text-sm text-slate-600 hover:text-yellow-600" onClick={() => setIsOpen(false)}>Công nghệ</Link>
+                  <Link href="/danh-muc/giai-tri" className="text-sm text-slate-600 hover:text-yellow-600" onClick={() => setIsOpen(false)}>Giải trí</Link>
+                  <Link href="/danh-muc/kinh-te" className="text-sm text-slate-600 hover:text-yellow-600" onClick={() => setIsOpen(false)}>Kinh tế</Link>
+                  <Link href="/danh-muc/xa-hoi" className="text-sm text-slate-600 hover:text-yellow-600" onClick={() => setIsOpen(false)}>Xã hội</Link>
+                  <Link href="/danh-muc/thong-bao" className="text-sm text-slate-600 hover:text-yellow-600" onClick={() => setIsOpen(false)}>Thông báo</Link>
                 </div>
+                <Link
+                  href="/tai-nguyen"
+                  className="text-sm font-medium hover:text-yellow-600 transition-colors"
+                  onClick={() => setIsOpen(false)}
+                >
+                  Tài nguyên
+                </Link>
+                <Link
+                  href="/khach-hang"
+                  className="text-sm font-medium hover:text-yellow-600 transition-colors"
+                  onClick={() => setIsOpen(false)}
+                >
+                  Khách hàng
+                </Link>
                 <Link
                   href="/gioi-thieu"
                   className="text-sm font-medium hover:text-yellow-600 transition-colors"
@@ -147,14 +174,6 @@ export function Header() {
                 >
                   Liên hệ
                 </Link>
-                {/* Xóa link Đăng nhập ở menu mobile */}
-                {/* <Link
-                  href="/admin"
-                  className="text-sm font-medium hover:text-yellow-600 transition-colors"
-                  onClick={() => setIsOpen(false)}
-                >
-                  Đăng nhập
-                </Link> */}
               </nav>
             </SheetContent>
           </Sheet>

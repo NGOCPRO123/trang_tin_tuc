@@ -18,6 +18,18 @@ import { removeVietnameseTones } from "@/lib/utils"
 
 const fetcher = (url: string) => fetch(url).then(res => res.json())
 
+// Hàm chuyển status sang tiếng Việt
+function hienThiTrangThai(status: string) {
+  switch (status) {
+    case "published": return "Đã xuất bản";
+    case "scheduled": return "Đã lên lịch";
+    case "draft": return "Bản nháp";
+    case "pending": return "Chờ duyệt";
+    case "private": return "Riêng tư";
+    default: return status;
+  }
+}
+
 export function HomePage() {
   const { data: articles = [], isLoading } = useSWR("/api/articles", fetcher)
   const [allVisibleCount, setAllVisibleCount] = useState(9)
@@ -40,24 +52,34 @@ export function HomePage() {
   const loadMoreAll = () => setAllVisibleCount((prev) => Math.min(prev + 9, articles.length))
   const loadMoreLatest = () => setLatestVisibleCount((prev) => Math.min(prev + 6, articles.length))
 
-  // Tin nổi bật: 5 bài có viewCount cao nhất
-  const featuredArticles = [...filteredArticles]
-    .sort((a, b) => (b.viewCount || 0) - (a.viewCount || 0))
-    .slice(0, 5)
-  // Tin mới nhất: tất cả bài viết sắp xếp theo ngày đăng
-  const allLatestArticles = [...filteredArticles]
-    .sort((a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime())
-  const latestArticles = allLatestArticles.slice(0, latestVisibleCount)
+  // Lọc các bài viết đã xuất bản và đã đến giờ đăng
+  const thoiGianHienTai = new Date();
+  const baiVietDaXuatBan = filteredArticles.filter(baiViet =>
+    baiViet.status === "published" &&
+    (!baiViet.scheduledDate || new Date(baiViet.scheduledDate) <= thoiGianHienTai)
+  );
 
-  const visibleAllArticles = filteredArticles.slice(0, allVisibleCount)
-  const hasMoreAll = allVisibleCount < filteredArticles.length
-  const hasMoreLatest = latestVisibleCount < allLatestArticles.length
+  // Tin nổi bật: 5 bài có lượt xem cao nhất
+  const tinNoiBat = [...baiVietDaXuatBan]
+    .sort((a, b) => (b.viewCount || 0) - (a.viewCount || 0))
+    .slice(0, 5);
+  // Tin mới nhất: sắp xếp theo ngày đăng
+  const tatCaTinMoiNhat = [...baiVietDaXuatBan]
+    .sort((a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime());
+  const tinMoiNhat = tatCaTinMoiNhat.slice(0, latestVisibleCount);
+
+  const tatCaBaiVietHienThi = baiVietDaXuatBan.slice(0, allVisibleCount);
+  const conThemAll = allVisibleCount < baiVietDaXuatBan.length;
+  const conThemMoiNhat = latestVisibleCount < tatCaTinMoiNhat.length;
 
   if (isLoading) return <div className="text-center py-16">Đang tải dữ liệu...</div>
   return (
     <MainLayout>
       {/* Hero Section */}
       <HeroSection onSearch={setSearch} />
+
+      {/* Why Choose Us Section */}
+      {/* <WhyChooseUsSection /> */}
 
       {/* Features Section */}
       <FeaturesSection />
@@ -88,7 +110,7 @@ export function HomePage() {
             ) : (
               <>
                 {/* Featured News Section */}
-                {featuredArticles.length > 0 && (
+                {tinNoiBat.length > 0 && (
                   <div className="mb-16" id="featured-section">
                     <div className="text-center mb-8">
                       <h2 className="text-2xl md:text-3xl font-bold mb-2">🔥 Tin nổi bật</h2>
@@ -98,11 +120,11 @@ export function HomePage() {
                     <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
                       {/* Spotlight lớn cho bài đầu */}
                       <div className="lg:col-span-2">
-                        <FeaturedArticleCard article={featuredArticles[0]} spotlight />
+                        <FeaturedArticleCard article={tinNoiBat[0]} spotlight />
                       </div>
                       {/* 4 bài mini card */}
                       <div className="flex flex-col gap-6">
-                        {featuredArticles.slice(1, 5).map((article: any, index: number) => (
+                        {tinNoiBat.slice(1, 5).map((article: any, index: number) => (
                           <FeaturedArticleCard key={`${article.id || article._id}-featured-mini-${index}`} article={article} mini />
                         ))}
                       </div>
@@ -111,7 +133,7 @@ export function HomePage() {
                 )}
 
                 {/* Latest News Section */}
-                {latestArticles.length > 0 && (
+                {tinMoiNhat.length > 0 && (
                   <div>
                     <div className="text-center mb-8">
                       <h2 className="text-2xl md:text-3xl font-bold mb-2">📰 Tin tức mới nhất</h2>
@@ -119,11 +141,11 @@ export function HomePage() {
                       <div className="w-20 h-1 bg-gradient-to-r from-yellow-300 to-yellow-100 mx-auto mt-3 rounded-full"></div>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-                      {latestArticles.map((article: any, index: number) => (
+                      {tinMoiNhat.map((article: any, index: number) => (
                         <NewsArticleCard key={`${article.id || article._id}-latest-${index}`} article={article} index={index} />
                       ))}
                     </div>
-                    {hasMoreLatest && (
+                    {conThemMoiNhat && (
                       <motion.div
                         className="text-center mb-12"
                         initial={{ opacity: 0, y: 20 }}
@@ -139,7 +161,7 @@ export function HomePage() {
                           <ChevronDown className="ml-2 h-5 w-5 text-yellow-700" />
                         </Button>
                         <p className="text-sm text-gray-500 mt-3">
-                          Hiển thị {Math.min(latestVisibleCount, allLatestArticles.length)} / {allLatestArticles.length} bài viết mới nhất
+                          Hiển thị {Math.min(latestVisibleCount, tatCaTinMoiNhat.length)} / {tatCaTinMoiNhat.length} bài viết mới nhất
                         </p>
                       </motion.div>
                     )}
@@ -155,11 +177,11 @@ export function HomePage() {
                       <div className="w-20 h-1 bg-gradient-to-r from-yellow-300 to-yellow-100 mx-auto mt-3 rounded-full"></div>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-                      {visibleAllArticles.map((article: any, index: number) => (
+                      {tatCaBaiVietHienThi.map((article: any, index: number) => (
                         <NewsArticleCard key={`${article.id || article._id}-all-${index}`} article={article} index={index} />
                       ))}
                     </div>
-                    {hasMoreAll && (
+                    {conThemAll && (
                       <motion.div
                         className="text-center"
                         initial={{ opacity: 0, y: 20 }}

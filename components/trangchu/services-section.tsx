@@ -3,56 +3,79 @@
 import { motion } from "framer-motion"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { ArrowRight, Code, Palette, BarChart3, Shield, Headphones, Zap } from "lucide-react"
+import { ArrowRight, Code, Palette, BarChart3, Shield, Headphones, Zap, DollarSign, TrendingUp, ShieldCheck, FileText, CreditCard, Lock } from "lucide-react"
 import { useRouter } from "next/navigation"
 
 const services = [
   {
     id: 1,
-    title: "Phát triển phần mềm",
-    description: "Xây dựng ứng dụng web, mobile và hệ thống quản lý theo yêu cầu riêng của doanh nghiệp",
-    icon: Code,
-    features: ["Công nghệ hiện đại", "Bảo mật cao", "Tối ưu hiệu suất"],
+    title: "Đầu Tư Tài Chính",
+    description: "Tối ưu hóa cấu trúc tài chính, tìm kiếm nguồn vốn phù hợp và quản lý rủi ro đầu tư hiệu quả.",
+    icon: DollarSign,
+    features: [
+      "Tư vấn cấu trúc vốn",
+      "Kết nối nhà đầu tư",
+      "Quản lý danh mục đầu tư"
+    ],
     backgroundImage: "https://i.pinimg.com/736x/b1/a2/47/b1a247b31bc1c14ac0a78e4b71557027.jpg"
   },
   {
     id: 2,
-    title: "Thiết kế UI/UX",
-    description: "Tạo ra trải nghiệm người dùng tuyệt vời với thiết kế hiện đại và thân thiện",
-    icon: Palette,
-    features: ["Thiết kế responsive", "Tối ưu chuyển đổi", "Nghiên cứu người dùng"],
+    title: "Tăng Doanh Số Bền Vững",
+    description: "Xây dựng chiến lược kinh doanh hiệu quả, tối ưu quy trình bán hàng và mở rộng thị trường.",
+    icon: TrendingUp,
+    features: [
+      "Chiến lược marketing",
+      "Tối ưu quy trình bán hàng",
+      "Phát triển kênh phân phối"
+    ],
     backgroundImage: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80"
   },
   {
     id: 3,
-    title: "Tư vấn chiến lược",
-    description: "Đưa ra lời khuyên chuyên môn để tối ưu hóa quy trình và nâng cao hiệu quả kinh doanh",
-    icon: BarChart3,
-    features: ["Phân tích thị trường", "Lập kế hoạch", "Đo lường KPI"],
+    title: "Tư Vấn Pháp Lý & Quản Trị Rủi Ro",
+    description: "Đảm bảo tuân thủ pháp luật, quản lý rủi ro và bảo vệ doanh nghiệp.",
+    icon: ShieldCheck,
+    features: [
+      "Tư vấn pháp luật doanh nghiệp",
+      "Quản lý rủi ro pháp lý",
+      "Giải quyết tranh chấp"
+    ],
     backgroundImage: "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80"
   },
   {
     id: 4,
-    title: "Bảo mật & An toàn",
-    description: "Đảm bảo hệ thống của bạn luôn được bảo vệ khỏi các mối đe dọa an ninh mạng",
-    icon: Shield,
-    features: ["Kiểm tra bảo mật", "Mã hóa dữ liệu", "Giám sát 24/7"],
+    title: "Kế Toán - Thuế",
+    description: "Dịch vụ kế toán chuyên nghiệp, tối ưu thuế và đảm bảo tuân thủ quy định tài chính.",
+    icon: FileText,
+    features: [
+      "Kế toán doanh nghiệp",
+      "Tối ưu thuế",
+      "Báo cáo tài chính"
+    ],
     backgroundImage: "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80"
   },
   {
     id: 5,
-    title: "Hỗ trợ & Bảo trì",
-    description: "Dịch vụ hỗ trợ kỹ thuật và bảo trì hệ thống chuyên nghiệp, đáng tin cậy",
-    icon: Headphones,
-    features: ["Hỗ trợ 24/7", "Cập nhật định kỳ", "Sao lưu dữ liệu"],
+    title: "Xử Lý Công Nợ",
+    description: "Giải pháp thu hồi công nợ hiệu quả, đảm phán và tái cấu trúc nợ cho doanh nghiệp.",
+    icon: CreditCard,
+    features: [
+      "Thu hồi công nợ",
+      "Tái cấu trúc nợ",
+      "Đàm phán với chủ nợ"
+    ],
     backgroundImage: "https://images.unsplash.com/photo-1521737852567-6949f3f9f2b5?auto=format&fit=crop&w=400&q=80"
   },
   {
     id: 6,
-    title: "Tối ưu hiệu suất",
-    description: "Nâng cao tốc độ và hiệu suất hệ thống để mang lại trải nghiệm tốt nhất",
-    icon: Zap,
-    features: ["Tối ưu database", "CDN toàn cầu", "Giám sát hiệu suất"],
+    title: "Bảo Vệ An Ninh",
+    description: "Bảo vệ thông tin, tài sản và an ninh doanh nghiệp với các giải pháp bảo mật tiên tiến.",
+    icon: Lock,
+    features: [
+      "Bảo vệ tài sản",
+      "Quản lý rủi ro an ninh"
+    ],
     backgroundImage: "https://i.pinimg.com/736x/2d/a9/c4/2da9c4f0d49127e870ba28f8db2c848c.jpg"
   },
 ]
@@ -101,22 +124,21 @@ export function ServicesSection() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <span className="text-amber-600 font-semibold text-lg">DỊCH VỤ CỦA CHÚNG TÔI</span>
+         
           <motion.h2 className="text-4xl md:text-6xl font-bold font-heading text-gray-800 mt-4 mb-8 relative">
-            Giải pháp{" "}
+          Các Dịch Vụ  {" "}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-orange-600 relative">
-              toàn diện
+            Trọng Tâm
               <motion.div
                 className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent"
                 animate={{ x: ["-100%", "100%"] }}
                 transition={{ duration: 3, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
               />
             </span>{" "}
-            cho doanh nghiệp
+            Của HLCC
           </motion.h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Chúng tôi cung cấp đầy đủ các dịch vụ từ phát triển, thiết kế đến tư vấn và hỗ trợ, giúp doanh nghiệp của
-            bạn hoạt động hiệu quả và phát triển bền vững
+          Giải pháp toàn diện từ tài chính đến vận hành, giúp doanh nghiệp phát triển bền vững
           </p>
         </motion.div>
 
@@ -163,14 +185,6 @@ export function ServicesSection() {
                         ))}
                       </ul>
                     </div>
-                    <Button
-                      variant="outline"
-                      className="w-full border-amber-400 text-amber-200 hover:bg-amber-600 hover:text-white group bg-transparent font-bold drop-shadow"
-                      onClick={handleLearnMoreClick}
-                    >
-                      Tìm hiểu thêm
-                      <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                    </Button>
                   </CardContent>
                 </div>
               </Card>

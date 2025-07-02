@@ -1,22 +1,14 @@
 "use client"
-
-import { useState } from "react"
-import { Button } from "@/components/ui/button"
-import { Separator } from "@/components/ui/separator"
-import {
-  Bold,
-  Italic,
-  Underline,
-  List,
-  ListOrdered,
-  Quote,
-  Link,
-  ImageIcon,
-  Code,
-  Heading1,
-  Heading2,
-  Heading3,
-} from "lucide-react"
+import { useEditor, EditorContent, BubbleMenu } from '@tiptap/react'
+import StarterKit from '@tiptap/starter-kit'
+import Link from '@tiptap/extension-link'
+import Image from '@tiptap/extension-image'
+import Underline from '@tiptap/extension-underline'
+import TextAlign from '@tiptap/extension-text-align'
+import Highlight from '@tiptap/extension-highlight'
+import Placeholder from '@tiptap/extension-placeholder'
+import Heading from '@tiptap/extension-heading'
+import { Bold, Italic, Underline as UnderlineIcon, List, ListOrdered, Quote, Link as LinkIcon, ImageIcon, Code, Heading1, Heading2, Heading3, AlignLeft, AlignCenter, AlignRight, Highlighter } from "lucide-react"
 
 interface RichTextEditorProps {
   value: string
@@ -25,81 +17,58 @@ interface RichTextEditorProps {
 }
 
 export function RichTextEditor({ value, onChange, placeholder }: RichTextEditorProps) {
-  const [selectedText, setSelectedText] = useState("")
+  const editor = useEditor({
+    extensions: [
+      StarterKit.configure({ heading: false }),
+      Heading.configure({ levels: [1, 2, 3] }),
+      Link,
+      Image,
+      Underline,
+      Highlight,
+      TextAlign.configure({ types: ['heading', 'paragraph'] }),
+      Placeholder.configure({ placeholder: placeholder || "Nhập nội dung..." })
+    ],
+    content: value,
+    onUpdate: ({ editor }) => {
+      onChange(editor.getHTML())
+    },
+    editorProps: {
+      attributes: {
+        class: "min-h-[300px] p-4 outline-none bg-white text-slate-900 rounded-b-lg"
+      }
+    }
+  })
 
-  const insertMarkdown = (before: string, after = "") => {
-    const textarea = document.getElementById("content-editor") as HTMLTextAreaElement
-    if (!textarea) return
-
-    const start = textarea.selectionStart
-    const end = textarea.selectionEnd
-    const selectedText = value.substring(start, end)
-
-    const newText = value.substring(0, start) + before + selectedText + after + value.substring(end)
-    onChange(newText)
-
-    // Restore cursor position
-    setTimeout(() => {
-      textarea.focus()
-      textarea.setSelectionRange(start + before.length, start + before.length + selectedText.length)
-    }, 0)
-  }
-
-  const toolbarButtons = [
-    { icon: Bold, action: () => insertMarkdown("**", "**"), title: "Bold" },
-    { icon: Italic, action: () => insertMarkdown("*", "*"), title: "Italic" },
-    { icon: Underline, action: () => insertMarkdown("<u>", "</u>"), title: "Underline" },
-    { type: "separator" },
-    { icon: Heading1, action: () => insertMarkdown("# "), title: "Heading 1" },
-    { icon: Heading2, action: () => insertMarkdown("## "), title: "Heading 2" },
-    { icon: Heading3, action: () => insertMarkdown("### "), title: "Heading 3" },
-    { type: "separator" },
-    { icon: List, action: () => insertMarkdown("- "), title: "Bullet List" },
-    { icon: ListOrdered, action: () => insertMarkdown("1. "), title: "Numbered List" },
-    { icon: Quote, action: () => insertMarkdown("> "), title: "Quote" },
-    { type: "separator" },
-    { icon: Link, action: () => insertMarkdown("[", "](url)"), title: "Link" },
-    { icon: ImageIcon, action: () => insertMarkdown("![alt text](", ")"), title: "Image" },
-    { icon: Code, action: () => insertMarkdown("`", "`"), title: "Inline Code" },
-  ]
+  if (!editor) return <div className="min-h-[300px] bg-white rounded-lg border-2 border-slate-200" />
 
   return (
-    <div className="border rounded-lg overflow-hidden">
+    <div className="border-2 border-slate-200 rounded-lg bg-white">
       {/* Toolbar */}
-      <div className="bg-gray-50 border-b p-2 flex items-center gap-1 flex-wrap">
-        {toolbarButtons.map((button, index) =>
-          button.type === "separator" ? (
-            <Separator key={index} orientation="vertical" className="h-6 mx-1" />
-          ) : (
-            <Button
-              key={index}
-              variant="ghost"
-              size="sm"
-              onClick={button.action}
-              title={button.title}
-              className="h-8 w-8 p-0"
-            >
-              {button.icon && <button.icon className="h-4 w-4" />}
-            </Button>
-          ),
-        )}
+      <div className="flex flex-wrap items-center gap-1 p-2 border-b bg-slate-50 rounded-t-lg">
+        <button onClick={() => editor.chain().focus().toggleBold().run()} className={editor.isActive('bold') ? 'text-blue-600 font-bold' : ''} title="In đậm"><Bold className="h-4 w-4" /></button>
+        <button onClick={() => editor.chain().focus().toggleItalic().run()} className={editor.isActive('italic') ? 'text-blue-600 font-bold' : ''} title="In nghiêng"><Italic className="h-4 w-4" /></button>
+        <button onClick={() => editor.chain().focus().toggleUnderline().run()} className={editor.isActive('underline') ? 'text-blue-600 font-bold' : ''} title="Gạch chân"><UnderlineIcon className="h-4 w-4" /></button>
+        <button onClick={() => editor.chain().focus().toggleHighlight().run()} className={editor.isActive('highlight') ? 'text-yellow-500 font-bold' : ''} title="Highlight"><Highlighter className="h-4 w-4" /></button>
+        <button onClick={() => editor.chain().focus().toggleHeading({ level: 1 }).run()} className={editor.isActive('heading', { level: 1 }) ? 'text-blue-600 font-bold' : ''} title="Heading 1"><Heading1 className="h-4 w-4" /></button>
+        <button onClick={() => editor.chain().focus().toggleHeading({ level: 2 }).run()} className={editor.isActive('heading', { level: 2 }) ? 'text-blue-600 font-bold' : ''} title="Heading 2"><Heading2 className="h-4 w-4" /></button>
+        <button onClick={() => editor.chain().focus().toggleHeading({ level: 3 }).run()} className={editor.isActive('heading', { level: 3 }) ? 'text-blue-600 font-bold' : ''} title="Heading 3"><Heading3 className="h-4 w-4" /></button>
+        <button onClick={() => editor.chain().focus().toggleBulletList().run()} className={editor.isActive('bulletList') ? 'text-blue-600 font-bold' : ''} title="Danh sách chấm"><List className="h-4 w-4" /></button>
+        <button onClick={() => editor.chain().focus().toggleOrderedList().run()} className={editor.isActive('orderedList') ? 'text-blue-600 font-bold' : ''} title="Danh sách số"><ListOrdered className="h-4 w-4" /></button>
+        <button onClick={() => editor.chain().focus().toggleBlockquote().run()} className={editor.isActive('blockquote') ? 'text-blue-600 font-bold' : ''} title="Trích dẫn"><Quote className="h-4 w-4" /></button>
+        <button onClick={() => editor.chain().focus().toggleCode().run()} className={editor.isActive('code') ? 'text-blue-600 font-bold' : ''} title="Code"><Code className="h-4 w-4" /></button>
+        <button onClick={() => editor.chain().focus().setTextAlign('left').run()} className={editor.isActive({ textAlign: 'left' }) ? 'text-blue-600 font-bold' : ''} title="Căn trái"><AlignLeft className="h-4 w-4" /></button>
+        <button onClick={() => editor.chain().focus().setTextAlign('center').run()} className={editor.isActive({ textAlign: 'center' }) ? 'text-blue-600 font-bold' : ''} title="Căn giữa"><AlignCenter className="h-4 w-4" /></button>
+        <button onClick={() => editor.chain().focus().setTextAlign('right').run()} className={editor.isActive({ textAlign: 'right' }) ? 'text-blue-600 font-bold' : ''} title="Căn phải"><AlignRight className="h-4 w-4" /></button>
+        <button onClick={() => {
+          const url = prompt('Nhập URL:');
+          if (url) editor.chain().focus().setLink({ href: url }).run();
+        }} className={editor.isActive('link') ? 'text-blue-600 font-bold' : ''} title="Chèn link"><LinkIcon className="h-4 w-4" /></button>
+        <button onClick={() => {
+          const url = prompt('Nhập URL ảnh:');
+          if (url) editor.chain().focus().setImage({ src: url }).run();
+        }} title="Chèn ảnh"><ImageIcon className="h-4 w-4" /></button>
       </div>
-
-      {/* Editor */}
-      <textarea
-        id="content-editor"
-        value={value}
-        onChange={(e) => onChange(e.target.value)}
-        placeholder={placeholder}
-        className="w-full min-h-[400px] p-4 resize-none focus:outline-none font-mono text-sm"
-        style={{ fontFamily: 'ui-monospace, SFMono-Regular, "SF Mono", Consolas, "Liberation Mono", Menlo, monospace' }}
-      />
-
-      {/* Status Bar */}
-      <div className="bg-gray-50 border-t px-4 py-2 text-xs text-gray-500 flex justify-between">
-        <span>Hỗ trợ Markdown</span>
-        <span>{value.length} ký tự</span>
-      </div>
+      <EditorContent editor={editor} />
     </div>
   )
 }

@@ -32,7 +32,7 @@ const stats = [
 
 export function CompanyStatsSection() {
   return (
-    <section className="py-24 px-4 text-white relative overflow-hidden">
+    <section className="py-10 px-4 text-white relative overflow-hidden">
       {/* Background image + overlay */}
       <div className="absolute inset-0 z-0" style={{
         backgroundImage: "url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&q=80')",
@@ -46,7 +46,7 @@ export function CompanyStatsSection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-6"
         >
           <h2 className="text-3xl md:text-5xl font-bold mb-6">
             Những con số <span className="text-amber-200">ấn tượng</span>
@@ -68,7 +68,7 @@ export function CompanyStatsSection() {
               whileHover={{ y: -5 }}
               className="text-center group"
             >
-              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8 hover:bg-white/20 transition-all duration-300">
+              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-4 hover:bg-white/20 transition-all duration-300">
                 <div className="w-16 h-16 bg-amber-300 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
                   <stat.icon className="w-8 h-8 text-amber-900" />
                 </div>
@@ -93,9 +93,9 @@ export function CompanyStatsSection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
           viewport={{ once: true }}
-          className="mt-16 text-center"
+          className="mt-8 text-center"
         >
-          <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-8">
+          <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-4">
             <h3 className="text-2xl font-bold mb-4">Cam kết của chúng tôi</h3>
             <p className="text-lg opacity-90 max-w-4xl mx-auto leading-relaxed">
               "Chúng tôi không chỉ cung cấp dịch vụ, mà còn xây dựng mối quan hệ đối tác lâu dài. Thành công của khách

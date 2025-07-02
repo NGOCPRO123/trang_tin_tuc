@@ -3,7 +3,7 @@
 import { motion } from "framer-motion"
 import { Card, CardContent } from "@/components/ui/card"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
-import { Quote, Star } from "lucide-react"
+import { Quote, Star, Users, Briefcase, Heart, DollarSign } from "lucide-react"
 
 const testimonials = [
   {
@@ -70,106 +70,42 @@ const testimonials = [
 
 export function ClientTestimonialsSection() {
   return (
-    <section className="py-24 px-4 bg-gradient-to-br from-yellow-50 via-amber-50 to-orange-50 relative overflow-hidden">
+    <section className="py-24 px-4 bg-gray-50">
       <div className="container mx-auto max-w-7xl">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
-        >
-          <span className="text-amber-600 font-semibold text-lg">KHÁCH HÀNG NÓI GÌ VỀ CHÚNG TÔI</span>
-          <h2 className="text-3xl md:text-5xl font-bold text-gray-800 mt-2 mb-6">
-            Những phản hồi <span className="text-amber-600">chân thực</span>
-          </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Sự hài lòng của khách hàng là thước đo thành công của chúng tôi. Hãy nghe những chia sẻ chân thực từ các đối
-            tác đã tin tưởng và hợp tác
-          </p>
-        </motion.div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {testimonials.map((testimonial, index) => (
-            <motion.div
-              key={testimonial.id}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              viewport={{ once: true }}
-              whileHover={{ y: -5 }}
-            >
-              <Card className="h-full hover:shadow-xl transition-all duration-300 border-0 shadow-lg bg-slate-600">
-
-                <CardContent className="p-8">
-                  <div className="flex items-center gap-2 mb-4">
-                    {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="w-5 h-5 text-amber-400 fill-current" />
-                    ))}
-                  </div>
-                  <motion.div
-                    animate={{ y: [0, -5, 0] }}
-                    transition={{ duration: 3, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" }}
-                  >
-                    <Quote className="w-8 h-8 text-amber-600 mb-4" />
-                  </motion.div>
-                  <p className="text-gray-100 leading-relaxed mb-6 text-lg italic">"{testimonial.quote}"</p>
-                  <div className="flex items-center gap-4">
-                    <Avatar className="w-14 h-14">
-                      <AvatarImage src={testimonial.avatar || "/placeholder.svg"} alt={testimonial.name} />
-                      <AvatarFallback className="bg-amber-100 text-amber-600 font-semibold">
-                        {testimonial.name
-                          .split(" ")
-                          .map((n) => n[0])
-                          .join("")}
-                      </AvatarFallback>
-                    </Avatar>
-                    <div>
-                      <h4 className="font-semibold text-white text-lg">{testimonial.name}</h4>
-                      <p className="text-sm text-gray-300">{testimonial.role}</p>
-                      <p className="text-sm text-amber-400 font-medium">{testimonial.company}</p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            </motion.div>
-          ))}
+        <div className="text-center mb-12">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Điểm Khác Biệt Của HLCC</h2>
+          <p className="text-lg text-gray-500">Những lý do khiến hàng nghìn doanh nghiệp tin tưởng và lựa chọn HLCC</p>
         </div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          viewport={{ once: true }}
-          className="mt-16 text-center"
-        >
-          <motion.div
-            className="bg-slate-500 text-white rounded-2xl p-8 relative overflow-hidden shadow-2xl"
-            whileHover={{ scale: 1.02 }}
-            transition={{ duration: 0.3 }}
-          >
-            <div className="relative z-10">
-              <h3 className="text-2xl font-bold mb-4">Tham gia cùng 500+ khách hàng hài lòng</h3>
-              <p className="text-lg opacity-90 mb-6">
-                Hãy để chúng tôi giúp bạn đạt được những mục tiêu kinh doanh như họ đã làm
-              </p>
-              <div className="flex justify-center gap-4">
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-amber-400">4.9/5</div>
-                  <div className="text-amber-100">Đánh giá trung bình</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-amber-400">95%</div>
-                  <div className="text-amber-100">Khách hàng quay lại</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-amber-400">24h</div>
-                  <div className="text-amber-100">Thời gian phản hồi</div>
-                </div>
-              </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+          <div className="flex flex-col items-center text-center bg-blue-50 rounded-2xl shadow-md p-8 transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
+            <div className="w-20 h-20 rounded-full bg-gradient-to-br from-blue-500 to-blue-700 flex items-center justify-center mb-6 shadow-lg">
+              <Users className="w-10 h-10 text-white" />
             </div>
-          </motion.div>
-        </motion.div>
+            <h3 className="font-bold text-xl mb-2 text-gray-900">Đội Ngũ Chuyên Gia Thực Chiến</h3>
+            <p className="text-gray-600">Hơn 50 chuyên gia với kinh nghiệm thực tế tại các tập đoàn lớn và doanh nghiệp thành công</p>
+          </div>
+          <div className="flex flex-col items-center text-center bg-green-50 rounded-2xl shadow-md p-8 transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
+            <div className="w-20 h-20 rounded-full bg-gradient-to-br from-green-500 to-green-700 flex items-center justify-center mb-6 shadow-lg">
+              <Briefcase className="w-10 h-10 text-white" />
+            </div>
+            <h3 className="font-bold text-xl mb-2 text-gray-900">Giải Pháp Toàn Diện & Linh Hoạt</h3>
+            <p className="text-gray-600">Từ tài chính đến vận hành, từ pháp lý đến marketing - một điểm đến cho mọi nhu cầu doanh nghiệp</p>
+          </div>
+          <div className="flex flex-col items-center text-center bg-purple-50 rounded-2xl shadow-md p-8 transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
+            <div className="w-20 h-20 rounded-full bg-gradient-to-br from-purple-500 to-purple-700 flex items-center justify-center mb-6 shadow-lg">
+              <Heart className="w-10 h-10 text-white" />
+            </div>
+            <h3 className="font-bold text-xl mb-2 text-gray-900">Đồng Hành Trực Tiếp & Sâu Sát</h3>
+            <p className="text-gray-600">Không chỉ tư vấn mà còn thực hiện cùng bạn, đảm bảo mọi giải pháp được triển khai hiệu quả</p>
+          </div>
+          <div className="flex flex-col items-center text-center bg-orange-50 rounded-2xl shadow-md p-8 transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
+            <div className="w-20 h-20 rounded-full bg-gradient-to-br from-orange-500 to-orange-700 flex items-center justify-center mb-6 shadow-lg">
+              <DollarSign className="w-10 h-10 text-white" />
+            </div>
+            <h3 className="font-bold text-xl mb-2 text-gray-900">Tối Ưu Chi Phí Qua Nguồn Lực Chung</h3>
+            <p className="text-gray-600">Tiết kiệm đến 60% chi phí so với việc thuê từng chuyên gia riêng lẻ</p>
+          </div>
+        </div>
       </div>
     </section>
   )

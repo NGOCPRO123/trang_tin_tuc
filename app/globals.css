@@ -1,9 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;700;900&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Be Vietnam Pro', Arial, Helvetica, sans-serif;
 }
 
 @layer utilities {
@@ -161,4 +162,8 @@ body {
     max-width: 1400px;
     width: 100%;
   }
+}
+
+.font-be-vietnam-pro {
+  font-family: 'Be Vietnam Pro', Arial, Helvetica, sans-serif;
 }

@@ -292,14 +292,14 @@ export function SEOArticleEditor() {
 
   const getScoreColor = (score: number) => {
     if (score >= 80) return "text-green-600"
-    if (score >= 60) return "text-yellow-600"
+    if (score >= 60) return "text-blue-600"
     return "text-red-600"
   }
 
   const getCharacterCountColor = (current: number, min: number, max: number) => {
     if (current < min || current > max) return "text-red-500"
     if (current >= min && current <= max) return "text-green-500"
-    return "text-yellow-500"
+    return "text-blue-500"
   }
 
   return (

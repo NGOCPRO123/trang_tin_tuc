@@ -1,7 +1,6 @@
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/trangchu/footer";
 import { HeroSection } from "@/components/trangchu/hero-section"
-import { AboutSection } from "@/components/trangchu/about-section"
 import { ServicesSection } from "@/components/trangchu/services-section"
 import { WhyChooseUsSection } from "@/components/trangchu/why-choose-us-section"
 import { ClientTestimonialsSection } from "@/components/trangchu/client-testimonials-section"
@@ -15,11 +14,10 @@ export default function TrangChu1Page() {
       <Header />
       <main className="min-h-screen bg-gradient-to-b from-blue-50 to-gray-50">
         <HeroSection />
-        <AboutSection />
-        <ServicesSection />
         <WhyChooseUsSection />
-        <CompanyStatsSection />
+        <ServicesSection />
         <ClientTestimonialsSection />
+        <CompanyStatsSection />
         <ContactCTASection />
       </main>
       <div className="mt-20">

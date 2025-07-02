@@ -2,39 +2,42 @@
 
 import { motion } from "framer-motion"
 import { Card, CardContent } from "@/components/ui/card"
-import { CheckCircle, Clock, Award, Users, Shield, Lightbulb } from "lucide-react"
+import { CheckCircle, Clock, Award, Users, Shield, Lightbulb, DollarSign, BarChart2 } from "lucide-react"
 
 const reasons = [
   {
-    icon: CheckCircle,
-    title: "Cam kết chất lượng",
-    description: "Mọi sản phẩm đều được kiểm tra kỹ lưỡng và đảm bảo chất lượng cao nhất",
+    icon: DollarSign,
+    title: "Khó Khăn Tài Chính",
+    bullets: [
+      "Thiếu vốn lưu động",
+      "Khó tiếp cận nguồn vốn",
+      "Quản lý dòng tiền kém",
+      "Rủi ro tài chính cao"
+    ],
+    color: "bg-red-100 text-red-500 border-l-4 border-red-200"
   },
   {
-    icon: Clock,
-    title: "Giao hàng đúng hẹn",
-    description: "Luôn tuân thủ timeline và cam kết giao dự án đúng thời gian đã thỏa thuận",
-  },
-  {
-    icon: Award,
-    title: "Đội ngũ chuyên gia",
-    description: "Đội ngũ có nhiều năm kinh nghiệm và được đào tạo bài bản, chuyên nghiệp",
-  },
-  {
-    icon: Users,
-    title: "Hỗ trợ tận tâm",
-    description: "Đội ngũ hỗ trợ khách hàng 24/7, luôn sẵn sàng giải đáp mọi thắc mắc",
+    icon: BarChart2,
+    title: "Vận Hành & Doanh Số",
+    bullets: [
+      "Doanh thu không ổn định",
+      "Quy trình vận hành lỏng lẻo",
+      "Hiệu quả kinh doanh thấp",
+      "Khó mở rộng thị trường"
+    ],
+    color: "bg-orange-100 text-orange-500 border-l-4 border-orange-200"
   },
   {
     icon: Shield,
-    title: "Bảo mật tuyệt đối",
-    description: "Cam kết bảo mật thông tin khách hàng và dữ liệu dự án một cách tuyệt đối",
-  },
-  {
-    icon: Lightbulb,
-    title: "Giải pháp sáng tạo",
-    description: "Luôn đưa ra những ý tưởng mới mẻ và giải pháp sáng tạo cho từng dự án",
-  },
+    title: "Pháp Lý & Rủi Ro",
+    bullets: [
+      "Thiếu hiểu biết pháp luật",
+      "Rủi ro tuân thủ cao",
+      "Tranh chấp hợp đồng",
+      "An ninh thông tin yếu"
+    ],
+    color: "bg-purple-100 text-purple-500 border-l-4 border-purple-200"
+  }
 ]
 
 const cardGradients = [
@@ -70,13 +73,12 @@ export function WhyChooseUsSection() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <span className="text-amber-600 font-semibold text-lg">TẠI SAO CHỌN CHÚNG TÔI</span>
+          
           <h2 className="text-3xl md:text-5xl font-bold text-gray-800 mt-2 mb-6">
-            Những lý do khách hàng <span className="text-amber-600">tin tưởng</span>
+            Vấn Đề Của Bạn <span className="text-gray-600"> - </span> <span className="text-amber-600">Giải Pháp Của Chúng Tôi</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Chúng tôi hiểu rằng sự tin tưởng phải được xây dựng qua từng dự án, từng sản phẩm. Đây là những cam kết mà
-            chúng tôi luôn thực hiện
+          Hiểu rõ những thách thức mà doanh nghiệp đang đối mặt, HLCC mang đến giải pháp toàn diện
           </p>
         </motion.div>
 
@@ -90,13 +92,17 @@ export function WhyChooseUsSection() {
               viewport={{ once: true }}
               whileHover={{ y: -5 }}
             >
-              <Card className="h-full hover:shadow-xl transition-all duration-300 border-0 shadow-lg bg-slate-600">
-                <CardContent className="p-8 text-center">
-                  <div className="w-16 h-16 bg-amber-100 group-hover:bg-amber-600 rounded-full flex items-center justify-center mx-auto mb-6 transition-colors duration-300">
-                    <reason.icon className="w-8 h-8 text-amber-600 group-hover:text-white transition-colors duration-300" />
+              <Card className={`h-full hover:shadow-xl transition-all duration-300 border-0 shadow-lg ${reason.color}`}>
+                <CardContent className="p-8 text-left">
+                  <div className={`w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-6 text-3xl ${reason.color}`.replace('border-l-4','') }>
+                    <reason.icon className="w-8 h-8" />
                   </div>
-                  <h3 className="text-xl font-bold text-white mb-4">{reason.title}</h3>
-                  <p className="text-gray-100 leading-relaxed">{reason.description}</p>
+                  <h3 className="text-lg font-bold text-gray-900 mb-4 text-center">{reason.title}</h3>
+                  <ul className="text-gray-700 text-base list-disc pl-5 space-y-1">
+                    {reason.bullets.map((item, idx) => (
+                      <li key={idx}>{item}</li>
+                    ))}
+                  </ul>
                 </CardContent>
               </Card>
             </motion.div>
@@ -109,10 +115,10 @@ export function WhyChooseUsSection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
           viewport={{ once: true }}
-          className="mt-20 text-center"
+          className="mt-28 text-center"
         >
           <motion.div
-            className="relative rounded-2xl p-8 text-white shadow-2xl overflow-hidden"
+            className="relative rounded-3xl p-14 text-white shadow-2xl overflow-hidden"
             whileHover={{ scale: 1.02 }}
             transition={{ duration: 0.3 }}
             style={{
@@ -128,25 +134,10 @@ export function WhyChooseUsSection() {
             <div className="absolute inset-0 z-10 bg-black/60" />
             {/* Nội dung */}
             <div className="relative z-20">
-              <h3 className="text-2xl font-bold mb-6">Được chứng nhận và công nhận</h3>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-                <div>
-                  <div className="text-3xl font-bold mb-2">ISO 9001</div>
-                  <div className="text-blue-100">Chứng nhận chất lượng</div>
-                </div>
-                <div>
-                  <div className="text-3xl font-bold mb-2">ISO 27001</div>
-                  <div className="text-blue-100">Bảo mật thông tin</div>
-                </div>
-                <div>
-                  <div className="text-3xl font-bold mb-2">CMMI Level 3</div>
-                  <div className="text-blue-100">Quy trình phát triển</div>
-                </div>
-                <div>
-                  <div className="text-3xl font-bold mb-2">Top 10</div>
-                  <div className="text-blue-100">Công ty IT hàng đầu</div>
-                </div>
-              </div>
+              <h3 className="text-4xl font-bold mb-6">HLCC - Đối Tác Tin Cậy Cho Mọi Thách Thức</h3>
+              <p className="text-lg md:text-xl text-blue-100 mx-auto text-center max-w-2xl px-2">
+                Với kinh nghiệm hơn 10 năm và đội ngũ chuyên gia hàng đầu, chúng tôi sẵn sàng đồng hành cùng bạn vượt qua mọi khó khăn
+              </p>
             </div>
           </motion.div>
         </motion.div>

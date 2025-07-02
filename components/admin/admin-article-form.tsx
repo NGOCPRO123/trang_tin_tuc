@@ -28,6 +28,7 @@ import {
   Link,
 } from "lucide-react"
 import { MediaUpload } from "./media-upload"
+import { RichTextEditor } from "./rich-text-editor"
 
 interface ArticleFormData {
   title: string
@@ -57,18 +58,20 @@ interface AdvancedArticleFormProps {
   onSaveDraft: (data: ArticleFormData) => void
   onPreview: (data: ArticleFormData) => void
   onCancel: () => void
+  resetKey?: number
+  successMessage?: string
 }
 
 const categories = ["Thời sự", "Thể thao", "Giải trí", "Công nghệ", "Kinh tế", "Xã hội", "Thông báo", "Du lịch"]
 
 const statusOptions = [
   { value: "draft", label: "Lưu nháp", color: "bg-gray-500" },
-  { value: "pending", label: "Đang chờ duyệt", color: "bg-yellow-500" },
+  { value: "pending", label: "Đang chờ duyệt", color: "bg-blue-400" },
   { value: "published", label: "Xuất bản", color: "bg-green-500" },
   { value: "private", label: "Riêng tư", color: "bg-red-500" },
 ]
 
-export function AdvancedArticleForm({ article, onSubmit, onSaveDraft, onPreview, onCancel }: AdvancedArticleFormProps) {
+export function AdvancedArticleForm({ article, onSubmit, onSaveDraft, onPreview, onCancel, resetKey, successMessage }: AdvancedArticleFormProps) {
   const [formData, setFormData] = useState<ArticleFormData>({
     title: "",
     slug: "",
@@ -127,6 +130,35 @@ export function AdvancedArticleForm({ article, onSubmit, onSaveDraft, onPreview,
     }
   }, [formData.title, formData.summary])
 
+  // Reset form when resetKey changes
+  useEffect(() => {
+    if (resetKey && !article) {
+      setFormData({
+        title: "",
+        slug: "",
+        content: "",
+        summary: "",
+        category: "",
+        tags: [],
+        author: "Admin",
+        status: "draft",
+        featuredImage: "",
+        altText: "",
+        metaTitle: "",
+        metaDescription: "",
+        canonicalUrl: "",
+        noIndex: false,
+        noFollow: false,
+        ogTitle: "",
+        ogDescription: "",
+        ogImage: "",
+      })
+      setCurrentTag("")
+      setErrors({})
+      setLastSaved(null)
+    }
+  }, [resetKey, article])
+
   // Auto-save functionality
   useEffect(() => {
     const autoSave = setTimeout(() => {
@@ -165,12 +197,16 @@ export function AdvancedArticleForm({ article, onSubmit, onSaveDraft, onPreview,
     }))
   }
 
+  // Thêm hàm loại bỏ tag HTML
+  function stripHtml(html: string) {
+    return html.replace(/<[^>]*>?/gm, '').trim();
+  }
+
   const validateForm = () => {
     const newErrors: Record<string, string> = {}
-
     if (!formData.title.trim()) newErrors.title = "Tiêu đề là bắt buộc"
     if (formData.title.length > 60) newErrors.title = "Tiêu đề không nên vượt quá 60 ký tự"
-    if (!formData.content.trim()) newErrors.content = "Nội dung là bắt buộc"
+    if (!stripHtml(formData.content)) newErrors.content = "Nội dung là bắt buộc"
     if (!formData.summary.trim()) newErrors.summary = "Tóm tắt là bắt buộc"
     if (!formData.category) newErrors.category = "Danh mục là bắt buộc"
     if (formData.metaDescription.length > 160)
@@ -183,8 +219,14 @@ export function AdvancedArticleForm({ article, onSubmit, onSaveDraft, onPreview,
   const handleSubmit = (action: "publish" | "draft" | "preview") => {
     if (action !== "draft" && !validateForm()) return
 
+    // Chuyển scheduledDate local time sang ISO (UTC+7) nếu có
+    let scheduledDateISO = formData.scheduledDate
+      ? new Date(formData.scheduledDate + ':00+07:00').toISOString()
+      : "";
+
     const submitData = {
       ...formData,
+      scheduledDate: scheduledDateISO || undefined,
       ogImage: formData.ogImage || formData.featuredImage,
       image: formData.featuredImage,
     }
@@ -205,7 +247,7 @@ export function AdvancedArticleForm({ article, onSubmit, onSaveDraft, onPreview,
   const getCharacterCountColor = (current: number, max: number) => {
     const percentage = (current / max) * 100
     if (percentage > 90) return "text-red-500"
-    if (percentage > 75) return "text-yellow-500"
+    if (percentage > 75) return "text-blue-400"
     return "text-green-500"
   }
 
@@ -229,10 +271,10 @@ export function AdvancedArticleForm({ article, onSubmit, onSaveDraft, onPreview,
           {/* Main Content */}
           <div className="lg:col-span-2 space-y-6">
             {/* Basic Information */}
-            <Card>
+            <Card className="bg-white border border-slate-200">
               <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <FileText className="h-5 w-5" />
+                <CardTitle className="flex items-center gap-2 text-blue-700">
+                  <FileText className="h-5 w-5 text-blue-500" />
                   Thông tin cơ bản
                 </CardTitle>
               </CardHeader>
@@ -240,11 +282,11 @@ export function AdvancedArticleForm({ article, onSubmit, onSaveDraft, onPreview,
                 {/* Title */}
                 <div>
                   <div className="flex items-center justify-between mb-2">
-                    <Label htmlFor="title" className="flex items-center gap-2">
+                    <Label htmlFor="title" className="flex items-center gap-2 text-slate-700 font-semibold">
                       Tiêu đề *
                       <Tooltip>
                         <TooltipTrigger>
-                          <Info className="h-4 w-4 text-gray-400" />
+                          <Info className="h-4 w-4 text-blue-400" />
                         </TooltipTrigger>
                         <TooltipContent>
                           <p>Tiêu đề tối ưu SEO nên từ 50-60 ký tự</p>
@@ -260,7 +302,7 @@ export function AdvancedArticleForm({ article, onSubmit, onSaveDraft, onPreview,
                     value={formData.title}
                     onChange={(e) => handleTitleChange(e.target.value)}
                     placeholder="Ví dụ: Bí quyết tối ưu doanh thu trong quý 3"
-                    className={errors.title ? "border-red-500" : ""}
+                    className={`bg-white border-2 border-slate-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-100 text-slate-900 ${errors.title ? "border-red-500" : "border-slate-200"}`}
                   />
                   {errors.title && (
                     <p className="text-sm text-red-500 mt-1 flex items-center gap-1">
@@ -290,6 +332,7 @@ export function AdvancedArticleForm({ article, onSubmit, onSaveDraft, onPreview,
                       value={formData.slug}
                       onChange={(e) => setFormData((prev) => ({ ...prev, slug: e.target.value }))}
                       placeholder="bai-viet-moi"
+                      className={`bg-white border-2 border-slate-200 text-slate-900`}
                     />
                     <p className="text-xs text-gray-500">
                       URL:{" "}
@@ -308,7 +351,7 @@ export function AdvancedArticleForm({ article, onSubmit, onSaveDraft, onPreview,
                       value={formData.category}
                       onValueChange={(value) => setFormData((prev) => ({ ...prev, category: value }))}
                     >
-                      <SelectTrigger className={errors.category ? "border-red-500" : ""}>
+                      <SelectTrigger className={`bg-white border-2 border-slate-200 text-slate-900 ${errors.category ? "border-red-500" : "border-slate-200"}`}>
                         <SelectValue placeholder="Chọn danh mục" />
                       </SelectTrigger>
                       <SelectContent>
@@ -333,8 +376,9 @@ export function AdvancedArticleForm({ article, onSubmit, onSaveDraft, onPreview,
                         onChange={(e) => setCurrentTag(e.target.value)}
                         placeholder="Nhập tag..."
                         onKeyPress={(e) => e.key === "Enter" && (e.preventDefault(), handleAddTag())}
+                        className={`bg-white border-2 border-slate-200 text-slate-900`}
                       />
-                      <Button type="button" variant="outline" onClick={handleAddTag}>
+                      <Button type="button" variant="outline" className="rounded-lg bg-slate-50 border-2 border-slate-200 hover:border-blue-400 text-slate-900" onClick={handleAddTag}>
                         Thêm
                       </Button>
                     </div>
@@ -343,7 +387,7 @@ export function AdvancedArticleForm({ article, onSubmit, onSaveDraft, onPreview,
                         <Badge
                           key={tag}
                           variant="secondary"
-                          className="cursor-pointer"
+                          className="bg-slate-100 text-slate-900 border border-slate-200 cursor-pointer"
                           onClick={() => handleRemoveTag(tag)}
                         >
                           {tag} ×
@@ -362,7 +406,7 @@ export function AdvancedArticleForm({ article, onSubmit, onSaveDraft, onPreview,
                     onChange={(e) => setFormData((prev) => ({ ...prev, summary: e.target.value }))}
                     rows={3}
                     placeholder="Tóm tắt ngắn gọn về nội dung bài viết..."
-                    className={errors.summary ? "border-red-500" : ""}
+                    className={`bg-white border-2 border-slate-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-100 text-slate-900 ${errors.summary ? "border-red-500" : "border-slate-200"}`}
                   />
                   {errors.summary && <p className="text-sm text-red-500 mt-1">{errors.summary}</p>}
                 </div>
@@ -370,13 +414,10 @@ export function AdvancedArticleForm({ article, onSubmit, onSaveDraft, onPreview,
                 {/* Content */}
                 <div>
                   <Label htmlFor="content">Nội dung *</Label>
-                  <Textarea
-                    id="content"
+                  <RichTextEditor
                     value={formData.content}
-                    onChange={(e) => setFormData((prev) => ({ ...prev, content: e.target.value }))}
-                    rows={15}
+                    onChange={val => setFormData(prev => ({ ...prev, content: val }))}
                     placeholder="Viết nội dung bài viết tại đây..."
-                    className={`font-mono ${errors.content ? "border-red-500" : ""}`}
                   />
                   {errors.content && <p className="text-sm text-red-500 mt-1">{errors.content}</p>}
                   <p className="text-xs text-gray-500 mt-1">
@@ -387,7 +428,7 @@ export function AdvancedArticleForm({ article, onSubmit, onSaveDraft, onPreview,
             </Card>
 
             {/* SEO Settings */}
-            <Card>
+            <Card className="bg-white border border-slate-200">
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
                   <Search className="h-5 w-5" />
@@ -415,6 +456,7 @@ export function AdvancedArticleForm({ article, onSubmit, onSaveDraft, onPreview,
                         value={formData.metaTitle}
                         onChange={(e) => setFormData((prev) => ({ ...prev, metaTitle: e.target.value }))}
                         placeholder="Tiêu đề hiển thị trên Google"
+                        className={`bg-white border-2 border-slate-200 text-slate-900`}
                       />
                     </div>
 
@@ -431,7 +473,7 @@ export function AdvancedArticleForm({ article, onSubmit, onSaveDraft, onPreview,
                         onChange={(e) => setFormData((prev) => ({ ...prev, metaDescription: e.target.value }))}
                         rows={3}
                         placeholder="Mô tả hiển thị trên kết quả tìm kiếm"
-                        className={errors.metaDescription ? "border-red-500" : ""}
+                        className={`bg-white border-2 border-slate-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-100 text-slate-900 ${errors.metaDescription ? "border-red-500" : "border-slate-200"}`}
                       />
                       {errors.metaDescription && <p className="text-sm text-red-500 mt-1">{errors.metaDescription}</p>}
                     </div>
@@ -443,6 +485,7 @@ export function AdvancedArticleForm({ article, onSubmit, onSaveDraft, onPreview,
                         value={formData.canonicalUrl}
                         onChange={(e) => setFormData((prev) => ({ ...prev, canonicalUrl: e.target.value }))}
                         placeholder="https://domain.com/bai-viet-chinh"
+                        className={`bg-white border-2 border-slate-200 text-slate-900`}
                       />
                       <p className="text-xs text-gray-500 mt-1">Để tránh duplicate content</p>
                     </div>
@@ -456,6 +499,7 @@ export function AdvancedArticleForm({ article, onSubmit, onSaveDraft, onPreview,
                         value={formData.ogTitle}
                         onChange={(e) => setFormData((prev) => ({ ...prev, ogTitle: e.target.value }))}
                         placeholder="Tiêu đề khi chia sẻ trên mạng xã hội"
+                        className={`bg-white border-2 border-slate-200 text-slate-900`}
                       />
                     </div>
 
@@ -467,6 +511,7 @@ export function AdvancedArticleForm({ article, onSubmit, onSaveDraft, onPreview,
                         onChange={(e) => setFormData((prev) => ({ ...prev, ogDescription: e.target.value }))}
                         rows={3}
                         placeholder="Mô tả khi chia sẻ trên mạng xã hội"
+                        className={`bg-white border-2 border-slate-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-100 text-slate-900 ${errors.ogDescription ? "border-red-500" : "border-slate-200"}`}
                       />
                     </div>
 
@@ -477,6 +522,7 @@ export function AdvancedArticleForm({ article, onSubmit, onSaveDraft, onPreview,
                         value={formData.ogImage}
                         onChange={(e) => setFormData((prev) => ({ ...prev, ogImage: e.target.value }))}
                         placeholder="https://domain.com/social-image.jpg"
+                        className={`bg-white border-2 border-slate-200 text-slate-900`}
                       />
                       <p className="text-xs text-gray-500 mt-1">Kích thước khuyến nghị: 1200x630px</p>
                     </div>
@@ -509,7 +555,7 @@ export function AdvancedArticleForm({ article, onSubmit, onSaveDraft, onPreview,
           {/* Sidebar */}
           <div className="space-y-6">
             {/* Publish Settings */}
-            <Card>
+            <Card className="bg-white border border-slate-200">
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
                   <Settings className="h-5 w-5" />
@@ -526,6 +572,7 @@ export function AdvancedArticleForm({ article, onSubmit, onSaveDraft, onPreview,
                     id="author"
                     value={formData.author}
                     onChange={(e) => setFormData((prev) => ({ ...prev, author: e.target.value }))}
+                    className={`bg-white border-2 border-slate-200 text-slate-900`}
                   />
                 </div>
 
@@ -535,7 +582,7 @@ export function AdvancedArticleForm({ article, onSubmit, onSaveDraft, onPreview,
                     value={formData.status}
                     onValueChange={(value: any) => setFormData((prev) => ({ ...prev, status: value }))}
                   >
-                    <SelectTrigger>
+                    <SelectTrigger className={`bg-white border-2 border-slate-200 text-slate-900`}>
                       <SelectValue />
                     </SelectTrigger>
                     <SelectContent>
@@ -559,15 +606,19 @@ export function AdvancedArticleForm({ article, onSubmit, onSaveDraft, onPreview,
                   <Input
                     id="scheduledDate"
                     type="datetime-local"
-                    value={formData.scheduledDate}
-                    onChange={(e) => setFormData((prev) => ({ ...prev, scheduledDate: e.target.value }))}
+                    value={formData.scheduledDate || ""}
+                    onChange={(e) => {
+                      // Lưu local time, không chuyển sang UTC
+                      setFormData((prev) => ({ ...prev, scheduledDate: e.target.value }));
+                    }}
+                    className={`bg-white border-2 border-slate-200 text-slate-900`}
                   />
                 </div>
               </CardContent>
             </Card>
 
             {/* Featured Image */}
-            <Card>
+            <Card className="bg-white border border-slate-200">
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
                   <ImageIcon className="h-5 w-5" />
@@ -590,6 +641,7 @@ export function AdvancedArticleForm({ article, onSubmit, onSaveDraft, onPreview,
                       value={formData.altText}
                       onChange={(e) => setFormData((prev) => ({ ...prev, altText: e.target.value }))}
                       placeholder="Mô tả ảnh cho SEO và accessibility"
+                      className={`bg-white border-2 border-slate-200 text-slate-900`}
                     />
                   </div>
                 )}
@@ -597,7 +649,7 @@ export function AdvancedArticleForm({ article, onSubmit, onSaveDraft, onPreview,
             </Card>
 
             {/* SEO Preview */}
-            <Card>
+            <Card className="bg-white border border-slate-200">
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
                   <Globe className="h-5 w-5" />
@@ -605,19 +657,49 @@ export function AdvancedArticleForm({ article, onSubmit, onSaveDraft, onPreview,
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="border rounded-lg p-4 bg-gray-50">
-                  <div className="text-blue-600 text-lg font-medium line-clamp-1">
-                    {formData.metaTitle || formData.title || "Tiêu đề bài viết"}
-                  </div>
-                  <div className="text-green-700 text-sm mt-1">
-                    domain.com › {formData.category.toLowerCase()} › {formData.slug}
-                  </div>
-                  <div className="text-gray-600 text-sm mt-2 line-clamp-2">
-                    {formData.metaDescription || formData.summary || "Mô tả bài viết sẽ hiển thị ở đây..."}
+                <div className="p-4">
+                  <div className="flex flex-col gap-1">
+                    {/* Tiêu đề */}
+                    <div
+                      className="text-[#1a0dab] text-xl font-medium leading-tight hover:underline cursor-pointer transition-all line-clamp-2"
+                      title={formData.metaTitle || formData.title || "Tiêu đề bài viết"}
+                      style={{ wordBreak: 'break-word', marginBottom: 2 }}
+                    >
+                      {formData.metaTitle || formData.title || "Tiêu đề bài viết"}
+                    </div>
+                    {/* Đường dẫn */}
+                    <div className="flex items-center text-[#006621] text-sm gap-1 mb-1">
+                      <span className="truncate max-w-[180px] md:max-w-[240px]" title={formData.category ? `domain.com/${formData.category.toLowerCase()}` : 'domain.com'}>
+                        domain.com{formData.category ? `/${formData.category.toLowerCase()}` : ''}
+                      </span>
+                      <span className="mx-1">›</span>
+                      <span className="truncate max-w-[120px] md:max-w-[180px]" title={formData.slug}>
+                        {formData.slug || ''}
+                      </span>
+                    </div>
+                    {/* Mô tả */}
+                    <div
+                      className="text-[#545454] text-base leading-snug line-clamp-3 mt-1"
+                      title={formData.metaDescription || formData.summary || "Mô tả bài viết sẽ hiển thị ở đây..."}
+                      style={{ wordBreak: 'break-word' }}
+                    >
+                      {formData.metaDescription || formData.summary || "Mô tả bài viết sẽ hiển thị ở đây..."}
+                    </div>
                   </div>
                 </div>
               </CardContent>
             </Card>
+
+            {/* Thông báo thành công dưới SEO Preview */}
+            {successMessage && (
+              <div className="mb-4 p-4 bg-green-50 border border-green-200 rounded-lg">
+                <div className="flex items-center gap-2">
+                  <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                  <span className="text-green-800 font-semibold">{successMessage}</span>
+                </div>
+                <p className="text-green-600 text-sm mt-1">Form sẽ được reset để tạo bài viết mới...</p>
+              </div>
+            )}
           </div>
         </div>
 

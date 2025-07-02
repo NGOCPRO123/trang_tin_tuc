@@ -16,7 +16,7 @@ interface ArticleListProps {
 const statusConfig = {
   published: { label: "Đã xuất bản", color: "bg-green-500", textColor: "text-green-700" },
   draft: { label: "Bản nháp", color: "bg-gray-500", textColor: "text-gray-700" },
-  pending: { label: "Chờ duyệt", color: "bg-yellow-500", textColor: "text-yellow-700" },
+  pending: { label: "Chờ duyệt", color: "bg-blue-400", textColor: "text-blue-700" },
   private: { label: "Riêng tư", color: "bg-red-500", textColor: "text-red-700" },
 }
 

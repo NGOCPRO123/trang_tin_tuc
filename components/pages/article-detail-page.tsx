@@ -221,7 +221,7 @@ export function ArticleDetailPage({ articleId }: ArticleDetailPageProps) {
                 </div>
 
                 <div id="content" className="prose prose-lg max-w-none">
-                  <div className="whitespace-pre-wrap text-base leading-relaxed">{article.content}</div>
+                  <div dangerouslySetInnerHTML={{ __html: article.content }} />
                 </div>
 
                 <Separator className="my-8" />
