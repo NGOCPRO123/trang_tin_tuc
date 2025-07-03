@@ -25,4 +25,5 @@ export interface Article {
   video?: string
   image?: string
   keywords?: string[]
+  type?: "article" | "giai-phap" | "kien-thuc"
 }

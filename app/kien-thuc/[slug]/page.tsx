@@ -12,7 +12,7 @@ async function getArticleBySlug(slug: string) {
   return articles.find((a: any) => a.slug === slug);
 }
 
-export default async function ArticleBySlugPage({ params }: Props) {
+export default async function KienThucBySlugPage({ params }: Props) {
   const article = await getArticleBySlug(params.slug);
   if (!article) return notFound();
   return <ArticleDetailPage articleId={article._id || article.id} />;

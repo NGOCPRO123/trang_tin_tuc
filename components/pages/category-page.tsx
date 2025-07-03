@@ -8,17 +8,38 @@ import { Badge } from "@/components/ui/badge"
 import { FolderOpen } from "lucide-react"
 import useSWR from "swr"
 
-const categories = ["Thời sự", "Thể thao", "Giải trí", "Công nghệ", "Kinh tế", "Xã hội", "Thông báo"]
+// Danh mục giải pháp
+const giaiPhapCategories = [
+  "Tư vấn Tài chính & Huy động vốn",
+  "Nghiệp vụ Kế toán – Thuế",
+  "Chiến lược Tăng doanh số bền vững",
+  "Tư vấn Pháp lý & Quản trị rủi ro",
+  "Tối ưu Vận hành & An ninh Doanh nghiệp"
+]
 
-// Mapping từ URL slug sang tên danh mục tiếng Việt
+// Danh mục kiến thức
+const kienThucCategories = [
+  "Quản trị Doanh nghiệp",
+  "Phát triển Doanh nghiệp",
+  "Tài chính - Kế toán - Thuế",
+  "Pháp lý & Rủi ro",
+  "Tài nguyên tải về"
+]
+
+// Mapping từ URL slug sang tên danh mục
 const categoryMapping: Record<string, string> = {
-  "the-thao": "Thể thao",
-  "thoi-su": "Thời sự", 
-  "cong-nghe": "Công nghệ",
-  "giai-tri": "Giải trí",
-  "kinh-te": "Kinh tế",
-  "xa-hoi": "Xã hội",
-  "thong-bao": "Thông báo"
+  // Giải pháp
+  "thoi-su": "Tư vấn Tài chính & Huy động vốn",
+  "cong-nghe": "Nghiệp vụ Kế toán – Thuế",
+  "giai-tri": "Chiến lược Tăng doanh số bền vững",
+  "kinh-te": "Tư vấn Pháp lý & Quản trị rủi ro",
+  "xa-hoi": "Tối ưu Vận hành & An ninh Doanh nghiệp",
+  // Kiến thức
+  "quan-tri-doanh-nghiep": "Quản trị Doanh nghiệp",
+  "phat-trien-doanh-nghiep": "Phát triển Doanh nghiệp",
+  "tai-chinh-ke-toan-thue": "Tài chính - Kế toán - Thuế",
+  "phap-ly-rui-ro": "Pháp lý & Rủi ro",
+  "tai-nguyen-tai-ve": "Tài nguyên tải về"
 }
 
 interface CategoryPageProps {
@@ -62,7 +83,13 @@ export function CategoryPage({ category }: CategoryPageProps) {
       )
     }
 
-    const categoryArticles = articles.filter((article: any) => article.category === categoryName)
+    // Xác định type dựa trên category
+    const isKienThuc = kienThucCategories.includes(categoryName)
+    const articleType = isKienThuc ? "kien-thuc" : "giai-phap"
+    
+    const categoryArticles = articles.filter((article: any) => 
+      article.category === categoryName && article.type === articleType
+    )
 
     return (
       <MainLayout>
@@ -101,7 +128,7 @@ export function CategoryPage({ category }: CategoryPageProps) {
 
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {categoryArticles.map((article: any, index: number) => (
-                      <ArticleCard key={article.id} article={article} index={index} />
+                      <ArticleCard key={article._id || article.id} article={article} index={index} />
                     ))}
                   </div>
                 </div>
@@ -113,10 +140,15 @@ export function CategoryPage({ category }: CategoryPageProps) {
     )
   }
 
-  // Nếu không có category cụ thể, hiển thị tất cả danh mục (giữ nguyên logic cũ)
-  const articlesByCategory = categories.reduce(
-    (acc, category) => {
-      acc[category] = articles.filter((article: any) => article.category === category)
+  // Nếu không có category cụ thể, hiển thị tất cả danh mục
+  const allCategories = [...giaiPhapCategories, ...kienThucCategories]
+  const articlesByCategory = allCategories.reduce(
+    (acc: Record<string, typeof articles>, category: string) => {
+      const isKienThuc = kienThucCategories.includes(category)
+      const articleType = isKienThuc ? "kien-thuc" : "giai-phap"
+      acc[category] = articles.filter((article: any) => 
+        article.category === category && article.type === articleType
+      )
       return acc
     },
     {} as Record<string, typeof articles>,
@@ -148,7 +180,7 @@ export function CategoryPage({ category }: CategoryPageProps) {
               </Card>
             ) : (
               <div className="space-y-12">
-                {categories.map((category) => {
+                {allCategories.map((category: string) => {
                   const categoryArticles = articlesByCategory[category]
                   if (categoryArticles.length === 0) return null
 
@@ -171,7 +203,7 @@ export function CategoryPage({ category }: CategoryPageProps) {
 
                       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                         {categoryArticles.map((article: any, index: number) => (
-                          <ArticleCard key={article.id} article={article} index={index} />
+                          <ArticleCard key={article._id || article.id} article={article} index={index} />
                         ))}
                       </div>
                     </motion.section>

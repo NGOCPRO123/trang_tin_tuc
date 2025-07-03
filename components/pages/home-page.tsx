@@ -30,7 +30,103 @@ function hienThiTrangThai(status: string) {
   }
 }
 
-export function HomePage() {
+function KnowledgeHomePage({ articles }: { articles: any[] }) {
+  // Lọc các bài viết đã xuất bản, đã đến giờ đăng
+  const thoiGianHienTai = new Date();
+  const baiVietDaXuatBan = articles.filter(baiViet =>
+    baiViet.status === "published" &&
+    (!baiViet.scheduledDate || new Date(baiViet.scheduledDate) <= thoiGianHienTai)
+  );
+  // Danh mục kiến thức
+  const categories = [
+    {
+      name: "Quản trị Doanh nghiệp",
+      desc: "Kiến thức về quản lý, vận hành, phát triển doanh nghiệp hiệu quả.",
+      bg: "bg-yellow-50",
+      icon: "📊"
+    },
+    {
+      name: "Phát triển Doanh nghiệp",
+      desc: "Chiến lược, kinh nghiệm giúp doanh nghiệp tăng trưởng bền vững.",
+      bg: "bg-yellow-50",
+      icon: "🚀"
+    },
+    {
+      name: "Tài chính - Kế toán - Thuế",
+      desc: "Kiến thức về tài chính, kế toán, thuế dành cho doanh nghiệp và cá nhân.",
+      bg: "bg-yellow-50",
+      icon: "💰"
+    },
+    {
+      name: "Pháp lý & Rủi ro",
+      desc: "Cập nhật pháp luật, quản trị rủi ro, bảo vệ doanh nghiệp.",
+      bg: "bg-yellow-50",
+      icon: "⚖️"
+    },
+    {
+      name: "Tài nguyên tải về",
+      desc: "Tổng hợp tài liệu, biểu mẫu, file hữu ích cho doanh nghiệp.",
+      bg: "bg-yellow-50",
+      icon: "📂"
+    }
+  ];
+  // Gom bài viết theo category
+  const articlesByCategory: Record<string, any[]> = {};
+  baiVietDaXuatBan.forEach(article => {
+    if (!articlesByCategory[article.category]) articlesByCategory[article.category] = [];
+    articlesByCategory[article.category].push(article);
+  });
+  return (
+    <MainLayout>
+      {/* Hero Section riêng */}
+      <section className="relative min-h-[70vh] py-16 bg-yellow-50 overflow-hidden flex items-center">
+        {/* Background image */}
+        <div className="absolute inset-0 w-full h-full z-0">
+          <img src="/anh_trangchu.jpg" alt="background" className="w-full h-full object-cover object-center opacity-60" />
+        </div>
+        <div className="container relative z-10 flex flex-col justify-center items-center h-full">
+          <div className="max-w-4xl mx-auto text-center">
+            <motion.h1 initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}
+              className="text-4xl md:text-5xl font-extrabold text-yellow-800 mb-4 flex items-center justify-center gap-2 text-center">
+              <span>📖</span> Chào mừng đến với Kho Kiến Thức
+            </motion.h1>
+            <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.3, duration: 0.7 }}
+              className="text-lg md:text-xl text-yellow-700 mb-6 max-w-2xl mx-auto text-center">
+              Nơi tổng hợp các chủ đề, bài viết hữu ích giúp doanh nghiệp và cá nhân phát triển bền vững.
+            </motion.p>
+          </div>
+        </div>
+      </section>
+      {/* Sectioned Categories */}
+      {categories.map((cat, idx) => (
+        <section key={cat.name} className={`py-12 ${cat.bg}`}>
+          <div className="container">
+            <div className="mb-8 text-center">
+              <h2 className="text-2xl md:text-3xl font-bold text-yellow-900 flex items-center justify-center gap-2 mb-2">
+                <span>{cat.icon}</span> {cat.name}
+              </h2>
+              <p className="text-yellow-700 text-base md:text-lg max-w-2xl mx-auto">{cat.desc}</p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {(articlesByCategory[cat.name] || []).length === 0 ? (
+                <div className="col-span-full text-center text-gray-400 italic">Chưa có bài viết nào</div>
+              ) : (
+                articlesByCategory[cat.name].map((article, index) => (
+                  <NewsArticleCard key={article.id || article._id} article={article} index={index} />
+                ))
+              )}
+            </div>
+          </div>
+        </section>
+      ))}
+      {/* Categories Section cuối trang */}
+      <CategoriesSection type="kien-thuc" />
+      <BackToTop />
+    </MainLayout>
+  );
+}
+
+export function HomePage({ type }: { type?: "giai-phap" | "kien-thuc" }) {
   const { data: articles = [], isLoading } = useSWR("/api/articles", fetcher)
   const [allVisibleCount, setAllVisibleCount] = useState(9)
   const [latestVisibleCount, setLatestVisibleCount] = useState(6)
@@ -52,11 +148,12 @@ export function HomePage() {
   const loadMoreAll = () => setAllVisibleCount((prev) => Math.min(prev + 9, articles.length))
   const loadMoreLatest = () => setLatestVisibleCount((prev) => Math.min(prev + 6, articles.length))
 
-  // Lọc các bài viết đã xuất bản và đã đến giờ đăng
+  // Lọc các bài viết đã xuất bản, đã đến giờ đăng và đúng type nếu có
   const thoiGianHienTai = new Date();
   const baiVietDaXuatBan = filteredArticles.filter(baiViet =>
     baiViet.status === "published" &&
-    (!baiViet.scheduledDate || new Date(baiViet.scheduledDate) <= thoiGianHienTai)
+    (!baiViet.scheduledDate || new Date(baiViet.scheduledDate) <= thoiGianHienTai) &&
+    (!type || baiViet.type === type)
   );
 
   // Tin nổi bật: 5 bài có lượt xem cao nhất
@@ -71,6 +168,11 @@ export function HomePage() {
   const tatCaBaiVietHienThi = baiVietDaXuatBan.slice(0, allVisibleCount);
   const conThemAll = allVisibleCount < baiVietDaXuatBan.length;
   const conThemMoiNhat = latestVisibleCount < tatCaTinMoiNhat.length;
+
+  if (type === "kien-thuc") {
+    if (isLoading) return <div className="text-center py-16">Đang tải dữ liệu...</div>;
+    return <KnowledgeHomePage articles={articles.filter((a: any) => a.type === "kien-thuc")} />;
+  }
 
   if (isLoading) return <div className="text-center py-16">Đang tải dữ liệu...</div>
   return (
@@ -136,7 +238,7 @@ export function HomePage() {
                 {tinMoiNhat.length > 0 && (
                   <div>
                     <div className="text-center mb-8">
-                      <h2 className="text-2xl md:text-3xl font-bold mb-2">📰 Tin tức mới nhất</h2>
+                      <h2 className="text-2xl md:text-3xl font-bold mb-2">🆕 Tin tức mới nhất</h2>
                       <p className="text-gray-600">Cập nhật mỗi ngày — chọn lọc những nội dung đáng chú ý nhất</p>
                       <div className="w-20 h-1 bg-gradient-to-r from-yellow-300 to-yellow-100 mx-auto mt-3 rounded-full"></div>
                     </div>
@@ -210,7 +312,7 @@ export function HomePage() {
       </section>
 
       {/* Categories Section */}
-      <CategoriesSection />
+      <CategoriesSection type={type} />
 
       {/* Back to Top Button */}
       <BackToTop />

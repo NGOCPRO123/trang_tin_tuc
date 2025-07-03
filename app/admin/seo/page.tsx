@@ -9,6 +9,23 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogClose } from "@
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { useRouter } from "next/navigation"
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+
+const giaiPhapCategories = [
+  "Tư vấn Tài chính & Huy động vốn",
+  "Nghiệp vụ Kế toán – Thuế",
+  "Chiến lược Tăng doanh số bền vững",
+  "Tư vấn Pháp lý & Quản trị rủi ro",
+  "Tối ưu Vận hành & An ninh Doanh nghiệp"
+]
+
+const kienThucCategories = [
+  "Quản trị Doanh nghiệp",
+  "Phát triển Doanh nghiệp",
+  "Tài chính - Kế toán - Thuế",
+  "Pháp lý & Rủi ro",
+  "Tài nguyên tải về"
+]
 
 function calcSeoScore(article: Article) {
   let score = 0
@@ -47,8 +64,11 @@ export default function AdminSeoPage() {
   const [articles, setArticles] = useState<Article[]>([])
   const [editing, setEditing] = useState<Article | null>(null)
   const [form, setForm] = useState<Partial<Article>>({})
+  const [keywordsForm, setKeywordsForm] = useState<string>("")
   const [saving, setSaving] = useState(false)
   const [success, setSuccess] = useState(false)
+  const [selectedType, setSelectedType] = useState<string>("giai-phap")
+  const [selectedCategory, setSelectedCategory] = useState<string>("all")
   const inputRef = useRef<HTMLInputElement>(null)
   const router = useRouter()
 
@@ -58,22 +78,33 @@ export default function AdminSeoPage() {
       .then((data: Article[]) => setArticles(data))
   }, [])
 
+  // Khi đổi loại, reset danh mục
+  useEffect(() => {
+    setSelectedCategory("all")
+  }, [selectedType])
+
   const openEdit = (article: Article) => {
     setEditing(article)
-    setForm({ ...article, keywords: Array.isArray(article.keywords) ? article.keywords.join(", ") : (article.keywords || "") })
+    setForm({ ...article })
+    setKeywordsForm(Array.isArray(article.keywords) ? article.keywords.join(", ") : (typeof article.keywords === "string" ? article.keywords : ""))
   }
 
   const closeEdit = () => {
     setEditing(null)
     setForm({})
+    setKeywordsForm("")
   }
 
-  const handleChange = (e: any) => {
-    const { name, value, type, checked } = e.target
-    setForm(f => ({
-      ...f,
-      [name]: type === "checkbox" ? checked : value
-    }))
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value, type } = e.target
+    if (name === "keywords") {
+      setKeywordsForm(value)
+    } else {
+      setForm(prev => ({
+        ...prev,
+        [name]: type === "checkbox" && e.target instanceof HTMLInputElement ? e.target.checked : value
+      }))
+    }
   }
 
   const handleSave = async () => {
@@ -83,7 +114,7 @@ export default function AdminSeoPage() {
     const payload = {
       ...editing,
       ...form,
-      keywords: typeof form.keywords === "string" ? form.keywords.split(",").map((k: string) => k.trim()).filter(Boolean) : [],
+      keywords: keywordsForm.split(",").map((k: string) => k.trim()).filter(Boolean),
     }
     const res = await fetch(`/api/articles/${id}`, {
       method: "PUT",
@@ -101,9 +132,47 @@ export default function AdminSeoPage() {
     }
   }
 
+  // Lọc bài viết theo loại và danh mục
+  const filteredArticles = articles.filter(a => {
+    if (!a.type || a.type !== selectedType) return false
+    if (selectedCategory !== "all" && a.category !== selectedCategory) return false
+    return true
+  })
+
+  const categories = selectedType === "giai-phap" ? giaiPhapCategories : kienThucCategories
+
   return (
     <div className="max-w-6xl mx-auto p-6 bg-white rounded-lg shadow-md">
       <h1 className="text-3xl font-bold mb-8 text-blue-700 text-center">Quản lý SEO bài viết</h1>
+      {/* Bộ lọc loại và danh mục */}
+      <div className="flex flex-col md:flex-row gap-4 mb-6 items-center justify-center">
+        <div>
+          <label className="block text-sm font-medium mb-1 text-slate-700">Loại bài viết</label>
+          <Select value={selectedType} onValueChange={setSelectedType}>
+            <SelectTrigger className="w-48">
+              <SelectValue placeholder="Chọn loại bài viết" />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="giai-phap">Giải pháp</SelectItem>
+              <SelectItem value="kien-thuc">Kiến thức</SelectItem>
+            </SelectContent>
+          </Select>
+        </div>
+        <div>
+          <label className="block text-sm font-medium mb-1 text-slate-700">Danh mục</label>
+          <Select value={selectedCategory} onValueChange={setSelectedCategory}>
+            <SelectTrigger className="w-64">
+              <SelectValue placeholder="Chọn danh mục" />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="all">Tất cả</SelectItem>
+              {categories.map(cat => (
+                <SelectItem key={cat} value={cat}>{cat}</SelectItem>
+              ))}
+            </SelectContent>
+          </Select>
+        </div>
+      </div>
       {success && <div className="mb-4 text-green-600 font-semibold text-center">Lưu thành công!</div>}
       <div className="overflow-x-auto">
         <table className="min-w-full border text-sm">
@@ -124,7 +193,7 @@ export default function AdminSeoPage() {
             </tr>
           </thead>
           <tbody>
-            {articles.map(article => {
+            {filteredArticles.map(article => {
               const { score, suggestions } = calcSeoScore(article)
               return (
                 <tr key={article._id || article.id} className="hover:bg-blue-50">

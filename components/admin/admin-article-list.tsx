@@ -14,7 +14,10 @@ import {
   ExternalLink,
   CheckCircle,
   Clock,
-  AlertCircle
+  AlertCircle,
+  Lightbulb,
+  BookOpen,
+  FileText
 } from "lucide-react"
 import type { Article } from "@/types/article"
 import { formatDate } from "@/lib/utils"
@@ -26,6 +29,28 @@ interface AdminArticleListProps {
 }
 
 export function AdminArticleList({ articles, onEdit, onDelete }: AdminArticleListProps) {
+  const getTypeIcon = (type?: string) => {
+    switch (type) {
+      case 'giai-phap':
+        return <Lightbulb className="w-4 h-4 text-purple-600" />
+      case 'kien-thuc':
+        return <BookOpen className="w-4 h-4 text-orange-600" />
+      default:
+        return <FileText className="w-4 h-4 text-blue-600" />
+    }
+  }
+
+  const getTypeLabel = (type?: string) => {
+    switch (type) {
+      case 'giai-phap':
+        return 'Giải pháp'
+      case 'kien-thuc':
+        return 'Kiến thức'
+      default:
+        return 'Bài viết'
+    }
+  }
+
   const getStatusIcon = (status: string) => {
     switch (status) {
       case 'published':
@@ -121,6 +146,10 @@ export function AdminArticleList({ articles, onEdit, onDelete }: AdminArticleLis
                   
                   {/* Tags and categories */}
                   <div className="flex flex-wrap items-center gap-2">
+                    <Badge variant="outline" className="text-xs flex items-center gap-1">
+                      {getTypeIcon(article.type)}
+                      {getTypeLabel(article.type)}
+                    </Badge>
                     <Badge variant="outline" className="text-xs">
                       {article.category}
                     </Badge>

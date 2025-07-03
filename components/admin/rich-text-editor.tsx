@@ -7,7 +7,6 @@ import Underline from '@tiptap/extension-underline'
 import TextAlign from '@tiptap/extension-text-align'
 import Highlight from '@tiptap/extension-highlight'
 import Placeholder from '@tiptap/extension-placeholder'
-import Heading from '@tiptap/extension-heading'
 import { Bold, Italic, Underline as UnderlineIcon, List, ListOrdered, Quote, Link as LinkIcon, ImageIcon, Code, Heading1, Heading2, Heading3, AlignLeft, AlignCenter, AlignRight, Highlighter } from "lucide-react"
 
 interface RichTextEditorProps {
@@ -19,8 +18,11 @@ interface RichTextEditorProps {
 export function RichTextEditor({ value, onChange, placeholder }: RichTextEditorProps) {
   const editor = useEditor({
     extensions: [
-      StarterKit.configure({ heading: false }),
-      Heading.configure({ levels: [1, 2, 3] }),
+      StarterKit.configure({
+        heading: {
+          levels: [1, 2, 3]
+        }
+      }),
       Link,
       Image,
       Underline,

@@ -50,6 +50,7 @@ interface ArticleFormData {
   ogTitle: string
   ogDescription: string
   ogImage: string
+  type: string
 }
 
 interface AdvancedArticleFormProps {
@@ -62,7 +63,13 @@ interface AdvancedArticleFormProps {
   successMessage?: string
 }
 
-const categories = ["Thời sự", "Thể thao", "Giải trí", "Công nghệ", "Kinh tế", "Xã hội", "Thông báo", "Du lịch"]
+const categories = [
+  "Tư vấn Tài chính & Huy động vốn",
+  "Nghiệp vụ Kế toán – Thuế",
+  "Chiến lược Tăng doanh số bền vững",
+  "Tư vấn Pháp lý & Quản trị rủi ro",
+  "Tối ưu Vận hành & An ninh Doanh nghiệp"
+]
 
 const statusOptions = [
   { value: "draft", label: "Lưu nháp", color: "bg-gray-500" },
@@ -70,6 +77,28 @@ const statusOptions = [
   { value: "published", label: "Xuất bản", color: "bg-green-500" },
   { value: "private", label: "Riêng tư", color: "bg-red-500" },
 ]
+
+const typeOptions = [
+  { value: "giai-phap", label: "Giải pháp" },
+  { value: "kien-thuc", label: "Kiến thức" },
+]
+
+const categoryOptionsByType: Record<string, string[]> = {
+  "giai-phap": [
+    "Tư vấn Tài chính & Huy động vốn",
+    "Nghiệp vụ Kế toán – Thuế",
+    "Chiến lược Tăng doanh số bền vững",
+    "Tư vấn Pháp lý & Quản trị rủi ro",
+    "Tối ưu Vận hành & An ninh Doanh nghiệp"
+  ],
+  "kien-thuc": [
+    "Quản trị Doanh nghiệp",
+    "Phát triển Doanh nghiệp",
+    "Tài chính - Kế toán - Thuế",
+    "Pháp lý & Rủi ro",
+    "Tài nguyên tải về"
+  ]
+};
 
 export function AdvancedArticleForm({ article, onSubmit, onSaveDraft, onPreview, onCancel, resetKey, successMessage }: AdvancedArticleFormProps) {
   const [formData, setFormData] = useState<ArticleFormData>({
@@ -91,6 +120,7 @@ export function AdvancedArticleForm({ article, onSubmit, onSaveDraft, onPreview,
     ogTitle: "",
     ogDescription: "",
     ogImage: "",
+    type: "giai-phap",
     ...article,
   })
 
@@ -152,6 +182,7 @@ export function AdvancedArticleForm({ article, onSubmit, onSaveDraft, onPreview,
         ogTitle: "",
         ogDescription: "",
         ogImage: "",
+        type: "giai-phap",
       })
       setCurrentTag("")
       setErrors({})
@@ -343,6 +374,26 @@ export function AdvancedArticleForm({ article, onSubmit, onSaveDraft, onPreview,
                   </div>
                 </div>
 
+                {/* Type (Loại bài viết) */}
+                <div>
+                  <Label htmlFor="type">Loại bài viết *</Label>
+                  <Select
+                    value={formData.type}
+                    onValueChange={(value) => setFormData((prev) => ({ ...prev, type: value, category: "" }))}
+                  >
+                    <SelectTrigger className="bg-white border-2 border-slate-200 text-slate-900">
+                      <SelectValue placeholder="Chọn loại bài viết" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      {typeOptions.map((option) => (
+                        <SelectItem key={option.value} value={option.value}>
+                          {option.label}
+                        </SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
+                </div>
+
                 {/* Category & Tags */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
@@ -350,12 +401,13 @@ export function AdvancedArticleForm({ article, onSubmit, onSaveDraft, onPreview,
                     <Select
                       value={formData.category}
                       onValueChange={(value) => setFormData((prev) => ({ ...prev, category: value }))}
+                      disabled={!formData.type}
                     >
-                      <SelectTrigger className={`bg-white border-2 border-slate-200 text-slate-900 ${errors.category ? "border-red-500" : "border-slate-200"}`}>
-                        <SelectValue placeholder="Chọn danh mục" />
+                      <SelectTrigger className={`bg-white border-2 border-slate-200 text-slate-900 ${errors.category ? "border-red-500" : "border-slate-200"}` + (!formData.type ? " opacity-60 cursor-not-allowed" : "") }>
+                        <SelectValue placeholder={formData.type ? "Chọn danh mục" : "Chọn loại bài viết trước"} />
                       </SelectTrigger>
                       <SelectContent>
-                        {categories.map((category) => (
+                        {(categoryOptionsByType[formData.type] || []).map((category) => (
                           <SelectItem key={category} value={category}>
                             {category}
                           </SelectItem>

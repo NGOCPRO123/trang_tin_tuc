@@ -11,7 +11,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         title, summary, content, category, tags, author, status, slug,
         featuredImage, altText, metaTitle, metaDescription, canonicalUrl,
         noIndex, noFollow, ogTitle, ogDescription, ogImage,
-        publishedAt, scheduledDate, viewCount, video, image, keywords
+        publishedAt, scheduledDate, viewCount, video, image, keywords,
+        type
       } = req.body;
 
       const result = await db.collection("acta").insertOne({
@@ -39,6 +40,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         viewCount: viewCount ?? 0,
         video: video || "",
         image: image || "",
+        type,
         createdAt: new Date(),
         updatedAt: new Date(),
       });

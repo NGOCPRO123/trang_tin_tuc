@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import typography from '@tailwindcss/typography';
 
 const config: Config = {
     darkMode: ["class"],
@@ -88,9 +89,16 @@ const config: Config = {
   		animation: {
   			'accordion-down': 'accordion-down 0.2s ease-out',
   			'accordion-up': 'accordion-up 0.2s ease-out'
-  		}
+  		},
+  		fontFamily: {
+  			sans: ['var(--font-geist-sans)', 'sans-serif'],
+  			mono: ['var(--font-geist-mono)', 'monospace'],
+  		},
   	}
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [
+    require("tailwindcss-animate"),
+    typography,
+  ],
 };
 export default config;

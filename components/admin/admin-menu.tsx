@@ -13,7 +13,9 @@ import {
   Home,
   Users,
   Settings,
-  ChevronRight
+  ChevronRight,
+  Lightbulb,
+  BookOpen
 } from "lucide-react"
 import { useAuth } from "@/contexts/auth-context"
 import { Button } from "@/components/ui/button"
@@ -34,8 +36,8 @@ export function AdminMenu() {
       href: "/admin/articles",
       icon: FileText,
       label: "Quản lý bài viết",
-      description: "Thêm, sửa, xóa bài viết",
-      badge: "12"
+      description: "Bài viết, giải pháp, kiến thức",
+      badge: "Tất cả"
     },
     {
       href: "/admin/categories",

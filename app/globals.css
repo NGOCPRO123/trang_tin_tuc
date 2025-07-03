@@ -70,6 +70,10 @@ body {
     text-overflow: ellipsis;
     white-space: nowrap;
   }
+  
+  .font-uppercase {
+    font-family: Arial, Helvetica, sans-serif !important;
+  }
 }
 
 @layer base {
