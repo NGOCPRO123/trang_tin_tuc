@@ -92,11 +92,9 @@ const categoryOptionsByType: Record<string, string[]> = {
     "Tối ưu Vận hành & An ninh Doanh nghiệp"
   ],
   "kien-thuc": [
-    "Quản trị Doanh nghiệp",
-    "Phát triển Doanh nghiệp",
-    "Tài chính - Kế toán - Thuế",
-    "Pháp lý & Rủi ro",
-    "Tài nguyên tải về"
+    "Quản trị doanh nghiệp",
+    "Giải pháp doanh nghiệp",
+    "Phát triển bền vững"
   ]
 };
 

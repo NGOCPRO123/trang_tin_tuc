@@ -6,7 +6,7 @@ import Image from "next/image"
 import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
-import { Menu, Settings, ChevronDown } from "lucide-react"
+import { Menu, Settings, ChevronDown, Phone } from "lucide-react"
 import {
   DropdownMenu,
   DropdownMenuTrigger,
@@ -28,14 +28,15 @@ export function Header() {
           </div>
           {/* Center: Title + Subtitle */}
           <div className="flex flex-col items-center justify-center text-center flex-1 px-5 transform translate-x-20">
-
-
-            <span className="text-2xl md:text-3xl font-bold text-black leading-tight text-center">DỊCH VỤ QUẢN TRỊ DOANH NGHIỆP</span>
-            <span className="text-lg md:text-2xl font-extrabold font-be-vietnam-pro text-yellow-700 mt-4 text-center drop-shadow-lg bg-gradient-to-r from-yellow-400 via-yellow-600 to-yellow-800 bg-clip-text text-transparent" style={{textShadow: '1px 2px 8px rgba(0,0,0,0.12)'}}>VỰC DẬY TÀI CHÍNH - BỨT PHÁ DOANH THU</span>
+            <span className="text-2xl md:text-3xl font-bold text-black leading-tight text-center font-sans">DỊCH VỤ QUẢN TRỊ DOANH NGHIỆP</span>
+            <span className="text-lg md:text-2xl font-extrabold text-yellow-700 mt-4 text-center drop-shadow-lg bg-gradient-to-r from-yellow-400 via-yellow-600 to-yellow-800 bg-clip-text text-transparent font-sans" style={{textShadow: '1px 2px 8px rgba(0,0,0,0.12)'}}>VỰC DẬY TÀI CHÍNH - BỨT PHÁ DOANH THU</span>
           </div>
           {/* Right: Hotline */}
           <div className="flex items-center justify-center md:justify-end min-w-[200px] w-full md:w-auto">
-            <span className="bg-yellow-400 text-white font-bold rounded-xl px-6 py-3 text-lg md:text-xl shadow">Hotline: 028 5555 8879</span>
+            <span className="bg-yellow-400 text-white font-bold rounded-xl px-6 py-3 text-lg md:text-xl shadow flex items-center gap-2">
+              <Phone className="w-6 h-6 mr-1" />
+              Nhận tư vấn
+            </span>
           </div>
         </div>
       </div>
@@ -73,25 +74,22 @@ export function Header() {
                 </DropdownMenuTrigger>
                 <DropdownMenuContent align="start">
                   <DropdownMenuItem asChild>
-                    <Link href="/danh-muc/thoi-su" className="font-bold text-base md:text-lg hover:text-yellow-600">Tư vấn Tài chính & Huy động vốn</Link>
+                    <Link href="/giai-phap/dau-tu-tai-chinh" className="font-bold text-base md:text-lg hover:text-yellow-600">Đầu tư tài chính</Link>
                   </DropdownMenuItem>
                   <DropdownMenuItem asChild>
-                    <Link href="/danh-muc/cong-nghe" className="font-bold text-base md:text-lg hover:text-yellow-600">Nghiệp vụ Kế toán – Thuế</Link>
+                    <Link href="/giai-phap/giai-phap-tang-doanh-so" className="font-bold text-base md:text-lg hover:text-yellow-600">Giải pháp tăng doanh số bền vững</Link>
                   </DropdownMenuItem>
                   <DropdownMenuItem asChild>
-                    <Link href="/danh-muc/kinh-te" className="font-bold text-base md:text-lg hover:text-yellow-600">Tư vấn Pháp lý & Quản trị rủi ro</Link>
+                    <Link href="/giai-phap/tu-van-phap-ly" className="font-bold text-base md:text-lg hover:text-yellow-600">Tư vấn pháp lý</Link>
                   </DropdownMenuItem>
                   <DropdownMenuItem asChild>
-                    <Link href="/danh-muc/giai-tri" className="font-bold text-base md:text-lg hover:text-yellow-600">Chiến lược Tăng doanh số bền vững</Link>
+                    <Link href="/giai-phap/nghiep-vu-ke-toan-thue" className="font-bold text-base md:text-lg hover:text-yellow-600">Nghiệp vụ kế toán – Thuế</Link>
                   </DropdownMenuItem>
                   <DropdownMenuItem asChild>
-                    <Link href="/danh-muc/xa-hoi" className="font-bold text-base md:text-lg hover:text-yellow-600">Tối ưu Vận hành & An ninh Doanh nghiệp</Link>
+                    <Link href="/giai-phap/xu-ly-cong-no" className="font-bold text-base md:text-lg hover:text-yellow-600">Xử lý công nợ</Link>
                   </DropdownMenuItem>
                   <DropdownMenuItem asChild>
-                    <Link href="/giai-phap" className="font-bold text-base md:text-blue-600 hover:underline flex items-center">
-                      <span className="text-blue-600">Xem tất cả giải pháp</span>
-                      <span className="ml-2">&rarr;</span>
-                    </Link>
+                    <Link href="/giai-phap/bao-ve-an-ninh" className="font-bold text-base md:text-lg hover:text-yellow-600">Bảo vệ an ninh</Link>
                   </DropdownMenuItem>
                 </DropdownMenuContent>
               </DropdownMenu>
@@ -108,25 +106,13 @@ export function Header() {
                 </DropdownMenuTrigger>
                 <DropdownMenuContent align="start">
                   <DropdownMenuItem asChild>
-                    <Link href="/danh-muc/quan-tri-doanh-nghiep" className="font-bold text-base md:text-lg hover:text-yellow-600">Quản trị Doanh nghiệp</Link>
+                    <Link href="/danh-muc/quan-tri-doanh-nghiep" className="font-bold text-base md:text-lg hover:text-yellow-600">Quản trị doanh nghiệp</Link>
                   </DropdownMenuItem>
                   <DropdownMenuItem asChild>
-                    <Link href="/danh-muc/phat-trien-doanh-nghiep" className="font-bold text-base md:text-lg hover:text-yellow-600">Phát triển Doanh nghiệp</Link>
+                    <Link href="/danh-muc/giai-phap-doanh-nghiep" className="font-bold text-base md:text-lg hover:text-yellow-600">Giải pháp doanh nghiệp</Link>
                   </DropdownMenuItem>
                   <DropdownMenuItem asChild>
-                    <Link href="/danh-muc/tai-chinh-ke-toan-thue" className="font-bold text-base md:text-lg hover:text-yellow-600">Tài chính - Kế toán - Thuế</Link>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem asChild>
-                    <Link href="/danh-muc/phap-ly-rui-ro" className="font-bold text-base md:text-lg hover:text-yellow-600">Pháp lý & Rủi ro</Link>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem asChild>
-                    <Link href="/danh-muc/tai-nguyen-tai-ve" className="font-bold text-base md:text-lg hover:text-yellow-600">Tài nguyên tải về</Link>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem asChild>
-                    <Link href="/kien-thuc" className="font-bold text-base md:text-blue-600 hover:underline flex items-center">
-                      <span className="text-blue-600">Xem tất cả bài viết</span>
-                      <span className="ml-2">&rarr;</span>
-                    </Link>
+                    <Link href="/danh-muc/phat-trien-ben-vung" className="font-bold text-base md:text-lg hover:text-yellow-600">Phát triển bền vững</Link>
                   </DropdownMenuItem>
                 </DropdownMenuContent>
               </DropdownMenu>
@@ -168,20 +154,19 @@ export function Header() {
                 </Link>
                 <span className="text-sm font-medium hover:text-yellow-600 transition-colors cursor-pointer select-none">Giải Pháp</span>
                 <div className="ml-4 flex flex-col space-y-2 mt-2">
-                  <Link href="/danh-muc/thoi-su" className="text-sm text-slate-600 hover:text-yellow-600" onClick={() => setIsOpen(false)}>Tư vấn Tài chính & Huy động vốn</Link>
-                  <Link href="/danh-muc/cong-nghe" className="text-sm text-slate-600 hover:text-yellow-600" onClick={() => setIsOpen(false)}>Nghiệp vụ Kế toán – Thuế</Link>
-                  <Link href="/danh-muc/kinh-te" className="text-sm text-slate-600 hover:text-yellow-600" onClick={() => setIsOpen(false)}>Tư vấn Pháp lý & Quản trị rủi ro</Link>
-                  <Link href="/danh-muc/giai-tri" className="text-sm text-slate-600 hover:text-yellow-600" onClick={() => setIsOpen(false)}>Chiến lược Tăng doanh số bền vững</Link>
-                  <Link href="/danh-muc/xa-hoi" className="text-sm text-slate-600 hover:text-yellow-600" onClick={() => setIsOpen(false)}>Tối ưu Vận hành & An ninh Doanh nghiệp</Link>
-                  <Link href="/giai-phap" className="text-sm text-blue-600 hover:underline font-semibold" onClick={() => setIsOpen(false)}>Xem tất cả giải pháp &rarr;</Link>
+                  <Link href="/giai-phap/dau-tu-tai-chinh" className="text-sm text-slate-600 hover:text-yellow-600" onClick={() => setIsOpen(false)}>Đầu tư tài chính</Link>
+                  <Link href="/giai-phap/giai-phap-tang-doanh-so" className="text-sm text-slate-600 hover:text-yellow-600" onClick={() => setIsOpen(false)}>Giải pháp tăng doanh số bền vững</Link>
+                  <Link href="/giai-phap/tu-van-phap-ly" className="text-sm text-slate-600 hover:text-yellow-600" onClick={() => setIsOpen(false)}>Tư vấn pháp lý</Link>
+                  <Link href="/giai-phap/nghiep-vu-ke-toan-thue" className="text-sm text-slate-600 hover:text-yellow-600" onClick={() => setIsOpen(false)}>Nghiệp vụ kế toán – Thuế</Link>
+                  <Link href="/giai-phap/xu-ly-cong-no" className="text-sm text-slate-600 hover:text-yellow-600" onClick={() => setIsOpen(false)}>Xử lý công nợ</Link>
+                  <Link href="/giai-phap/bao-ve-an-ninh" className="text-sm text-slate-600 hover:text-yellow-600" onClick={() => setIsOpen(false)}>Bảo vệ an ninh</Link>
                 </div>
-                <Link
-                  href="/kien-thuc"
-                  className="text-sm font-medium hover:text-yellow-600 transition-colors"
-                  onClick={() => setIsOpen(false)}
-                >
-                  Kiến thức
-                </Link>
+                <span className="text-sm font-medium hover:text-yellow-600 transition-colors cursor-pointer select-none">Kiến thức</span>
+                <div className="ml-4 flex flex-col space-y-2 mt-2">
+                  <Link href="/danh-muc/quan-tri-doanh-nghiep" className="text-sm text-slate-600 hover:text-yellow-600" onClick={() => setIsOpen(false)}>Quản trị doanh nghiệp</Link>
+                  <Link href="/danh-muc/giai-phap-doanh-nghiep" className="text-sm text-slate-600 hover:text-yellow-600" onClick={() => setIsOpen(false)}>Giải pháp doanh nghiệp</Link>
+                  <Link href="/danh-muc/phat-trien-ben-vung" className="text-sm text-slate-600 hover:text-yellow-600" onClick={() => setIsOpen(false)}>Phát triển bền vững</Link>
+                </div>
                 <Link
                   href="/gioi-thieu"
                   className="text-sm font-medium hover:text-yellow-600 transition-colors"

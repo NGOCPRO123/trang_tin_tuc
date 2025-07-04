@@ -57,11 +57,11 @@ export function HeroSection() {
           <div className="flex flex-col items-start justify-center text-left w-full h-full space-y-3 max-w-xl">
             {/* Logo HLCC nếu muốn thêm, có thể dùng <img src="/logo.png" ... /> */}
             {/* Tiêu đề lớn */}
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold uppercase text-white mb-2 tracking-wide">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold uppercase text-white mb-2 tracking-wide font-sans">
               BỨT PHÁ DOANH THU
             </h1>
             {/* Subheadline vàng/cam */}
-            <h2 className="text-xl md:text-2xl lg:text-2xl font-bold uppercase text-yellow-400 mb-4 tracking-wide">
+            <h2 className="text-xl md:text-2xl lg:text-2xl font-bold uppercase text-yellow-400 mb-4 tracking-wide font-sans">
             Giải Pháp Quản Trị Doanh Nghiệp Toàn Diện Cùng HLCC
             </h2>
             {/* Gạch ngang */}

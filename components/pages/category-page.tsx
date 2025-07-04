@@ -10,36 +10,34 @@ import useSWR from "swr"
 
 // Danh mục giải pháp
 const giaiPhapCategories = [
-  "Tư vấn Tài chính & Huy động vốn",
-  "Nghiệp vụ Kế toán – Thuế",
-  "Chiến lược Tăng doanh số bền vững",
-  "Tư vấn Pháp lý & Quản trị rủi ro",
-  "Tối ưu Vận hành & An ninh Doanh nghiệp"
+  "Đầu tư tài chính",
+  "Giải pháp tăng doanh số bền vững",
+  "Tư vấn pháp lý",
+  "Nghiệp vụ kế toán – Thuế",
+  "Xử lý công nợ",
+  "Bảo vệ an ninh"
 ]
 
 // Danh mục kiến thức
 const kienThucCategories = [
-  "Quản trị Doanh nghiệp",
-  "Phát triển Doanh nghiệp",
-  "Tài chính - Kế toán - Thuế",
-  "Pháp lý & Rủi ro",
-  "Tài nguyên tải về"
+  "Quản trị doanh nghiệp",
+  "Giải pháp doanh nghiệp",
+  "Phát triển bền vững"
 ]
 
 // Mapping từ URL slug sang tên danh mục
 const categoryMapping: Record<string, string> = {
   // Giải pháp
-  "thoi-su": "Tư vấn Tài chính & Huy động vốn",
-  "cong-nghe": "Nghiệp vụ Kế toán – Thuế",
-  "giai-tri": "Chiến lược Tăng doanh số bền vững",
-  "kinh-te": "Tư vấn Pháp lý & Quản trị rủi ro",
-  "xa-hoi": "Tối ưu Vận hành & An ninh Doanh nghiệp",
+  "dau-tu-tai-chinh": "Đầu tư tài chính",
+  "giai-phap-tang-doanh-so": "Giải pháp tăng doanh số bền vững",
+  "tu-van-phap-ly": "Tư vấn pháp lý",
+  "nghiep-vu-ke-toan-thue": "Nghiệp vụ kế toán – Thuế",
+  "xu-ly-cong-no": "Xử lý công nợ",
+  "bao-ve-an-ninh": "Bảo vệ an ninh",
   // Kiến thức
-  "quan-tri-doanh-nghiep": "Quản trị Doanh nghiệp",
-  "phat-trien-doanh-nghiep": "Phát triển Doanh nghiệp",
-  "tai-chinh-ke-toan-thue": "Tài chính - Kế toán - Thuế",
-  "phap-ly-rui-ro": "Pháp lý & Rủi ro",
-  "tai-nguyen-tai-ve": "Tài nguyên tải về"
+  "quan-tri-doanh-nghiep": "Quản trị doanh nghiệp",
+  "giai-phap-doanh-nghiep": "Giải pháp doanh nghiệp",
+  "phat-trien-ben-vung": "Phát triển bền vững"
 }
 
 interface CategoryPageProps {

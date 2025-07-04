@@ -4,7 +4,7 @@
 @tailwind utilities;
 
 body {
-  font-family: 'Be Vietnam Pro', Arial, Helvetica, sans-serif;
+  /* font-family: 'Be Vietnam Pro', Arial, Helvetica, sans-serif; */
 }
 
 @layer utilities {
@@ -168,6 +168,6 @@ body {
   }
 }
 
-.font-be-vietnam-pro {
+/* .font-be-vietnam-pro {
   font-family: 'Be Vietnam Pro', Arial, Helvetica, sans-serif;
-}
+} */

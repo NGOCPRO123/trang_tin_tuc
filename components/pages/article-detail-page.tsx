@@ -14,9 +14,10 @@ import Link from "next/link"
 import useSWR from "swr"
 import { formatRelativeTime } from "@/lib/utils"
 import { useEffect, useState } from "react"
-import { PartnersSection } from "@/components/pages/partners-section"
 import { WeatherWidget } from "@/components/pages/weather-widget"
 import { usePathname } from "next/navigation"
+import { KnowledgeCategoriesSidebar } from "@/components/pages/knowledge-categories-sidebar"
+import { RecentPostsSidebar } from "@/components/pages/recent-posts-sidebar"
 
 interface ArticleDetailPageProps {
   articleId: string
@@ -110,32 +111,10 @@ export function ArticleDetailPage({ articleId }: ArticleDetailPageProps) {
             </Button>
           </Link>
 
-          <div className="grid grid-cols-1 lg:grid-cols-16 gap-4 lg:gap-6">
-            {/* Left Sidebar - Đối tác - Rộng hơn */}
-            <aside className="lg:col-span-3 space-y-4">
-              {/* Partners Banner */}
-              <Card className="sticky top-4">
-                <CardHeader className="pb-3">
-                  <CardTitle className="text-sm font-semibold text-center">🤝 Đối tác</CardTitle>
-                </CardHeader>
-                <CardContent className="pt-0">
-                  <PartnersSection />
-                </CardContent>
-              </Card>
-
-              {/* Advertisement Banner */}
-              <Card>
-                <CardContent className="p-4">
-                  <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-lg p-8 text-center">
-                    <div className="text-base font-medium text-blue-600 mb-3">Quảng cáo</div>
-                    <div className="text-sm text-muted-foreground">160x600</div>
-                  </div>
-                </CardContent>
-              </Card>
-            </aside>
-
-            {/* Main Content - Thu hẹp lại một chút */}
-            <main className="lg:col-span-10">
+          <div className="grid grid-cols-1 lg:grid-cols-10 gap-4 lg:gap-6">
+            {/* Left Sidebar - bỏ trống hoặc có thể bỏ luôn */}
+            {/* Main Content rộng hơn */}
+            <main className="lg:col-span-7">
               <article className="max-w-none">
                 <header className="mb-8">
                   <Badge variant="secondary" className="mb-4">
@@ -252,54 +231,25 @@ export function ArticleDetailPage({ articleId }: ArticleDetailPageProps) {
               </article>
             </main>
 
-            {/* Right Sidebar - Thời tiết - Rộng hơn */}
-            <aside className="lg:col-span-3 space-y-4">
-              {/* Professional Weather Widget */}
-              <Card className="sticky top-4">
-                <CardHeader className="pb-3">
-                  <CardTitle className="text-sm font-semibold">🌤️ Dự báo thời tiết</CardTitle>
-                </CardHeader>
-                <CardContent className="pt-0">
-                  <WeatherWidget />
-                </CardContent>
-              </Card>
-
-              {/* Trending Articles */}
-              <Card>
-                <CardHeader className="pb-3">
-                  <CardTitle className="text-sm font-semibold">🔥 Tin nổi bật</CardTitle>
-                </CardHeader>
-                <CardContent className="pt-0">
-                  <div className="space-y-4">
-                    {trending.slice(0, 4).map((trend: any, index: number) => (
-                      <Link key={trend._id} href={`/bai-viet/${trend._id}`}>
-                        <div className="flex gap-3 p-2 rounded-lg hover:bg-muted/50 transition-colors">
-                          <div className="flex-shrink-0 w-6 h-6 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-xs font-bold">
-                            {index + 1}
-                          </div>
-                          <div className="flex-1 min-w-0">
-                            <h4 className="text-sm font-medium line-clamp-2 mb-1">{trend.title}</h4>
-                            <div className="flex items-center space-x-2 text-xs text-muted-foreground">
-                              <Eye className="h-3 w-3" />
-                              <span>{trend.viewCount || 0}</span>
-                              <Clock className="h-3 w-3" />
-                              <span>{formatRelativeTime(trend.publishedAt)}</span>
-                            </div>
-                          </div>
-                        </div>
-                      </Link>
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
-
-              {/* Advertisement Placeholder */}
+            {/* Right Sidebar - Danh mục Kiến thức, Recent Posts, WeatherWidget */}
+            <aside className="lg:col-span-3 space-y-4 sticky top-8 self-start h-fit">
               <Card>
                 <CardContent className="p-4">
-                  <div className="bg-muted/30 rounded-lg p-10 text-center">
-                    <div className="text-base text-muted-foreground mb-3">Quảng cáo</div>
-                    <div className="text-sm text-muted-foreground">300x250</div>
-                  </div>
+                  <div className="mb-3 text-base font-semibold text-yellow-700 flex items-center gap-2"><span>📚</span> Danh mục Kiến thức</div>
+                  <KnowledgeCategoriesSidebar />
+                </CardContent>
+              </Card>
+              {/* Recent Posts */}
+              <Card>
+                <CardContent className="p-4">
+                  <div className="mb-3 text-base font-semibold flex items-center gap-2">Recent Posts</div>
+                  <RecentPostsSidebar />
+                </CardContent>
+              </Card>
+              {/* Weather Card đồng bộ */}
+              <Card>
+                <CardContent className="p-4">
+                  <WeatherWidget />
                 </CardContent>
               </Card>
             </aside>

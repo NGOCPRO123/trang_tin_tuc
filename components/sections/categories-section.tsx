@@ -40,50 +40,47 @@ export function CategoriesSection({ type }: { type?: "giai-phap" | "kien-thuc" }
   // Danh mục cho từng loại
   const categoryIconsByType = {
     "giai-phap": {
-      "Tư vấn Tài chính & Huy động vốn": Newspaper,
-      "Nghiệp vụ Kế toán – Thuế": Cpu,
-      "Tư vấn Pháp lý & Quản trị rủi ro": DollarSign,
-      "Chiến lược Tăng doanh số bền vững": Music,
-      "Tối ưu Vận hành & An ninh Doanh nghiệp": Users,
+      "Đầu tư tài chính": Newspaper,
+      "Giải pháp tăng doanh số bền vững": Trophy,
+      "Tư vấn pháp lý": DollarSign,
+      "Nghiệp vụ kế toán – Thuế": Cpu,
+      "Xử lý công nợ": Users,
+      "Bảo vệ an ninh": Megaphone,
     },
     "kien-thuc": {
-      "Quản trị Doanh nghiệp": Newspaper,
-      "Phát triển Doanh nghiệp": Trophy,
-      "Tài chính - Kế toán - Thuế": DollarSign,
-      "Pháp lý & Rủi ro": Megaphone,
-      "Tài nguyên tải về": Cpu,
+      "Quản trị doanh nghiệp": Newspaper,
+      "Giải pháp doanh nghiệp": Trophy,
+      "Phát triển bền vững": DollarSign,
     }
   };
   const categoryColorsByType = {
     "giai-phap": {
-      "Tư vấn Tài chính & Huy động vốn": "bg-gradient-to-r from-red-400 to-red-600",
-      "Nghiệp vụ Kế toán – Thuế": "bg-gradient-to-r from-blue-400 to-blue-600",
-      "Tư vấn Pháp lý & Quản trị rủi ro": "bg-gradient-to-r from-yellow-400 to-yellow-600",
-      "Chiến lược Tăng doanh số bền vững": "bg-gradient-to-r from-purple-400 to-purple-600",
-      "Tối ưu Vận hành & An ninh Doanh nghiệp": "bg-gradient-to-r from-teal-400 to-teal-600",
+      "Đầu tư tài chính": "bg-gradient-to-r from-red-400 to-red-600",
+      "Giải pháp tăng doanh số bền vững": "bg-gradient-to-r from-purple-400 to-purple-600",
+      "Tư vấn pháp lý": "bg-gradient-to-r from-yellow-400 to-yellow-600",
+      "Nghiệp vụ kế toán – Thuế": "bg-gradient-to-r from-blue-400 to-blue-600",
+      "Xử lý công nợ": "bg-gradient-to-r from-teal-400 to-teal-600",
+      "Bảo vệ an ninh": "bg-gradient-to-r from-pink-400 to-pink-600",
     },
     "kien-thuc": {
-      "Quản trị Doanh nghiệp": "bg-gradient-to-r from-blue-400 to-blue-600",
-      "Phát triển Doanh nghiệp": "bg-gradient-to-r from-green-400 to-green-600",
-      "Tài chính - Kế toán - Thuế": "bg-gradient-to-r from-yellow-400 to-yellow-600",
-      "Pháp lý & Rủi ro": "bg-gradient-to-r from-purple-400 to-purple-600",
-      "Tài nguyên tải về": "bg-gradient-to-r from-pink-400 to-pink-600",
+      "Quản trị doanh nghiệp": "bg-gradient-to-r from-blue-400 to-blue-600",
+      "Giải pháp doanh nghiệp": "bg-gradient-to-r from-green-400 to-green-600",
+      "Phát triển bền vững": "bg-gradient-to-r from-yellow-400 to-yellow-600",
     }
   };
   const categorySlugsByType = {
     "giai-phap": {
-      "Tư vấn Tài chính & Huy động vốn": "thoi-su",
-      "Nghiệp vụ Kế toán – Thuế": "cong-nghe",
-      "Tư vấn Pháp lý & Quản trị rủi ro": "kinh-te",
-      "Chiến lược Tăng doanh số bền vững": "giai-tri",
-      "Tối ưu Vận hành & An ninh Doanh nghiệp": "xa-hoi",
+      "Đầu tư tài chính": "dau-tu-tai-chinh",
+      "Giải pháp tăng doanh số bền vững": "giai-phap-tang-doanh-so",
+      "Tư vấn pháp lý": "tu-van-phap-ly",
+      "Nghiệp vụ kế toán – Thuế": "nghiep-vu-ke-toan-thue",
+      "Xử lý công nợ": "xu-ly-cong-no",
+      "Bảo vệ an ninh": "bao-ve-an-ninh",
     },
     "kien-thuc": {
-      "Quản trị Doanh nghiệp": "quan-tri-doanh-nghiep",
-      "Phát triển Doanh nghiệp": "phat-trien-doanh-nghiep",
-      "Tài chính - Kế toán - Thuế": "tai-chinh-ke-toan-thue",
-      "Pháp lý & Rủi ro": "phap-ly-rui-ro",
-      "Tài nguyên tải về": "tai-nguyen-tai-ve",
+      "Quản trị doanh nghiệp": "quan-tri-doanh-nghiep",
+      "Giải pháp doanh nghiệp": "giai-phap-doanh-nghiep",
+      "Phát triển bền vững": "phat-trien-ben-vung",
     }
   };
 

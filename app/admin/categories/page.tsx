@@ -6,19 +6,18 @@ import { AdminArticleList } from "@/components/admin/admin-article-list"
 import type { Article } from "@/types/article"
 
 const giaiPhapCategories = [
-  "Tư vấn Tài chính & Huy động vốn",
-  "Nghiệp vụ Kế toán – Thuế",
-  "Chiến lược Tăng doanh số bền vững",
-  "Tư vấn Pháp lý & Quản trị rủi ro",
-  "Tối ưu Vận hành & An ninh Doanh nghiệp"
+  "Đầu tư tài chính",
+  "Giải pháp tăng doanh số bền vững",
+  "Tư vấn pháp lý",
+  "Nghiệp vụ kế toán – Thuế",
+  "Xử lý công nợ",
+  "Bảo vệ an ninh"
 ]
 
 const kienThucCategories = [
-  "Quản trị Doanh nghiệp",
-  "Phát triển Doanh nghiệp",
-  "Tài chính - Kế toán - Thuế",
-  "Pháp lý & Rủi ro",
-  "Tài nguyên tải về"
+  "Quản trị doanh nghiệp",
+  "Giải pháp doanh nghiệp",
+  "Phát triển bền vững"
 ]
 
 export default function AdminCategoriesPage() {
