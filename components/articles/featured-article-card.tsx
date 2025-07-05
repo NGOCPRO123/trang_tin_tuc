@@ -18,7 +18,7 @@ interface FeaturedArticleCardProps {
 
 export function FeaturedArticleCard({ article, index = 0, spotlight = false, mini = false }: FeaturedArticleCardProps) {
   return (
-    <Link href={`/bai-viet/${article._id}`} className={`block group ${spotlight ? "" : mini ? "" : ""}`}>
+    <Link href={`/${article.slug || article._id}`} className={`block group ${spotlight ? "" : mini ? "" : ""}`}>
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}

@@ -1,4 +1,4 @@
-import { ArticleDetailPage } from "@/components/pages/article-detail-page"
+import { redirect } from 'next/navigation'
 
 interface ArticleDetailPageProps {
   params: {
@@ -7,5 +7,6 @@ interface ArticleDetailPageProps {
 }
 
 export default function ArticleDetail({ params }: ArticleDetailPageProps) {
-  return <ArticleDetailPage articleId={params.id} />
+  // Redirect từ URL cũ sang URL mới
+  redirect(`/${params.id}`)
 }

@@ -19,7 +19,7 @@ export function ArticleCard({ article, index = 0 }: ArticleCardProps) {
   const hasVideo = article.video && article.video.trim() !== ""
 
   return (
-    <Link href={`/bai-viet/${article._id || article.id}`} className="block h-full">
+    <Link href={`/${article.slug || article._id || article.id}`} className="block h-full">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}

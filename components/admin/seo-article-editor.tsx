@@ -437,7 +437,7 @@ export function SEOArticleEditor() {
                     id="slug"
                     value={articleData.slug}
                     onChange={(e) => setArticleData((prev) => ({ ...prev, slug: e.target.value }))}
-                    placeholder="duong-dan-bai-viet"
+                                            placeholder="cuoc-song-sau-dai-dich"
                   />
                 </div>
 
@@ -528,7 +528,7 @@ export function SEOArticleEditor() {
                       id="permalink"
                       value={articleData.permalink}
                       onChange={(e) => setArticleData((prev) => ({ ...prev, permalink: e.target.value }))}
-                      placeholder="/duong-dan-bai-viet (65-70 ký tự)"
+                                              placeholder="/cuoc-song-sau-dai-dich (65-70 ký tự)"
                     />
                   </div>
 

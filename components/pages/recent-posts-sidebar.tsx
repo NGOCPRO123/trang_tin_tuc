@@ -16,7 +16,7 @@ export function RecentPostsSidebar() {
     <ul className="space-y-4">
       {recent.map((post: any) => (
         <li key={post._id} className="flex gap-3 border-b pb-3 last:border-b-0 last:pb-0">
-          <Link href={`/bai-viet/${post._id}`} className="flex-shrink-0">
+          <Link href={`/${post.slug || post._id}`} className="flex-shrink-0">
             <Image
               src={post.image || post.featuredImage || "/placeholder.svg"}
               alt={post.title}
@@ -26,7 +26,7 @@ export function RecentPostsSidebar() {
             />
           </Link>
           <div className="flex-1 min-w-0">
-            <Link href={`/bai-viet/${post._id}`} className="font-medium text-sm line-clamp-2 hover:text-blue-700 transition">
+            <Link href={`/${post.slug || post._id}`} className="font-medium text-sm line-clamp-2 hover:text-blue-700 transition">
               {post.title}
             </Link>
             <div className="text-xs text-muted-foreground mt-1 line-clamp-2">{post.summary || ""}</div>

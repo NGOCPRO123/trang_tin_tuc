@@ -23,7 +23,7 @@ export function NewsArticleCard({ article, index = 0 }: NewsArticleCardProps) {
     return diff <= 3
   })()
   return (
-    <Link href={`/bai-viet/${article._id}`} className="block group">
+    <Link href={`/${article.slug || article._id}`} className="block group">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}

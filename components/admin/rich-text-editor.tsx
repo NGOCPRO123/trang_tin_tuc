@@ -7,7 +7,38 @@ import Underline from '@tiptap/extension-underline'
 import TextAlign from '@tiptap/extension-text-align'
 import Highlight from '@tiptap/extension-highlight'
 import Placeholder from '@tiptap/extension-placeholder'
-import { Bold, Italic, Underline as UnderlineIcon, List, ListOrdered, Quote, Link as LinkIcon, ImageIcon, Code, Heading1, Heading2, Heading3, AlignLeft, AlignCenter, AlignRight, Highlighter } from "lucide-react"
+import { Extension } from '@tiptap/core'
+import { Bold, Italic, Underline as UnderlineIcon, List, ListOrdered, Quote, Link as LinkIcon, ImageIcon, Code, Heading1, Heading2, Heading3, Heading4, Heading5, Heading6, AlignLeft, AlignCenter, AlignRight, Highlighter, Upload } from "lucide-react"
+import { ImagePicker } from './image-picker'
+import { useToast } from '@/hooks/use-toast'
+
+// Custom extension to add IDs to headings
+const HeadingWithId = Extension.create({
+  name: 'headingWithId',
+  
+  addGlobalAttributes() {
+    return [
+      {
+        types: ['heading'],
+        attributes: {
+          id: {
+            default: null,
+            parseHTML: (element: HTMLElement) => element.getAttribute('id'),
+            renderHTML: (attributes: any) => {
+              if (!attributes.id) {
+                const text = attributes.content || ''
+                attributes.id = `heading-${Date.now()}-${text.toLowerCase().replace(/[^a-z0-9]/g, '-')}`
+              }
+              return {
+                id: attributes.id
+              }
+            }
+          }
+        }
+      }
+    ]
+  }
+})
 
 interface RichTextEditorProps {
   value: string
@@ -16,13 +47,16 @@ interface RichTextEditorProps {
 }
 
 export function RichTextEditor({ value, onChange, placeholder }: RichTextEditorProps) {
+  const { toast } = useToast()
+  
   const editor = useEditor({
     extensions: [
       StarterKit.configure({
         heading: {
-          levels: [1, 2, 3]
+          levels: [1, 2, 3, 4, 5, 6]
         }
       }),
+      HeadingWithId,
       Link,
       Image,
       Underline,
@@ -36,7 +70,7 @@ export function RichTextEditor({ value, onChange, placeholder }: RichTextEditorP
     },
     editorProps: {
       attributes: {
-        class: "min-h-[300px] p-4 outline-none bg-white text-slate-900 rounded-b-lg"
+        class: "min-h-[300px] p-4 outline-none bg-white text-slate-900 rounded-b-lg prose prose-lg max-w-none"
       }
     }
   })
@@ -54,6 +88,9 @@ export function RichTextEditor({ value, onChange, placeholder }: RichTextEditorP
         <button onClick={() => editor.chain().focus().toggleHeading({ level: 1 }).run()} className={editor.isActive('heading', { level: 1 }) ? 'text-blue-600 font-bold' : ''} title="Heading 1"><Heading1 className="h-4 w-4" /></button>
         <button onClick={() => editor.chain().focus().toggleHeading({ level: 2 }).run()} className={editor.isActive('heading', { level: 2 }) ? 'text-blue-600 font-bold' : ''} title="Heading 2"><Heading2 className="h-4 w-4" /></button>
         <button onClick={() => editor.chain().focus().toggleHeading({ level: 3 }).run()} className={editor.isActive('heading', { level: 3 }) ? 'text-blue-600 font-bold' : ''} title="Heading 3"><Heading3 className="h-4 w-4" /></button>
+        <button onClick={() => editor.chain().focus().toggleHeading({ level: 4 }).run()} className={editor.isActive('heading', { level: 4 }) ? 'text-blue-600 font-bold' : ''} title="Heading 4"><Heading4 className="h-4 w-4" /></button>
+        <button onClick={() => editor.chain().focus().toggleHeading({ level: 5 }).run()} className={editor.isActive('heading', { level: 5 }) ? 'text-blue-600 font-bold' : ''} title="Heading 5"><Heading5 className="h-4 w-4" /></button>
+        <button onClick={() => editor.chain().focus().toggleHeading({ level: 6 }).run()} className={editor.isActive('heading', { level: 6 }) ? 'text-blue-600 font-bold' : ''} title="Heading 6"><Heading6 className="h-4 w-4" /></button>
         <button onClick={() => editor.chain().focus().toggleBulletList().run()} className={editor.isActive('bulletList') ? 'text-blue-600 font-bold' : ''} title="Danh sách chấm"><List className="h-4 w-4" /></button>
         <button onClick={() => editor.chain().focus().toggleOrderedList().run()} className={editor.isActive('orderedList') ? 'text-blue-600 font-bold' : ''} title="Danh sách số"><ListOrdered className="h-4 w-4" /></button>
         <button onClick={() => editor.chain().focus().toggleBlockquote().run()} className={editor.isActive('blockquote') ? 'text-blue-600 font-bold' : ''} title="Trích dẫn"><Quote className="h-4 w-4" /></button>
@@ -68,7 +105,22 @@ export function RichTextEditor({ value, onChange, placeholder }: RichTextEditorP
         <button onClick={() => {
           const url = prompt('Nhập URL ảnh:');
           if (url) editor.chain().focus().setImage({ src: url }).run();
-        }} title="Chèn ảnh"><ImageIcon className="h-4 w-4" /></button>
+        }} title="Chèn ảnh từ URL"><ImageIcon className="h-4 w-4" /></button>
+        <ImagePicker 
+          onImageSelect={(imageUrl) => {
+            editor.chain().focus().setImage({ src: imageUrl }).run();
+            toast({
+              title: "Thành công!",
+              description: "Đã chèn ảnh vào bài viết",
+              duration: 2000,
+            })
+          }}
+          trigger={
+            <button title="Chọn ảnh từ máy tính">
+              <Upload className="h-4 w-4" />
+            </button>
+          }
+        />
       </div>
       <EditorContent editor={editor} />
     </div>

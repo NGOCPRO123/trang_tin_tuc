@@ -36,29 +36,52 @@ export function removeVietnameseTones(str: string) {
   return str
 }
 
-export function formatRelativeTime(dateString: string) {
-  const now = new Date()
+export function formatRelativeTime(dateString: string): string {
   const date = new Date(dateString)
-  const diffInMs = now.getTime() - date.getTime()
-  const diffInMinutes = Math.floor(diffInMs / (1000 * 60))
-  const diffInHours = Math.floor(diffInMs / (1000 * 60 * 60))
-  const diffInDays = Math.floor(diffInMs / (1000 * 60 * 60 * 24))
-  const diffInWeeks = Math.floor(diffInDays / 7)
-  const diffInMonths = Math.floor(diffInDays / 30)
+  const now = new Date()
+  const diffInSeconds = Math.floor((now.getTime() - date.getTime()) / 1000)
 
-  if (diffInMinutes < 1) {
+  if (diffInSeconds < 60) {
     return "Vừa xong"
-  } else if (diffInMinutes < 60) {
-    return `${diffInMinutes} phút trước`
-  } else if (diffInHours < 24) {
-    return `${diffInHours} giờ trước`
-  } else if (diffInDays < 7) {
-    return `${diffInDays} ngày trước`
-  } else if (diffInWeeks < 4) {
-    return `${diffInWeeks} tuần trước`
-  } else if (diffInMonths < 12) {
-    return `${diffInMonths} tháng trước`
-  } else {
-    return formatDate(dateString)
   }
+
+  const diffInMinutes = Math.floor(diffInSeconds / 60)
+  if (diffInMinutes < 60) {
+    return `${diffInMinutes} phút trước`
+  }
+
+  const diffInHours = Math.floor(diffInMinutes / 60)
+  if (diffInHours < 24) {
+    return `${diffInHours} giờ trước`
+  }
+
+  const diffInDays = Math.floor(diffInHours / 24)
+  if (diffInDays < 7) {
+    return `${diffInDays} ngày trước`
+  }
+
+  const diffInWeeks = Math.floor(diffInDays / 7)
+  if (diffInWeeks < 4) {
+    return `${diffInWeeks} tuần trước`
+  }
+
+  const diffInMonths = Math.floor(diffInDays / 30)
+  if (diffInMonths < 12) {
+    return `${diffInMonths} tháng trước`
+  }
+
+  const diffInYears = Math.floor(diffInDays / 365)
+  return `${diffInYears} năm trước`
+}
+
+export function generateSlug(title: string): string {
+  return title
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '') // Loại bỏ dấu tiếng Việt
+    .replace(/[đĐ]/g, 'd') // Thay đổi đ/Đ thành d
+    .replace(/[^a-z0-9\s-]/g, '') // Chỉ giữ lại chữ cái, số, khoảng trắng và dấu gạch ngang
+    .replace(/\s+/g, '-') // Thay khoảng trắng thành dấu gạch ngang
+    .replace(/-+/g, '-') // Loại bỏ dấu gạch ngang liên tiếp
+    .replace(/^-|-$/g, '') // Loại bỏ dấu gạch ngang ở đầu và cuối
 }

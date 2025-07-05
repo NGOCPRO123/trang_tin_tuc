@@ -55,7 +55,7 @@ export function InternalLinkManager({ category, onLinksChange }: InternalLinkMan
               id="manualLink"
               value={currentLink}
               onChange={(e) => setCurrentLink(e.target.value)}
-              placeholder="/duong-dan-bai-viet"
+                                      placeholder="/cuoc-song-sau-dai-dich"
             />
             <Button type="button" variant="outline" onClick={() => addLink(currentLink)}>
               <Plus className="h-4 w-4" />

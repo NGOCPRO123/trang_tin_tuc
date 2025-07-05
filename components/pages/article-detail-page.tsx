@@ -70,7 +70,18 @@ export function ArticleDetailPage({ articleId }: ArticleDetailPageProps) {
     return (
       <MainLayout>
         <div className="container py-8">
-          <p>Không tìm thấy bài viết.</p>
+          <div className="text-center space-y-6">
+            <h1 className="text-4xl font-bold text-gray-800">Không tìm thấy bài viết</h1>
+            <p className="text-gray-600 max-w-md mx-auto">
+              Bài viết bạn đang tìm kiếm có thể đã bị di chuyển, xóa hoặc không tồn tại.
+            </p>
+            <Button asChild>
+              <Link href="/">
+                <ArrowLeft className="h-4 w-4 mr-2" />
+                Về trang chủ
+              </Link>
+            </Button>
+          </div>
         </div>
       </MainLayout>
     )
@@ -199,7 +210,7 @@ export function ArticleDetailPage({ articleId }: ArticleDetailPageProps) {
                   )}
                 </div>
 
-                <div id="content" className="prose prose-lg max-w-none">
+                <div id="content" className="article-content">
                   <div dangerouslySetInnerHTML={{ __html: article.content }} />
                 </div>
 
@@ -315,7 +326,7 @@ function RelatedArticleCard({ article }: { article: any }) {
   const hasVideo = article.video && article.video.trim() !== ""
 
   return (
-    <Link href={`/bai-viet/${article._id}`}>
+                      <Link href={`/${article.slug || article._id}`}>
       <Card className="h-full hover:shadow-md transition-shadow">
         <div className="relative h-48 w-full">
           <Image

@@ -1,5 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from "next"
 import clientPromise from "@/lib/mongodb"
+import { generateSlug } from "@/lib/utils"
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   const client = await clientPromise
@@ -15,6 +16,9 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         type
       } = req.body;
 
+      // Tạo slug tự động nếu không có
+      const finalSlug = slug || generateSlug(title);
+
       const result = await db.collection("acta").insertOne({
         title,
         summary,
@@ -24,7 +28,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         keywords: keywords && keywords.length > 0 ? keywords : tags,
         author,
         status,
-        slug,
+        slug: finalSlug,
         featuredImage,
         altText,
         metaTitle,

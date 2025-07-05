@@ -4,6 +4,7 @@ import { Geist, Geist_Mono } from 'next/font/google'
 import { ArticleProvider } from "@/contexts/article-context"
 import { AuthProvider } from "@/contexts/auth-context"
 import "./globals.css"
+import "@/styles/toc.css"
 import { Toaster } from "@/components/ui/toaster"
 
 const geistSans = Geist({

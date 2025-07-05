@@ -168,6 +168,254 @@ body {
   }
 }
 
+/* Styles cho nội dung bài viết */
+.article-content {
+  @apply prose prose-lg max-w-none;
+}
+
+.article-content h1 {
+  @apply text-3xl font-bold text-gray-900 mb-6 mt-8;
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+}
+
+.article-content h2 {
+  @apply text-2xl font-bold text-gray-900 mb-4 mt-6;
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+
+.article-content h3 {
+  @apply text-xl font-semibold text-gray-800 mb-3 mt-5;
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+.article-content h4 {
+  @apply text-lg font-semibold text-gray-800 mb-3 mt-4;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
+.article-content h5 {
+  @apply text-base font-semibold text-gray-700 mb-2 mt-3;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
+.article-content h6 {
+  @apply text-sm font-semibold text-gray-700 mb-2 mt-3;
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+.article-content p {
+  @apply text-base text-gray-700 mb-4 leading-relaxed;
+}
+
+.article-content ul {
+  @apply list-disc list-inside mb-4 space-y-2;
+}
+
+.article-content ol {
+  @apply list-decimal list-inside mb-4 space-y-2;
+}
+
+.article-content li {
+  @apply text-base text-gray-700;
+}
+
+.article-content blockquote {
+  @apply border-l-4 border-blue-500 pl-4 py-2 mb-4 bg-blue-50 italic;
+}
+
+.article-content code {
+  @apply bg-gray-100 px-2 py-1 rounded text-sm font-mono;
+}
+
+.article-content pre {
+  @apply bg-gray-100 p-4 rounded-lg mb-4 overflow-x-auto;
+}
+
+.article-content a {
+  @apply text-blue-600 hover:text-blue-800 underline;
+}
+
+.article-content strong {
+  @apply font-bold;
+}
+
+.article-content em {
+  @apply italic;
+}
+
+.article-content mark {
+  @apply bg-yellow-200 px-1 rounded;
+}
+
+/* Dark mode support */
+.dark .article-content h1,
+.dark .article-content h2,
+.dark .article-content h3,
+.dark .article-content h4,
+.dark .article-content h5,
+.dark .article-content h6 {
+  @apply text-gray-100;
+}
+
+.dark .article-content p,
+.dark .article-content li {
+  @apply text-gray-300;
+}
+
+.dark .article-content blockquote {
+  @apply bg-blue-900/20 border-blue-400;
+}
+
+.dark .article-content code {
+  @apply bg-gray-800 text-gray-200;
+}
+
+.dark .article-content pre {
+  @apply bg-gray-800;
+}
+
+.dark .article-content a {
+  @apply text-blue-400 hover:text-blue-300;
+}
+
+/* Styles cho ProseMirror editor */
+.ProseMirror h1 {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 1.5rem;
+  margin-top: 2rem;
+}
+
+.ProseMirror h2 {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 1rem;
+  margin-top: 1.5rem;
+}
+
+.ProseMirror h3 {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 0.75rem;
+  margin-top: 1.25rem;
+}
+
+.ProseMirror h4 {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 0.75rem;
+  margin-top: 1rem;
+}
+
+.ProseMirror h5 {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 0.5rem;
+  margin-top: 0.75rem;
+}
+
+.ProseMirror h6 {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 0.5rem;
+  margin-top: 0.75rem;
+}
+
+.ProseMirror p {
+  font-size: 1rem;
+  line-height: 1.75rem;
+  color: #374151;
+  margin-bottom: 1rem;
+}
+
+.ProseMirror ul {
+  list-style-type: disc;
+  list-style-position: inside;
+  margin-bottom: 1rem;
+  margin-top: 0.5rem;
+}
+
+.ProseMirror ol {
+  list-style-type: decimal;
+  list-style-position: inside;
+  margin-bottom: 1rem;
+  margin-top: 0.5rem;
+}
+
+.ProseMirror li {
+  font-size: 1rem;
+  line-height: 1.75rem;
+  color: #374151;
+  margin-bottom: 0.25rem;
+}
+
+.ProseMirror blockquote {
+  border-left: 4px solid #3b82f6;
+  padding-left: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+  background-color: #eff6ff;
+  font-style: italic;
+}
+
+.ProseMirror code {
+  background-color: #f3f4f6;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  font-size: 0.875rem;
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", Consolas, "Liberation Mono", Menlo, monospace;
+}
+
+.ProseMirror pre {
+  background-color: #f3f4f6;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+  overflow-x: auto;
+}
+
+.ProseMirror a {
+  color: #2563eb;
+  text-decoration: underline;
+}
+
+.ProseMirror a:hover {
+  color: #1d4ed8;
+}
+
+.ProseMirror strong {
+  font-weight: 700;
+}
+
+.ProseMirror em {
+  font-style: italic;
+}
+
+.ProseMirror mark {
+  background-color: #fef3c7;
+  padding: 0.25rem;
+  border-radius: 0.25rem;
+}
+
 /* .font-be-vietnam-pro {
   font-family: 'Be Vietnam Pro', Arial, Helvetica, sans-serif;
 } */

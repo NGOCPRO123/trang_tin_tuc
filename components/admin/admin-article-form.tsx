@@ -29,6 +29,9 @@ import {
 } from "lucide-react"
 import { MediaUpload } from "./media-upload"
 import { RichTextEditor } from "./rich-text-editor"
+import { TableOfContents } from "./table-of-contents"
+import { TocInserter } from "./toc-inserter"
+import { generateSlug } from "@/lib/utils"
 
 interface ArticleFormData {
   title: string
@@ -126,19 +129,9 @@ export function AdvancedArticleForm({ article, onSubmit, onSaveDraft, onPreview,
   const [isAutoSaving, setIsAutoSaving] = useState(false)
   const [lastSaved, setLastSaved] = useState<Date | null>(null)
   const [errors, setErrors] = useState<Record<string, string>>({})
+  const [showTableOfContents, setShowTableOfContents] = useState(true)
 
-  // Auto-generate slug from title
-  const generateSlug = useCallback((title: string) => {
-    return title
-      .toLowerCase()
-      .normalize("NFD")
-      .replace(/[\u0300-\u036f]/g, "")
-      .replace(/[đĐ]/g, "d")
-      .replace(/[^a-z0-9\s-]/g, "")
-      .replace(/\s+/g, "-")
-      .replace(/-+/g, "-")
-      .trim()
-  }, [])
+  // Auto-generate slug from title using utility function
 
   // Auto-generate meta fields
   useEffect(() => {
@@ -360,13 +353,13 @@ export function AdvancedArticleForm({ article, onSubmit, onSaveDraft, onPreview,
                       id="slug"
                       value={formData.slug}
                       onChange={(e) => setFormData((prev) => ({ ...prev, slug: e.target.value }))}
-                      placeholder="bai-viet-moi"
+                      placeholder="cuoc-song-sau-dai-dich"
                       className={`bg-white border-2 border-slate-200 text-slate-900`}
                     />
                     <p className="text-xs text-gray-500">
                       URL:{" "}
                       <span className="font-mono">
-                        https://domain.com/{formData.category.toLowerCase()}/{formData.slug}
+                        https://domain.com/{formData.slug}
                       </span>
                     </p>
                   </div>
@@ -534,7 +527,7 @@ export function AdvancedArticleForm({ article, onSubmit, onSaveDraft, onPreview,
                         id="canonicalUrl"
                         value={formData.canonicalUrl}
                         onChange={(e) => setFormData((prev) => ({ ...prev, canonicalUrl: e.target.value }))}
-                        placeholder="https://domain.com/bai-viet-chinh"
+                        placeholder="https://domain.com/cuoc-song-sau-dai-dich"
                         className={`bg-white border-2 border-slate-200 text-slate-900`}
                       />
                       <p className="text-xs text-gray-500 mt-1">Để tránh duplicate content</p>
@@ -719,8 +712,8 @@ export function AdvancedArticleForm({ article, onSubmit, onSaveDraft, onPreview,
                     </div>
                     {/* Đường dẫn */}
                     <div className="flex items-center text-[#006621] text-sm gap-1 mb-1">
-                      <span className="truncate max-w-[180px] md:max-w-[240px]" title={formData.category ? `domain.com/${formData.category.toLowerCase()}` : 'domain.com'}>
-                        domain.com{formData.category ? `/${formData.category.toLowerCase()}` : ''}
+                      <span className="truncate max-w-[180px] md:max-w-[240px]" title="domain.com">
+                        domain.com
                       </span>
                       <span className="mx-1">›</span>
                       <span className="truncate max-w-[120px] md:max-w-[180px]" title={formData.slug}>
@@ -739,6 +732,20 @@ export function AdvancedArticleForm({ article, onSubmit, onSaveDraft, onPreview,
                 </div>
               </CardContent>
             </Card>
+
+            {/* Table of Contents */}
+            <TableOfContents 
+              content={formData.content}
+              onToggle={setShowTableOfContents}
+              className="sticky top-6"
+            />
+
+            {/* TOC Inserter */}
+            <TocInserter
+              content={formData.content}
+              onInsert={(tocHtml) => setFormData(prev => ({ ...prev, content: tocHtml }))}
+              className="sticky top-6"
+            />
 
             {/* Thông báo thành công dưới SEO Preview */}
             {successMessage && (

@@ -24,7 +24,7 @@ export function FeaturedArticle({ article }: FeaturedArticleProps) {
       transition={{ duration: 0.6 }}
       className="h-full"
     >
-      <Link href={`/bai-viet/${article.id}`} className="block h-full group">
+              <Link href={`/${article.slug || article.id}`} className="block h-full group">
         <Card className="overflow-hidden hover:shadow-xl transition-all duration-300 h-full flex flex-col rounded-xl border border-gray-200 hover:border-blue-300">
           <div className="relative h-56 md:h-64 lg:h-72 w-full flex-shrink-0">
             <Image 
