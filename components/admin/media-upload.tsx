@@ -39,8 +39,8 @@ export function MediaUpload({ imageUrl, videoUrl, onImageChange, onVideoChange }
       return
     }
 
-    if (file.size > 5 * 1024 * 1024) {
-      alert("File ảnh không được lớn hơn 5MB!")
+    if (file.size > 10 * 1024 * 1024) {
+      alert("File ảnh không được lớn hơn 10MB!")
       return
     }
 
