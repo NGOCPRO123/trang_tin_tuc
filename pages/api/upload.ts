@@ -22,7 +22,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       maxFileSize: 50 * 1024 * 1024, // 50MB
       filter: (part) => {
         // Chỉ cho phép upload ảnh và video
-        return part.mimetype?.startsWith("image/") || part.mimetype?.startsWith("video/")
+        return !!(part.mimetype && (part.mimetype.startsWith("image/") || part.mimetype.startsWith("video/")))
       },
     })
 
