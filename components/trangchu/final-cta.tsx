@@ -36,10 +36,10 @@ export function FinalCTA() {
         >
           <Heart className="w-16 h-16 mx-auto mb-6" />
           <h2 className="text-3xl md:text-5xl font-bold mb-6 leading-tight">
-            Sẵn sàng đồng hành cùng cộng đồng hạnh phúc?
+            Doanh nghiệp của bạn đã sẵn sàng cho một cuộc "Chẩn đoán"?
           </h2>
           <p className="text-xl md:text-2xl mb-12 opacity-90 max-w-3xl mx-auto">
-            Hãy cùng chúng tôi tạo nên những thay đổi tích cực và xây dựng một cộng đồng tốt đẹp hơn mỗi ngày
+            Vấn đề sẽ không tự biến mất. Hãy để các chuyên gia tư vấn doanh nghiệp của HLCC cùng bạn tìm ra nguyên nhân gốc rễ và xây dựng một lộ trình phát triển vững chắc với giải pháp tài chính toàn diện.
           </p>
 
           <motion.div
@@ -59,12 +59,11 @@ export function FinalCTA() {
               <ArrowRight className="ml-2 w-5 h-5" />
             </Button>
             <Button
-              variant="outline"
               size="lg"
-              className="border-2 border-white text-white hover:bg-white hover:text-orange-600 px-10 py-4 text-lg rounded-full shadow-lg hover:shadow-xl transition-all duration-300 font-semibold bg-transparent"
+              className="bg-white text-orange-600 hover:bg-gray-100 px-10 py-4 text-lg rounded-full shadow-lg hover:shadow-xl transition-all duration-300 font-semibold"
               onClick={handleBecomePartnerClick}
             >
-              Trở thành đối tác
+              Bắt đầu Giải mã Doanh nghiệp của bạn
             </Button>
           </motion.div>
         </motion.div>

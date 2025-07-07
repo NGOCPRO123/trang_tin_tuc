@@ -1,10 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 body {
-  /* font-family: 'Be Vietnam Pro', Arial, Helvetica, sans-serif; */
+  font-family: 'Roboto', 'Helvetica Neue', 'Arial', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
 }
 
 @layer utilities {
@@ -416,6 +418,6 @@ body {
   border-radius: 0.25rem;
 }
 
-/* .font-be-vietnam-pro {
-  font-family: 'Be Vietnam Pro', Arial, Helvetica, sans-serif;
-} */
+.font-publicsans {
+  font-family: 'Roboto', 'Helvetica Neue', 'Arial', sans-serif !important;
+}

@@ -1,59 +1,37 @@
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
-import { ArrowRight, Clock, DollarSign } from "lucide-react"
+import { ArrowRight } from "lucide-react"
 
 export default function HeroSection() {
   return (
-    <section className="py-20 lg:py-32">
+    <section className="py-20 lg:py-32 bg-gradient-to-br from-yellow-50 via-orange-50 to-red-50">
       <div className="container mx-auto px-4">
-        <div className="max-w-4xl mx-auto text-center">
-          <div className="mb-8">
-            <h1 className="text-4xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-              Tiền của bạn đang nằm trong túi <span className="text-yellow-600">người khác</span> bao lâu rồi?
+        <div className="max-w-5xl mx-auto text-center">
+          <div className="mb-10">
+            <h1 className="text-4xl lg:text-6xl font-black text-gray-900 mb-6 leading-tight">
+              Doanh thu trên giấy tờ rất đẹp, nhưng <span className="text-red-700">tiền trong tài khoản thì không thấy đâu?</span>
             </h1>
-
-            <p className="text-xl lg:text-2xl text-gray-700 mb-4 leading-relaxed">
-              Đừng để dòng tiền tắc nghẽn chỉ vì bạn ngại đòi nợ.
-            </p>
-
-            <p className="text-lg text-gray-600 mb-8">
-              Chúng tôi là đơn vị xử lý công nợ{" "}
-              <span className="font-semibold text-yellow-700">âm thầm – hợp pháp – hiệu quả.</span>
+            <p className="text-xl lg:text-2xl text-gray-700 mb-6 leading-relaxed">
+              Đó là khi công nợ khó đòi đang ăn mòn lợi nhuận và bóp nghẹt dòng tiền của bạn. Việc đòi nợ sai cách có thể phá vỡ mối quan hệ với khách hàng và thậm chí đẩy bạn vào rủi ro pháp lý. <span className="font-bold text-red-700">Tại HLCC, chúng tôi cung cấp dịch vụ xử lý công nợ chuyên nghiệp, giúp bạn thu hồi tiền một cách hiệu quả và giữ gìn uy tín doanh nghiệp.</span>
             </p>
           </div>
-
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
             <Button
               size="lg"
-              className="bg-yellow-500 hover:bg-yellow-600 text-white px-8 py-4 text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all"
+              className="bg-red-600 hover:bg-red-700 text-white px-10 py-4 text-lg font-bold rounded-xl shadow-lg hover:shadow-xl transition-all"
             >
-              <DollarSign className="w-5 h-5 mr-2" />
-              Tôi cần hỗ trợ thu nợ ngay
+              Yêu cầu Đánh giá Nhanh Tình trạng Công nợ
               <ArrowRight className="w-5 h-5 ml-2" />
             </Button>
-
-            <Button
-              variant="outline"
-              size="lg"
-              className="border-2 border-yellow-400 text-yellow-700 hover:bg-yellow-50 px-8 py-4 text-lg rounded-xl bg-transparent"
-            >
-              <Clock className="w-5 h-5 mr-2" />
-              Tư vấn miễn phí
-            </Button>
           </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
-            <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-6 border border-yellow-200">
-              <div className="text-3xl font-bold text-yellow-600 mb-2">95%</div>
-              <div className="text-gray-700">Tỷ lệ thu hồi thành công</div>
-            </div>
-            <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-6 border border-yellow-200">
-              <div className="text-3xl font-bold text-yellow-600 mb-2">7 ngày</div>
-              <div className="text-gray-700">Thời gian trung bình</div>
-            </div>
-            <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-6 border border-yellow-200">
-              <div className="text-3xl font-bold text-yellow-600 mb-2">500+</div>
-              <div className="text-gray-700">Khách hàng tin tưởng</div>
-            </div>
+          <div className="flex justify-center mb-10">
+            <Image
+              src="/placeholder-pipe-broken.png"
+              alt="Dòng tiền bị tắc nghẽn - hình ảnh ẩn dụ"
+              width={420}
+              height={220}
+              className="mx-auto rounded-xl shadow-lg border border-yellow-200 bg-white"
+            />
           </div>
         </div>
       </div>

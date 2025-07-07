@@ -1,94 +1,94 @@
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { Checkbox } from "@/components/ui/checkbox"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { ArrowRight } from "lucide-react"
 
 export function CTASection() {
   return (
-    <section className="py-20 bg-gradient-to-br from-yellow-100 to-amber-100">
-      <div className="container mx-auto px-4">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-800 mb-6">
-              📞 Bạn không cần giàu để bắt đầu đầu tư
-            </h2>
-            <p className="text-2xl text-gray-700 mb-4">– bạn cần hiểu để không mất tiền.</p>
-            <p className="text-xl text-gray-600">Gửi thông tin – chúng tôi sẽ giúp bạn khởi động đúng cách.</p>
+    <section className="relative py-20 bg-gradient-to-br from-yellow-50 to-amber-100 overflow-hidden">
+      {/* Hiệu ứng nền vàng */}
+      <div className="absolute top-0 left-0 w-40 h-40 bg-yellow-200/40 rounded-full blur-2xl animate-pulse" />
+      <div className="absolute bottom-0 right-0 w-60 h-60 bg-amber-200/30 rounded-full blur-3xl animate-pulse delay-1000" />
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="flex flex-col md:flex-row items-center gap-12 max-w-5xl mx-auto">
+          {/* Bên trái: Quote vàng lớn */}
+          <div className="flex-1 flex flex-col items-start justify-center mb-8 md:mb-0">
+            <div className="text-3xl md:text-4xl font-extrabold text-yellow-700 mb-6 leading-tight">
+              “Bước ngoặt tài chính bắt đầu từ một quyết định chiến lược.”
+            </div>
+            <div className="text-lg text-yellow-900 font-medium">
+              Hãy để HLCC đồng hành cùng bạn trên hành trình kiến tạo giá trị bền vững.
+            </div>
           </div>
+          {/* Bên phải: Form */}
+          <div className="flex-1">
+            <Card className="border-2 border-yellow-200 shadow-2xl bg-white/80 rounded-3xl">
+              <CardHeader className="text-center">
+                <CardTitle className="text-2xl text-yellow-800 flex items-center justify-center font-bold">
+                  NHẬN TƯ VẤN CHIẾN LƯỢC TÀI CHÍNH NGAY!
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="p-8">
+                <form className="space-y-6">
+                  <div className="grid md:grid-cols-2 gap-6">
+                    <div>
+                      <Label htmlFor="fullName" className="text-yellow-900 font-medium">
+                        Họ tên *
+                      </Label>
+                      <Input
+                        id="fullName"
+                        placeholder="Nhập họ và tên của bạn"
+                        className="mt-2 border-yellow-200 focus:border-yellow-400 focus:ring-yellow-400 bg-yellow-50/50"
+                      />
+                    </div>
+                    <div>
+                      <Label htmlFor="phone" className="text-yellow-900 font-medium">
+                        Số điện thoại *
+                      </Label>
+                      <Input
+                        id="phone"
+                        placeholder="Nhập số điện thoại"
+                        className="mt-2 border-yellow-200 focus:border-yellow-400 focus:ring-yellow-400 bg-yellow-50/50"
+                      />
+                    </div>
+                  </div>
 
-          <Card className="border-yellow-300 shadow-2xl">
-            <CardHeader className="text-center">
-              <CardTitle className="text-2xl text-gray-800">📬 Đăng ký tư vấn miễn phí</CardTitle>
-            </CardHeader>
-            <CardContent className="p-8">
-              <form className="space-y-6">
-                <div className="grid md:grid-cols-2 gap-6">
                   <div>
-                    <Label htmlFor="fullName" className="text-gray-700 font-medium">
-                      Họ tên *
+                    <Label htmlFor="company" className="text-yellow-900 font-medium">
+                      Tên doanh nghiệp
                     </Label>
                     <Input
-                      id="fullName"
-                      placeholder="Nhập họ và tên của bạn"
-                      className="mt-2 border-gray-300 focus:border-yellow-400"
+                      id="company"
+                      placeholder="Nhập tên doanh nghiệp"
+                      className="mt-2 border-yellow-200 focus:border-yellow-400 focus:ring-yellow-400 bg-yellow-50/50"
                     />
                   </div>
+
                   <div>
-                    <Label htmlFor="phone" className="text-gray-700 font-medium">
-                      Số điện thoại *
+                    <Label htmlFor="message" className="text-yellow-900 font-medium">
+                      Nội dung cần tư vấn
                     </Label>
                     <Input
-                      id="phone"
-                      placeholder="Nhập số điện thoại"
-                      className="mt-2 border-gray-300 focus:border-yellow-400"
+                      id="message"
+                      placeholder="Bạn quan tâm điều gì nhất về tài chính & cổ phần?"
+                      className="mt-2 border-yellow-200 focus:border-yellow-400 focus:ring-yellow-400 bg-yellow-50/50"
                     />
                   </div>
-                </div>
 
-                <div>
-                  <Label htmlFor="capital" className="text-gray-700 font-medium">
-                    Mức vốn dự kiến đầu tư
-                  </Label>
-                  <Select>
-                    <SelectTrigger className="mt-2 border-gray-300 focus:border-yellow-400">
-                      <SelectValue placeholder="Chọn mức vốn" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="under-100">Dưới 100 triệu</SelectItem>
-                      <SelectItem value="100-500">100 - 500 triệu</SelectItem>
-                      <SelectItem value="over-500">Trên 500 triệu</SelectItem>
-                    </SelectContent>
-                  </Select>
-                </div>
-
-                <div>
-                  <Label className="text-gray-700 font-medium mb-3 block">
-                    Kênh đầu tư quan tâm (có thể chọn nhiều)
-                  </Label>
-                  <div className="grid md:grid-cols-2 gap-3">
-                    {["Chứng khoán", "Trái phiếu", "Tài sản số", "Bất động sản", "Vàng", "Ngoại tệ"].map((option) => (
-                      <div key={option} className="flex items-center space-x-2">
-                        <Checkbox id={option} />
-                        <Label htmlFor={option} className="text-gray-700">
-                          {option}
-                        </Label>
-                      </div>
-                    ))}
+                  <div className="flex justify-center mt-6">
+                    <Button
+                      type="submit"
+                      size="icon"
+                      className="w-16 h-16 rounded-full bg-gradient-to-br from-yellow-400 to-amber-500 hover:from-yellow-500 hover:to-amber-600 text-yellow-900 font-bold text-2xl shadow-lg border-2 border-yellow-200 flex items-center justify-center"
+                    >
+                      <ArrowRight className="w-8 h-8" />
+                    </Button>
                   </div>
-                </div>
-
-                <Button
-                  type="submit"
-                  size="lg"
-                  className="w-full bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white py-4 text-lg"
-                >
-                  🚀 Nhận tư vấn miễn phí ngay
-                </Button>
-              </form>
-            </CardContent>
-          </Card>
+                </form>
+              </CardContent>
+            </Card>
+          </div>
         </div>
       </div>
     </section>

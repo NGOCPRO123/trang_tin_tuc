@@ -1,66 +1,52 @@
-import { Shield, UserCheck, MessageCircle, Scale } from "lucide-react"
+import { Scale, Clock, CheckCircle } from "lucide-react"
 
 export default function CommitmentSection() {
-  const commitments = [
-    {
-      icon: MessageCircle,
-      text: "Không đòi bậy – Không hứa sai",
-    },
-    {
-      icon: UserCheck,
-      text: "Không chia sẻ thông tin khách hàng",
-    },
+  const benefits = [
     {
       icon: Scale,
-      text: "Luôn ưu tiên thương lượng trước khi kiện tụng",
+      title: "Chuyên nghiệp & Hợp pháp",
+      description:
+        "Chúng tôi hành động dựa trên cơ sở pháp luật, sử dụng các kỹ năng đàm phán và tâm lý chuyên nghiệp, giúp bạn thu hồi nợ một cách văn minh và bảo vệ uy tín thương hiệu.",
     },
     {
-      icon: Shield,
-      text: "Tuân thủ nghiêm ngặt quy định pháp luật",
+      icon: Clock,
+      title: "Tối ưu Thời gian & Nguồn lực",
+      description:
+        "Bạn không cần phải tốn thời gian, nhân lực và cảm xúc vào việc đòi nợ. Hãy để chúng tôi làm việc đó, để bạn có thể tập trung vào hoạt động kinh doanh cốt lõi của mình.",
+    },
+    {
+      icon: CheckCircle,
+      title: "Cam kết trên Hiệu quả",
+      description:
+        "Mô hình hợp tác của chúng tôi rất linh hoạt. Phí dịch vụ thường được tính dựa trên một tỷ lệ phần trăm của số tiền thu hồi thành công. Bạn chỉ trả phí khi chúng tôi mang lại kết quả.",
     },
   ]
 
   return (
-    <section className="py-20 bg-white/40 backdrop-blur-sm">
-      <div className="container mx-auto px-4">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-12">
-            <div className="inline-flex items-center space-x-2 bg-yellow-100 rounded-full px-6 py-2 mb-6">
-              <Shield className="w-5 h-5 text-yellow-600" />
-              <span className="text-yellow-800 font-semibold">Cam kết của chúng tôi</span>
-            </div>
-
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">Chúng tôi cam kết</h2>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {commitments.map((commitment, index) => {
-              const IconComponent = commitment.icon
-              return (
-                <div
-                  key={index}
-                  className="flex items-center space-x-4 bg-white/80 rounded-xl p-6 border border-yellow-200"
-                >
-                  <div className="flex-shrink-0">
-                    <div className="w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center">
-                      <IconComponent className="w-6 h-6 text-yellow-600" />
-                    </div>
-                  </div>
-                  <div className="text-lg text-gray-700 font-medium">{commitment.text}</div>
+    <section className="py-20 bg-white">
+      <div className="container mx-auto px-4 md:px-6">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl font-black text-gray-900 mb-4">Tại sao nên Ủy thác việc Xử lý Công nợ cho HLCC?</h2>
+          <p className="text-xl text-gray-700 max-w-2xl mx-auto">
+            Sự khác biệt của chúng tôi
+          </p>
+        </div>
+        <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          {benefits.map((benefit, index) => {
+            const Icon = benefit.icon
+            return (
+              <div
+                key={index}
+                className="bg-gradient-to-br from-red-50 to-yellow-50 border border-red-100 rounded-xl p-8 hover:shadow-lg transition-all hover:scale-105 flex flex-col items-center text-center"
+              >
+                <div className="bg-red-100 p-4 rounded-full mb-4">
+                  <Icon className="h-10 w-10 text-red-600" />
                 </div>
-              )
-            })}
-          </div>
-
-          <div className="mt-12 text-center">
-            <div className="bg-gradient-to-r from-yellow-50 to-amber-50 rounded-2xl p-8 border border-yellow-200">
-              <p className="text-lg text-gray-700 leading-relaxed">
-                <span className="font-semibold text-yellow-700">"Uy tín là tài sản quý giá nhất của chúng tôi."</span>
-                <br />
-                Mỗi khách hàng tin tưởng là một trách nhiệm mà chúng tôi không bao giờ xem nhẹ.
-              </p>
-            </div>
-          </div>
+                <h3 className="font-semibold text-gray-900 mb-3 text-lg">{benefit.title}</h3>
+                <p className="text-gray-700 text-base leading-relaxed">{benefit.description}</p>
+              </div>
+            )
+          })}
         </div>
       </div>
     </section>

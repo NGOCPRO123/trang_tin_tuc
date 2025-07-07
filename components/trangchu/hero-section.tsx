@@ -54,21 +54,21 @@ export function HeroSection() {
       <div className="container mx-auto relative z-10 px-4 py-2 lg:py-3">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left: Content */}
-          <div className="flex flex-col items-start justify-center text-left w-full h-full space-y-3 max-w-xl">
+          <div className="flex flex-col items-start justify-center text-left h-full space-y-3 max-w-5xl">
             {/* Logo HLCC nếu muốn thêm, có thể dùng <img src="/logo.png" ... /> */}
             {/* Tiêu đề lớn */}
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold uppercase text-white mb-2 tracking-wide font-sans">
-              BỨT PHÁ DOANH THU
+            <h1 className="text-4xl md:text-5xl lg:text-5xl font-bold text-white mb-2 tracking-wide font-sans">
+              Doanh thu tăng, lợi nhuận không về. CEO luôn phải "chữa cháy".
             </h1>
             {/* Subheadline vàng/cam */}
-            <h2 className="text-xl md:text-2xl lg:text-2xl font-bold uppercase text-yellow-400 mb-4 tracking-wide font-sans">
-            Giải Pháp Quản Trị Doanh Nghiệp Toàn Diện Cùng HLCC
+            <h2 className="text-xl md:text-2xl lg:text-2xl font-bold text-yellow-400 mb-4 tracking-wide font-sans">
+              HLCC – Giải mã gốc rễ, kiến tạo tăng trưởng bền vững.
             </h2>
             {/* Gạch ngang */}
             <div className="w-16 h-1 bg-white/40 rounded mb-4" />
             {/* Mô tả */}
             <p className="text-white text-base md:text-lg mb-6">
-              Chúng tôi cam kết đồng hành cùng doanh nghiệp Việt Nam vượt qua mọi thách thức tài chính, tối ưu hóa vận hành và đạt được tăng trưởng bền vững.
+              HLCC - Tư vấn doanh nghiệp chuyên sâu, giải pháp tài chính toàn diện, tối ưu vận hành, tái cấu trúc tài chính, tăng trưởng bền vững.
             </p>
           </div>
 
@@ -150,7 +150,7 @@ export function HeroSection() {
                         type="submit"
                         className="w-full h-12 bg-gradient-to-r from-yellow-400 to-yellow-500 hover:from-yellow-500 hover:to-yellow-600 text-gray-900 font-bold text-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02]"
                       >
-                        Gửi Thông Tin Ngay
+                        Bắt đầu Chẩn đoán Doanh nghiệp
                       </Button>
 
                       <p className="text-xs text-gray-500 text-center flex items-center justify-center gap-1">

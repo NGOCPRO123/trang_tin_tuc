@@ -2,135 +2,58 @@
 
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { TrendingUp, Shield, Zap, CheckCircle } from "lucide-react"
+import { TrendingUp, Shield, Zap, CheckCircle, UserCheck, Award, Cpu } from "lucide-react"
 import Image from "next/image"
+import { motion } from "framer-motion"
 
 export function BenefitsSection() {
   return (
-    <section className="py-24 bg-white">
-      <div className="container mx-auto px-6">
+    <section className="relative py-24 bg-gradient-to-b from-yellow-50 via-amber-50 to-yellow-100 overflow-hidden">
+      {/* Decorative Blobs */}
+      <div className="absolute -top-24 right-0 w-[350px] h-[350px] bg-yellow-200 rounded-full blur-3xl opacity-40 animate-pulse" />
+      <div className="absolute bottom-0 left-0 w-[300px] h-[200px] bg-gradient-to-r from-yellow-300 via-amber-200 to-yellow-100 rounded-full blur-2xl opacity-40" />
+      <div className="container mx-auto px-6 relative z-10">
         <div className="text-center mb-20">
-          <Badge className="bg-green-100 text-green-800 px-4 py-2 mb-6">📈 Kết quả đo lường được</Badge>
-          <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-            Lợi Ích Cụ Thể Cho{" "}
-            <span className="bg-gradient-to-r from-amber-600 to-yellow-600 bg-clip-text text-transparent">
-              Doanh Nghiệp
-            </span>
+          <Badge className="bg-gradient-to-r from-yellow-400 to-amber-300 text-yellow-900 px-4 py-2 mb-6 shadow-md rounded-xl">🌟 Sự khác biệt của chúng tôi</Badge>
+          <h2 className="text-4xl lg:text-5xl font-extrabold text-gray-900 mb-6">
+            Sự khác biệt của <span className="bg-gradient-to-r from-yellow-600 to-amber-500 bg-clip-text text-transparent">HLCC</span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Những con số thực tế mà khách hàng đã đạt được sau khi sử dụng giải pháp của chúng tôi
+          <p className="text-xl text-gray-700 max-w-3xl mx-auto font-medium">
+            Chúng tôi không chỉ là một agency. Chúng tôi là đối tác đồng hành, cam kết hiệu quả và ứng dụng công nghệ tiên tiến.
           </p>
         </div>
-
-        {/* Stats Cards */}
-        <div className="grid md:grid-cols-3 gap-8 mb-16">
-          <Card className="bg-gradient-to-br from-amber-50 to-yellow-50 border-amber-200 shadow-lg hover:shadow-xl transition-all duration-300 group">
-            <CardContent className="p-8 text-center">
-              <div className="w-16 h-16 bg-gradient-to-br from-amber-500 to-yellow-500 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
-                <TrendingUp className="w-8 h-8 text-white" />
+        <div className="grid md:grid-cols-3 gap-10">
+          {[{
+            icon: Award,
+            title: "Giải pháp Tối ưu – Cam kết trên Kết quả",
+            desc: "Chúng tôi tập trung vào ROI. Một số mô hình hợp tác được xây dựng dựa trên hiệu quả thực tế bạn nhận được, đảm bảo lợi ích song phương.",
+            color: "from-yellow-500 to-amber-400"
+          }, {
+            icon: Cpu,
+            title: "Ứng dụng Công nghệ Tiên tiến",
+            desc: "Chúng tôi mang đến các giải pháp công nghệ về CRM, Marketing Automation và phân tích dữ liệu để gia tăng hiệu suất kinh doanh.",
+            color: "from-yellow-400 to-amber-300"
+          }, {
+            icon: UserCheck,
+            title: "Đội ngũ Chuyên gia Đồng hành Xuyên suốt",
+            desc: "Chúng tôi là một phần của đội ngũ của bạn, đồng hành hỗ trợ từ A-Z để đảm bảo chiến lược được triển khai thành công.",
+            color: "from-amber-400 to-yellow-500"
+          }].map((item, idx) => (
+            <motion.div
+              key={item.title}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 * idx, duration: 0.7 }}
+              className="bg-white/60 backdrop-blur-xl rounded-3xl shadow-xl border-2 border-yellow-200/60 p-10 text-center group hover:scale-105 hover:shadow-2xl transition-all duration-300"
+            >
+              <div className={`w-20 h-20 bg-gradient-to-br ${item.color} rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                <item.icon className="w-10 h-10 text-white" />
               </div>
-              <div className="text-5xl font-bold text-amber-600 mb-2">+35%</div>
-              <h3 className="text-xl font-semibold text-amber-800 mb-2">Tăng doanh thu</h3>
-              <p className="text-amber-700">Trung bình sau 3 tháng triển khai</p>
-            </CardContent>
-          </Card>
-
-          <Card className="bg-gradient-to-br from-blue-50 to-cyan-50 border-blue-200 shadow-lg hover:shadow-xl transition-all duration-300 group">
-            <CardContent className="p-8 text-center">
-              <div className="w-16 h-16 bg-gradient-to-br from-blue-400 to-cyan-500 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
-                <Shield className="w-8 h-8 text-white" />
-              </div>
-              <div className="text-5xl font-bold text-blue-600 mb-2">40%</div>
-              <h3 className="text-xl font-semibold text-blue-800 mb-2">Tiết kiệm chi phí</h3>
-              <p className="text-blue-700">Marketing và vận hành hiệu quả hơn</p>
-            </CardContent>
-          </Card>
-
-          <Card className="bg-gradient-to-br from-purple-50 to-violet-50 border-purple-200 shadow-lg hover:shadow-xl transition-all duration-300 group">
-            <CardContent className="p-8 text-center">
-              <div className="w-16 h-16 bg-gradient-to-br from-purple-400 to-violet-500 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
-                <Zap className="w-8 h-8 text-white" />
-              </div>
-              <div className="text-5xl font-bold text-purple-600 mb-2">24/7</div>
-              <h3 className="text-xl font-semibold text-purple-800 mb-2">Hỗ trợ liên tục</h3>
-              <p className="text-purple-700">Đội ngũ chuyên gia luôn sẵn sàng</p>
-            </CardContent>
-          </Card>
-        </div>
-
-        {/* Before vs After */}
-        <div className="bg-gradient-to-br from-amber-50 to-yellow-50 rounded-3xl p-12 shadow-xl border border-amber-100">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h3 className="text-3xl font-bold text-gray-900 mb-8">Bạn sẽ nhận được gì?</h3>
-              <div className="space-y-6">
-                <div className="flex items-start space-x-4">
-                  <div className="w-8 h-8 bg-gradient-to-br from-amber-500 to-yellow-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                    <CheckCircle className="w-5 h-5 text-white" />
-                  </div>
-                  <div>
-                    <h4 className="text-lg font-semibold text-gray-900 mb-1">Tăng trưởng doanh số bền vững</h4>
-                    <p className="text-gray-600">
-                      Hệ thống được thiết kế để mang lại kết quả lâu dài, không chỉ tăng trưởng ngắn hạn
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-start space-x-4">
-                  <div className="w-8 h-8 bg-gradient-to-br from-blue-400 to-cyan-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                    <CheckCircle className="w-5 h-5 text-white" />
-                  </div>
-                  <div>
-                    <h4 className="text-lg font-semibold text-gray-900 mb-1">Hệ thống CRM chuyên nghiệp</h4>
-                    <p className="text-gray-600">Quản lý khách hàng toàn diện với AI và automation tiên tiến</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start space-x-4">
-                  <div className="w-8 h-8 bg-gradient-to-br from-purple-400 to-pink-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                    <CheckCircle className="w-5 h-5 text-white" />
-                  </div>
-                  <div>
-                    <h4 className="text-lg font-semibold text-gray-900 mb-1">Đội ngũ chuyên gia tận tâm</h4>
-                    <p className="text-gray-600">Hỗ trợ 24/7 với đội ngũ có kinh nghiệm 10+ năm trong lĩnh vực</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start space-x-4">
-                  <div className="w-8 h-8 bg-gradient-to-br from-green-400 to-emerald-500 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                    <CheckCircle className="w-5 h-5 text-white" />
-                  </div>
-                  <div>
-                    <h4 className="text-lg font-semibold text-gray-900 mb-1">Báo cáo chi tiết và insights</h4>
-                    <p className="text-gray-600">Dashboard thông minh với phân tích sâu và khuyến nghị hành động</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div className="relative">
-              <div className="bg-white rounded-2xl p-6 shadow-xl">
-                <Image
-                  src="/placeholder.svg?height=400&width=500"
-                  alt="Business Success Dashboard"
-                  width={500}
-                  height={400}
-                  className="rounded-xl"
-                />
-              </div>
-
-              {/* Floating Elements */}
-              <div className="absolute -top-4 -right-4 bg-gradient-to-br from-amber-500 to-yellow-500 text-white rounded-xl p-3 shadow-lg">
-                <div className="text-sm font-bold">ROI</div>
-                <div className="text-2xl font-bold">300%</div>
-              </div>
-
-              <div className="absolute -bottom-4 -left-4 bg-gradient-to-br from-blue-400 to-cyan-500 text-white rounded-xl p-3 shadow-lg">
-                <div className="text-sm font-bold">Conversion</div>
-                <div className="text-2xl font-bold">+85%</div>
-              </div>
-            </div>
-          </div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-3">{item.title}</h3>
+              <p className="text-lg text-gray-700 font-medium">{item.desc}</p>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>

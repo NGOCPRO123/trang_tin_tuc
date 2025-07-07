@@ -1,18 +1,16 @@
 "use client"
 
-import type React from "react"
-
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { Send, Clock } from "lucide-react"
+import { Send, DollarSign } from "lucide-react"
 
 export default function ContactSection() {
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
+    email: "",
     amount: "",
     description: "",
   })
@@ -24,22 +22,23 @@ export default function ContactSection() {
   }
 
   return (
-    <section id="lien-he" className="py-20">
+    <section id="lien-he" className="py-20 bg-gradient-to-br from-yellow-50 via-orange-50 to-red-50">
       <div className="container mx-auto px-4">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-3xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
-              Bạn có đang bị nợ tiền mà không dám lên tiếng?
+            <h2 className="text-3xl lg:text-4xl font-black text-red-700 mb-6">
+              Đừng để Công nợ Khó đòi "Ăn mòn" Lợi nhuận của bạn
             </h2>
-            <p className="text-xl text-gray-600 mb-4">Hãy để chúng tôi thay bạn lên tiếng — đúng luật, đúng cách.</p>
+            <p className="text-xl text-gray-700 mb-4">
+              Mỗi ngày trôi qua, khả năng thu hồi một khoản nợ quá hạn lại càng giảm đi. Hãy hành động ngay hôm nay. Để lại thông tin để nhận một buổi đánh giá sơ bộ về các khoản nợ của bạn và tư vấn hướng xử lý từ các chuyên gia của HLCC.
+            </p>
           </div>
-
-          <div className="bg-white/80 rounded-2xl p-8 lg:p-12 border border-yellow-200 shadow-lg">
+          <div className="bg-white/90 rounded-2xl p-8 lg:p-12 border border-red-200 shadow-xl">
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                   <label htmlFor="name" className="block text-sm font-semibold text-gray-700 mb-2">
-                    Họ và tên *
+                    Họ và Tên
                   </label>
                   <Input
                     id="name"
@@ -51,10 +50,9 @@ export default function ContactSection() {
                     required
                   />
                 </div>
-
                 <div>
                   <label htmlFor="phone" className="block text-sm font-semibold text-gray-700 mb-2">
-                    Số điện thoại *
+                    Số điện thoại
                   </label>
                   <Input
                     id="phone"
@@ -67,26 +65,35 @@ export default function ContactSection() {
                   />
                 </div>
               </div>
-
+              <div>
+                <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-2">
+                  Email
+                </label>
+                <Input
+                  id="email"
+                  type="email"
+                  value={formData.email}
+                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                  className="w-full"
+                  placeholder="Email nhận tư vấn (không bắt buộc)"
+                />
+              </div>
               <div>
                 <label htmlFor="amount" className="block text-sm font-semibold text-gray-700 mb-2">
-                  Số tiền đang bị nợ *
+                  Tổng giá trị công nợ (ước tính)
                 </label>
-                <Select onValueChange={(value) => setFormData({ ...formData, amount: value })}>
-                  <SelectTrigger className="w-full">
-                    <SelectValue placeholder="Chọn mức tiền" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="under-50m">Dưới 50 triệu</SelectItem>
-                    <SelectItem value="50-200m">50 - 200 triệu</SelectItem>
-                    <SelectItem value="over-200m">Trên 200 triệu</SelectItem>
-                  </SelectContent>
-                </Select>
+                <Input
+                  id="amount"
+                  type="text"
+                  value={formData.amount}
+                  onChange={(e) => setFormData({ ...formData, amount: e.target.value })}
+                  className="w-full"
+                  placeholder="Ví dụ: 200 triệu, 1 tỷ..."
+                />
               </div>
-
               <div>
                 <label htmlFor="description" className="block text-sm font-semibold text-gray-700 mb-2">
-                  Mô tả ngắn tình huống *
+                  Mô tả ngắn
                 </label>
                 <Textarea
                   id="description"
@@ -97,21 +104,15 @@ export default function ContactSection() {
                   required
                 />
               </div>
-
               <div className="text-center">
                 <Button
                   type="submit"
                   size="lg"
-                  className="bg-yellow-500 hover:bg-yellow-600 text-white px-12 py-4 text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all"
+                  className="bg-red-600 hover:bg-red-700 text-white px-12 py-4 text-xl font-bold rounded-xl shadow-lg hover:shadow-xl transition-all"
                 >
-                  <Send className="w-5 h-5 mr-2" />
-                  Gửi tình huống – Nhận phản hồi trong 4h làm việc
+                  YÊU CẦU TƯ VẤN THU HỒI CÔNG NỢ
+                  <Send className="w-5 h-5 ml-2" />
                 </Button>
-
-                <div className="flex items-center justify-center space-x-2 mt-4 text-sm text-gray-600">
-                  <Clock className="w-4 h-4" />
-                  <span>Phản hồi nhanh trong giờ hành chính</span>
-                </div>
               </div>
             </form>
           </div>

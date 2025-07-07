@@ -1,75 +1,165 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Card, CardContent } from "@/components/ui/card"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { 
+  AlertTriangle, 
+  Clock, 
+  DollarSign, 
+  Users, 
+  FileText, 
+  Target,
+  XCircle,
+  ArrowRight
+} from "lucide-react"
+
+const problems = [
+  {
+    icon: XCircle,
+    title: "Thiếu Đồng bộ",
+    description: "Công ty kế toán không hiểu chiến lược kinh doanh. Đơn vị pháp lý không nắm rõ cấu trúc tài chính. Dữ liệu phân mảnh, quyết định thiếu nhất quán.",
+    color: "from-red-400 to-pink-500",
+    bgColor: "from-red-50 to-pink-50",
+    borderColor: "border-red-200"
+  },
+  {
+    icon: Clock,
+    title: "Lãng phí Thời gian & Chi phí",
+    description: "Bạn phải dành thời gian làm việc với nhiều đối tác, lặp lại cùng một câu chuyện. Chi phí cộng dồn từ nhiều nhà cung cấp thường cao hơn một giải pháp tổng thể.",
+    color: "from-orange-400 to-red-500",
+    bgColor: "from-orange-50 to-red-50",
+    borderColor: "border-orange-200"
+  },
+  {
+    icon: AlertTriangle,
+    title: "Trách nhiệm Không rõ ràng",
+    description: "Khi có vấn đề xảy ra, các bên đổ lỗi cho nhau và không ai chịu trách nhiệm cuối cùng. Doanh nghiệp của bạn là người chịu thiệt hại.",
+    color: "from-yellow-400 to-orange-500",
+    bgColor: "from-yellow-50 to-orange-50",
+    borderColor: "border-yellow-200"
+  }
+]
 
 export function IntroSection() {
   return (
-    <section className="py-20 bg-gradient-to-br from-yellow-50 to-white">
+    <section className="py-20 bg-white">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {/* Left Card */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="lg:col-span-1"
-          >
-            <Card className="bg-gradient-to-br from-blue-900 to-blue-800 text-white h-full shadow-2xl border-0 rounded-2xl overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-yellow-400/10 to-transparent"></div>
-              <CardContent className="p-8 relative z-10">
-                <div className="w-16 h-16 bg-yellow-400/20 rounded-2xl flex items-center justify-center mb-6">
-                  <span className="text-2xl">💼</span>
-                </div>
-                <h3 className="text-2xl font-bold mb-4">DỊCH VỤ VÀ GIẢI PHÁP</h3>
-                <p className="text-blue-100 leading-relaxed">
-                  Chúng tôi cung cấp các dịch vụ tư vấn chuyên nghiệp, giúp doanh nghiệp phát triển bền vững và đạt được
-                  mục tiêu kinh doanh.
-                </p>
-              </CardContent>
-            </Card>
-          </motion.div>
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            Bạn có đang bị mắc kẹt trong vòng luẩn quẩn của các dịch vụ rời rạc?
+          </h2>
+          <p className="text-xl text-gray-700 max-w-4xl mx-auto leading-relaxed">
+            Nhiều doanh nghiệp đang phải đối mặt với những thách thức không thể giải quyết bằng cách "vá" từng lỗ hổng một cách riêng lẻ.
+          </p>
+        </motion.div>
 
-          {/* Right Content */}
-          <div className="lg:col-span-2 space-y-8">
-            {[
-              {
-                number: "01",
-                title: "Đội ngũ chuyên gia",
-                description:
-                  "Đội ngũ chuyên gia giàu kinh nghiệm với nhiều năm hoạt động trong lĩnh vực tư vấn doanh nghiệp, luôn cập nhật những xu hướng và phương pháp mới nhất.",
-              },
-              {
-                number: "02",
-                title: "Quy trình chuẩn mực",
-                description:
-                  "Áp dụng quy trình làm việc chuyên nghiệp, minh bạch và hiệu quả, đảm bảo chất lượng dịch vụ và sự hài lòng của khách hàng.",
-              },
-              {
-                number: "03",
-                title: "Cam kết chất lượng",
-                description:
-                  "Cam kết mang đến những giải pháp tối ưu, phù hợp với từng doanh nghiệp, hỗ trợ khách hàng đạt được mục tiêu phát triển bền vững.",
-              },
-            ].map((item, index) => (
-              <motion.div
-                key={item.number}
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.1 * (index + 1) }}
-                className="flex items-start space-x-6 p-6 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-yellow-100"
-              >
-                <div className="flex-shrink-0 w-16 h-16 bg-gradient-to-br from-yellow-400 to-yellow-500 rounded-2xl flex items-center justify-center shadow-lg">
-                  <span className="text-blue-900 font-bold text-xl">{item.number}</span>
-                </div>
-                <div className="flex-1">
-                  <h4 className="text-xl font-bold text-gray-900 mb-3">{item.title}</h4>
-                  <p className="text-gray-600 leading-relaxed">{item.description}</p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
+        {/* Problem Cards */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
+          {problems.map((problem, idx) => (
+            <motion.div
+              key={problem.title}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: idx * 0.2 }}
+              viewport={{ once: true }}
+            >
+              <Card className={`border-0 shadow-xl hover:shadow-2xl transition-all duration-300 bg-gradient-to-br ${problem.bgColor} ${problem.borderColor} border-2`}>
+                <CardHeader className="pb-4">
+                  <div className={`bg-gradient-to-r ${problem.color} p-4 rounded-full w-16 h-16 flex items-center justify-center mb-4`}>
+                    <problem.icon className="h-8 w-8 text-white" />
+                  </div>
+                  <CardTitle className="text-2xl font-bold text-gray-900 mb-3">
+                    {problem.title}
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-gray-700 leading-relaxed">
+                    {problem.description}
+                  </p>
+                </CardContent>
+              </Card>
+            </motion.div>
+          ))}
         </div>
+
+        {/* Impact Summary */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.6 }}
+          viewport={{ once: true }}
+          className="bg-gradient-to-r from-red-50 to-orange-50 p-8 rounded-2xl border-2 border-red-200 shadow-lg"
+        >
+          <div className="text-center mb-8">
+            <h3 className="text-2xl font-bold text-gray-900 mb-4">
+              Hậu quả của việc sử dụng dịch vụ rời rạc
+            </h3>
+            <p className="text-lg text-gray-700">
+              Những vấn đề này không chỉ gây lãng phí thời gian và tiền bạc, mà còn cản trở sự phát triển bền vững của doanh nghiệp.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+            <div className="text-center">
+              <div className="bg-red-100 p-4 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
+                <DollarSign className="h-8 w-8 text-red-600" />
+              </div>
+              <h4 className="font-bold text-gray-900 mb-2">Chi phí cao</h4>
+              <p className="text-sm text-gray-600">Nhiều nhà cung cấp = Chi phí cộng dồn</p>
+            </div>
+            <div className="text-center">
+              <div className="bg-orange-100 p-4 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
+                <Clock className="h-8 w-8 text-orange-600" />
+              </div>
+              <h4 className="font-bold text-gray-900 mb-2">Thời gian lãng phí</h4>
+              <p className="text-sm text-gray-600">Lặp lại thông tin nhiều lần</p>
+            </div>
+            <div className="text-center">
+              <div className="bg-yellow-100 p-4 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
+                <Users className="h-8 w-8 text-yellow-600" />
+              </div>
+              <h4 className="font-bold text-gray-900 mb-2">Thiếu đồng bộ</h4>
+              <p className="text-sm text-gray-600">Dữ liệu phân mảnh</p>
+            </div>
+            <div className="text-center">
+              <div className="bg-red-100 p-4 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
+                <AlertTriangle className="h-8 w-8 text-red-600" />
+              </div>
+              <h4 className="font-bold text-gray-900 mb-2">Rủi ro cao</h4>
+              <p className="text-sm text-gray-600">Trách nhiệm không rõ ràng</p>
+            </div>
+          </div>
+        </motion.div>
+
+        {/* Solution Preview */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.8 }}
+          viewport={{ once: true }}
+          className="text-center mt-16"
+        >
+          <div className="bg-gradient-to-r from-yellow-500 to-orange-500 p-8 rounded-2xl text-white shadow-xl">
+            <h3 className="text-2xl font-bold mb-4">
+              Giải pháp: Một điểm đến duy nhất
+            </h3>
+            <p className="text-lg mb-6 text-yellow-100">
+              HLCC cung cấp giải pháp doanh nghiệp toàn diện, kết nối mọi mắt xích từ tài chính, pháp lý đến vận hành.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <button className="bg-white text-yellow-600 font-bold px-8 py-4 rounded-xl hover:bg-yellow-50 transition-all duration-300 transform hover:scale-105">
+                Khám phá giải pháp của chúng tôi
+                <ArrowRight className="ml-2 h-5 w-5 inline" />
+              </button>
+            </div>
+          </div>
+        </motion.div>
       </div>
     </section>
   )

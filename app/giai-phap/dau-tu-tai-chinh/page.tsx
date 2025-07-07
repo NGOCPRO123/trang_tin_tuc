@@ -1,6 +1,6 @@
 import { HeroSection } from "@/components/giai-phap/dau-tu-tai-chinh/hero-section"
 import { ProblemsSection } from "@/components/giai-phap/dau-tu-tai-chinh/problems-section"
-import { SolutionsSection } from "@/components/giai-phap/dau-tu-tai-chinh/solutions-section"
+import { StrategicTurningPointsSection } from "@/components/giai-phap/dau-tu-tai-chinh/solutions-section"
 import { ProcessSection } from "@/components/giai-phap/dau-tu-tai-chinh/process-section"
 import { StatsSection } from "@/components/giai-phap/dau-tu-tai-chinh/stats-section"
 import { TeamSection } from "@/components/giai-phap/dau-tu-tai-chinh/team-section"
@@ -18,7 +18,7 @@ export default function LandingPage() {
       <main>
         <HeroSection />
         <ProblemsSection />
-        <SolutionsSection />
+        <StrategicTurningPointsSection />
         <ProcessSection />
         <StatsSection />
         <TeamSection />

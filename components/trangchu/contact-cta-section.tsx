@@ -35,10 +35,10 @@ export function ContactCTASection() {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-5xl font-bold mb-6 leading-tight text-amber-600">
-            Sẵn sàng bắt đầu dự án <span className="text-blue-600">tiếp theo</span>?
+            Liên Hệ <span className="text-blue-600">(Contact Us)</span>
           </h2>
           <p className="text-xl md:text-2xl mb-12 opacity-90 max-w-4xl mx-auto text-gray-700">
-            Hãy để chúng tôi giúp bạn biến ý tưởng thành hiện thực. Liên hệ ngay để được tư vấn miễn phí và báo giá chi tiết
+            Bạn có câu hỏi hoặc cần tư vấn chuyên sâu về các giải pháp Vực Dậy Tài Chính – Bứt Phá Doanh Thu? Đừng ngần ngại liên hệ với đội ngũ HLCC ngay hôm nay!
           </p>
         </motion.div>
 
@@ -51,7 +51,7 @@ export function ContactCTASection() {
             viewport={{ once: true }}
             className="space-y-6"
           >
-            <h3 className="text-2xl font-bold mb-8 text-blue-700">Nhiều cách để liên hệ</h3>
+            <h3 className="text-2xl font-bold mb-8 text-blue-700">Thông Tin Liên Hệ</h3>
 
             <div className="space-y-4">
               <motion.div
@@ -65,8 +65,8 @@ export function ContactCTASection() {
                   <Phone className="w-6 h-6 text-amber-500 group-hover:text-amber-600" />
                 </motion.div>
                 <div>
-                  <div className="font-semibold text-gray-800">Gọi điện trực tiếp</div>
-                  <div className="text-blue-600">+84 123 456 789</div>
+                  <div className="font-semibold text-gray-800">Hotline</div>
+                  <div className="text-blue-600">0912.880.330</div>
                 </div>
               </motion.div>
 
@@ -81,8 +81,8 @@ export function ContactCTASection() {
                   <Mail className="w-6 h-6 text-blue-500 group-hover:text-blue-600" />
                 </motion.div>
                 <div>
-                  <div className="font-semibold text-gray-800">Gửi email</div>
-                  <div className="text-blue-600">contact@company.com</div>
+                  <div className="font-semibold text-gray-800">Email</div>
+                  <div className="text-blue-600">lienhe@acta.vn</div>
                 </div>
               </motion.div>
 
@@ -97,8 +97,8 @@ export function ContactCTASection() {
                   <MessageCircle className="w-6 h-6 text-amber-400 group-hover:text-amber-500" />
                 </motion.div>
                 <div>
-                  <div className="font-semibold text-gray-800">Chat trực tuyến</div>
-                  <div className="text-blue-600">Hỗ trợ 24/7</div>
+                  <div className="font-semibold text-gray-800">Tư vấn chuyên sâu</div>
+                  <div className="text-blue-600">Vực Dậy Tài Chính – Bứt Phá Doanh Thu</div>
                 </div>
               </motion.div>
 
@@ -113,8 +113,8 @@ export function ContactCTASection() {
                   <Calendar className="w-6 h-6 text-blue-400 group-hover:text-blue-500" />
                 </motion.div>
                 <div>
-                  <div className="font-semibold text-gray-800">Đặt lịch tư vấn</div>
-                  <div className="text-blue-600">Miễn phí 30 phút</div>
+                  <div className="font-semibold text-gray-800">Địa chỉ</div>
+                  <div className="text-blue-600">Tòa nhà SABAY – 99 Cộng Hòa, Phường 4, Quận Tân Bình, TP.HCM</div>
                 </div>
               </motion.div>
             </div>
@@ -129,9 +129,9 @@ export function ContactCTASection() {
             className="text-center md:text-left"
           >
             <div className="bg-white border-2 border-amber-300 rounded-2xl p-10 shadow-2xl">
-              <h3 className="text-2xl font-bold mb-6 text-amber-700">Bắt đầu ngay hôm nay</h3>
+              <h3 className="text-2xl font-bold mb-6 text-amber-700">Bắt đầu tư vấn ngay</h3>
               <p className="text-lg opacity-90 mb-8 text-gray-700">
-                Chúng tôi cam kết phản hồi trong vòng 24 giờ và cung cấp báo giá chi tiết trong 48 giờ
+                Chúng tôi luôn sẵn sàng lắng nghe và hỗ trợ bạn với các giải pháp chuyên sâu từ đội ngũ 22 Doanh Chủ
               </p>
 
               <div className="space-y-4">
@@ -143,7 +143,7 @@ export function ContactCTASection() {
                   }}
                   onClick={handleConsultationClick}
                 >
-                  Nhận tư vấn miễn phí
+                  Tư vấn miễn phí
                   <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>
 
@@ -153,13 +153,13 @@ export function ContactCTASection() {
                   className="w-full border-2 border-blue-400 text-blue-700 hover:bg-blue-50 hover:text-blue-900 px-8 py-4 text-lg rounded-full shadow-lg hover:shadow-xl transition-all duration-300 bg-transparent font-semibold"
                   onClick={handlePortfolioClick}
                 >
-                  Xem portfolio
+                  Xem giải pháp
                 </Button>
               </div>
 
               <div className="mt-8 pt-6 border-t border-amber-100">
                 <p className="text-sm opacity-75 text-gray-600">
-                  ✓ Tư vấn miễn phí &nbsp;&nbsp; ✓ Báo giá trong 48h &nbsp;&nbsp; ✓ Bảo hành 12 tháng
+                  ✓ Tư vấn miễn phí &nbsp;&nbsp; ✓ Đội ngũ 22 Doanh Chủ &nbsp;&nbsp; ✓ Giải pháp thực tiễn
                 </p>
               </div>
             </div>

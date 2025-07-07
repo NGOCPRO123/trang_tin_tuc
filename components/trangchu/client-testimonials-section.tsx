@@ -3,108 +3,77 @@
 import { motion } from "framer-motion"
 import { Card, CardContent } from "@/components/ui/card"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
-import { Quote, Star, Users, Briefcase, Heart, DollarSign } from "lucide-react"
+import { Quote, Star, Users, Briefcase, Heart, DollarSign, HelpCircle, TrendingUp, Building2, Handshake } from "lucide-react"
 
-const testimonials = [
+const faqs = [
   {
     id: 1,
-    name: "Trần Minh Hoàng",
-    role: "Giám đốc công nghệ",
-    company: "TechViet Solutions",
-    avatar: "/placeholder.svg?height=60&width=60",
-    rating: 5,
-    quote:
-      "Đội ngũ rất chuyên nghiệp và có kinh nghiệm. Họ đã giúp chúng tôi xây dựng hệ thống quản lý hiệu quả, tiết kiệm được 40% thời gian xử lý công việc.",
+    question: "HLCC khác biệt gì so với các đơn vị tư vấn khác?",
+    answer: "HLCC là liên minh 22 Doanh Chủ với đội ngũ chuyên gia thực chiến trực tiếp tham gia giải quyết vấn đề. Chúng tôi điều phối nguồn lực chung và vận hành Hệ Sinh Thái TMĐT ACTA mang lại giá trị thực tiễn.",
+    icon: HelpCircle
   },
   {
     id: 2,
-    name: "Lê Thị Mai Anh",
-    role: "Giám đốc Marketing",
-    company: "Green Life Corp",
-    avatar: "/placeholder.svg?height=60&width=60",
-    rating: 5,
-    quote:
-      "Từ khi hợp tác, doanh số online của chúng tôi tăng 150%. Website mới không chỉ đẹp mà còn rất dễ sử dụng. Khách hàng rất hài lòng.",
+    question: "HLCC hỗ trợ tăng doanh số như thế nào?",
+    answer: "Cung cấp giải pháp tăng doanh số bền vững qua phân tích thị trường, tối ưu vận hành và chiến lược kinh doanh. Quản lý Cộng Đồng Affiliate Thực Chiến với hàng nghìn thành viên giúp bứt phá doanh thu.",
+    icon: TrendingUp
   },
   {
     id: 3,
-    name: "Phạm Đức Thành",
-    role: "CEO",
-    company: "Smart Logistics",
-    avatar: "/placeholder.svg?height=60&width=60",
-    rating: 5,
-    quote:
-      "Ứng dụng mobile họ phát triển đã cách mạng hóa cách chúng tôi quản lý vận chuyển. Hiệu quả vượt ngoài mong đợi, đội ngũ hỗ trợ rất tận tâm.",
+    question: "Giải pháp HLCC có phù hợp với SME không?",
+    answer: "Hoàn toàn phù hợp. HLCC cung cấp giải pháp cho đa dạng doanh nghiệp từ startup đến tập đoàn lớn. Chúng tôi tùy chỉnh giải pháp phù hợp với từng đặc thù ngành nghề và quy mô.",
+    icon: Building2
   },
   {
     id: 4,
-    name: "Nguyễn Thị Hương",
-    role: "Giám đốc vận hành",
-    company: "EduTech Vietnam",
-    avatar: "/placeholder.svg?height=60&width=60",
-    rating: 5,
-    quote:
-      "Nền tảng học trực tuyến họ xây dựng đã giúp chúng tôi mở rộng quy mô từ 1,000 lên 10,000 học viên chỉ trong 6 tháng. Rất ấn tượng!",
-  },
-  {
-    id: 5,
-    name: "Võ Minh Tuấn",
-    role: "Founder",
-    company: "FinTech Startup",
-    avatar: "/placeholder.svg?height=60&width=60",
-    rating: 5,
-    quote:
-      "Họ không chỉ phát triển sản phẩm mà còn tư vấn chiến lược rất hay. Startup của chúng tôi đã gọi vốn thành công 2 triệu USD nhờ sản phẩm này.",
-  },
-  {
-    id: 6,
-    name: "Đặng Thị Lan",
-    role: "Giám đốc bán hàng",
-    company: "Fashion House",
-    avatar: "/placeholder.svg?height=60&width=60",
-    rating: 5,
-    quote:
-      "Hệ thống CRM họ thiết kế đã giúp đội bán hàng của chúng tôi tăng hiệu suất 60%. Giao diện thân thiện, dễ sử dụng và báo cáo rất chi tiết.",
-  },
+    question: "Làm thế nào để hợp tác với HLCC?",
+    answer: "Liên hệ trực tiếp qua hotline hoặc email. Đội ngũ chuyên gia HLCC sẽ tư vấn miễn phí và cùng bạn xây dựng lộ trình hợp tác phù hợp để vực dậy tài chính và bứt phá doanh thu.",
+    icon: Handshake
+  }
 ]
 
 export function ClientTestimonialsSection() {
   return (
-    <section className="py-24 px-4 bg-gray-50">
-      <div className="container mx-auto max-w-7xl">
-        <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Điểm Khác Biệt Của HLCC</h2>
-          <p className="text-lg text-gray-500">Những lý do khiến hàng nghìn doanh nghiệp tin tưởng và lựa chọn HLCC</p>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
-          <div className="flex flex-col items-center text-center bg-blue-50 rounded-2xl shadow-md p-8 transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
-            <div className="w-20 h-20 rounded-full bg-gradient-to-br from-blue-500 to-blue-700 flex items-center justify-center mb-6 shadow-lg">
-              <Users className="w-10 h-10 text-white" />
-            </div>
-            <h3 className="font-bold text-xl mb-2 text-gray-900">Đội Ngũ Chuyên Gia Thực Chiến</h3>
-            <p className="text-gray-600">Hơn 50 chuyên gia với kinh nghiệm thực tế tại các tập đoàn lớn và doanh nghiệp thành công</p>
-          </div>
-          <div className="flex flex-col items-center text-center bg-green-50 rounded-2xl shadow-md p-8 transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
-            <div className="w-20 h-20 rounded-full bg-gradient-to-br from-green-500 to-green-700 flex items-center justify-center mb-6 shadow-lg">
-              <Briefcase className="w-10 h-10 text-white" />
-            </div>
-            <h3 className="font-bold text-xl mb-2 text-gray-900">Giải Pháp Toàn Diện & Linh Hoạt</h3>
-            <p className="text-gray-600">Từ tài chính đến vận hành, từ pháp lý đến marketing - một điểm đến cho mọi nhu cầu doanh nghiệp</p>
-          </div>
-          <div className="flex flex-col items-center text-center bg-purple-50 rounded-2xl shadow-md p-8 transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
-            <div className="w-20 h-20 rounded-full bg-gradient-to-br from-purple-500 to-purple-700 flex items-center justify-center mb-6 shadow-lg">
-              <Heart className="w-10 h-10 text-white" />
-            </div>
-            <h3 className="font-bold text-xl mb-2 text-gray-900">Đồng Hành Trực Tiếp & Sâu Sát</h3>
-            <p className="text-gray-600">Không chỉ tư vấn mà còn thực hiện cùng bạn, đảm bảo mọi giải pháp được triển khai hiệu quả</p>
-          </div>
-          <div className="flex flex-col items-center text-center bg-orange-50 rounded-2xl shadow-md p-8 transition-all duration-300 hover:shadow-xl hover:-translate-y-2">
-            <div className="w-20 h-20 rounded-full bg-gradient-to-br from-orange-500 to-orange-700 flex items-center justify-center mb-6 shadow-lg">
-              <DollarSign className="w-10 h-10 text-white" />
-            </div>
-            <h3 className="font-bold text-xl mb-2 text-gray-900">Tối Ưu Chi Phí Qua Nguồn Lực Chung</h3>
-            <p className="text-gray-600">Tiết kiệm đến 60% chi phí so với việc thuê từng chuyên gia riêng lẻ</p>
-          </div>
+    <section className="py-24 px-4 bg-gradient-to-br from-gray-50 to-blue-50">
+      <div className="container mx-auto max-w-6xl">
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Câu Hỏi Thường Gặp</h2>
+          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+            Những thắc mắc phổ biến về giải pháp và cách thức hoạt động của HLCC
+          </p>
+        </motion.div>
+        
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          {faqs.map((faq, index) => (
+            <motion.div
+              key={faq.id}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+              viewport={{ once: true }}
+              whileHover={{ y: -8, scale: 1.02 }}
+            >
+              <Card className="h-full hover:shadow-2xl transition-all duration-500 border-0 shadow-lg bg-white/80 backdrop-blur-sm border-l-4 border-blue-500">
+                <CardContent className="p-8">
+                  <div className="flex items-start space-x-6">
+                    <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-blue-500 to-blue-700 flex items-center justify-center flex-shrink-0 shadow-lg">
+                      <faq.icon className="w-7 h-7 text-white" />
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="font-bold text-xl mb-4 text-gray-900 leading-tight">{faq.question}</h3>
+                      <p className="text-gray-600 leading-relaxed text-base">{faq.answer}</p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>

@@ -3,52 +3,38 @@
 import { motion } from "framer-motion"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { ArrowRight, Users, Leaf, BookOpen, Heart, Lightbulb, Globe } from "lucide-react"
+import { ArrowRight, Users, Leaf, BookOpen, Heart, Lightbulb, Globe, Handshake, TrendingUp } from "lucide-react"
 import Image from "next/image"
 
 const programs = [
   {
     id: 1,
-    title: "Cộng đồng Xanh",
-    description: "Chương trình bảo vệ môi trường và phát triển bền vững cho cộng đồng địa phương",
-    icon: Leaf,
-    image: "/placeholder.svg?height=200&width=300",
-  },
-  {
-    id: 2,
-    title: "Kết nối Yêu thương",
-    description: "Hoạt động tình nguyện hỗ trợ người già, trẻ em và những hoàn cảnh khó khăn",
-    icon: Heart,
-    image: "/placeholder.svg?height=200&width=300",
-  },
-  {
-    id: 3,
-    title: "Học tập Suốt đời",
-    description: "Các khóa học kỹ năng sống, phát triển bản thân và chia sẻ kiến thức",
-    icon: BookOpen,
-    image: "/placeholder.svg?height=200&width=300",
-  },
-  {
-    id: 4,
-    title: "Khởi nghiệp Xã hội",
-    description: "Hỗ trợ các ý tưởng kinh doanh có tác động tích cực đến cộng đồng",
-    icon: Lightbulb,
-    image: "/placeholder.svg?height=200&width=300",
-  },
-  {
-    id: 5,
-    title: "Sức khỏe Cộng đồng",
-    description: "Chương trình chăm sóc sức khỏe toàn diện cho mọi lứa tuổi",
+    title: "Chẩn đoán 360°",
+    description: "Lắng nghe và phân tích toàn diện để tìm ra vấn đề gốc rễ.",
     icon: Users,
     image: "/placeholder.svg?height=200&width=300",
   },
   {
-    id: 6,
-    title: "Văn hóa Địa phương",
-    description: "Bảo tồn và phát huy các giá trị văn hóa truyền thống Việt Nam",
-    icon: Globe,
+    id: 2,
+    title: "Xây dựng Lộ trình",
+    description: "Thiết kế một lộ trình giải pháp được 'may đo' riêng cho doanh nghiệp.",
+    icon: BookOpen,
     image: "/placeholder.svg?height=200&width=300",
   },
+  {
+    id: 3,
+    title: "Đồng hành Triển khai",
+    description: "'Xắn tay áo' cùng bạn thực thi để đảm bảo hiệu quả.",
+    icon: Handshake,
+    image: "/placeholder.svg?height=200&width=300",
+  },
+  {
+    id: 4,
+    title: "Đo lường & Tối ưu",
+    description: "Theo dõi, đánh giá và tinh chỉnh để mang lại kết quả cao nhất.",
+    icon: TrendingUp,
+    image: "/placeholder.svg?height=200&width=300",
+  }
 ]
 
 export function ProgramsSection() {
@@ -62,9 +48,9 @@ export function ProgramsSection() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-5xl font-bold text-gray-800 mb-6">Các chương trình tiêu biểu</h2>
+          <h2 className="text-3xl md:text-5xl font-bold text-gray-800 mb-6">Quy trình "Điều tra & Giải mã" của HLCC</h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Khám phá những dự án ý nghĩa mà chúng tôi đang triển khai để xây dựng cộng đồng tốt đẹp hơn
+            HLCC áp dụng quy trình tư vấn doanh nghiệp chuyên sâu, giúp bạn tìm ra gốc rễ vấn đề, xây dựng lộ trình giải pháp tài chính và vận hành tối ưu.
           </p>
         </motion.div>
 

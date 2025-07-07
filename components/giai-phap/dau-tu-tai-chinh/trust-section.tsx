@@ -1,64 +1,50 @@
-import { Shield, CheckCircle, Lock, UserCheck } from "lucide-react"
-import { Card, CardContent } from "@/components/ui/card"
+import { Handshake, Network, BarChart3 } from "lucide-react"
 
 export function TrustSection() {
-  const commitments = [
+  const differences = [
     {
-      icon: CheckCircle,
-      title: "Không cam kết lãi suất ảo",
-      description: "Chúng tôi chỉ báo cáo kết quả thực tế, không hứa hẹn lợi nhuận không thực tế",
+      icon: Handshake,
+      title: "Cam kết Hiệu quả – Đồng hành đến cùng",
+      description:
+        "Mô hình hợp tác của chúng tôi linh hoạt và gắn liền với thành công của bạn. Trong nhiều trường hợp, chúng tôi chỉ nhận một phần phí đáng kể sau khi thương vụ hoàn tất, đảm bảo chúng tôi luôn nỗ lực vì lợi ích cao nhất của bạn.",
     },
     {
-      icon: UserCheck,
-      title: "Không thu phí tư vấn khởi đầu",
-      description: "Tư vấn ban đầu hoàn toàn miễn phí, không ràng buộc",
+      icon: Network,
+      title: "Mạng lưới Quan hệ sâu rộng",
+      description:
+        "Chúng tôi không chỉ có chuyên môn. Chúng tôi có một mạng lưới quan hệ sâu rộng trong giới tài chính – đầu tư, từ các quỹ đầu tư mạo hiểm, ngân hàng cho đến các nhà đầu tư cá nhân uy tín.",
     },
     {
-      icon: Shield,
-      title: "Không bán chéo, không ép mở tài khoản",
-      description: "Tư vấn khách quan, không áp đặt sản phẩm không phù hợp",
-    },
-    {
-      icon: Lock,
-      title: "Bảo mật thông tin khách hàng 100%",
-      description: "Cam kết bảo vệ thông tin cá nhân theo tiêu chuẩn quốc tế",
+      icon: BarChart3,
+      title: "Chiến lược Tài chính Toàn diện",
+      description:
+        "Chúng tôi nhìn xa hơn một thương vụ đơn lẻ. Mọi giải pháp về vốn và cổ phần đều được đặt trong một chiến lược tài chính tổng thể, giúp tối ưu dòng vốn, kiểm soát rủi ro và phục vụ cho mục tiêu tăng trưởng dài hạn.",
     },
   ]
 
   return (
-    <section className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
+    <section className="py-20 bg-gradient-to-br from-yellow-50 to-amber-100">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-3xl lg:text-4xl font-bold text-gray-800 mb-4">
-            🧷 Cam kết & Bảo mật – khẳng định uy tín
+          <h2 className="text-3xl lg:text-4xl font-bold text-yellow-700 mb-4">
+            Sự khác biệt của chúng tôi
           </h2>
-          <p className="text-xl text-gray-600">Những cam kết cụ thể để bạn an tâm hợp tác</p>
         </div>
-
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
-          {commitments.map((commitment, index) => (
-            <Card
+        {/* Zigzag layout */}
+        <div className="flex flex-col lg:flex-row items-center justify-center gap-0 lg:gap-[-40px] max-w-5xl mx-auto relative">
+          {differences.map((item, index) => (
+            <div
               key={index}
-              className="border-blue-200 hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+              className={`relative bg-white border-2 border-yellow-200 rounded-2xl shadow-2xl p-10 text-center flex flex-col items-center transition-all duration-300 z-${10 + index * 10} ${index === 1 ? 'lg:-mt-16' : ''} ${index === 2 ? 'lg:-mt-32' : ''}`}
+              style={{ left: index === 1 ? '0px' : index === 2 ? '-40px' : '0px', marginRight: index === 0 ? '-40px' : '0px' }}
             >
-              <CardContent className="p-8 text-center">
-                <div className="bg-gradient-to-r from-blue-500 to-indigo-500 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <commitment.icon className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="text-lg font-bold text-gray-800 mb-4">{commitment.title}</h3>
-                <p className="text-gray-600 leading-relaxed">{commitment.description}</p>
-              </CardContent>
-            </Card>
+              <div className="bg-gradient-to-r from-yellow-400 to-amber-400 w-20 h-20 rounded-full flex items-center justify-center mb-6 shadow-lg">
+                <item.icon className="w-10 h-10 text-yellow-700" />
+              </div>
+              <h3 className="text-xl font-bold text-yellow-800 mb-4">{item.title}</h3>
+              <p className="text-yellow-900 leading-relaxed">{item.description}</p>
+            </div>
           ))}
-        </div>
-
-        <div className="text-center mt-16">
-          <div className="bg-white rounded-2xl shadow-lg p-8 max-w-4xl mx-auto border border-blue-200">
-            <h3 className="text-2xl font-bold text-gray-800 mb-4">🛡️ Uy tín là nền tảng của sự thành công</h3>
-            <p className="text-lg text-gray-600">
-              Chúng tôi xây dựng mối quan hệ lâu dài dựa trên sự tin tưởng và kết quả thực tế, không phải lời hứa suông.
-            </p>
-          </div>
         </div>
       </div>
     </section>

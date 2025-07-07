@@ -2,68 +2,126 @@
 
 import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
+import { ArrowRight, Puzzle, Target, Zap, Lightbulb, Shield } from "lucide-react"
 import Image from "next/image"
 
 export function HeroSection() {
   return (
-    <section className="relative bg-gradient-to-br from-blue-900 via-blue-800 to-indigo-900 text-white overflow-hidden min-h-[600px]">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 bg-black/10"></div>
-      <div className="absolute inset-0 bg-gradient-to-r from-yellow-400/5 to-transparent"></div>
+    <section className="relative py-24 overflow-hidden bg-gradient-to-br from-yellow-50 via-amber-50 to-orange-50">
+      {/* Background decoration */}
+      <div className="absolute inset-0 bg-gradient-to-r from-yellow-100/20 to-orange-100/20"></div>
+      <div className="absolute top-20 left-10 w-32 h-32 bg-yellow-200 rounded-full opacity-20"></div>
+      <div className="absolute bottom-20 right-10 w-24 h-24 bg-orange-200 rounded-full opacity-20"></div>
+      <div className="absolute top-1/2 left-1/4 w-16 h-16 bg-amber-200 rounded-full opacity-20"></div>
 
-      {/* Decorative Elements */}
-      <div className="absolute top-20 right-20 w-32 h-32 bg-yellow-300/10 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-20 left-20 w-40 h-40 bg-yellow-200/10 rounded-full blur-3xl"></div>
-
-      <div className="container mx-auto px-4 py-24 relative z-10">
+      <div className="container mx-auto px-4 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          {/* Left Content */}
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             className="space-y-8"
           >
-            <div className="inline-flex items-center px-4 py-2 bg-yellow-400/20 backdrop-blur-sm rounded-full border border-yellow-300/30">
-              <span className="text-yellow-300 font-semibold text-sm">✨ Chúng tôi là chuyên gia</span>
-            </div>
+            {/* Badge */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="inline-flex items-center gap-2 bg-gradient-to-r from-yellow-400 to-orange-500 text-white rounded-full px-6 py-3 text-sm font-semibold shadow-lg"
+            >
+              <Puzzle className="w-4 h-4" />
+              <span>Giải pháp doanh nghiệp toàn diện</span>
+            </motion.div>
 
-            <h1 className="text-5xl md:text-6xl font-bold leading-tight">
-              <span className="bg-gradient-to-r from-white to-yellow-100 bg-clip-text text-transparent">Dịch vụ</span>
-            </h1>
+            {/* Main Heading */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+            >
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-gray-900 mb-6">
+                Doanh nghiệp của bạn không cần thêm "dịch vụ". Bạn cần một <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-600 to-orange-600">GIẢI PHÁP</span> toàn diện.
+              </h1>
+            </motion.div>
 
-            <p className="text-xl text-blue-100 leading-relaxed max-w-lg">
-              Chúng tôi cung cấp dịch vụ tư vấn toàn diện với đội ngũ chuyên gia giàu kinh nghiệm, cam kết mang đến
-              những giải pháp tối ưu và hiệu quả nhất cho doanh nghiệp của bạn.
-            </p>
+            {/* Sub-headline */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.5 }}
+              className="space-y-6"
+            >
+              <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
+                Một doanh nghiệp khỏe mạnh là một hệ thống vận hành đồng nhất. Việc chỉ "vá" các lỗi đơn lẻ sẽ không bao giờ tạo ra sự tăng trưởng bền vững.
+              </p>
+              <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
+                Tại <span className="font-bold text-yellow-600">HLCC</span>, chúng tôi cung cấp các <span className="font-semibold text-yellow-600">giải pháp doanh nghiệp</span> được thiết kế để giải quyết vấn đề từ gốc rễ, kết nối mọi mắt xích từ tài chính, pháp lý đến vận hành.
+              </p>
+            </motion.div>
 
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Button className="bg-gradient-to-r from-yellow-400 to-yellow-500 hover:from-yellow-500 hover:to-yellow-600 text-blue-900 px-8 py-4 text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all">
-                Liên hệ ngay
-              </Button>
+            {/* Key Benefits */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.7 }}
+              className="grid grid-cols-1 md:grid-cols-3 gap-4"
+            >
+              <div className="flex items-center gap-3 text-gray-700 bg-white p-4 rounded-lg shadow-sm">
+                <Target className="w-5 h-5 text-yellow-500" />
+                <span className="text-sm font-medium">Giải pháp toàn diện</span>
+              </div>
+              <div className="flex items-center gap-3 text-gray-700 bg-white p-4 rounded-lg shadow-sm">
+                <Zap className="w-5 h-5 text-yellow-500" />
+                <span className="text-sm font-medium">Từ gốc rễ</span>
+              </div>
+              <div className="flex items-center gap-3 text-gray-700 bg-white p-4 rounded-lg shadow-sm">
+                <Shield className="w-5 h-5 text-yellow-500" />
+                <span className="text-sm font-medium">Bền vững</span>
+              </div>
+            </motion.div>
+
+            {/* CTA Button */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.9 }}
+            >
               <Button
-                variant="outline"
-                className="border-yellow-300/50 text-yellow-100 hover:bg-yellow-400/10 px-8 py-4 text-lg rounded-xl bg-transparent"
+                size="lg"
+                className="bg-gradient-to-r from-yellow-500 to-orange-500 hover:from-yellow-600 hover:to-orange-600 text-white px-8 py-4 text-lg rounded-xl font-semibold group shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
               >
-                Tìm hiểu thêm
+                Khám phá giải pháp của chúng tôi
+                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </Button>
-            </div>
+            </motion.div>
           </motion.div>
 
+          {/* Right Image */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
             className="relative"
           >
-            <div className="relative w-full h-96 lg:h-[500px]">
-              {/* Decorative background */}
-              <div className="absolute inset-0 bg-gradient-to-br from-yellow-300/20 to-transparent rounded-3xl"></div>
-              <Image
-                src="/placeholder.svg?height=500&width=500&text=Professional+Services"
-                alt="Professional Services"
-                fill
-                className="object-contain drop-shadow-2xl"
-              />
+            <div className="relative w-full h-[500px]">
+              <div className="absolute inset-0 bg-gradient-to-br from-yellow-400/20 to-orange-400/20 rounded-3xl blur-xl"></div>
+              <div className="relative w-full h-full rounded-3xl overflow-hidden border-2 border-yellow-200 shadow-2xl">
+                <Image
+                  src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80"
+                  alt="Giải pháp doanh nghiệp toàn diện - HLCC"
+                  fill
+                  className="object-cover"
+                  priority
+                />
+                {/* Overlay with text */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent flex items-end">
+                  <div className="p-8 text-white">
+                    <h3 className="text-2xl font-bold mb-2">Giải pháp doanh nghiệp HLCC</h3>
+                    <p className="text-yellow-200">Kết nối mọi mắt xích từ tài chính, pháp lý đến vận hành</p>
+                  </div>
+                </div>
+              </div>
             </div>
           </motion.div>
         </div>

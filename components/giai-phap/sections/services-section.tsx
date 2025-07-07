@@ -1,160 +1,261 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Card, CardContent } from "@/components/ui/card"
-import Image from "next/image"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { Button } from "@/components/ui/button"
+import { 
+  DollarSign, 
+  Calculator, 
+  Shield, 
+  TrendingUp, 
+  Settings, 
+  Users,
+  ArrowRight,
+  CheckCircle,
+  Lightbulb,
+  Target,
+  Zap,
+  Award
+} from "lucide-react"
 
-const services = [
+const solutions = [
   {
-    title: "Đầu tư & Thành lập",
-    description: "Hỗ trợ toàn diện trong việc thành lập và phát triển doanh nghiệp từ những bước đầu tiên.",
-    image: "/placeholder.svg?height=200&width=200&text=Investment",
-    icon: "🏢",
-    color: "from-blue-500 to-blue-600",
-    items: [
-      "Tư vấn thành lập doanh nghiệp",
-      "Hỗ trợ thủ tục pháp lý",
-      "Tư vấn cơ cấu tổ chức",
-      "Lập kế hoạch kinh doanh",
-      "Tìm kiếm nguồn vốn đầu tư",
-      "Đánh giá rủi ro và cơ hội",
+    icon: DollarSign,
+    title: "Giải pháp Tài chính & Huy động vốn",
+    description: "Tái cấu trúc, quản trị dòng tiền, xây dựng kế hoạch tài chính và kết nối các nguồn vốn chiến lược.",
+    features: [
+      "Tái cấu trúc tài chính doanh nghiệp",
+      "Quản trị dòng tiền hiệu quả",
+      "Xây dựng kế hoạch tài chính",
+      "Kết nối nguồn vốn chiến lược"
     ],
+    color: "from-green-400 to-emerald-500",
+    bgColor: "from-green-50 to-emerald-50",
+    borderColor: "border-green-200",
+    link: "/giai-phap/dau-tu-tai-chinh"
   },
   {
-    title: "Tối ưu hoạt động",
-    description: "Cải thiện hiệu quả hoạt động và tối ưu hóa quy trình kinh doanh của doanh nghiệp.",
-    image: "/placeholder.svg?height=200&width=200&text=Optimization",
-    icon: "⚡",
-    color: "from-yellow-500 to-orange-500",
-    items: [
-      "Phân tích quy trình hiện tại",
-      "Tối ưu hóa vận hành",
-      "Cải thiện năng suất",
-      "Quản lý chất lượng",
-      "Đào tạo nhân sự",
-      "Ứng dụng công nghệ",
+    icon: Calculator,
+    title: "Giải pháp Kế toán – Thuế",
+    description: "Cung cấp dịch vụ doanh nghiệp chuyên sâu về kế toán, tối ưu thuế, đảm bảo tuân thủ và minh bạch.",
+    features: [
+      "Dịch vụ kế toán chuyên sâu",
+      "Tối ưu thuế doanh nghiệp",
+      "Đảm bảo tuân thủ pháp luật",
+      "Báo cáo tài chính minh bạch"
     ],
+    color: "from-blue-400 to-indigo-500",
+    bgColor: "from-blue-50 to-indigo-50",
+    borderColor: "border-blue-200",
+    link: "/giai-phap/nghiep-vu-ke-toan-thue"
   },
   {
-    title: "Mở rộng quy mô",
-    description: "Hỗ trợ doanh nghiệp mở rộng thị trường và phát triển bền vững.",
-    image: "/placeholder.svg?height=200&width=200&text=Growth",
-    icon: "📈",
-    color: "from-green-500 to-emerald-600",
-    items: [
-      "Chiến lược mở rộng thị trường",
-      "Phát triển sản phẩm mới",
-      "Xây dựng đối tác chiến lược",
-      "Tối ưu chuỗi cung ứng",
-      "Marketing và bán hàng",
-      "Quản lý tài chính mở rộng",
+    icon: Shield,
+    title: "Giải pháp Pháp lý & Quản trị rủi ro",
+    description: "Xây dựng 'tấm khiên pháp lý' vững chắc, từ hợp đồng, sở hữu trí tuệ đến giải quyết tranh chấp.",
+    features: [
+      "Xây dựng hệ thống pháp lý",
+      "Bảo vệ sở hữu trí tuệ",
+      "Quản trị rủi ro pháp lý",
+      "Giải quyết tranh chấp"
     ],
+    color: "from-purple-400 to-pink-500",
+    bgColor: "from-purple-50 to-pink-50",
+    borderColor: "border-purple-200",
+    link: "/giai-phap/tu-van-phap-ly"
   },
   {
-    title: "M&A - Đóng cửa",
-    description: "Tư vấn chuyên nghiệp về sáp nhập, mua bán và tái cấu trúc doanh nghiệp.",
-    image: "/placeholder.svg?height=200&width=200&text=M&A",
-    icon: "🤝",
-    color: "from-purple-500 to-indigo-600",
-    items: [
-      "Đánh giá giá trị doanh nghiệp",
-      "Tư vấn M&A",
-      "Due diligence",
-      "Tái cấu trúc doanh nghiệp",
-      "Thủ tục pháp lý",
-      "Hỗ trợ hậu M&A",
+    icon: TrendingUp,
+    title: "Giải pháp Tăng trưởng Doanh số",
+    description: "Xây dựng chiến lược kinh doanh, tối ưu kênh phân phối và các hoạt động marketing thực chiến.",
+    features: [
+      "Chiến lược kinh doanh tổng thể",
+      "Tối ưu kênh phân phối",
+      "Marketing thực chiến",
+      "Tăng trưởng doanh số bền vững"
     ],
+    color: "from-yellow-400 to-orange-500",
+    bgColor: "from-yellow-50 to-orange-50",
+    borderColor: "border-yellow-200",
+    link: "/giai-phap/giai-phap-tang-doanh-so"
   },
+  {
+    icon: Settings,
+    title: "Giải pháp Tối ưu Vận hành",
+    description: "Tinh gọn bộ máy, xây dựng quy trình (SOP) và hệ thống quản trị để doanh nghiệp tự vận hành hiệu quả.",
+    features: [
+      "Tinh gọn bộ máy tổ chức",
+      "Xây dựng quy trình SOP",
+      "Hệ thống quản trị hiệu quả",
+      "Tự động hóa vận hành"
+    ],
+    color: "from-gray-400 to-slate-500",
+    bgColor: "from-gray-50 to-slate-50",
+    borderColor: "border-gray-200",
+    link: "/giai-phap/xu-ly-cong-no"
+  },
+  {
+    icon: Users,
+    title: "Giải pháp Nhân sự & Văn hóa",
+    description: "Tư vấn xây dựng thang bảng lương, chính sách phúc lợi và văn hóa doanh nghiệp để thu hút, giữ chân nhân tài.",
+    features: [
+      "Xây dựng thang bảng lương",
+      "Chính sách phúc lợi hấp dẫn",
+      "Văn hóa doanh nghiệp",
+      "Thu hút và giữ chân nhân tài"
+    ],
+    color: "from-pink-400 to-rose-500",
+    bgColor: "from-pink-50 to-rose-50",
+    borderColor: "border-pink-200",
+    link: "/giai-phap/bao-ve-an-ninh"
+  }
 ]
 
 export function ServicesSection() {
   return (
-    <section className="py-24 bg-white">
+    <section className="py-20 bg-gradient-to-br from-gray-50 to-yellow-50">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
+          whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Dịch vụ của chúng tôi</h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Khám phá các giải pháp toàn diện được thiết kế để thúc đẩy sự phát triển của doanh nghiệp bạn
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            Các Mảnh ghép Giải pháp của HLCC
+          </h2>
+          <p className="text-xl text-gray-700 max-w-4xl mx-auto leading-relaxed">
+            Chúng tôi không chỉ cung cấp dịch vụ đơn lẻ, mà mang đến giải pháp doanh nghiệp toàn diện, 
+            kết nối mọi mắt xích để tạo ra sự phát triển bền vững.
           </p>
-          <div className="w-24 h-1 bg-gradient-to-r from-yellow-400 to-yellow-500 mx-auto mt-6 rounded-full"></div>
         </motion.div>
 
-        <div className="space-y-24">
-          {services.map((service, index) => (
+        {/* Solutions Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+          {solutions.map((solution, idx) => (
             <motion.div
-              key={service.title}
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: index * 0.2 }}
-              className={`grid grid-cols-1 lg:grid-cols-2 gap-16 items-center ${
-                index % 2 === 1 ? "lg:grid-flow-col-dense" : ""
-              }`}
+              key={solution.title}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: idx * 0.1 }}
+              viewport={{ once: true }}
             >
-              <div className={index % 2 === 1 ? "lg:col-start-2" : ""}>
-                <div className="text-center lg:text-left">
-                  <div className="inline-flex items-center justify-center w-20 h-20 mb-6 rounded-2xl bg-gradient-to-br from-yellow-100 to-yellow-200">
-                    <span className="text-3xl">{service.icon}</span>
+              <Card className={`border-0 shadow-xl hover:shadow-2xl transition-all duration-300 bg-gradient-to-br ${solution.bgColor} ${solution.borderColor} border-2 h-full group`}>
+                <CardHeader className="pb-4">
+                  <div className={`bg-gradient-to-r ${solution.color} p-4 rounded-full w-16 h-16 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}>
+                    <solution.icon className="h-8 w-8 text-white" />
                   </div>
-
-                  <h3 className="text-3xl font-bold text-gray-900 mb-4">{service.title}</h3>
-                  <p className="text-lg text-gray-600 leading-relaxed mb-8">{service.description}</p>
-
-                  <div className="relative">
-                    <div className="w-64 h-64 mx-auto lg:mx-0 relative">
-                      <div
-                        className={`absolute inset-0 bg-gradient-to-br ${service.color} rounded-full opacity-20`}
-                      ></div>
-                      <div className="absolute inset-4 bg-white rounded-full shadow-2xl flex items-center justify-center">
-                        <Image
-                          src={service.image || "/placeholder.svg"}
-                          alt={service.title}
-                          width={120}
-                          height={120}
-                          className="object-contain"
-                        />
+                  <CardTitle className="text-xl font-bold text-gray-900 mb-3">
+                    {solution.title}
+                  </CardTitle>
+                  <p className="text-gray-700 leading-relaxed">
+                    {solution.description}
+                  </p>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-3 mb-6">
+                    {solution.features.map((feature, featureIdx) => (
+                      <div key={featureIdx} className="flex items-center gap-3">
+                        <CheckCircle className="h-4 w-4 text-green-500 flex-shrink-0" />
+                        <span className="text-sm text-gray-600">{feature}</span>
                       </div>
-                    </div>
+                    ))}
                   </div>
-                </div>
-              </div>
-
-              <div className={index % 2 === 1 ? "lg:col-start-1" : ""}>
-                <Card className="border-0 shadow-2xl rounded-3xl overflow-hidden bg-gradient-to-br from-white to-yellow-50">
-                  <CardContent className="p-8">
-                    <div className="flex items-center mb-6">
-                      <div
-                        className={`w-12 h-12 rounded-xl bg-gradient-to-br ${service.color} flex items-center justify-center mr-4`}
-                      >
-                        <span className="text-white font-bold">✓</span>
-                      </div>
-                      <h4 className="text-2xl font-bold text-gray-900">Dịch vụ chi tiết</h4>
-                    </div>
-
-                    <div className="grid grid-cols-1 gap-4">
-                      {service.items.map((item, itemIndex) => (
-                        <motion.div
-                          key={itemIndex}
-                          initial={{ opacity: 0, x: -20 }}
-                          animate={{ opacity: 1, x: 0 }}
-                          transition={{ duration: 0.5, delay: itemIndex * 0.1 }}
-                          className="flex items-center space-x-4 p-3 rounded-xl hover:bg-yellow-100/50 transition-colors"
-                        >
-                          <div className="w-2 h-2 bg-gradient-to-r from-yellow-400 to-yellow-500 rounded-full flex-shrink-0"></div>
-                          <span className="text-gray-700 font-medium">{item}</span>
-                        </motion.div>
-                      ))}
-                    </div>
-                  </CardContent>
-                </Card>
-              </div>
+                  <Button
+                    className={`w-full bg-gradient-to-r ${solution.color} hover:opacity-90 text-white font-semibold rounded-lg transition-all duration-300 transform hover:scale-105`}
+                    onClick={() => window.open(solution.link, '_self')}
+                  >
+                    Khám phá chi tiết
+                    <ArrowRight className="ml-2 h-4 w-4" />
+                  </Button>
+                </CardContent>
+              </Card>
             </motion.div>
           ))}
         </div>
+
+        {/* Why Choose HLCC Solutions */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.6 }}
+          viewport={{ once: true }}
+          className="bg-gradient-to-br from-yellow-50 to-orange-50 p-8 rounded-2xl border-2 border-yellow-200 shadow-lg mb-12"
+        >
+          <div className="text-center mb-8">
+            <h3 className="text-2xl font-bold text-gray-900 mb-4">
+              Tại sao chọn giải pháp doanh nghiệp của HLCC?
+            </h3>
+            <p className="text-lg text-gray-700">
+              Chúng tôi không chỉ giải quyết vấn đề, mà còn xây dựng nền tảng vững chắc cho sự phát triển bền vững.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+            <div className="flex items-center gap-4 p-4 bg-white rounded-lg shadow-sm">
+              <Target className="h-8 w-8 text-yellow-600" />
+              <div>
+                <h4 className="font-semibold text-gray-900">Giải pháp toàn diện</h4>
+                <p className="text-sm text-gray-600">Kết nối mọi mắt xích</p>
+              </div>
+            </div>
+            <div className="flex items-center gap-4 p-4 bg-white rounded-lg shadow-sm">
+              <Zap className="h-8 w-8 text-yellow-600" />
+              <div>
+                <h4 className="font-semibold text-gray-900">Thực chiến</h4>
+                <p className="text-sm text-gray-600">Dựa trên kinh nghiệm thực tế</p>
+              </div>
+            </div>
+            <div className="flex items-center gap-4 p-4 bg-white rounded-lg shadow-sm">
+              <Award className="h-8 w-8 text-yellow-600" />
+              <div>
+                <h4 className="font-semibold text-gray-900">Cam kết kết quả</h4>
+                <p className="text-sm text-gray-600">Đo lường được và bền vững</p>
+              </div>
+            </div>
+            <div className="flex items-center gap-4 p-4 bg-white rounded-lg shadow-sm">
+              <Lightbulb className="h-8 w-8 text-yellow-600" />
+              <div>
+                <h4 className="font-semibold text-gray-900">Sáng tạo</h4>
+                <p className="text-sm text-gray-600">Giải pháp độc đáo</p>
+              </div>
+            </div>
+          </div>
+        </motion.div>
+
+        {/* CTA Section */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.8 }}
+          viewport={{ once: true }}
+          className="text-center"
+        >
+          <div className="bg-gradient-to-r from-yellow-500 to-orange-500 p-8 rounded-2xl text-white shadow-xl">
+            <h3 className="text-2xl font-bold mb-4">
+              Sẵn sàng xây dựng giải pháp doanh nghiệp toàn diện?
+            </h3>
+            <p className="text-lg mb-6 text-yellow-100">
+              Hãy để chúng tôi hiểu rõ thách thức của bạn và đề xuất giải pháp phù hợp nhất.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button
+                size="lg"
+                className="bg-white text-yellow-600 hover:bg-yellow-50 font-semibold px-8 py-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+              >
+                Tư vấn miễn phí ngay
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
+              <Button
+                size="lg"
+                variant="outline"
+                className="border-2 border-white text-white hover:bg-white hover:text-yellow-600 font-semibold px-8 py-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+              >
+                Xem case study
+              </Button>
+            </div>
+          </div>
+        </motion.div>
       </div>
     </section>
   )

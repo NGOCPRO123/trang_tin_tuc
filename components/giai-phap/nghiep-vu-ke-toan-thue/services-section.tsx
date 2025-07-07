@@ -1,126 +1,93 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { Compass, Rocket, Shield, Telescope, Wand2, Zap } from "lucide-react"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { Card, CardContent } from "@/components/ui/card"
+import { Briefcase, Lightbulb, RefreshCcw, UserCheck } from "lucide-react"
 
 export function ServicesSection() {
-  const coreServices = [
-    {
-      icon: Compass,
-      title: "Định vị tài chính thông minh",
-      description: "Như GPS cho doanh nghiệp - luôn biết mình đang ở đâu trên bản đồ kinh doanh",
-    },
-    {
-      icon: Telescope,
-      title: "Dự báo xu hướng tài chính",
-      description: "Nhìn xa hơn con số hiện tại, dự đoán những thay đổi sắp tới",
-    },
-    {
-      icon: Shield,
-      title: "Khiên chống 'bom tấn' thuế",
-      description: "Bảo vệ bạn khỏi những 'cú sốc' bất ngờ từ chính sách thuế mới",
-    },
-    {
-      icon: Wand2,
-      title: "Biến hóa báo cáo 'khô khan'",
-      description: "Từ những con số nhàm chán thành insight kinh doanh sống động",
-    },
-  ]
-
-  const premiumServices = [
-    {
-      icon: Rocket,
-      title: "Tăng tốc quy trình số hóa",
-      description: "Từ thủ công sang tự động - tiết kiệm 80% thời gian xử lý",
-    },
-    {
-      icon: Zap,
-      title: "SOS cấp cứu tài chính",
-      description: "Hỗ trợ khẩn cấp khi gặp 'sự cố' với cơ quan thuế",
-    },
-    {
-      icon: Telescope,
-      title: "Phẫu thuật sổ sách cũ",
-      description: "Chữa trị những 'vết thương' từ hệ thống kế toán cũ",
-    },
-    {
-      icon: Compass,
-      title: "Tối ưu thuế như nghệ thuật",
-      description: "Biến việc tiết kiệm thuế thành một môn nghệ thuật tinh tế",
-    },
-  ]
-
   return (
     <section className="py-20 bg-gradient-to-b from-amber-50 to-yellow-50">
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">Bộ "Siêu Năng Lực" Tài Chính</h2>
+          <h2 className="text-3xl font-bold text-gray-900 mb-4">Từ Ghi sổ Chính xác đến Tư vấn Tối ưu</h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Không phải dịch vụ thông thường - đây là những "siêu năng lực" giúp doanh nghiệp bay cao
+            Chúng tôi cung cấp một gói giải pháp toàn diện, giúp bạn giải quyết mọi vấn đề từ cơ bản đến nâng cao.
           </p>
         </div>
-
-        <div className="grid lg:grid-cols-2 gap-12">
-          {/* Core Services */}
-          <Card className="bg-white shadow-lg border-0 overflow-hidden">
-            <CardHeader className="bg-gradient-to-r from-blue-500 to-indigo-600 text-white">
-              <CardTitle className="text-2xl flex items-center">
-                <span className="mr-3">🎯</span>
-                Gói "Thông Minh Cơ Bản"
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="p-6">
-              <div className="space-y-6">
-                {coreServices.map((service, index) => (
-                  <div key={index} className="flex items-start gap-4">
-                    <div className="bg-blue-100 p-2 rounded-lg flex-shrink-0">
-                      <service.icon className="h-5 w-5 text-blue-600" />
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-gray-900 mb-1">{service.title}</h4>
-                      <p className="text-gray-600 text-sm">{service.description}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </CardContent>
-          </Card>
-
-          {/* Premium Services */}
-          <Card className="bg-white shadow-lg border-0 overflow-hidden">
-            <CardHeader className="bg-gradient-to-r from-amber-500 to-orange-500 text-white">
-              <CardTitle className="text-2xl flex items-center">
-                <span className="mr-3">🚀</span>
-                Gói "Siêu Tốc Độ"
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="p-6">
-              <div className="space-y-6">
-                {premiumServices.map((service, index) => (
-                  <div key={index} className="flex items-start gap-4">
-                    <div className="bg-amber-100 p-2 rounded-lg flex-shrink-0">
-                      <service.icon className="h-5 w-5 text-amber-600" />
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-gray-900 mb-1">{service.title}</h4>
-                      <p className="text-gray-600 text-sm">{service.description}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </CardContent>
-          </Card>
-        </div>
-
-        <div className="text-center mt-12 space-y-4">
-          <Button size="lg" className="bg-amber-600 hover:bg-amber-700 text-white px-8 py-4">
-            Khám phá bảng giá "bất ngờ"
-          </Button>
-          <div className="text-sm text-gray-600">
-            Hoặc{" "}
-            <button className="text-amber-600 hover:text-amber-700 font-medium underline">
-              so sánh gói nào phù hợp với bạn
-            </button>
-          </div>
+        <div className="max-w-3xl mx-auto">
+          <Tabs defaultValue="ke-toan-tron-goi" className="w-full">
+            <TabsList className="grid grid-cols-2 md:grid-cols-4 gap-2 mb-8 bg-white/80">
+              <TabsTrigger value="ke-toan-tron-goi" className="flex flex-col items-center">
+                <Briefcase className="h-6 w-6 mb-1 text-amber-600" />
+                Kế toán trọn gói
+              </TabsTrigger>
+              <TabsTrigger value="tu-van-thue" className="flex flex-col items-center">
+                <Lightbulb className="h-6 w-6 mb-1 text-amber-600" />
+                Tư vấn & tối ưu thuế
+              </TabsTrigger>
+              <TabsTrigger value="don-dep-so-sach" className="flex flex-col items-center">
+                <RefreshCcw className="h-6 w-6 mb-1 text-amber-600" />
+                Dọn dẹp sổ sách
+              </TabsTrigger>
+              <TabsTrigger value="cfo-thue-ngoai" className="flex flex-col items-center">
+                <UserCheck className="h-6 w-6 mb-1 text-amber-600" />
+                Kế toán trưởng/CFO thuê ngoài
+              </TabsTrigger>
+            </TabsList>
+            <TabsContent value="ke-toan-tron-goi">
+              <Card className="shadow-lg">
+                <CardContent className="p-6 space-y-4">
+                  <h3 className="text-xl font-bold mb-2">✅ Dịch vụ Kế toán Trọn gói</h3>
+                  <p>
+                    Chúng tôi đảm nhận toàn bộ công việc của một phòng kế toán chuyên nghiệp: từ việc xử lý hóa đơn, chứng từ, ghi nhận sổ sách, lập báo cáo thuế hàng tháng/quý cho đến quyết toán thuế cuối năm. Bạn hoàn toàn có thể yên tâm tập trung vào kinh doanh.
+                  </p>
+                  <ul className="list-disc pl-5 text-amber-700">
+                    <li>Tiết kiệm chi phí so với việc xây dựng phòng kế toán riêng</li>
+                    <li>Đảm bảo tính ổn định và chuyên môn cao</li>
+                  </ul>
+                </CardContent>
+              </Card>
+            </TabsContent>
+            <TabsContent value="tu-van-thue">
+              <Card className="shadow-lg">
+                <CardContent className="p-6 space-y-4">
+                  <h3 className="text-xl font-bold mb-2">✅ Dịch vụ Tư vấn & Tối ưu Thuế</h3>
+                  <p>
+                    Đây là dịch vụ mang lại giá trị cao nhất. Chúng tôi sẽ "soi chiếu" toàn bộ hoạt động của bạn để tìm ra các phương án tối ưu hóa chi phí thuế một cách hợp pháp, từ thuế TNDN, GTGT đến TNCN. Chúng tôi giúp bạn tiết kiệm từng đồng thuế quý giá.
+                  </p>
+                  <ul className="list-disc pl-5 text-amber-700">
+                    <li>Tối đa hóa lợi nhuận sau thuế</li>
+                    <li>Giảm thiểu rủi ro bị truy thu và xử phạt</li>
+                  </ul>
+                </CardContent>
+              </Card>
+            </TabsContent>
+            <TabsContent value="don-dep-so-sach">
+              <Card className="shadow-lg">
+                <CardContent className="p-6 space-y-4">
+                  <h3 className="text-xl font-bold mb-2">✅ Dịch vụ "Dọn dẹp" & Hoàn thiện Sổ sách</h3>
+                  <p>
+                    Dành cho các doanh nghiệp có hệ thống sổ sách lộn xộn, thiếu nhất quán qua nhiều năm. Đội ngũ chuyên gia của chúng tôi sẽ vào cuộc, rà soát, đối chiếu và hoàn thiện lại toàn bộ hệ thống chứng từ, sổ sách của bạn, giúp nó trở nên "sạch sẽ" và sẵn sàng cho bất kỳ cuộc thanh tra nào.
+                  </p>
+                  <ul className="list-disc pl-5 text-amber-700">
+                    <li>Loại bỏ các rủi ro tồn đọng</li>
+                    <li>Tạo nền tảng vững chắc cho sự phát triển trong tương lai</li>
+                  </ul>
+                </CardContent>
+              </Card>
+            </TabsContent>
+            <TabsContent value="cfo-thue-ngoai">
+              <Card className="shadow-lg">
+                <CardContent className="p-6 space-y-4">
+                  <h3 className="text-xl font-bold mb-2">✅ Dịch vụ Kế toán trưởng & CFO Thuê ngoài</h3>
+                  <p>
+                    Nâng tầm bộ phận kế toán của bạn. Chuyên gia của chúng tôi không chỉ làm kế toán mà còn đóng vai trò là một cố vấn tài chính chiến lược, giúp bạn phân tích các chỉ số, xây dựng kế hoạch tài chính và đưa ra các quyết định kinh doanh dựa trên dữ liệu.
+                  </p>
+                  <ul className="list-disc pl-5 text-amber-700">
+                    <li>Sở hữu một bộ não tài chính cấp cao với chi phí hợp lý</li>
+                  </ul>
+                </CardContent>
+              </Card>
+            </TabsContent>
+          </Tabs>
         </div>
       </div>
     </section>

@@ -3,78 +3,79 @@
 import { motion } from "framer-motion"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { ArrowRight, Code, Palette, BarChart3, Shield, Headphones, Zap, DollarSign, TrendingUp, ShieldCheck, FileText, CreditCard, Lock } from "lucide-react"
+import { ArrowRight, Code, Palette, BarChart3, Shield, Headphones, Zap, DollarSign, TrendingUp, ShieldCheck, FileText, CreditCard, Lock, Users, Handshake, BookOpen, Building2, Briefcase, Target } from "lucide-react"
 import { useRouter } from "next/navigation"
 
 const services = [
   {
     id: 1,
-    title: "Đầu Tư Tài Chính",
-    description: "Tối ưu hóa cấu trúc tài chính, tìm kiếm nguồn vốn phù hợp và quản lý rủi ro đầu tư hiệu quả.",
+    title: "Giải mã Dòng tiền & Tài chính",
+    description: "Tái cấu trúc, quản trị dòng tiền và giải pháp tài chính giúp huy động vốn thành công, đảm bảo sức khỏe tài chính vững chắc",
     icon: DollarSign,
     features: [
-      "Tư vấn cấu trúc vốn",
-      "Kết nối nhà đầu tư",
-      "Quản lý danh mục đầu tư"
+      "Tái cấu trúc tài chính",
+      "Quản trị dòng tiền",
+      "Giải pháp huy động vốn"
     ],
-    backgroundImage: "https://i.pinimg.com/736x/b1/a2/47/b1a247b31bc1c14ac0a78e4b71557027.jpg"
+    backgroundImage: "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80"
   },
   {
     id: 2,
-    title: "Tăng Doanh Số Bền Vững",
-    description: "Xây dựng chiến lược kinh doanh hiệu quả, tối ưu quy trình bán hàng và mở rộng thị trường.",
-    icon: TrendingUp,
+    title: "Giải mã Hệ thống & Vận hành",
+    description: "Tinh gọn quy trình, xây dựng hệ thống quản trị bài bản để doanh nghiệp tự vận hành hiệu quả mà không cần CEO 'chữa cháy'.",
+    icon: Briefcase,
     features: [
-      "Chiến lược marketing",
-      "Tối ưu quy trình bán hàng",
-      "Phát triển kênh phân phối"
+      "Tinh gọn quy trình",
+      "Xây dựng hệ thống quản trị",
+      "Tối ưu vận hành doanh nghiệp"
     ],
     backgroundImage: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80"
   },
   {
     id: 3,
-    title: "Tư Vấn Pháp Lý & Quản Trị Rủi Ro",
-    description: "Đảm bảo tuân thủ pháp luật, quản lý rủi ro và bảo vệ doanh nghiệp.",
+    title: "Giải mã Rủi ro Pháp lý & Thuế",
+    description: "Xây dựng tấm khiên pháp lý vững chắc, đảm bảo tuân thủ, tối ưu hóa các nghĩa vụ về thuế và giảm thiểu rủi ro pháp lý cho doanh nghiệp.",
     icon: ShieldCheck,
     features: [
-      "Tư vấn pháp luật doanh nghiệp",
-      "Quản lý rủi ro pháp lý",
-      "Giải quyết tranh chấp"
+      "Tư vấn pháp lý doanh nghiệp",
+      "Tối ưu thuế",
+      "Đảm bảo tuân thủ luật"
     ],
-    backgroundImage: "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80"
+    backgroundImage: "https://images.unsplash.com/photo-1521737852567-6949f3f9f2b5?auto=format&fit=crop&w=400&q=80"
   },
   {
     id: 4,
-    title: "Kế Toán - Thuế",
-    description: "Dịch vụ kế toán chuyên nghiệp, tối ưu thuế và đảm bảo tuân thủ quy định tài chính.",
-    icon: FileText,
+    title: "Đồng Hành Trực Tiếp",
+    description: "HLCC không chỉ tư vấn mà trực tiếp tham gia giải quyết vấn đề, đảm bảo hiệu quả cao nhất cho doanh nghiệp.",
+    icon: Handshake,
     features: [
-      "Kế toán doanh nghiệp",
-      "Tối ưu thuế",
-      "Báo cáo tài chính"
+      "Trực tiếp tham gia",
+      "Giải quyết vấn đề",
+      "Đảm bảo hiệu quả cao"
     ],
     backgroundImage: "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80"
   },
   {
     id: 5,
-    title: "Xử Lý Công Nợ",
-    description: "Giải pháp thu hồi công nợ hiệu quả, đảm phán và tái cấu trúc nợ cho doanh nghiệp.",
-    icon: CreditCard,
+    title: "12 Quy Tắc Sống",
+    description: "Tìm hiểu thêm về tầm nhìn, giá trị cốt lõi và 12 Quy tắc sống, những yếu tố định hình nên văn hóa và bản sắc HLCC.",
+    icon: BookOpen,
     features: [
-      "Thu hồi công nợ",
-      "Tái cấu trúc nợ",
-      "Đàm phán với chủ nợ"
+      "Tầm nhìn rõ ràng",
+      "Giá trị cốt lõi",
+      "12 Quy tắc sống"
     ],
     backgroundImage: "https://images.unsplash.com/photo-1521737852567-6949f3f9f2b5?auto=format&fit=crop&w=400&q=80"
   },
   {
     id: 6,
-    title: "Bảo Vệ An Ninh",
-    description: "Bảo vệ thông tin, tài sản và an ninh doanh nghiệp với các giải pháp bảo mật tiên tiến.",
-    icon: Lock,
+    title: "Đối Tác Tin Cậy",
+    description: "Chúng tôi cam kết đồng hành lâu dài, không chỉ hỗ trợ ngắn hạn mà còn có giải pháp cụ thể cho mục tiêu phát triển bền vững.",
+    icon: Building2,
     features: [
-      "Bảo vệ tài sản",
-      "Quản lý rủi ro an ninh"
+      "Đồng hành lâu dài",
+      "Giải pháp bền vững",
+      "Đối tác tin cậy"
     ],
     backgroundImage: "https://i.pinimg.com/736x/2d/a9/c4/2da9c4f0d49127e870ba28f8db2c848c.jpg"
   },
@@ -126,19 +127,10 @@ export function ServicesSection() {
         >
          
           <motion.h2 className="text-4xl md:text-6xl font-bold font-heading text-gray-800 mt-4 mb-8 relative">
-          Các Dịch Vụ  {" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-orange-600 relative">
-            Trọng Tâm
-              <motion.div
-                className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent"
-                animate={{ x: ["-100%", "100%"] }}
-                transition={{ duration: 3, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
-              />
-            </span>{" "}
-            Của HLCC
+            Bộ công cụ của Chuyên gia Giải mã
           </motion.h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-          Giải pháp toàn diện từ tài chính đến vận hành, giúp doanh nghiệp phát triển bền vững
+            Mỗi doanh nghiệp là một "vụ án" riêng biệt. HLCC cung cấp các giải pháp tư vấn doanh nghiệp toàn diện, đặc biệt nhấn mạnh giải pháp tài chính, giúp bạn xây dựng nền tảng vững chắc cho tăng trưởng bền vững.
           </p>
         </motion.div>
 
@@ -191,6 +183,12 @@ export function ServicesSection() {
             </motion.div>
           ))}
         </div>
+        <Button
+          onClick={() => router.push('/giai-phap')}
+          className="mt-12 px-8 py-4 bg-gradient-to-r from-yellow-400 to-orange-500 text-white font-bold rounded-full shadow-lg hover:from-yellow-500 hover:to-orange-600 transition-all text-lg"
+        >
+          Xem tất cả các dịch vụ tư vấn doanh nghiệp của HLCC →
+        </Button>
       </div>
     </section>
   )

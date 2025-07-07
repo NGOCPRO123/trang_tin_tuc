@@ -1,91 +1,73 @@
 "use client"
 
-import { Shield, Users, Clock, DollarSign } from "lucide-react"
+import { ShieldCheck, Users, BadgeDollarSign } from "lucide-react"
 
 const values = [
   {
-    icon: Shield,
-    title: "Bảo mật tuyệt đối",
-    description: "Thông tin khách hàng được bảo vệ nghiêm ngặt theo tiêu chuẩn quốc tế",
-    color: "from-emerald-400 to-teal-500",
-    bgColor: "from-emerald-50 to-teal-50",
+    icon: ShieldCheck,
+    title: "Bảo vệ Doanh nghiệp Toàn diện",
+    description:
+      "Chúng tôi không chỉ nhìn vào một điều khoản luật. Chúng tôi đặt vấn đề pháp lý trong bối cảnh chung của doanh nghiệp - tài chính, vận hành, chiến lược - để đưa ra lời tư vấn thực tiễn và có lợi nhất.",
+    color: "from-[#fbbf24] to-[#f59e42]",
+    bgColor: "from-[#fffbe6] to-[#fbbf24]/10",
   },
   {
     icon: Users,
-    title: "Đội ngũ chuyên môn cao",
-    description: "Luật sư giàu kinh nghiệm, chuyên sâu từng lĩnh vực pháp lý",
-    color: "from-blue-400 to-indigo-500",
-    bgColor: "from-blue-50 to-indigo-50",
+    title: "Đội ngũ Luật sư & Chuyên gia dày dặn Kinh nghiệm",
+    description:
+      "Đội ngũ của chúng tôi là sự kết hợp giữa các luật sư tranh tụng sắc bén và các chuyên gia tư vấn am hiểu sâu sắc về môi trường kinh doanh tại Việt Nam.",
+    color: "from-[#38bdf8] to-[#6366f1]",
+    bgColor: "from-[#f1f5f9] to-[#fffbe6]/40",
   },
   {
-    icon: Clock,
-    title: "Phản hồi trong 4h",
-    description: "Cam kết hỗ trợ nhanh chóng, kịp thời trong giờ làm việc",
-    color: "from-purple-400 to-pink-500",
-    bgColor: "from-purple-50 to-pink-50",
-  },
-  {
-    icon: DollarSign,
-    title: "Chi phí minh bạch",
-    description: "Báo giá rõ ràng, không có chi phí phát sinh bất ngờ",
-    color: "from-amber-400 to-orange-500",
-    bgColor: "from-amber-50 to-orange-50",
+    icon: BadgeDollarSign,
+    title: "Cam kết Hiệu quả - Minh bạch Chi phí",
+    description:
+      "Chúng tôi luôn nỗ lực tìm kiếm giải pháp hiệu quả nhất cho khách hàng. Mô hình hợp tác linh hoạt, chi phí gắn liền với kết quả bạn nhận được.",
+    color: "from-[#34d399] to-[#fbbf24]",
+    bgColor: "from-[#fffbe6] to-[#fbbf24]/10",
   },
 ]
 
 export default function Values() {
   return (
-    <section className="py-20 relative overflow-hidden">
-      {/* Background elements */}
+    <section className="py-24 relative overflow-hidden bg-gradient-to-br from-[#fffbe6] via-[#fbbf24]/10 to-[#0f172a]/5">
       <div className="absolute inset-0">
-        <div className="absolute top-10 left-10 w-32 h-32 bg-gradient-to-br from-amber-200/20 to-orange-300/20 rounded-full blur-xl"></div>
-        <div className="absolute bottom-10 right-10 w-40 h-40 bg-gradient-to-br from-yellow-200/20 to-amber-300/20 rounded-full blur-xl"></div>
+        <div className="absolute top-10 left-10 w-32 h-32 bg-gradient-to-br from-[#fbbf24]/20 to-[#f59e42]/20 rounded-full blur-xl"></div>
+        <div className="absolute bottom-10 right-10 w-40 h-40 bg-gradient-to-br from-[#fbbf24]/20 to-[#fffbe6]/20 rounded-full blur-xl"></div>
       </div>
-
       <div className="container mx-auto px-4 relative z-10">
-        {/* Section header với design độc đáo */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 bg-gradient-to-r from-amber-100 to-orange-100 rounded-full px-6 py-2 border border-amber-200 mb-6">
-            <div className="w-2 h-2 bg-gradient-to-r from-amber-400 to-orange-500 rounded-full"></div>
-            <span className="text-sm font-medium text-amber-800">Tại sao chọn chúng tôi</span>
+          <div className="inline-flex items-center gap-2 bg-gradient-to-r from-[#fbbf24]/30 to-[#f59e42]/30 rounded-full px-6 py-2 border border-[#fbbf24]/40 mb-6 shadow-md">
+            <div className="w-2 h-2 bg-gradient-to-r from-[#fbbf24] to-[#f59e42] rounded-full"></div>
+            <span className="text-sm font-semibold text-[#b45309] tracking-wide">Tại sao nên chọn HLCC?</span>
           </div>
-
-          <h2 className="text-4xl lg:text-5xl font-bold text-slate-800 mb-4">
-            Cam kết & Giá trị
-            <span className="block bg-gradient-to-r from-amber-500 to-orange-500 bg-clip-text text-transparent">
-              Cốt lõi
-            </span>
+          <h2 className="text-4xl lg:text-5xl font-extrabold text-[#0f172a] mb-4 drop-shadow-[0_2px_12px_rgba(251,191,36,0.10)]">
+            Sự khác biệt của chúng tôi
           </h2>
-
-          <div className="w-24 h-1 bg-gradient-to-r from-amber-400 to-orange-500 rounded-full mx-auto"></div>
+          <div className="w-24 h-1 bg-gradient-to-r from-[#fbbf24] to-[#f59e42] rounded-full mx-auto"></div>
         </div>
-
-        {/* Values grid với layout bất đối xứng */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           {values.map((value, index) => (
             <div
               key={index}
-              className={`group relative p-8 rounded-3xl bg-gradient-to-br ${value.bgColor} border border-white/50 hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 ${
-                index % 2 === 0 ? "lg:mt-8" : ""
-              }`}
+              className={`group relative p-10 rounded-3xl bg-gradient-to-br ${value.bgColor} border-2 border-transparent hover:border-[#fbbf24] shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-[1.03] hover:-translate-y-1 flex flex-col items-center text-center overflow-hidden`}
+              style={{boxShadow:'0 8px 32px 0 rgba(251,191,36,0.10), 0 1.5px 8px 0 rgba(15,23,42,0.08)'}}
             >
-              {/* Floating icon */}
-              <div className="relative mb-6">
+              <div className="relative mb-8 flex justify-center">
                 <div
-                  className={`w-16 h-16 bg-gradient-to-br ${value.color} rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300`}
+                  className={`w-20 h-20 bg-gradient-to-br ${value.color} rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300 border-4 border-white/60`}
                 >
-                  <value.icon className="w-8 h-8 text-white" />
+                  <value.icon className="w-10 h-10 text-white drop-shadow-lg" />
                 </div>
                 <div
-                  className={`absolute inset-0 w-16 h-16 bg-gradient-to-br ${value.color} rounded-2xl opacity-20 blur-lg group-hover:opacity-40 transition-opacity duration-300`}
+                  className={`absolute inset-0 w-20 h-20 bg-gradient-to-br ${value.color} rounded-2xl opacity-20 blur-lg group-hover:opacity-40 transition-opacity duration-300`}
                 ></div>
               </div>
-
-              <h3 className="font-bold text-slate-800 mb-3 text-lg">{value.title}</h3>
-              <p className="text-slate-600 text-sm leading-relaxed">{value.description}</p>
-
-              {/* Decorative element */}
-              <div className="absolute top-4 right-4 w-8 h-8 bg-white/30 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <h3 className="font-bold text-[#0f172a] mb-4 text-xl drop-shadow-sm">{value.title}</h3>
+              <p className="text-slate-700 text-base leading-relaxed font-medium">{value.description}</p>
+              {/* Glow effect */}
+              <div className="absolute -top-8 -right-8 w-32 h-32 bg-gradient-to-br from-[#fbbf24]/30 to-[#fffbe6]/0 rounded-full blur-2xl opacity-60 group-hover:opacity-90 transition-opacity duration-300 pointer-events-none"></div>
             </div>
           ))}
         </div>

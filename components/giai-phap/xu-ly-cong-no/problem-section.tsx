@@ -1,71 +1,62 @@
-import { AlertTriangle, Phone, Clock, Users } from "lucide-react"
+import { AlertTriangle } from "lucide-react"
 
 export default function ProblemSection() {
-  const problems = [
+  const mistakes = [
     {
-      icon: AlertTriangle,
-      text: "Bạn ngại làm lớn chuyện?",
+      title: "Thiếu quy trình chuyên nghiệp",
+      description:
+        "Việc đòi nợ cảm tính, lúc mềm mỏng, lúc cứng rắn không nhất quán khiến đối tác 'nhờn thuốc'.",
     },
     {
-      icon: Clock,
-      text: "Bạn không biết bắt đầu từ đâu?",
+      title: "Không có cơ sở pháp lý vững chắc",
+      description:
+        "Hợp đồng lỏng lẻo, thiếu chứng từ khiến bạn yếu thế khi cần đến các biện pháp mạnh.",
     },
     {
-      icon: Phone,
-      text: 'Bạn gọi hoài mà họ "đang kẹt tiền"?',
+      title: "Ngại ngần, sợ mất lòng",
+      description:
+        "Lo sợ việc đòi nợ sẽ làm hỏng mối quan hệ kinh doanh, dẫn đến việc chần chừ và để khoản nợ trở thành nợ xấu.",
     },
     {
-      icon: Users,
-      text: "Bạn không muốn mất khách nên... cứ để đó?",
+      title: "Sử dụng các biện pháp tiêu cực",
+      description:
+        "Các hành động thiếu chuyên nghiệp không chỉ không thu được tiền mà còn làm tổn hại nghiêm trọng đến uy tín thương hiệu của bạn.",
     },
   ]
 
   return (
-    <section className="py-20 bg-white/40 backdrop-blur-sm">
+    <section className="py-20 bg-white/60 backdrop-blur-md">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl lg:text-4xl font-bold text-center text-gray-900 mb-4">
-            Tại sao bạn chưa thu được nợ?
+          <h2 className="text-3xl lg:text-4xl font-black text-center text-red-700 mb-4">
+            Những Sai lầm Chết người khi Tự đi Đòi nợ
           </h2>
-
-          <p className="text-xl text-center text-gray-600 mb-12">Hãy thẳng thắn với chính mình</p>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
-            {problems.map((problem, index) => {
-              const IconComponent = problem.icon
-              return (
-                <div
-                  key={index}
-                  className="flex items-center space-x-4 bg-white/80 rounded-xl p-6 border border-yellow-200 shadow-sm"
-                >
-                  <div className="flex-shrink-0">
-                    <div className="w-12 h-12 bg-yellow-100 rounded-full flex items-center justify-center">
-                      <IconComponent className="w-6 h-6 text-yellow-600" />
-                    </div>
+          <p className="text-xl text-center text-gray-700 mb-12">
+            Bạn có đang vô tình khiến khoản nợ trở nên khó đòi hơn?
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+            {mistakes.map((item, idx) => (
+              <div
+                key={idx}
+                className="flex items-start gap-4 bg-white rounded-xl p-6 border-l-4 border-red-400 shadow-md hover:shadow-lg transition-all"
+              >
+                <div className="flex-shrink-0">
+                  <div className="w-14 h-14 bg-red-100 rounded-full flex items-center justify-center">
+                    <AlertTriangle className="w-7 h-7 text-red-600" />
                   </div>
-                  <div className="text-lg text-gray-700 font-medium">{problem.text}</div>
                 </div>
-              )
-            })}
-          </div>
-
-          <div className="bg-gradient-to-r from-red-50 to-orange-50 rounded-2xl p-8 border-l-4 border-red-400">
-            <div className="flex items-start space-x-4">
-              <div className="flex-shrink-0">
-                <div className="w-8 h-8 bg-red-100 rounded-full flex items-center justify-center">
-                  <span className="text-red-600 font-bold">👉</span>
+                <div>
+                  <h3 className="font-semibold text-lg text-red-700 mb-1 flex items-center">
+                    <span className="mr-2">⚠️</span>{item.title}
+                  </h3>
+                  <p className="text-gray-700 text-base leading-relaxed">{item.description}</p>
                 </div>
               </div>
-              <div>
-                <p className="text-lg text-gray-800 font-semibold mb-2">
-                  Trong khi đó, người nợ bạn vẫn sống bình thường
-                </p>
-                <p className="text-gray-700">– và có thể nợ cả chục người như bạn.</p>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </div>
     </section>
   )
 }
+
