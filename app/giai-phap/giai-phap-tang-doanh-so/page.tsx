@@ -4,7 +4,7 @@ import { SolutionsSection } from "@/components/giai-phap/giai-phap-tang-doanh-so
 import { BenefitsSection } from "@/components/giai-phap/giai-phap-tang-doanh-so/benefits-section"
 import { TestimonialsSection } from "@/components/giai-phap/giai-phap-tang-doanh-so/testimonials-section"
 import { CtaSection } from "@/components/giai-phap/giai-phap-tang-doanh-so/cta-section"
-import { Footer } from "@/components/layout/footer";
+import { Footer } from "@/components/trangchu/footer"
 
 export default function LandingPage() {
   return (

@@ -4,8 +4,8 @@ import MultiLayerSecuritySection from "@/components/giai-phap/bao-ve-an-ninh/ser
 import UniqueApproach from "@/components/giai-phap/bao-ve-an-ninh/unique-approach"
 import ContactSection from "@/components/giai-phap/bao-ve-an-ninh/contact-section"
 import { Header } from "@/components/layout/header";
-import { Footer } from "@/components/layout/footer";
 
+import { Footer } from "@/components/trangchu/footer"
 export default function BaoVeAnNinhPage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-amber-50 via-yellow-50 to-orange-50 overflow-x-hidden">

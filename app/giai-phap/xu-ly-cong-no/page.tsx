@@ -5,7 +5,7 @@ import RealityCheck from "@/components/giai-phap/xu-ly-cong-no/reality-check"
 import ProcessTimeline from "@/components/giai-phap/xu-ly-cong-no/process-timeline"
 import TruthSection from "@/components/giai-phap/xu-ly-cong-no/truth-section"
 import DecisionMoment from "@/components/giai-phap/xu-ly-cong-no/decision-moment"
-import { Footer } from "@/components/layout/footer"
+import { Footer } from "@/components/trangchu/footer"
 
 export default function Home() {
   return (

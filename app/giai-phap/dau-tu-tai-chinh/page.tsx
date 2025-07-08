@@ -9,7 +9,7 @@ import { PackagesSection } from "@/components/giai-phap/dau-tu-tai-chinh/package
 import { CTASection } from "@/components/giai-phap/dau-tu-tai-chinh/cta-section"
 import { TrustSection } from "@/components/giai-phap/dau-tu-tai-chinh/trust-section"
 import { Header } from "@/components/layout/header"
-import { Footer } from "@/components/layout/footer"
+import { Footer } from "@/components/trangchu/footer"
 
 export default function LandingPage() {
   return (

@@ -1,6 +1,6 @@
 import type React from "react"
 import { Header } from "./header"
-import { Footer } from "./footer"
+import { Footer } from "../trangchu/footer"
 
 interface MainLayoutProps {
   children: React.ReactNode

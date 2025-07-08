@@ -7,7 +7,7 @@ import { TeamSection } from "@/components/giai-phap/nghiep-vu-ke-toan-thue/team-
 import { ResultsSection } from "@/components/giai-phap/nghiep-vu-ke-toan-thue/results-section"
 import { TestimonialsSection } from "@/components/giai-phap/nghiep-vu-ke-toan-thue/testimonials-section"
 import { CTASection } from "@/components/giai-phap/nghiep-vu-ke-toan-thue/cta-section"
-import { Footer } from "@/components/layout/footer"
+import { Footer } from "@/components/trangchu/footer"
 
 export default function Home() {
   return (

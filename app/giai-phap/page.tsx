@@ -1,5 +1,5 @@
 import { Header } from "@/components/layout/header";
-import { Footer } from "@/components/layout/footer";
+import { Footer } from "@/components/trangchu/footer"
 import { BlogSection } from "@/components/giai-phap/sections/blog-section";
 import { ClientsSection } from "@/components/giai-phap/sections/clients-section";
 import { HeroSection } from "@/components/giai-phap/sections/hero-section";

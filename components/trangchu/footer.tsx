@@ -7,16 +7,32 @@ import Image from "next/image"
 
 const quickLinks = [
   { name: "Trang chủ", href: "/" },
-  { name: "Tin tức", href: "/tin-tuc" },
   { name: "Giới thiệu", href: "/gioi-thieu" },
+  { name: "Dự án tiêu biểu", href: "/dich-vu" },
+  { name: "Giải pháp", href: "/giai-phap" },
+  { name: "Kiến thức", href: "/kien-thuc" },
   { name: "Liên hệ", href: "/lien-he" },
 ]
 
-const services = [
-  { name: "Về chúng tôi", href: "/#about" },
-  { name: "Dịch vụ của chúng tôi", href: "/#services" },
-  { name: "Tại sao chọn chúng tôi", href: "/#why-choose-us" },
-  { name: "Khách hàng nói gì về chúng tôi", href: "/#testimonials" },
+const giaiPhapLinks = [
+  { name: "Đầu tư tài chính", href: "/giai-phap/dau-tu-tai-chinh" },
+  { name: "Giải pháp tăng doanh số bền vững", href: "/giai-phap/giai-phap-tang-doanh-so" },
+  { name: "Tư vấn pháp lý", href: "/giai-phap/tu-van-phap-ly" },
+  { name: "Nghiệp vụ kế toán – Thuế", href: "/giai-phap/nghiep-vu-ke-toan-thue" },
+  { name: "Xử lý công nợ", href: "/giai-phap/xu-ly-cong-no" },
+  { name: "Bảo vệ an ninh", href: "/giai-phap/bao-ve-an-ninh" },
+]
+
+const kienThucLinks = [
+  { name: "Quản trị doanh nghiệp", href: "/danh-muc/quan-tri-doanh-nghiep" },
+  { name: "Giải pháp doanh nghiệp", href: "/danh-muc/giai-phap-doanh-nghiep" },
+  { name: "Phát triển bền vững", href: "/danh-muc/phat-trien-ben-vung" },
+]
+
+const lienHeLinks = [
+  { name: "Tuyển dụng", href: "/lien-he/tuyen-dung" },
+  { name: "Chính sách Bảo mật", href: "/lien-he/chinh-sach-bao-mat" },
+  { name: "Điều khoản", href: "/lien-he/dieu-khoan" },
 ]
 
 const socialLinks = [
@@ -30,7 +46,7 @@ export function Footer() {
   return (
     <footer className="bg-gray-900 text-white py-16 px-4">
       <div className="container mx-auto max-w-7xl">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-8 mb-12">
           {/* Company info */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -38,8 +54,7 @@ export function Footer() {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-         <div className="flex items-center gap-3 mb-6 -mt-5">
-
+            <div className="flex items-center gap-3 mb-6 -mt-5">
               <Image
                 src="/logo.png"
                 alt="ACTA Logo"
@@ -47,15 +62,10 @@ export function Footer() {
                 height={80}
                 className="w-20 h-20 object-contain"
               />
-          
             </div>
-            <p className="text-gray-300 leading-relaxed mb-6">
-              Đối tác tin cậy cho sự phát triển bền vững của doanh nghiệp. Chúng tôi cam kết mang đến những giải pháp
-              công nghệ tối ưu nhất với hơn 10 năm kinh nghiệm.
-            </p>
             <div className="space-y-3 text-sm text-gray-400">
               <div className="flex items-center gap-3">
-                <MapPin className="w-4 h-4 text-amber-400" />
+                <MapPin className="w-4 h-4 text-amber-400" style={{ minWidth: '1rem', minHeight: '1rem' }} />
                 <a 
                   href="https://maps.google.com/?q=213+Điện+Biên+Phủ,+Phường+Võ+Thị+Sáu,+Quận+3,+Tp.+HCM" 
                   target="_blank" 
@@ -66,7 +76,7 @@ export function Footer() {
                 </a>
               </div>
               <div className="flex items-center gap-3">
-                <Phone className="w-4 h-4 text-amber-400" />
+                <Phone className="w-4 h-4 text-amber-400" style={{ minWidth: '1rem', minHeight: '1rem' }} />
                 <a 
                   href="tel:+84123456789" 
                   className="hover:text-amber-400 transition-colors duration-200"
@@ -75,7 +85,7 @@ export function Footer() {
                 </a>
               </div>
               <div className="flex items-center gap-3">
-                <Mail className="w-4 h-4 text-amber-400" />
+                <Mail className="w-4 h-4 text-amber-400" style={{ minWidth: '1rem', minHeight: '1rem' }} />
                 <a 
                   href="mailto:contact@company.com" 
                   className="hover:text-amber-400 transition-colors duration-200"
@@ -108,38 +118,81 @@ export function Footer() {
             </ul>
           </motion.div>
 
-          {/* Services */}
+          {/* Giải pháp */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            <h4 className="text-lg font-semibold mb-6">Dịch vụ</h4>
+            <h4 className="text-lg font-semibold mb-6">Giải pháp</h4>
             <ul className="space-y-3">
-              {services.map((service) => (
-                <li key={service.name}>
+              {giaiPhapLinks.map((link) => (
+                <li key={link.name}>
                   <Link
-                    href={service.href}
+                    href={link.href}
                     className="text-gray-300 hover:text-amber-400 transition-colors duration-200 hover:translate-x-1 inline-block"
                   >
-                    {service.name}
+                    {link.name}
                   </Link>
                 </li>
               ))}
             </ul>
           </motion.div>
 
-          {/* Contact & Social */}
+          {/* Kiến thức */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
             viewport={{ once: true }}
           >
+            <h4 className="text-lg font-semibold mb-6">Kiến thức</h4>
+            <ul className="space-y-3">
+              {kienThucLinks.map((link) => (
+                <li key={link.name}>
+                  <Link
+                    href={link.href}
+                    className="text-gray-300 hover:text-amber-400 transition-colors duration-200 hover:translate-x-1 inline-block"
+                  >
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </motion.div>
+
+          {/* Liên hệ */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            viewport={{ once: true }}
+          >
+            <h4 className="text-lg font-semibold mb-6">Liên hệ</h4>
+            <ul className="space-y-3">
+              {lienHeLinks.map((link) => (
+                <li key={link.name}>
+                  <Link
+                    href={link.href}
+                    className="text-gray-300 hover:text-amber-400 transition-colors duration-200 hover:translate-x-1 inline-block"
+                  >
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </motion.div>
+
+          {/* Social & Newsletter */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.5 }}
+            viewport={{ once: true }}
+          >
             <h4 className="text-lg font-semibold mb-6">Kết nối với chúng tôi</h4>
-            <p className="text-gray-300 mb-6">Theo dõi chúng tôi để cập nhật những xu hướng công nghệ mới nhất</p>
-            <div className="flex gap-4 mb-6">
+            <div className="flex gap-4 mb-4">
               {socialLinks.map((social) => (
                 <Link
                   key={social.name}
@@ -150,19 +203,21 @@ export function Footer() {
                 </Link>
               ))}
             </div>
-            <div className="bg-gray-800 rounded-lg p-4">
-              <h5 className="font-semibold mb-2">Nhận tin tức mới nhất</h5>
-              <p className="text-sm text-gray-400 mb-3">Đăng ký để nhận thông tin về các xu hướng công nghệ</p>
-              <div className="flex gap-2">
+            <div className="bg-gray-800 rounded-lg p-3">
+              <h5 className="font-semibold mb-2 text-sm text-white">Nhận tin tức mới nhất</h5>
+              <form className="flex gap-0">
                 <input
                   type="email"
-                  placeholder="Email của bạn"
-                  className="flex-1 px-3 py-2 bg-gray-700 rounded text-sm focus:outline-none focus:ring-amber-500"
+                  placeholder="Nhập email của bạn"
+                  className="flex-1 px-3 py-2 rounded-l bg-gray-700 text-sm text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-amber-500 border-none"
                 />
-                <button className="px-4 py-2 bg-amber-600 hover:bg-amber-700 rounded text-sm transition-colors">
+                <button
+                  type="submit"
+                  className="px-4 py-2 rounded-r bg-amber-600 hover:bg-amber-700 text-sm font-semibold text-white transition-colors"
+                >
                   Đăng ký
                 </button>
-              </div>
+              </form>
             </div>
           </motion.div>
         </div>
@@ -171,13 +226,14 @@ export function Footer() {
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.4 }}
+          transition={{ duration: 0.6, delay: 0.6 }}
           viewport={{ once: true }}
           className="border-t border-gray-800 pt-8"
         >
-          
-          <div className="mt-4 text-center text-sm text-gray-500">
-            <p>© 2025 Công ty TMĐT ACTA. Tất cả quyền được bảo lưu.</p>
+          <div className="flex flex-col items-center justify-center gap-4">
+            <div className="text-center text-sm text-gray-500 w-full">
+              <p>© 2025 Công ty TMĐT ACTA. Tất cả quyền được bảo lưu.</p>
+            </div>
           </div>
         </motion.div>
       </div>

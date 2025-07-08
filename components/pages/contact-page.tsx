@@ -562,6 +562,25 @@ export function ContactPage() {
         </div>
       </section>
       
+      {/* Section 3: Liên kết đến các trang con (Tuyển dụng, Chính sách Bảo mật, Điều khoản) */}
+      <section className="container mx-auto py-8">
+        <div className="border-t pt-8 mt-8 flex flex-col md:flex-row gap-4 md:gap-8 justify-center items-center text-center">
+          <a
+            href="/lien-he/tuyen-dung"
+            className="text-lg text-blue-700 hover:underline font-medium"
+          >
+            Tuyển dụng
+          </a>
+          <span className="hidden md:inline-block text-gray-400">|</span>
+          <a
+            href="/lien-he/chinh-sach-bao-mat-dieu-khoan"
+            className="text-lg text-blue-700 hover:underline font-medium"
+          >
+            Chính sách Bảo mật, Điều khoản
+          </a>
+        </div>
+      </section>
+      
       <BackToTop />
     </MainLayout>
   )

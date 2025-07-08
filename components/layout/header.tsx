@@ -7,12 +7,6 @@ import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import { Menu, Settings, ChevronDown, Phone } from "lucide-react"
-import {
-  DropdownMenu,
-  DropdownMenuTrigger,
-  DropdownMenuContent,
-  DropdownMenuItem
-} from "@/components/ui/dropdown-menu";
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false)
@@ -62,67 +56,87 @@ export function Header() {
               GIỚI THIỆU
             </Link>
             
-            <div className="relative flex items-center group">
-              <Link href="/giai-phap" className="text-lg font-bold hover:text-yellow-600 transition-colors px-2">
-                GIẢI PHÁP
-              </Link>
-              <DropdownMenu>
-                <DropdownMenuTrigger asChild>
-                  <button className="ml-1 p-1 rounded hover:bg-gray-100 transition-colors flex items-center" aria-label="Xem danh mục giải pháp">
-                    <ChevronDown className="w-5 h-5" />
-                  </button>
-                </DropdownMenuTrigger>
-                <DropdownMenuContent align="start">
-                  <DropdownMenuItem asChild>
-                    <Link href="/giai-phap/dau-tu-tai-chinh" className="font-bold text-base md:text-lg hover:text-yellow-600">Đầu tư tài chính</Link>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem asChild>
-                    <Link href="/giai-phap/giai-phap-tang-doanh-so" className="font-bold text-base md:text-lg hover:text-yellow-600">Giải pháp tăng doanh số bền vững</Link>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem asChild>
-                    <Link href="/giai-phap/tu-van-phap-ly" className="font-bold text-base md:text-lg hover:text-yellow-600">Tư vấn pháp lý</Link>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem asChild>
-                    <Link href="/giai-phap/nghiep-vu-ke-toan-thue" className="font-bold text-base md:text-lg hover:text-yellow-600">Nghiệp vụ kế toán – Thuế</Link>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem asChild>
-                    <Link href="/giai-phap/xu-ly-cong-no" className="font-bold text-base md:text-lg hover:text-yellow-600">Xử lý công nợ</Link>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem asChild>
-                    <Link href="/giai-phap/bao-ve-an-ninh" className="font-bold text-base md:text-lg hover:text-yellow-600">Bảo vệ an ninh</Link>
-                  </DropdownMenuItem>
-                </DropdownMenuContent>
-              </DropdownMenu>
+            {/* GIẢI PHÁP - Hover Dropdown */}
+            <div className="relative group">
+              <div className="flex items-center cursor-pointer">
+                <Link href="/giai-phap" className="text-lg font-bold hover:text-yellow-600 transition-colors px-2">
+                  GIẢI PHÁP
+                </Link>
+                <ChevronDown className="w-5 h-5 ml-1 transition-transform group-hover:rotate-180" />
+              </div>
+              <div className="absolute top-full left-0 mt-1 w-80 bg-white border border-gray-200 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                <div className="py-2">
+                  <Link href="/giai-phap/dau-tu-tai-chinh" className="block px-4 py-3 text-base font-bold hover:text-yellow-600 hover:bg-gray-50 transition-colors">
+                    Đầu tư tài chính
+                  </Link>
+                  <Link href="/giai-phap/giai-phap-tang-doanh-so" className="block px-4 py-3 text-base font-bold hover:text-yellow-600 hover:bg-gray-50 transition-colors">
+                    Giải pháp tăng doanh số bền vững
+                  </Link>
+                  <Link href="/giai-phap/tu-van-phap-ly" className="block px-4 py-3 text-base font-bold hover:text-yellow-600 hover:bg-gray-50 transition-colors">
+                    Tư vấn pháp lý
+                  </Link>
+                  <Link href="/giai-phap/nghiep-vu-ke-toan-thue" className="block px-4 py-3 text-base font-bold hover:text-yellow-600 hover:bg-gray-50 transition-colors">
+                    Nghiệp vụ kế toán – Thuế
+                  </Link>
+                  <Link href="/giai-phap/xu-ly-cong-no" className="block px-4 py-3 text-base font-bold hover:text-yellow-600 hover:bg-gray-50 transition-colors">
+                    Xử lý công nợ
+                  </Link>
+                  <Link href="/giai-phap/bao-ve-an-ninh" className="block px-4 py-3 text-base font-bold hover:text-yellow-600 hover:bg-gray-50 transition-colors">
+                    Bảo vệ an ninh
+                  </Link>
+                </div>
+              </div>
             </div>
-            <div className="relative flex items-center group">
-              <Link href="/kien-thuc" className="text-lg font-bold hover:text-yellow-600 transition-colors px-2">
-                KIẾN THỨC
-              </Link>
-              <DropdownMenu>
-                <DropdownMenuTrigger asChild>
-                  <button className="ml-1 p-1 rounded hover:bg-gray-100 transition-colors flex items-center" aria-label="Xem danh mục kiến thức">
-                    <ChevronDown className="w-5 h-5" />
-                  </button>
-                </DropdownMenuTrigger>
-                <DropdownMenuContent align="start">
-                  <DropdownMenuItem asChild>
-                    <Link href="/danh-muc/quan-tri-doanh-nghiep" className="font-bold text-base md:text-lg hover:text-yellow-600">Quản trị doanh nghiệp</Link>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem asChild>
-                    <Link href="/danh-muc/giai-phap-doanh-nghiep" className="font-bold text-base md:text-lg hover:text-yellow-600">Giải pháp doanh nghiệp</Link>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem asChild>
-                    <Link href="/danh-muc/phat-trien-ben-vung" className="font-bold text-base md:text-lg hover:text-yellow-600">Phát triển bền vững</Link>
-                  </DropdownMenuItem>
-                </DropdownMenuContent>
-              </DropdownMenu>
+
+            {/* KIẾN THỨC - Hover Dropdown */}
+            <div className="relative group">
+              <div className="flex items-center cursor-pointer">
+                <Link href="/kien-thuc" className="text-lg font-bold hover:text-yellow-600 transition-colors px-2">
+                  KIẾN THỨC
+                </Link>
+                <ChevronDown className="w-5 h-5 ml-1 transition-transform group-hover:rotate-180" />
+              </div>
+              <div className="absolute top-full left-0 mt-1 w-80 bg-white border border-gray-200 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                <div className="py-2">
+                  <Link href="/danh-muc/quan-tri-doanh-nghiep" className="block px-4 py-3 text-base font-bold hover:text-yellow-600 hover:bg-gray-50 transition-colors">
+                    Quản trị doanh nghiệp
+                  </Link>
+                  <Link href="/danh-muc/giai-phap-doanh-nghiep" className="block px-4 py-3 text-base font-bold hover:text-yellow-600 hover:bg-gray-50 transition-colors">
+                    Giải pháp doanh nghiệp
+                  </Link>
+                  <Link href="/danh-muc/phat-trien-ben-vung" className="block px-4 py-3 text-base font-bold hover:text-yellow-600 hover:bg-gray-50 transition-colors">
+                    Phát triển bền vững
+                  </Link>
+                </div>
+              </div>
             </div>
+
             <Link href="/dich-vu" className="text-lg font-bold hover:text-yellow-600 transition-colors">
               DỰ ÁN TIÊU BIỂU
             </Link>
-            <Link href="/lien-he" className="text-lg font-bold hover:text-yellow-600 transition-colors">
-              LIÊN HỆ
-            </Link>
+
+            {/* LIÊN HỆ - Hover Dropdown */}
+            <div className="relative group">
+              <div className="flex items-center cursor-pointer">
+                <Link href="/lien-he" className="text-lg font-bold hover:text-yellow-600 transition-colors px-2">
+                  LIÊN HỆ
+                </Link>
+                <ChevronDown className="w-5 h-5 ml-1 transition-transform group-hover:rotate-180" />
+              </div>
+              <div className="absolute top-full left-0 mt-1 w-80 bg-white border border-gray-200 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                <div className="py-2">
+                  <Link href="/lien-he/tuyen-dung" className="block px-4 py-3 text-base font-bold hover:text-yellow-600 hover:bg-gray-50 transition-colors">
+                    Tuyển dụng
+                  </Link>
+                  <Link href="/lien-he/chinh-sach-bao-mat" className="block px-4 py-3 text-base font-bold hover:text-yellow-600 hover:bg-gray-50 transition-colors">
+                    Chính sách Bảo mật
+                  </Link>
+                  <Link href="/lien-he/dieu-khoan" className="block px-4 py-3 text-base font-bold hover:text-yellow-600 hover:bg-gray-50 transition-colors">
+                    Điều khoản
+                  </Link>
+                </div>
+              </div>
+            </div>
           </nav>
           {/* Nút bên phải */}
           <div className="hidden md:flex items-center">
@@ -174,13 +188,12 @@ export function Header() {
                 >
                   Giới thiệu
                 </Link>
-                <Link
-                  href="/lien-he"
-                  className="text-sm font-medium hover:text-yellow-600 transition-colors"
-                  onClick={() => setIsOpen(false)}
-                >
-                  Liên hệ
-                </Link>
+                <span className="text-sm font-medium hover:text-yellow-600 transition-colors cursor-pointer select-none">Liên hệ</span>
+                <div className="ml-4 flex flex-col space-y-2 mt-2">
+                  <Link href="/lien-he/tuyen-dung" className="text-sm text-slate-600 hover:text-yellow-600" onClick={() => setIsOpen(false)}>Tuyển dụng</Link>
+                  <Link href="/lien-he/chinh-sach-bao-mat" className="text-sm text-slate-600 hover:text-yellow-600" onClick={() => setIsOpen(false)}>Chính sách Bảo mật</Link>
+                  <Link href="/lien-he/dieu-khoan" className="text-sm text-slate-600 hover:text-yellow-600" onClick={() => setIsOpen(false)}>Điều khoản</Link>
+                </div>
               </nav>
             </SheetContent>
           </Sheet>

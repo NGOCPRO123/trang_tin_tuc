@@ -6,7 +6,7 @@ import Services from "@/components/giai-phap/tu-van-phap-ly/services"
 import Team from "@/components/giai-phap/tu-van-phap-ly/team"
 import Testimonials from "@/components/giai-phap/tu-van-phap-ly/testimonials"
 import CTAForm from "@/components/giai-phap/tu-van-phap-ly/cta-form"
-import { Footer } from "@/components/layout/footer"
+import { Footer } from "@/components/trangchu/footer"
 
 export default function LandingPage() {
   return (

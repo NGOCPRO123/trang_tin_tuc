@@ -28,10 +28,23 @@ export function HeroSection() {
     setForm({ ...form, service: value })
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    setSubmitted(true)
-    // TODO: Gửi dữ liệu form tới API hoặc email
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    // Gửi dữ liệu về Google Form
+    const formData = new FormData();
+    formData.append("entry.1343769271", form.name);      // Họ tên
+    formData.append("entry.721491223", form.phone);      // Số điện thoại
+    formData.append("entry.1909885774", form.email);     // Email
+    formData.append("entry.1906150215", form.company);   // Công ty
+    formData.append("entry.1558246489", form.service);   // Dịch vụ quan tâm
+
+    await fetch("https://docs.google.com/forms/d/e/1FAIpQLSdEHpO-rUDjjj0ohoWpRuHjwfwPOtrPz-OT1EfY4OEWUWOF8A/formResponse", {
+      method: "POST",
+      mode: "no-cors",
+      body: formData,
+    });
+    setSubmitted(true);
+    setForm({ name: "", phone: "", email: "", company: "", service: "" });
   }
 
   return (
@@ -84,7 +97,7 @@ export function HeroSection() {
                       <Sparkles className="w-8 h-8 text-white" />
                     </div>
                     <h3 className="text-2xl font-bold text-gray-900 mb-2">Đăng Ký Tư Vấn Miễn Phí</h3>
-                    <p className="text-gray-600">Nhận tư vấn từ chuyên gia trong 24h</p>
+                    <p className="text-gray-600 text-yellow-500">Nhận tư vấn từ chuyên gia trong 24h</p>
                   </div>
 
                   {submitted ? (
@@ -92,8 +105,8 @@ export function HeroSection() {
                       <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
                         <CheckCircle className="w-8 h-8 text-green-600" />
                       </div>
-                      <h4 className="text-xl font-semibold text-green-600 mb-2">Đăng ký thành công!</h4>
-                      <p className="text-gray-600">Chúng tôi sẽ liên hệ với bạn trong thời gian sớm nhất.</p>
+                      <h4 className="text-xl font-semibold text-green-600 mb-2 text-yellow-500">Đăng ký thành công!</h4>
+                      <p className="text-gray-600 text-yellow-500">Chúng tôi sẽ liên hệ với bạn trong thời gian sớm nhất.</p>
                     </div>
                   ) : (
                     <form className="space-y-4" onSubmit={handleSubmit}>
@@ -138,9 +151,12 @@ export function HeroSection() {
                             <SelectValue placeholder="Chọn dịch vụ quan tâm *" />
                           </SelectTrigger>
                           <SelectContent>
-                            <SelectItem value="Tư vấn quản trị">Tư vấn quản trị</SelectItem>
-                            <SelectItem value="Tối ưu vận hành">Tối ưu vận hành</SelectItem>
-                            <SelectItem value="Tài chính doanh nghiệp">Tài chính doanh nghiệp</SelectItem>
+                            <SelectItem value="Giải pháp bảo vệ an ninh">Giải pháp bảo vệ an ninh</SelectItem>
+                            <SelectItem value="Giải pháp đầu tư tài chính">Giải pháp đầu tư tài chính</SelectItem>
+                            <SelectItem value="Giải pháp tăng doanh số">Giải pháp tăng doanh số</SelectItem>
+                            <SelectItem value="Giải pháp nghiệp vụ kế toán thuế">Giải pháp nghiệp vụ kế toán thuế</SelectItem>
+                            <SelectItem value="Giải pháp tư vấn pháp lý">Giải pháp tư vấn pháp lý</SelectItem>
+                            <SelectItem value="Giải pháp xử lý công nợ">Giải pháp xử lý công nợ</SelectItem>
                             <SelectItem value="Khác">Khác</SelectItem>
                           </SelectContent>
                         </Select>
@@ -153,7 +169,7 @@ export function HeroSection() {
                         Bắt đầu Chẩn đoán Doanh nghiệp
                       </Button>
 
-                      <p className="text-xs text-gray-500 text-center flex items-center justify-center gap-1">
+                      <p className="text-xs text-yellow-500 text-center flex items-center justify-center gap-1">
                         <CheckCircle className="w-3 h-3" />
                         Thông tin của bạn được bảo mật tuyệt đối
                       </p>
