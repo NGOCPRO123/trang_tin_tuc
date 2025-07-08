@@ -25,7 +25,7 @@ export function HeroSection() {
               🚀 Giải pháp Tăng Doanh số Bền vững
             </Badge>
             <div className="space-y-8">
-              <h1 className="text-5xl lg:text-7xl font-extrabold leading-tight tracking-tight text-gray-900">
+              <h1 className="text-6xl lg:text-8xl font-extrabold leading-tight tracking-tight text-gray-900">
                 Bạn đang <span className="bg-gradient-to-r from-yellow-600 via-amber-500 to-yellow-400 bg-clip-text text-transparent animate-gradient-x">"đốt tiền"</span> vào marketing, nhưng doanh số vẫn ì ạch?
               </h1>
               <p className="text-2xl text-gray-700 leading-relaxed max-w-2xl">

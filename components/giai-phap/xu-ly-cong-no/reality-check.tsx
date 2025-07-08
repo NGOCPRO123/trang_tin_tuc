@@ -2,15 +2,16 @@ import { TrendingDown, Clock, DollarSign } from "lucide-react"
 
 export default function RealityCheck() {
   return (
-    <section className="py-20 bg-gradient-to-r from-red-900 to-orange-900 text-white relative overflow-hidden">
+    <section className="py-20 relative overflow-hidden text-white" style={{ backgroundImage: 'url(/homepage.jpg)', backgroundSize: 'cover', backgroundPosition: 'center' }}>
+      {/* Overlay tối để chữ rõ */}
+      <div className="absolute inset-0 bg-black/70 z-0" />
       {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-10">
+      <div className="absolute inset-0 opacity-10 z-10">
         <div className="absolute top-10 left-10 text-8xl">💸</div>
         <div className="absolute bottom-10 right-10 text-8xl">⏰</div>
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-9xl">🩸</div>
       </div>
-
-      <div className="container mx-auto px-4 relative">
+      <div className="container mx-auto px-4 relative z-20">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl lg:text-6xl font-black mb-8 leading-tight">

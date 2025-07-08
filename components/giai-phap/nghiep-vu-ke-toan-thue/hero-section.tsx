@@ -28,12 +28,12 @@ export function HeroSection() {
               </Button>
             </div>
           </div>
-          <div className="relative flex justify-center items-center">
-            <div className="relative rounded-2xl bg-white p-6 shadow-2xl max-w-md mx-auto">
+          <div className="relative flex justify-center items-center h-full w-full">
+            <div className="relative rounded-2xl bg-white p-6 shadow-2xl w-full h-full mx-auto">
               <img
                 src="/placeholder.svg?height=400&width=600"
                 alt="Chuyên gia phân tích tài chính"
-                className="rounded-lg w-full h-auto object-cover min-h-[320px]"
+                className="rounded-lg w-full h-full object-cover min-h-[320px]"
               />
               <div className="absolute -bottom-4 -right-4 bg-gradient-to-r from-amber-500 to-orange-500 text-white p-4 rounded-xl shadow-lg min-w-[180px]">
                 <div className="text-lg font-bold">"Bác sĩ" tài chính của bạn</div>

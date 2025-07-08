@@ -10,13 +10,11 @@ export default function ModernHeader() {
 
         {/* Main title with gradient */}
         <h1 className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-amber-600 via-yellow-600 to-orange-600 bg-clip-text text-transparent mb-6 leading-tight">
-          Chính sách
-          <br />
-          <span className="text-4xl md:text-6xl">Bảo mật</span>
+          Chính sách Bảo mật
         </h1>
 
         {/* Subtitle */}
-        <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
+        <p className="text-2xl text-gray-600 mx-auto leading-relaxed">
           Cam kết bảo vệ thông tin cá nhân của bạn với các tiêu chuẩn bảo mật cao nhất
         </p>
 

@@ -59,10 +59,10 @@ export function ClientTestimonialsSection() {
               viewport={{ once: true }}
               whileHover={{ y: -8, scale: 1.02 }}
             >
-              <Card className="h-full hover:shadow-2xl transition-all duration-500 border-0 shadow-lg bg-white/80 backdrop-blur-sm border-l-4 border-blue-500">
+              <Card className="h-full hover:shadow-2xl transition-all duration-500 border-0 shadow-lg bg-white/80 backdrop-blur-sm border-l-4 border-amber-400">
                 <CardContent className="p-8">
                   <div className="flex items-start space-x-6">
-                    <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-blue-500 to-blue-700 flex items-center justify-center flex-shrink-0 shadow-lg">
+                    <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-amber-400 to-yellow-500 flex items-center justify-center flex-shrink-0 shadow-lg">
                       <faq.icon className="w-7 h-7 text-white" />
                     </div>
                     <div className="flex-1">

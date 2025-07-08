@@ -32,7 +32,7 @@ export default function CTAForm() {
                 </p>
               </div>
               <div className="bg-gradient-to-br from-[#fbbf24]/20 to-[#fffbe6]/40 backdrop-blur-md rounded-2xl p-6 border-2 border-[#fbbf24]/30 shadow-lg flex flex-col items-center">
-                <div className="text-3xl font-extrabold text-[#fbbf24] mb-2 tracking-wider animate-pulse">0123.456.789</div>
+                <div className="text-3xl font-extrabold text-[#fbbf24] mb-2 tracking-wider animate-pulse">028.5555.8879</div>
                 <div className="text-slate-700 font-semibold">Hotline 24/7</div>
               </div>
             </div>

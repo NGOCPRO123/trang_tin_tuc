@@ -9,8 +9,8 @@ export default function DataSharingSection() {
       </h2>
 
       <div className="prose prose-lg max-w-none text-gray-700 leading-relaxed space-y-6">
-        <div className="bg-red-50 border-l-4 border-red-400 p-4 rounded-r-lg">
-          <p className="font-semibold text-red-800">
+        <div className="bg-yellow-50 border-l-4 border-yellow-400 p-4 rounded-r-lg">
+          <p className="font-semibold text-yellow-800">
             HLCC cam kết không bán, cho thuê hoặc trao đổi thông tin cá nhân của bạn cho bất kỳ bên thứ ba nào vì mục
             đích thương mại.
           </p>

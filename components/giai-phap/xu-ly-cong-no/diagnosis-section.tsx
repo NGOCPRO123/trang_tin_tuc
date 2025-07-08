@@ -52,7 +52,7 @@ export default function DiagnosisSection() {
     const score = calculateScore()
     if (score >= 10) return { level: "critical", color: "red", message: "TÌNH TRẠNG NGHIÊM TRỌNG" }
     if (score >= 7) return { level: "warning", color: "orange", message: "CẦN HÀNH ĐỘNG NGAY" }
-    if (score >= 4) return { level: "caution", color: "yellow", message: "NÊN CÂN NHẮC" }
+    if (score >= 4) return { level: "caution", color: "#FBBF24", message: "NÊN CÂN NHẮC" }
     return { level: "low", color: "green", message: "TÌNH TRẠNG ỔN ĐỊNH" }
   }
 
@@ -61,24 +61,24 @@ export default function DiagnosisSection() {
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
-            <div className="inline-block bg-blue-100 text-blue-800 px-6 py-2 rounded-full text-sm font-semibold mb-6">
+            <div className="inline-block bg-yellow-100 text-yellow-800 px-6 py-2 rounded-full text-sm font-semibold mb-6">
               🩺 CHẨN ĐOÁN NHANH
             </div>
             <h2 className="text-4xl lg:text-5xl font-black text-gray-900 mb-6">
               TÌNH TRẠNG NỢ CỦA BẠN
               <br />
-              <span className="text-blue-600">NGHIÊM TRỌNG ĐẾN MỨC NÀO?</span>
+              <span className="text-yellow-600">NGHIÊM TRỌNG ĐẾN MỨC NÀO?</span>
             </h2>
             <p className="text-xl text-gray-600">Trả lời 5 câu hỏi để biết bạn đang "chảy máu" bao nhiêu</p>
           </div>
 
-          <div className="bg-white rounded-3xl p-8 lg:p-12 shadow-2xl border-4 border-blue-200">
+          <div className="bg-white rounded-3xl p-8 lg:p-12 shadow-2xl border-4 border-yellow-200">
             <div className="space-y-8">
               {questions.map((q, index) => (
                 <div key={q.id} className="border-b border-gray-200 pb-6 last:border-b-0">
                   <div className="flex items-start space-x-4">
-                    <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                      <span className="text-blue-600 font-bold text-sm">{index + 1}</span>
+                    <div className="w-8 h-8 bg-yellow-100 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                      <span className="text-yellow-600 font-bold text-sm">{index + 1}</span>
                     </div>
                     <div className="flex-1">
                       <h3 className="text-lg font-semibold text-gray-900 mb-4">{q.question}</h3>
@@ -136,8 +136,8 @@ export default function DiagnosisSection() {
                         ? "text-red-500"
                         : getResult().color === "orange"
                           ? "text-orange-500"
-                          : getResult().color === "yellow"
-                            ? "text-yellow-500"
+                          : getResult().color === "#FBBF24"
+                            ? "text-amber-500"
                             : "text-green-500"
                     }`}
                   >
@@ -145,7 +145,7 @@ export default function DiagnosisSection() {
                       ? "🚨"
                       : getResult().color === "orange"
                         ? "⚠️"
-                        : getResult().color === "yellow"
+                        : getResult().color === "#FBBF24"
                           ? "⚡"
                           : "✅"}
                   </div>
@@ -155,8 +155,8 @@ export default function DiagnosisSection() {
                         ? "text-red-600"
                         : getResult().color === "orange"
                           ? "text-orange-600"
-                          : getResult().color === "yellow"
-                            ? "text-yellow-600"
+                          : getResult().color === "#FBBF24"
+                            ? "text-amber-600"
                             : "text-green-600"
                     }`}
                   >

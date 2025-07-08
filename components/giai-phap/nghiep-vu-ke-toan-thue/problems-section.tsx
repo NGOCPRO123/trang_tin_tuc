@@ -29,35 +29,61 @@ export function ProblemsSection() {
     },
   ]
 
+  const topProblems = problems.slice(0, 2)
+  const bottomProblems = problems.slice(2)
+
   return (
     <section className="py-20 bg-white">
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold text-red-700 mb-4">Bạn có đang phớt lờ những tín hiệu nguy hiểm này?</h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <h2 className="text-4xl font-extrabold text-red-700 mb-4">Bạn có đang phớt lờ những tín hiệu nguy hiểm này?</h2>
+          <p className="text-2xl text-gray-600 max-w-3xl mx-auto">
             Nếu bạn thấy những dấu hiệu này, hệ thống kế toán - thuế của bạn đang cần được <span className="font-bold text-red-600">"cấp cứu"</span>!
           </p>
         </div>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
-          {problems.map((problem, index) => (
-            <div
-              key={index}
-              className="bg-gradient-to-br from-red-50 to-pink-50 border border-red-100 rounded-xl p-6 hover:shadow-lg transition-all hover:scale-105"
-            >
-              <div className="flex items-start gap-4">
-                <div className="bg-red-100 p-3 rounded-lg flex-shrink-0">
-                  <problem.icon className="h-6 w-6 text-red-600" />
-                </div>
-                <div>
-                  <h3 className="font-semibold text-gray-900 mb-2 flex items-center">
-                    <span className="text-red-500 mr-2">⚠️</span>
-                    {problem.title}
-                  </h3>
-                  <p className="text-gray-600 text-sm leading-relaxed">{problem.description}</p>
+        <div className="flex flex-col items-center gap-8 w-full">
+          <div className="flex flex-col sm:flex-row justify-center gap-8 w-full mb-2">
+            {topProblems.map((problem, index) => (
+              <div
+                key={index}
+                className="bg-gradient-to-br from-red-50 to-pink-50 border border-red-100 rounded-xl p-6 hover:shadow-lg transition-all hover:scale-105 w-full sm:w-[340px] max-w-full"
+              >
+                <div className="flex items-start gap-4">
+                  <div className="bg-red-100 p-3 rounded-lg flex-shrink-0">
+                    <problem.icon className="h-6 w-6 text-red-600" />
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-lg md:text-xl text-gray-900 mb-2 flex items-center">
+                      <span className="text-red-500 mr-2">⚠️</span>
+                      {problem.title}
+                    </h3>
+                    <p className="text-gray-600 text-sm leading-relaxed">{problem.description}</p>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
+          <div className="flex flex-col sm:flex-row justify-center gap-8 w-full">
+            {bottomProblems.map((problem, index) => (
+              <div
+                key={index}
+                className="bg-gradient-to-br from-red-50 to-pink-50 border border-red-100 rounded-xl p-6 hover:shadow-lg transition-all hover:scale-105 w-full sm:w-[340px] max-w-full"
+              >
+                <div className="flex items-start gap-4">
+                  <div className="bg-red-100 p-3 rounded-lg flex-shrink-0">
+                    <problem.icon className="h-6 w-6 text-red-600" />
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-lg md:text-xl text-gray-900 mb-2 flex items-center">
+                      <span className="text-red-500 mr-2">⚠️</span>
+                      {problem.title}
+                    </h3>
+                    <p className="text-gray-600 text-sm leading-relaxed">{problem.description}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
         <div className="text-center mt-12">
           <div className="inline-flex items-center bg-gradient-to-r from-amber-100 to-yellow-100 text-amber-800 px-6 py-3 rounded-full font-medium">

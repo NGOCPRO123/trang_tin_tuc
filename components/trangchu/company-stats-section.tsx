@@ -52,10 +52,10 @@ export function CompanyStatsSection() {
         >
           <div className="bg-white/10 backdrop-blur-sm rounded-3xl p-8 shadow-2xl">
             <div className="text-center mb-8">
-              <h3 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              <h2 className="text-3xl md:text-5xl font-bold text-amber-300 mb-4 max-w-6xl mx-auto text-center">
                 Những Đối tác đã Tin tưởng và Cùng HLCC Giải mã
-              </h3>
-              <p className="text-xl opacity-90 max-w-3xl mx-auto">
+              </h2>
+              <p className="text-xl md:text-2xl opacity-90 max-w-4xl mx-auto">
                 HLCC tự hào đồng hành cùng nhiều doanh nghiệp lớn nhỏ, mang lại giải pháp tài chính và tư vấn doanh nghiệp tối ưu, giúp tăng trưởng bền vững.
               </p>
             </div>
@@ -63,15 +63,15 @@ export function CompanyStatsSection() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
               <div className="space-y-6">
                 <div className="bg-white/10 rounded-xl p-6">
-                  <h4 className="text-xl font-bold text-white mb-3">Liên Minh Cộng Đồng Affiliate Thực Chiến</h4>
-                  <p className="opacity-90 leading-relaxed">
+                  <h4 className="text-2xl font-bold text-amber-300 mb-4">Liên Minh Cộng Đồng Affiliate Thực Chiến</h4>
+                  <p className="text-lg opacity-90 leading-relaxed">
                     HLCC là đơn vị điều phối và sáng lập Hệ Sinh Thái TMĐT ACTA. Đây là một hệ sinh thái độc đáo kết hợp tinh hoa của Chợ Truyền Thống, ứng dụng AI và sức mạnh của Affiliate Marketing.
                   </p>
                 </div>
                 
                 <div className="bg-white/10 rounded-xl p-6">
-                  <h4 className="text-xl font-bold text-white mb-3">Hàng Nghìn Thành Viên Năng Lực</h4>
-                  <p className="opacity-90 leading-relaxed">
+                  <h4 className="text-2xl font-bold text-amber-300 mb-4">Hàng Nghìn Thành Viên Năng Lực</h4>
+                  <p className="text-lg opacity-90 leading-relaxed">
                     Với hàng nghìn thành viên có năng lực và nhiệt huyết, Cộng Đồng Affiliate Thực Chiến là một phần quan trọng trong giải pháp "tăng doanh số bền vững" của HLCC.
                   </p>
                 </div>
@@ -79,15 +79,15 @@ export function CompanyStatsSection() {
               
               <div className="space-y-6">
                 <div className="bg-white/10 rounded-xl p-6">
-                  <h4 className="text-xl font-bold text-white mb-3">Tin Tức & Kiến Thức</h4>
-                  <p className="opacity-90 leading-relaxed">
+                  <h4 className="text-2xl font-bold text-amber-300 mb-4">Tin Tức & Kiến Thức</h4>
+                  <p className="text-lg opacity-90 leading-relaxed">
                     Cập nhật những thông tin mới nhất, phân tích chuyên sâu và các giải pháp thực tiễn từ đội ngũ chuyên gia của HLCC.
                   </p>
                 </div>
                 
                 <div className="bg-white/10 rounded-xl p-6">
-                  <h4 className="text-xl font-bold text-white mb-3">Tài Nguyên Độc Quyền</h4>
-                  <p className="opacity-90 leading-relaxed">
+                  <h4 className="text-2xl font-bold text-amber-300 mb-4">Tài Nguyên Độc Quyền</h4>
+                  <p className="text-lg opacity-90 leading-relaxed">
                     Truy cập thư viện tài nguyên độc quyền của HLCC – nơi tổng hợp các cẩm nang, hướng dẫn chi tiết, biểu mẫu và kiến thức nền tảng.
                   </p>
                 </div>
@@ -96,22 +96,22 @@ export function CompanyStatsSection() {
             
             <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
               <div className="bg-white/10 rounded-xl p-6 text-center">
-                <h4 className="text-lg font-bold text-white mb-3">Khách Hàng Đa Dạng</h4>
-                <p className="opacity-90 text-sm">
+                <h4 className="text-2xl font-bold text-amber-300 mb-4">Khách Hàng Đa Dạng</h4>
+                <p className="text-lg opacity-90 leading-relaxed">
                   Từ startup đến tập đoàn lớn, HLCC tự hào là đối tác tin cậy của đa dạng các doanh nghiệp.
                 </p>
               </div>
               
               <div className="bg-white/10 rounded-xl p-6 text-center">
-                <h4 className="text-lg font-bold text-white mb-3">Cơ Hội Tuyển Dụng</h4>
-                <p className="opacity-90 text-sm">
+                <h4 className="text-2xl font-bold text-amber-300 mb-4">Cơ Hội Tuyển Dụng</h4>
+                <p className="text-lg opacity-90 leading-relaxed">
                   Gia nhập đội ngũ chuyên gia HLCC để phát triển sự nghiệp và tạo ra giá trị thực tiễn.
                 </p>
               </div>
               
               <div className="bg-white/10 rounded-xl p-6 text-center">
-                <h4 className="text-lg font-bold text-white mb-3">Khung Pháp Lý Vững Chắc</h4>
-                <p className="opacity-90 text-sm">
+                <h4 className="text-2xl font-bold text-amber-300 mb-4">Khung Pháp Lý Vững Chắc</h4>
+                <p className="text-lg opacity-90 leading-relaxed">
                   Minh bạch và tuân thủ tuyệt đối các tiêu chuẩn pháp lý, đảm bảo quyền lợi rõ ràng.
                 </p>
               </div>
@@ -127,7 +127,7 @@ export function CompanyStatsSection() {
           viewport={{ once: true }}
           className="text-center mb-6"
         >
-          <h2 className="text-3xl md:text-5xl font-bold mb-6">
+          <h2 className="text-3xl md:text-5xl font-bold mb-6 text-amber-300">
             Hồ sơ Vụ án: Những Câu chuyện Thành công
           </h2>
           <p className="text-xl opacity-90 max-w-3xl mx-auto">

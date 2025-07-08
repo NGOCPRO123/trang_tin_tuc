@@ -2,26 +2,27 @@ import { AlertTriangle, DollarSign, Clock } from "lucide-react"
 
 export default function TruthSection() {
   return (
-    <section className="py-20 bg-gradient-to-br from-gray-900 to-black text-white">
-      <div className="container mx-auto px-4">
+    <section className="py-20 relative overflow-hidden text-white" style={{ backgroundImage: 'url(/homepage.jpg)', backgroundSize: 'cover', backgroundPosition: 'center' }}>
+      <div className="absolute inset-0 bg-black/70 z-0" />
+      <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
-            <div className="inline-block bg-red-500 text-white px-6 py-2 rounded-full text-sm font-semibold mb-6">
+            <div className="inline-block bg-yellow-500 text-white px-6 py-2 rounded-full text-sm font-semibold mb-6">
               💣 SỰ THẬT PHŨ PHÀNG
             </div>
             <h2 className="text-4xl lg:text-5xl font-black mb-8 leading-tight">
               NHỮNG ĐIỀU
               <br />
-              <span className="text-red-400">KHÔNG AI MUỐN NÓI</span>
+              <span className="text-yellow-400">KHÔNG AI MUỐN NÓI</span>
             </h2>
           </div>
 
           <div className="space-y-8">
-            <div className="bg-red-900/50 backdrop-blur-sm rounded-2xl p-8 border-l-8 border-red-500">
+            <div className="bg-yellow-900/50 backdrop-blur-sm rounded-2xl p-8 border-l-8 border-yellow-500">
               <div className="flex items-start space-x-4">
-                <AlertTriangle className="w-8 h-8 text-red-400 flex-shrink-0 mt-1" />
+                <AlertTriangle className="w-8 h-8 text-yellow-400 flex-shrink-0 mt-1" />
                 <div>
-                  <h3 className="text-2xl font-bold text-red-400 mb-4">95% người nợ KHÔNG TỰ NGUYỆN trả</h3>
+                  <h3 className="text-2xl font-bold text-yellow-400 mb-4">95% người nợ KHÔNG TỰ NGUYỆN trả</h3>
                   <p className="text-gray-200 text-lg leading-relaxed">
                     Họ chỉ trả khi bị ép buộc. Sự "tử tế" và "kiên nhẫn" của bạn chỉ khiến họ coi thường bạn hơn.
                     <span className="font-semibold text-white"> Đây là sự thật mà 99% chủ nợ không muốn tin.</span>
@@ -66,8 +67,8 @@ export default function TruthSection() {
                 <p>❌ Vì bạn tin họ sẽ "có lương tâm" tự trả?</p>
                 <p>❌ Vì bạn nghĩ "đòi nợ" là việc xấu hổ?</p>
               </div>
-              <div className="mt-8 p-6 bg-red-500/20 rounded-2xl border-2 border-red-400">
-                <p className="text-2xl font-bold text-red-400">TRONG KHI ĐÓ, HỌ ĐANG CƯỜI THẦM VÀ TIÊU TIỀN CỦA BẠN!</p>
+              <div className="mt-8 p-6 bg-yellow-500/20 rounded-2xl border-2 border-yellow-400">
+                <p className="text-2xl font-bold text-yellow-400">TRONG KHI ĐÓ, HỌ ĐANG CƯỜI THẦM VÀ TIÊU TIỀN CỦA BẠN!</p>
               </div>
             </div>
           </div>

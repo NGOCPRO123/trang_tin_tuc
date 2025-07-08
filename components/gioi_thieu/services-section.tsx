@@ -58,7 +58,7 @@ const processSteps = [
   {
     step: "01",
     title: "Thấu hiểu & Phân tích",
-    description: "Lắng nghe và phân tích sâu sắc tình hình doanh nghiệp",
+    description: "Lắng nghe và  phân tích doanh nghiệp",
     icon: Search
   },
   {
@@ -231,28 +231,36 @@ export function ServicesSection() {
           viewport={{ once: true }}
           className="text-center"
         >
-          <div className="bg-gradient-to-r from-yellow-500 to-orange-500 p-8 rounded-2xl text-white shadow-xl">
-            <h3 className="text-2xl font-bold mb-4">
-              Sẵn sàng bắt đầu hành trình cùng HLCC?
-            </h3>
-            <p className="text-lg mb-6 text-yellow-100">
-              Hãy để chúng tôi hiểu rõ thách thức của bạn và đề xuất giải pháp phù hợp nhất.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button
-                size="lg"
-                className="bg-white text-yellow-600 hover:bg-yellow-50 font-semibold px-8 py-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
-              >
-                Tư vấn miễn phí ngay
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-2 border-white text-white hover:bg-white hover:text-yellow-600 font-semibold px-8 py-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
-              >
-                Xem các dự án tiêu biểu
-              </Button>
+          <div className="relative rounded-2xl text-white shadow-xl overflow-hidden">
+            <div className="absolute inset-0">
+              <img
+                src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1200&q=80"
+                alt="Business background"
+                className="w-full h-full object-cover object-center"
+              />
+            </div>
+            <div className="relative p-8 z-10">
+              <h3 className="text-2xl font-bold mb-4">
+                Sẵn sàng bắt đầu hành trình cùng HLCC?
+              </h3>
+              <p className="text-lg mb-6 text-yellow-100">
+                Hãy để chúng tôi hiểu rõ thách thức của bạn và đề xuất giải pháp phù hợp nhất.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Button
+                  size="lg"
+                  className="bg-white text-yellow-600 hover:bg-yellow-50 font-semibold px-8 py-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+                >
+                  Tư vấn miễn phí ngay
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Button>
+                <Button
+                  size="lg"
+                  className="bg-white text-yellow-600 hover:bg-yellow-50 font-semibold px-8 py-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+                >
+                  Xem các dự án tiêu biểu
+                </Button>
+              </div>
             </div>
           </div>
         </motion.div>

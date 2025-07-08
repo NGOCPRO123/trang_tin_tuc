@@ -72,10 +72,11 @@ export function WhyChooseSection() {
             viewport={{ once: true }}
             className="text-5xl md:text-6xl font-bold text-gray-900 leading-tight mb-8"
           >
-            Cam Kết Vượt Trội
-            <br />
-            <span className="bg-gradient-to-r from-yellow-500 via-orange-500 to-red-500 bg-clip-text text-transparent">
-              Cho Doanh Nghiệp Bạn
+            <span>
+              Cam Kết Vượt Trội{' '}
+              <span className="bg-gradient-to-r from-yellow-500 via-orange-500 to-red-500 bg-clip-text text-transparent">
+                Cho Doanh Nghiệp Bạn
+              </span>
             </span>
           </motion.h2>
           
@@ -86,7 +87,7 @@ export function WhyChooseSection() {
             viewport={{ once: true }}
             className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed"
           >
-            Việc lựa chọn HLCC là một quyết định chiến lược, bởi chúng tôi mang đến những cam kết và lợi thế cạnh tranh vượt trội
+            Chọn HLCC là quyết định chiến lược để nhận cam kết & lợi thế cạnh tranh vượt trội.
           </motion.p>
         </motion.div>
 

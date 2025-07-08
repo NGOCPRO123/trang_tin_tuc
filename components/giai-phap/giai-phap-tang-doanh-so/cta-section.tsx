@@ -46,10 +46,10 @@ export function CtaSection() {
             className="text-white"
           >
             <Badge className="bg-gradient-to-r from-yellow-500 to-amber-400 text-white px-5 py-2 mb-6 shadow-lg shadow-yellow-200/40 rounded-xl">🚀 Sẵn sàng bứt phá doanh thu</Badge>
-            <h2 className="text-4xl lg:text-5xl font-extrabold mb-6 leading-tight">
-              Bạn đã sẵn sàng để <span className="text-yellow-300">Bứt phá Doanh thu</span> một cách Thông minh?
+            <h2 className="text-5xl lg:text-6xl font-extrabold mb-6 leading-tight text-yellow-900">
+              Bạn đã sẵn sàng để <span className="text-yellow-500">Bứt phá Doanh thu</span> một cách Thông minh?
             </h2>
-            <p className="text-2xl text-yellow-100 mb-8 leading-relaxed font-medium">
+            <p className="text-2xl text-yellow-900 mb-8 leading-relaxed font-medium">
               Hãy ngừng việc lãng phí ngân sách. Liên hệ ngay để nhận một chiến lược kinh doanh sơ bộ được thiết kế riêng cho doanh nghiệp của bạn!
             </p>
             <div className="space-y-4 mb-8">
@@ -57,24 +57,24 @@ export function CtaSection() {
                 <div className="w-8 h-8 bg-yellow-400 rounded-full flex items-center justify-center animate-pulse">
                   <Phone className="w-4 h-4 text-amber-900" />
                 </div>
-                <span className="text-yellow-100">Tư vấn miễn phí 30 phút</span>
+                <span className="text-yellow-900">Tư vấn miễn phí 30 phút</span>
               </div>
               <div className="flex items-center space-x-3">
                 <div className="w-8 h-8 bg-yellow-400 rounded-full flex items-center justify-center animate-pulse">
                   <Mail className="w-4 h-4 text-amber-900" />
                 </div>
-                <span className="text-yellow-100">Phản hồi trong vòng 2 giờ</span>
+                <span className="text-yellow-900">Phản hồi trong vòng 2 giờ</span>
               </div>
               <div className="flex items-center space-x-3">
                 <div className="w-8 h-8 bg-yellow-400 rounded-full flex items-center justify-center animate-pulse">
                   <Clock className="w-4 h-4 text-amber-900" />
                 </div>
-                <span className="text-yellow-100">Hỗ trợ 24/7</span>
+                <span className="text-yellow-900">Hỗ trợ 24/7</span>
               </div>
             </div>
             <div className="bg-yellow-400/20 rounded-2xl p-6 border border-yellow-400/30">
-              <h3 className="text-xl font-bold text-yellow-300 mb-2">🎁 Ưu đãi đặc biệt tháng này</h3>
-              <p className="text-yellow-100">
+              <h3 className="text-xl font-bold text-yellow-600 mb-2">🎁 Ưu đãi đặc biệt tháng này</h3>
+              <p className="text-yellow-900">
                 Miễn phí setup và training cho 50 khách hàng đầu tiên. Tiết kiệm đến 10 triệu VNĐ!
               </p>
             </div>

@@ -28,7 +28,7 @@ export default function ProblemSection() {
     <section className="py-20 bg-white/60 backdrop-blur-md">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl lg:text-4xl font-black text-center text-red-700 mb-4">
+          <h2 className="text-3xl lg:text-4xl font-black text-center text-yellow-700 mb-4">
             Những Sai lầm Chết người khi Tự đi Đòi nợ
           </h2>
           <p className="text-xl text-center text-gray-700 mb-12">
@@ -38,15 +38,15 @@ export default function ProblemSection() {
             {mistakes.map((item, idx) => (
               <div
                 key={idx}
-                className="flex items-start gap-4 bg-white rounded-xl p-6 border-l-4 border-red-400 shadow-md hover:shadow-lg transition-all"
+                className="flex items-start gap-4 bg-white rounded-xl p-6 border-l-4 border-yellow-400 shadow-md hover:shadow-lg transition-all"
               >
                 <div className="flex-shrink-0">
-                  <div className="w-14 h-14 bg-red-100 rounded-full flex items-center justify-center">
-                    <AlertTriangle className="w-7 h-7 text-red-600" />
+                  <div className="w-14 h-14 bg-yellow-100 rounded-full flex items-center justify-center">
+                    <AlertTriangle className="w-7 h-7 text-yellow-600" />
                   </div>
                 </div>
                 <div>
-                  <h3 className="font-semibold text-lg text-red-700 mb-1 flex items-center">
+                  <h3 className="font-semibold text-lg text-yellow-700 mb-1 flex items-center">
                     <span className="mr-2">⚠️</span>{item.title}
                   </h3>
                   <p className="text-gray-700 text-base leading-relaxed">{item.description}</p>

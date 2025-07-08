@@ -12,8 +12,8 @@ export default function UserRightsSection() {
         <p>Bạn có các quyền sau đối với thông tin cá nhân của mình:</p>
 
         <div className="grid gap-4">
-          <div className="bg-blue-50 rounded-lg p-6">
-            <h3 className="text-lg font-semibold text-blue-800 mb-3">Quyền truy cập:</h3>
+          <div className="bg-yellow-50 rounded-lg p-6">
+            <h3 className="text-lg font-semibold text-yellow-800 mb-3">Quyền truy cập:</h3>
             <p>Bạn có quyền yêu cầu một bản sao thông tin cá nhân mà chúng tôi đang lưu trữ về bạn.</p>
           </div>
 

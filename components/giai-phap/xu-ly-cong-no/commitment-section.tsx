@@ -37,10 +37,10 @@ export default function CommitmentSection() {
             return (
               <div
                 key={index}
-                className="bg-gradient-to-br from-red-50 to-yellow-50 border border-red-100 rounded-xl p-8 hover:shadow-lg transition-all hover:scale-105 flex flex-col items-center text-center"
+                className="bg-gradient-to-br from-yellow-50 to-yellow-50 border border-yellow-100 rounded-xl p-8 hover:shadow-lg transition-all hover:scale-105 flex flex-col items-center text-center"
               >
-                <div className="bg-red-100 p-4 rounded-full mb-4">
-                  <Icon className="h-10 w-10 text-red-600" />
+                <div className="bg-yellow-100 p-4 rounded-full mb-4">
+                  <Icon className="h-10 w-10 text-yellow-600" />
                 </div>
                 <h3 className="font-semibold text-gray-900 mb-3 text-lg">{benefit.title}</h3>
                 <p className="text-gray-700 text-base leading-relaxed">{benefit.description}</p>

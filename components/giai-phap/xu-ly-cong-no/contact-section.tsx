@@ -26,14 +26,14 @@ export default function ContactSection() {
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl lg:text-4xl font-black text-red-700 mb-6">
+            <h2 className="text-3xl lg:text-4xl font-black text-yellow-700 mb-6">
               Đừng để Công nợ Khó đòi "Ăn mòn" Lợi nhuận của bạn
             </h2>
             <p className="text-xl text-gray-700 mb-4">
               Mỗi ngày trôi qua, khả năng thu hồi một khoản nợ quá hạn lại càng giảm đi. Hãy hành động ngay hôm nay. Để lại thông tin để nhận một buổi đánh giá sơ bộ về các khoản nợ của bạn và tư vấn hướng xử lý từ các chuyên gia của HLCC.
             </p>
           </div>
-          <div className="bg-white/90 rounded-2xl p-8 lg:p-12 border border-red-200 shadow-xl">
+          <div className="bg-white/90 rounded-2xl p-8 lg:p-12 border border-yellow-200 shadow-xl">
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
@@ -108,7 +108,7 @@ export default function ContactSection() {
                 <Button
                   type="submit"
                   size="lg"
-                  className="bg-red-600 hover:bg-red-700 text-white px-12 py-4 text-xl font-bold rounded-xl shadow-lg hover:shadow-xl transition-all"
+                  className="bg-yellow-600 hover:bg-yellow-700 text-white px-12 py-4 text-xl font-bold rounded-xl shadow-lg hover:shadow-xl transition-all"
                 >
                   YÊU CẦU TƯ VẤN THU HỒI CÔNG NỢ
                   <Send className="w-5 h-5 ml-2" />

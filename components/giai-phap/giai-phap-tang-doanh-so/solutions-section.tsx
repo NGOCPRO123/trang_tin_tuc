@@ -43,7 +43,7 @@ export function SolutionsSection() {
       <div className="container mx-auto px-6 relative z-10">
         <div className="text-center mb-16">
           <Badge className="bg-gradient-to-r from-yellow-400 to-amber-300 text-yellow-900 px-4 py-2 mb-6 shadow-md rounded-xl">💡 Hệ thống tăng trưởng toàn diện</Badge>
-          <h2 className="text-4xl lg:text-5xl font-extrabold text-gray-900 mb-6">
+          <h2 className="text-5xl lg:text-6xl font-extrabold text-gray-900 mb-6">
             Chiến lược thông minh giúp doanh nghiệp phát triển <span className="bg-gradient-to-r from-yellow-600 to-amber-500 bg-clip-text text-transparent">bền vững</span>
           </h2>
           <p className="text-xl text-gray-700 max-w-3xl mx-auto font-medium">

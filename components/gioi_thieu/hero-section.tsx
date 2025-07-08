@@ -7,8 +7,8 @@ import Image from "next/image"
 
 export function HeroSection() {
   return (
-    <section className="relative py-36 min-h-[500px] md:min-h-[650px] lg:min-h-[800px] overflow-hidden bg-cover bg-center" style={{backgroundImage: "url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1600&q=80')"}}>
-      {/* Background decoration */}
+    <section className="relative py-36 min-h-[500px] md:min-h-[650px] lg:min-h-[800px] overflow-hidden bg-cover bg-center" style={{backgroundImage: "url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1600&q=80')"}}>
+      {}
       <div className="absolute inset-0 bg-black/30"></div>
 
       <div className="relative z-10 flex flex-col items-center justify-center w-full h-full mb-28">
@@ -18,7 +18,7 @@ export function HeroSection() {
           transition={{ duration: 0.8 }}
           className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 tracking-wide font-sans text-center max-w-7xl mx-auto drop-shadow-lg text-white"
         >
-          HLCC – Đối tác chiến lược của doanh nghiệp Việt Vững vàng vượt thử thách, bứt phá tăng trưởng
+          Lắng nghe & phân tích sâu sắc doanh nghiệp
         </motion.h1>
         <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-yellow-400 mt-2 mb-4 text-center max-w-7xl mx-auto tracking-wide font-sans drop-shadow">
           15+ năm đồng hành – 500+ dự án thành công – Cam kết kết quả thực tế

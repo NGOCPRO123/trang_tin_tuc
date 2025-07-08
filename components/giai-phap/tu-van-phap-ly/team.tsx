@@ -40,10 +40,7 @@ export default function Team() {
           </div>
 
           <h2 className="text-4xl lg:text-5xl font-bold text-slate-800 mb-4">
-            Luật sư
-            <span className="block bg-gradient-to-r from-amber-500 to-orange-500 bg-clip-text text-transparent">
-              Tiêu biểu
-            </span>
+            Luật sư <span className="bg-gradient-to-r from-amber-500 to-orange-500 bg-clip-text text-transparent">Tiêu biểu</span>
           </h2>
 
           <p className="text-xl text-slate-600 max-w-2xl mx-auto">

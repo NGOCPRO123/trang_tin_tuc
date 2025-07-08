@@ -9,7 +9,7 @@ export default function HeroSection() {
         <div className="max-w-5xl mx-auto text-center">
           <div className="mb-10">
             <h1 className="text-4xl lg:text-6xl font-black text-gray-900 mb-6 leading-tight">
-              Doanh thu trên giấy tờ rất đẹp, nhưng <span className="text-red-700">tiền trong tài khoản thì không thấy đâu?</span>
+              Doanh thu trên giấy tờ rất đẹp, nhưng <span style={{ color: '#FBBF24' }}>tiền trong tài khoản thì không thấy đâu?</span>
             </h1>
             <p className="text-xl lg:text-2xl text-gray-700 mb-6 leading-relaxed">
               Đó là khi công nợ khó đòi đang ăn mòn lợi nhuận và bóp nghẹt dòng tiền của bạn. Việc đòi nợ sai cách có thể phá vỡ mối quan hệ với khách hàng và thậm chí đẩy bạn vào rủi ro pháp lý. <span className="font-bold text-red-700">Tại HLCC, chúng tôi cung cấp dịch vụ xử lý công nợ chuyên nghiệp, giúp bạn thu hồi tiền một cách hiệu quả và giữ gìn uy tín doanh nghiệp.</span>
@@ -18,7 +18,8 @@ export default function HeroSection() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
             <Button
               size="lg"
-              className="bg-red-600 hover:bg-red-700 text-white px-10 py-4 text-lg font-bold rounded-xl shadow-lg hover:shadow-xl transition-all"
+              className="text-white px-10 py-4 text-lg font-bold rounded-xl shadow-lg hover:shadow-xl transition-all"
+              style={{ backgroundColor: '#FBBF24' }}
             >
               Yêu cầu Đánh giá Nhanh Tình trạng Công nợ
               <ArrowRight className="w-5 h-5 ml-2" />

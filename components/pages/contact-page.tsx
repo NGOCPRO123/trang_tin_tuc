@@ -302,17 +302,17 @@ export function ContactPage() {
               </div>
 
               {/* Hotline */}
-              <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 bg-gradient-to-r from-green-50 to-emerald-50 border-l-4 border-green-400">
+              <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 bg-gradient-to-r from-yellow-50 to-orange-50 border-l-4 border-yellow-400">
                 <CardContent className="p-8">
                   <div className="flex items-start space-x-6">
-                    <div className="bg-gradient-to-r from-green-400 to-emerald-500 p-4 rounded-full shadow-lg">
+                    <div className="bg-gradient-to-r from-yellow-400 to-orange-500 p-4 rounded-full shadow-lg">
                       <Phone className="h-8 w-8 text-white" />
                     </div>
                     <div className="flex-1">
                       <h4 className="font-bold text-xl text-gray-900 mb-2">Hotline Tư vấn 24/7</h4>
                       <a 
                         href="tel:0912880330" 
-                        className="text-2xl font-bold text-green-600 hover:text-green-700 transition-colors"
+                        className="text-2xl font-bold text-yellow-600 hover:text-orange-700 transition-colors"
                       >
                         0912.880.330
                       </a>
@@ -323,17 +323,17 @@ export function ContactPage() {
               </Card>
 
               {/* Email */}
-              <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 bg-gradient-to-r from-blue-50 to-indigo-50 border-l-4 border-blue-400">
+              <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 bg-gradient-to-r from-yellow-50 to-orange-50 border-l-4 border-yellow-400">
                 <CardContent className="p-8">
                   <div className="flex items-start space-x-6">
-                    <div className="bg-gradient-to-r from-blue-400 to-indigo-500 p-4 rounded-full shadow-lg">
+                    <div className="bg-gradient-to-r from-yellow-400 to-orange-500 p-4 rounded-full shadow-lg">
                       <Mail className="h-8 w-8 text-white" />
                     </div>
                     <div className="flex-1">
                       <h4 className="font-bold text-xl text-gray-900 mb-2">Email Hỗ trợ</h4>
                       <a 
                         href="mailto:lienhe@acta.vn" 
-                        className="text-xl font-semibold text-blue-600 hover:text-blue-700 transition-colors"
+                        className="text-xl font-semibold text-yellow-600 hover:text-orange-700 transition-colors"
                       >
                         lienhe@acta.vn
                       </a>
@@ -344,10 +344,10 @@ export function ContactPage() {
               </Card>
 
               {/* LinkedIn */}
-              <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 bg-gradient-to-r from-indigo-50 to-purple-50 border-l-4 border-indigo-400">
+              <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 bg-gradient-to-r from-yellow-50 to-orange-50 border-l-4 border-yellow-400">
                 <CardContent className="p-8">
                   <div className="flex items-start space-x-6">
-                    <div className="bg-gradient-to-r from-indigo-400 to-purple-500 p-4 rounded-full shadow-lg">
+                    <div className="bg-gradient-to-r from-yellow-400 to-orange-500 p-4 rounded-full shadow-lg">
                       <Linkedin className="h-8 w-8 text-white" />
                     </div>
                     <div className="flex-1">
@@ -356,7 +356,7 @@ export function ContactPage() {
                         href="https://linkedin.com/company/hlcc" 
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-xl font-semibold text-indigo-600 hover:text-indigo-700 transition-colors"
+                        className="text-xl font-semibold text-yellow-600 hover:text-orange-700 transition-colors"
                       >
                         HLCC Company
                       </a>
@@ -453,7 +453,7 @@ export function ContactPage() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
               {/* Thông tin địa chỉ */}
               <div className="space-y-8">
-                <Card className="border-0 shadow-2xl bg-gradient-to-br from-white to-yellow-50">
+                <Card className="border-0 shadow-2xl bg-gradient-to-br from-yellow-50 to-orange-50 border-l-4 border-yellow-400">
                   <CardContent className="p-8">
                     <div className="space-y-8">
                       <div className="flex items-start space-x-6">
@@ -462,14 +462,14 @@ export function ContactPage() {
                         </div>
                         <div>
                           <h4 className="font-bold text-xl text-gray-900 mb-3">Địa chỉ văn phòng</h4>
-                                                     <p className="text-gray-700 text-lg leading-relaxed">
-                             Tòa nhà SABAY – 99 Cộng Hòa, Phường 4, Quận Tân Bình, TP.HCM
-                           </p>
+                          <p className="text-gray-700 text-lg leading-relaxed">
+                            Tòa nhà SABAY – 99 Cộng Hòa, Phường 4, Quận Tân Bình, TP.HCM
+                          </p>
                         </div>
                       </div>
                       
                       <div className="flex items-start space-x-6">
-                        <div className="bg-gradient-to-r from-green-400 to-emerald-500 p-4 rounded-full shadow-lg">
+                        <div className="bg-gradient-to-r from-yellow-400 to-orange-500 p-4 rounded-full shadow-lg">
                           <Clock className="h-8 w-8 text-white" />
                         </div>
                         <div>
@@ -488,16 +488,16 @@ export function ContactPage() {
                 <div className="bg-gradient-to-br from-yellow-50 to-orange-50 p-8 rounded-2xl border-2 border-yellow-200 shadow-lg">
                   <h4 className="font-bold text-xl text-gray-900 mb-6">Lưu ý khi đến văn phòng:</h4>
                   <ul className="space-y-4 text-gray-700">
-                    <li className="flex items-center p-3 bg-white rounded-lg shadow-sm">
-                      <CheckCircle className="h-5 w-5 mr-3 text-green-600" />
+                    <li className="flex items-center p-3 bg-yellow-200 rounded-lg shadow-sm border-l-4 border-yellow-400">
+                      <CheckCircle className="h-5 w-5 mr-3 text-yellow-600" />
                       <span className="font-medium">Vui lòng đặt lịch hẹn trước qua hotline hoặc email</span>
                     </li>
-                    <li className="flex items-center p-3 bg-white rounded-lg shadow-sm">
-                      <CheckCircle className="h-5 w-5 mr-3 text-green-600" />
+                    <li className="flex items-center p-3 bg-yellow-200 rounded-lg shadow-sm border-l-4 border-yellow-400">
+                      <CheckCircle className="h-5 w-5 mr-3 text-yellow-600" />
                       <span className="font-medium">Có bãi đỗ xe miễn phí cho khách hàng</span>
                     </li>
-                    <li className="flex items-center p-3 bg-white rounded-lg shadow-sm">
-                      <CheckCircle className="h-5 w-5 mr-3 text-green-600" />
+                    <li className="flex items-center p-3 bg-yellow-200 rounded-lg shadow-sm border-l-4 border-yellow-400">
+                      <CheckCircle className="h-5 w-5 mr-3 text-yellow-600" />
                       <span className="font-medium">Thang máy và cơ sở vật chất hiện đại</span>
                     </li>
                   </ul>
@@ -551,9 +551,8 @@ export function ContactPage() {
                 Gửi yêu cầu tư vấn
               </Button>
               <Button 
-                variant="outline" 
-                                 className="border-2 border-white text-white hover:bg-white hover:text-yellow-600 font-bold px-10 py-5 text-xl rounded-xl shadow-2xl transform hover:scale-105 transition-all duration-300"
-                 onClick={() => window.open('tel:0912880330', '_self')}
+                className="bg-white text-yellow-600 font-bold px-10 py-5 border-2 border-yellow-400 hover:bg-yellow-50 hover:text-orange-600 text-xl rounded-xl shadow-2xl transform hover:scale-105 transition-all duration-300"
+                onClick={() => window.open('tel:0912880330', '_self')}
               >
                 Gọi hotline ngay
               </Button>
@@ -567,14 +566,14 @@ export function ContactPage() {
         <div className="border-t pt-8 mt-8 flex flex-col md:flex-row gap-4 md:gap-8 justify-center items-center text-center">
           <a
             href="/lien-he/tuyen-dung"
-            className="text-lg text-blue-700 hover:underline font-medium"
+            className="text-lg text-amber-700 hover:underline font-medium"
           >
             Tuyển dụng
           </a>
           <span className="hidden md:inline-block text-gray-400">|</span>
           <a
             href="/lien-he/chinh-sach-bao-mat-dieu-khoan"
-            className="text-lg text-blue-700 hover:underline font-medium"
+            className="text-lg text-amber-700 hover:underline font-medium"
           >
             Chính sách Bảo mật, Điều khoản
           </a>

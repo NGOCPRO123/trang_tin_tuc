@@ -72,7 +72,7 @@ export function Footer() {
                   rel="noopener noreferrer"
                   className="hover:text-amber-400 transition-colors duration-200"
                 >
-                  213 Điện Biên Phủ, Phường Võ Thị Sáu, Quận 3, Tp. HCM
+                  Tòa nhà Sabay, 99 Cộng Hòa, Phường 4, Quận Tân Bình, TPHCM
                 </a>
               </div>
               <div className="flex items-center gap-3">
@@ -81,7 +81,7 @@ export function Footer() {
                   href="tel:+84123456789" 
                   className="hover:text-amber-400 transition-colors duration-200"
                 >
-                  +84 123 456 789
+               028.5555.8879
                 </a>
               </div>
               <div className="flex items-center gap-3">
@@ -90,7 +90,7 @@ export function Footer() {
                   href="mailto:contact@company.com" 
                   className="hover:text-amber-400 transition-colors duration-200"
                 >
-                  contact@company.com
+                  lienhe@hlcc.group
                 </a>
               </div>
             </div>

@@ -24,7 +24,7 @@ export default function DecisionMoment() {
   }
 
   return (
-    <section className="py-20 bg-gradient-to-br from-red-600 to-orange-600 text-white relative overflow-hidden">
+    <section className="py-20 relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-20 left-20 text-9xl">⚡</div>
@@ -36,53 +36,53 @@ export default function DecisionMoment() {
       <div className="container mx-auto px-4 relative">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <div className="inline-block bg-white/20 backdrop-blur-sm text-white px-8 py-3 rounded-full text-lg font-bold mb-8">
+            <div className="inline-block bg-white/20 backdrop-blur-sm px-8 py-3 rounded-full text-lg font-bold mb-8 text-yellow-600">
               ⚡ QUYẾT ĐỊNH NGAY BÂY GIỜ
             </div>
-            <h2 className="text-5xl lg:text-7xl font-black mb-8 leading-tight">
+            <h2 className="text-5xl lg:text-7xl font-black mb-8 leading-tight text-[#7c4a03]">
               ĐỪNG ĐỂ
               <br />
-              <span className="text-yellow-300">NGÀY MAI</span>
+              <span className="text-orange-600">NGÀY MAI</span>
               <br />
-              MẤT THÊM TIỀN
+              <span className="text-[#7c4a03]">MẤT THÊM TIỀN</span>
             </h2>
-            <p className="text-2xl text-red-100 font-medium">Mỗi ngày trôi qua = Thêm tiền bay vào túi người khác</p>
+            <p className="text-2xl font-medium text-[#7c4a03]">Mỗi ngày trôi qua = Thêm tiền bay vào túi người khác</p>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Left Side - Urgency */}
             <div className="space-y-8">
-              <div className="bg-black/50 backdrop-blur-sm rounded-3xl p-8 border-4 border-yellow-400">
-                <h3 className="text-3xl font-black text-yellow-400 mb-6">TÍNH TOÁN THỰC TẾ</h3>
+              <div className="bg-yellow-50/80 backdrop-blur-sm rounded-3xl p-8 border-4 border-yellow-200">
+                <h3 className="text-3xl font-black text-yellow-800 mb-6">TÍNH TOÁN THỰC TẾ</h3>
                 <div className="space-y-6">
-                  <div className="flex items-center justify-between bg-white/10 rounded-xl p-4">
-                    <span className="text-lg">Nợ 200 triệu x 6 tháng:</span>
-                    <span className="text-2xl font-bold text-red-300">-60 triệu cơ hội</span>
+                  <div className="flex items-center justify-between bg-yellow-100 rounded-xl p-4">
+                    <span className="text-lg text-gray-900">Nợ 200 triệu x 6 tháng:</span>
+                    <span className="text-2xl font-bold text-yellow-800">-60 triệu cơ hội</span>
                   </div>
-                  <div className="flex items-center justify-between bg-white/10 rounded-xl p-4">
-                    <span className="text-lg">Lãi suất cơ hội 1%/tháng:</span>
-                    <span className="text-2xl font-bold text-red-300">-12 triệu/năm</span>
+                  <div className="flex items-center justify-between bg-yellow-100 rounded-xl p-4">
+                    <span className="text-lg text-gray-900">Lãi suất cơ hội 1%/tháng:</span>
+                    <span className="text-2xl font-bold text-yellow-800">-12 triệu/năm</span>
                   </div>
-                  <div className="flex items-center justify-between bg-white/10 rounded-xl p-4">
-                    <span className="text-lg">Chi phí cơ hội kinh doanh:</span>
-                    <span className="text-2xl font-bold text-red-300">-50 triệu/năm</span>
+                  <div className="flex items-center justify-between bg-yellow-100 rounded-xl p-4">
+                    <span className="text-lg text-gray-900">Chi phí cơ hội kinh doanh:</span>
+                    <span className="text-2xl font-bold text-yellow-800">-50 triệu/năm</span>
                   </div>
-                  <div className="border-t-2 border-yellow-400 pt-4">
+                  <div className="border-t-2 border-yellow-200 pt-4">
                     <div className="flex items-center justify-between">
-                      <span className="text-xl font-bold">TỔNG THIỆT HẠI:</span>
-                      <span className="text-3xl font-black text-yellow-300">-122 triệu/năm</span>
+                      <span className="text-xl font-bold text-gray-900">TỔNG THIỆT HẠI:</span>
+                      <span className="text-3xl font-black text-yellow-900">-122 triệu/năm</span>
                     </div>
                   </div>
                 </div>
               </div>
 
-              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6">
-                <h4 className="text-xl font-bold text-yellow-300 mb-4">🚨 HOTLINE KHẨN CẤP</h4>
+              <div className="bg-yellow-50/80 backdrop-blur-sm rounded-2xl p-6 border border-yellow-200">
+                <h4 className="text-xl font-bold text-yellow-800 mb-4">🚨 HOTLINE KHẨN CẤP</h4>
                 <div className="flex items-center space-x-4">
                   <Phone className="w-8 h-8 text-green-400" />
                   <div>
-                    <div className="text-2xl font-black">0901.DEBT.NOW</div>
-                    <div className="text-sm text-gray-300">Tư vấn miễn phí 24/7</div>
+                    <div className="text-2xl font-black text-gray-900">0901.DEBT.NOW</div>
+                    <div className="text-sm text-gray-800">Tư vấn miễn phí 24/7</div>
                   </div>
                 </div>
               </div>
@@ -104,7 +104,7 @@ export default function DecisionMoment() {
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                       placeholder="Nhập họ tên"
-                      className="border-2 border-gray-300 focus:border-red-500"
+                      className="border-2 border-gray-300 focus:border-yellow-500"
                       required
                     />
                   </div>
@@ -116,7 +116,7 @@ export default function DecisionMoment() {
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                       placeholder="Nhập SĐT"
-                      className="border-2 border-gray-300 focus:border-red-500"
+                      className="border-2 border-gray-300 focus:border-yellow-500"
                       required
                     />
                   </div>
@@ -126,7 +126,7 @@ export default function DecisionMoment() {
                   <div>
                     <label className="block text-sm font-bold text-gray-700 mb-2">Số tiền bị nợ *</label>
                     <Select onValueChange={(value) => setFormData({ ...formData, amount: value })}>
-                      <SelectTrigger className="border-2 border-gray-300 focus:border-red-500">
+                      <SelectTrigger className="border-2 border-gray-300 focus:border-yellow-500">
                         <SelectValue placeholder="Chọn mức tiền" />
                       </SelectTrigger>
                       <SelectContent>
@@ -141,7 +141,7 @@ export default function DecisionMoment() {
                   <div>
                     <label className="block text-sm font-bold text-gray-700 mb-2">Đã chờ bao lâu? *</label>
                     <Select onValueChange={(value) => setFormData({ ...formData, timeWaiting: value })}>
-                      <SelectTrigger className="border-2 border-gray-300 focus:border-red-500">
+                      <SelectTrigger className="border-2 border-gray-300 focus:border-yellow-500">
                         <SelectValue placeholder="Thời gian chờ" />
                       </SelectTrigger>
                       <SelectContent>
@@ -160,7 +160,7 @@ export default function DecisionMoment() {
                     value={formData.description}
                     onChange={(e) => setFormData({ ...formData, description: e.target.value })}
                     placeholder="Họ nợ bao nhiêu? Từ khi nào? Có hợp đồng không? Họ trả lời thế nào khi bạn đòi?"
-                    className="h-32 border-2 border-gray-300 focus:border-red-500"
+                    className="h-32 border-2 border-gray-300 focus:border-yellow-500"
                     required
                   />
                 </div>
@@ -169,7 +169,7 @@ export default function DecisionMoment() {
                   <Button
                     type="submit"
                     size="lg"
-                    className="w-full bg-red-600 hover:bg-red-700 text-white py-6 text-xl font-black rounded-2xl shadow-2xl hover:shadow-3xl transition-all transform hover:scale-105"
+                    className="w-full bg-yellow-600 hover:bg-yellow-700 text-white py-6 text-xl font-black rounded-2xl shadow-2xl hover:shadow-3xl transition-all transform hover:scale-105"
                   >
                     <DollarSign className="w-6 h-6 mr-3" />
                     ĐÒNG TIỀN NGAY - MIỄN PHÍ TƯ VẤN
@@ -190,15 +190,13 @@ export default function DecisionMoment() {
             </div>
           </div>
 
-          <div className="mt-16 text-center">
-            <div className="bg-black/70 backdrop-blur-sm rounded-2xl p-8 border-4 border-yellow-400">
-              <p className="text-2xl font-bold text-yellow-300 mb-4">
-                ⚠️ LƯU Ý: Chúng tôi chỉ nhận tối đa 10 case/tháng
-              </p>
-              <p className="text-lg text-gray-200">
-                Để đảm bảo chất lượng dịch vụ. Đăng ký ngay để không bỏ lỡ cơ hội.
-              </p>
-            </div>
+          <div className="bg-yellow-50/80 backdrop-blur-sm rounded-3xl p-8 border-4 border-yellow-200 mt-16 text-center">
+            <p className="text-2xl font-bold text-yellow-900 mb-4">
+              ⚠️ LƯU Ý: Chúng tôi chỉ nhận tối đa 10 case/tháng
+            </p>
+            <p className="text-lg text-gray-900">
+              Để đảm bảo chất lượng dịch vụ. Đăng ký ngay để không bỏ lỡ cơ hội.
+            </p>
           </div>
         </div>
       </div>

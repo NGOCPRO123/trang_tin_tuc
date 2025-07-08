@@ -35,20 +35,20 @@ export default function MultiLayerSecuritySection() {
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-black text-gray-900 mb-4">
+            <h2 className="text-4xl font-black text-[#1a1a1a] mb-4">
               Quản lý và Bảo vệ Tài sản Vật lý: Từ Phòng ngừa đến Ứng phó
             </h2>
           </div>
           <Accordion type="single" collapsible className="space-y-4">
             {layers.map((item, idx) => (
               <AccordionItem key={idx} value={String(idx)}>
-                <AccordionTrigger className="text-lg font-bold text-orange-700">
-                  <CheckCircle className="inline-block mr-2 text-green-600" />
+                <AccordionTrigger className="text-lg font-bold text-[#1a1a1a]">
+                  <CheckCircle className="inline-block mr-2 text-[#1a1a1a]" />
                   {item.title}
                 </AccordionTrigger>
                 <AccordionContent>
                   <div className="text-gray-800 mb-2">{item.desc}</div>
-                  <div className="text-green-700 font-semibold">Lợi ích: {item.benefit}</div>
+                  <div className="text-[#1a1a1a] font-semibold">Lợi ích: {item.benefit}</div>
                 </AccordionContent>
               </AccordionItem>
             ))}

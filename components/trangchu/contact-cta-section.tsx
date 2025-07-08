@@ -17,7 +17,7 @@ export function ContactCTASection() {
   }
 
   return (
-    <section className="py-24 px-4 bg-gradient-to-br from-amber-50 via-white to-blue-50 relative overflow-hidden">
+    <section className="py-24 px-4 bg-gradient-to-br from-white via-white to-blue-50 relative overflow-hidden">
       {/* Decorative SVG circles */}
       <svg className="absolute left-0 top-0 z-0 opacity-20" width="300" height="300" fill="none">
         <circle cx="150" cy="150" r="120" fill="#FDE68A" />
@@ -35,7 +35,7 @@ export function ContactCTASection() {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-5xl font-bold mb-6 leading-tight text-amber-600">
-            Liên Hệ <span className="text-blue-600">(Contact Us)</span>
+            Liên Hệ <span className="text-amber-600">(Contact Us)</span>
           </h2>
           <p className="text-xl md:text-2xl mb-12 opacity-90 max-w-4xl mx-auto text-gray-700">
             Bạn có câu hỏi hoặc cần tư vấn chuyên sâu về các giải pháp Vực Dậy Tài Chính – Bứt Phá Doanh Thu? Đừng ngần ngại liên hệ với đội ngũ HLCC ngay hôm nay!
@@ -51,7 +51,7 @@ export function ContactCTASection() {
             viewport={{ once: true }}
             className="space-y-6"
           >
-            <h3 className="text-2xl font-bold mb-8 text-blue-700">Thông Tin Liên Hệ</h3>
+            <h3 className="text-2xl font-bold mb-8 text-amber-700">Thông Tin Liên Hệ</h3>
 
             <div className="space-y-4">
               <motion.div
@@ -66,23 +66,23 @@ export function ContactCTASection() {
                 </motion.div>
                 <div>
                   <div className="font-semibold text-gray-800">Hotline</div>
-                  <div className="text-blue-600">0912.880.330</div>
+                  <div className="text-amber-600">028.5555.8879</div>
                 </div>
               </motion.div>
 
               <motion.div
                 whileHover={{ x: 10, scale: 1.02 }}
-                className="flex items-center gap-4 bg-white border border-blue-200 rounded-xl p-4 shadow-md hover:shadow-lg transition-all duration-300 group"
+                className="flex items-center gap-4 bg-white border border-amber-200 rounded-xl p-4 shadow-md hover:shadow-lg transition-all duration-300 group"
               >
                 <motion.div
                   animate={{ scale: [1, 1.1, 1] }}
                   transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
                 >
-                  <Mail className="w-6 h-6 text-blue-500 group-hover:text-blue-600" />
+                  <Mail className="w-6 h-6 text-amber-500 group-hover:text-amber-600" />
                 </motion.div>
                 <div>
                   <div className="font-semibold text-gray-800">Email</div>
-                  <div className="text-blue-600">lienhe@acta.vn</div>
+                  <div className="text-amber-600">lienhe@hlcc.group</div>
                 </div>
               </motion.div>
 
@@ -98,23 +98,23 @@ export function ContactCTASection() {
                 </motion.div>
                 <div>
                   <div className="font-semibold text-gray-800">Tư vấn chuyên sâu</div>
-                  <div className="text-blue-600">Vực Dậy Tài Chính – Bứt Phá Doanh Thu</div>
+                  <div className="text-amber-600">Vực Dậy Tài Chính – Bứt Phá Doanh Thu</div>
                 </div>
               </motion.div>
 
               <motion.div
                 whileHover={{ x: 10, scale: 1.02 }}
-                className="flex items-center gap-4 bg-white border border-blue-100 rounded-xl p-4 shadow-md hover:shadow-lg transition-all duration-300 group"
+                className="flex items-center gap-4 bg-white border border-amber-100 rounded-xl p-4 shadow-md hover:shadow-lg transition-all duration-300 group"
               >
                 <motion.div
                   animate={{ scale: [1, 1.1, 1] }}
                   transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
                 >
-                  <Calendar className="w-6 h-6 text-blue-400 group-hover:text-blue-500" />
+                  <Calendar className="w-6 h-6 text-amber-400 group-hover:text-amber-500" />
                 </motion.div>
                 <div>
                   <div className="font-semibold text-gray-800">Địa chỉ</div>
-                  <div className="text-blue-600">Tòa nhà SABAY – 99 Cộng Hòa, Phường 4, Quận Tân Bình, TP.HCM</div>
+                  <div className="text-amber-600">Tòa nhà SABAY – 99 Cộng Hòa, Phường 4, Quận Tân Bình, TP.HCM</div>
                 </div>
               </motion.div>
             </div>
@@ -150,7 +150,7 @@ export function ContactCTASection() {
                 <Button
                   variant="outline"
                   size="lg"
-                  className="w-full border-2 border-blue-400 text-blue-700 hover:bg-blue-50 hover:text-blue-900 px-8 py-4 text-lg rounded-full shadow-lg hover:shadow-xl transition-all duration-300 bg-transparent font-semibold"
+                  className="w-full border-2 border-amber-400 text-amber-700 hover:bg-amber-50 hover:text-amber-900 px-8 py-4 text-lg rounded-full shadow-lg hover:shadow-xl transition-all duration-300 bg-transparent font-semibold"
                   onClick={handlePortfolioClick}
                 >
                   Xem giải pháp

@@ -12,8 +12,8 @@ export function CTASection() {
           <h2 className="text-4xl font-bold text-white mb-4">
             Bạn đã sẵn sàng để có một Hệ thống Tài chính - Kế toán Vững mạnh & An tâm?
           </h2>
-          <p className="text-xl text-amber-100 max-w-3xl mx-auto">
-            Hãy để những con số đau đầu và rủi ro về thuế lại cho các chuyên gia của HLCC. Liên hệ ngay để nhận một buổi tư vấn miễn phí về tình hình kế toán và các cơ hội tối ưu thuế cho doanh nghiệp của bạn!
+          <p className="text-xl text-amber-100 mx-auto whitespace-nowrap">
+            Để HLCC giúp bạn giải quyết mọi lo lắng về kế toán, thuế. Liên hệ nhận tư vấn miễn phí ngay!
           </p>
         </div>
         <div className="max-w-3xl mx-auto bg-white rounded-2xl shadow-2xl p-8">

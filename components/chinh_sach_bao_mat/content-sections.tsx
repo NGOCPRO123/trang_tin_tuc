@@ -5,7 +5,7 @@ export default function ContentSections() {
       <section id="commitment" className="group">
         <div className="bg-white/70 backdrop-blur-sm rounded-3xl p-8 md:p-12 shadow-xl border border-white/30 hover:shadow-2xl transition-all duration-500">
           <div className="flex items-center gap-4 mb-8">
-            <div className="w-12 h-12 bg-gradient-to-br from-yellow-400 to-amber-500 rounded-2xl flex items-center justify-center">
+            <div className="w-12 h-12 bg-yellow-500 rounded-2xl flex items-center justify-center">
               <span className="text-white font-bold text-lg">01</span>
             </div>
             <h2 className="text-3xl font-bold text-gray-800">Cam kết của chúng tôi</h2>
@@ -25,8 +25,8 @@ export default function ContentSections() {
               vụ của chúng tôi.
             </p>
 
-            <div className="bg-blue-50 rounded-xl p-4 border border-blue-200">
-              <p className="text-blue-800 font-medium text-center">
+            <div className="bg-yellow-50 rounded-xl p-4 border border-yellow-200">
+              <p className="text-yellow-800 font-medium text-center">
                 💡 Bằng việc sử dụng dịch vụ của chúng tôi, bạn đồng ý với chính sách này
               </p>
             </div>
@@ -38,16 +38,16 @@ export default function ContentSections() {
       <section id="data-collection" className="group">
         <div className="bg-white/70 backdrop-blur-sm rounded-3xl p-8 md:p-12 shadow-xl border border-white/30 hover:shadow-2xl transition-all duration-500">
           <div className="flex items-center gap-4 mb-8">
-            <div className="w-12 h-12 bg-gradient-to-br from-blue-400 to-cyan-500 rounded-2xl flex items-center justify-center">
+            <div className="w-12 h-12 bg-yellow-500 rounded-2xl flex items-center justify-center">
               <span className="text-white font-bold text-lg">02</span>
             </div>
             <h2 className="text-3xl font-bold text-gray-800">Thu thập thông tin</h2>
           </div>
 
           <div className="grid md:grid-cols-2 gap-6">
-            <div className="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-2xl p-6">
-              <h3 className="text-xl font-semibold text-blue-800 mb-4 flex items-center gap-2">
-                <span className="w-2 h-2 bg-blue-500 rounded-full"></span>
+            <div className="bg-yellow-50 rounded-2xl p-6">
+              <h3 className="text-xl font-semibold text-yellow-800 mb-4 flex items-center gap-2">
+                <span className="w-2 h-2 bg-yellow-500 rounded-full"></span>
                 Thông tin trực tiếp
               </h3>
               <ul className="space-y-2 text-gray-700">
@@ -57,9 +57,9 @@ export default function ContentSections() {
               </ul>
             </div>
 
-            <div className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl p-6">
-              <h3 className="text-xl font-semibold text-purple-800 mb-4 flex items-center gap-2">
-                <span className="w-2 h-2 bg-purple-500 rounded-full"></span>
+            <div className="bg-yellow-50 rounded-2xl p-6">
+              <h3 className="text-xl font-semibold text-yellow-800 mb-4 flex items-center gap-2">
+                <span className="w-2 h-2 bg-yellow-500 rounded-full"></span>
                 Thông tin tự động
               </h3>
               <ul className="space-y-2 text-gray-700">
@@ -76,7 +76,7 @@ export default function ContentSections() {
       <section id="data-usage" className="group">
         <div className="bg-white/70 backdrop-blur-sm rounded-3xl p-8 md:p-12 shadow-xl border border-white/30 hover:shadow-2xl transition-all duration-500">
           <div className="flex items-center gap-4 mb-8">
-            <div className="w-12 h-12 bg-gradient-to-br from-green-400 to-emerald-500 rounded-2xl flex items-center justify-center">
+            <div className="w-12 h-12 bg-yellow-500 rounded-2xl flex items-center justify-center">
               <span className="text-white font-bold text-lg">03</span>
             </div>
             <h2 className="text-3xl font-bold text-gray-800">Sử dụng thông tin</h2>
@@ -89,7 +89,7 @@ export default function ContentSections() {
               { icon: "📧", title: "Liên lạc marketing", desc: "Gửi newsletter và thông tin hữu ích (có thể hủy)" },
               { icon: "🔒", title: "Bảo mật & tuân thủ", desc: "Đảm bảo an ninh và thực hiện nghĩa vụ pháp lý" },
             ].map((item, index) => (
-              <div key={index} className="flex items-start gap-4 p-4 rounded-xl hover:bg-green-50/50 transition-colors">
+              <div key={index} className="flex items-start gap-4 p-4 rounded-xl hover:bg-yellow-50/50 transition-colors">
                 <span className="text-2xl">{item.icon}</span>
                 <div>
                   <h4 className="font-semibold text-gray-800">{item.title}</h4>
@@ -105,14 +105,14 @@ export default function ContentSections() {
       <section id="data-sharing" className="group">
         <div className="bg-white/70 backdrop-blur-sm rounded-3xl p-8 md:p-12 shadow-xl border border-white/30 hover:shadow-2xl transition-all duration-500">
           <div className="flex items-center gap-4 mb-8">
-            <div className="w-12 h-12 bg-gradient-to-br from-red-400 to-pink-500 rounded-2xl flex items-center justify-center">
+            <div className="w-12 h-12 bg-yellow-500 rounded-2xl flex items-center justify-center">
               <span className="text-white font-bold text-lg">04</span>
             </div>
             <h2 className="text-3xl font-bold text-gray-800">Chia sẻ thông tin</h2>
           </div>
 
-          <div className="bg-gradient-to-r from-red-50 to-pink-50 rounded-2xl p-6 mb-6 border-l-4 border-red-400">
-            <p className="text-red-800 font-semibold text-lg">
+          <div className="bg-yellow-50 rounded-2xl p-6 mb-6 border-l-4 border-yellow-400">
+            <p className="text-yellow-800 font-semibold text-lg">
               🚫 Chúng tôi KHÔNG bán hoặc trao đổi thông tin cá nhân vì mục đích thương mại
             </p>
           </div>
@@ -140,7 +140,7 @@ export default function ContentSections() {
       <section id="data-security" className="group">
         <div className="bg-white/70 backdrop-blur-sm rounded-3xl p-8 md:p-12 shadow-xl border border-white/30 hover:shadow-2xl transition-all duration-500">
           <div className="flex items-center gap-4 mb-8">
-            <div className="w-12 h-12 bg-gradient-to-br from-indigo-400 to-purple-500 rounded-2xl flex items-center justify-center">
+            <div className="w-12 h-12 bg-yellow-500 rounded-2xl flex items-center justify-center">
               <span className="text-white font-bold text-lg">05</span>
             </div>
             <h2 className="text-3xl font-bold text-gray-800">Bảo mật dữ liệu</h2>
@@ -152,16 +152,16 @@ export default function ContentSections() {
               { icon: "🛡️", title: "Tường lửa", desc: "Bảo vệ hệ thống" },
               { icon: "👥", title: "Kiểm soát", desc: "Truy cập nội bộ" },
             ].map((item, index) => (
-              <div key={index} className="text-center p-4 bg-indigo-50 rounded-xl">
+              <div key={index} className="text-center p-4 bg-yellow-50 rounded-xl">
                 <span className="text-3xl block mb-2">{item.icon}</span>
-                <h4 className="font-semibold text-indigo-800">{item.title}</h4>
-                <p className="text-indigo-600 text-sm">{item.desc}</p>
+                <h4 className="font-semibold text-yellow-800">{item.title}</h4>
+                <p className="text-yellow-600 text-sm">{item.desc}</p>
               </div>
             ))}
           </div>
 
-          <div className="bg-orange-50 border border-orange-200 rounded-xl p-4">
-            <p className="text-orange-800 text-center">
+          <div className="bg-yellow-50 border border-yellow-200 rounded-xl p-4">
+            <p className="text-yellow-800 text-center">
               ⚠️ Không có phương thức bảo mật nào là 100% an toàn, nhưng chúng tôi nỗ lực tối đa
             </p>
           </div>
@@ -172,7 +172,7 @@ export default function ContentSections() {
       <section id="user-rights" className="group">
         <div className="bg-white/70 backdrop-blur-sm rounded-3xl p-8 md:p-12 shadow-xl border border-white/30 hover:shadow-2xl transition-all duration-500">
           <div className="flex items-center gap-4 mb-8">
-            <div className="w-12 h-12 bg-gradient-to-br from-teal-400 to-cyan-500 rounded-2xl flex items-center justify-center">
+            <div className="w-12 h-12 bg-yellow-500 rounded-2xl flex items-center justify-center">
               <span className="text-white font-bold text-lg">06</span>
             </div>
             <h2 className="text-3xl font-bold text-gray-800">Quyền của bạn</h2>
@@ -180,15 +180,15 @@ export default function ContentSections() {
 
           <div className="grid md:grid-cols-2 gap-4">
             {[
-              { icon: "👁️", title: "Quyền truy cập", desc: "Xem thông tin chúng tôi lưu trữ", color: "blue" },
-              { icon: "✏️", title: "Quyền chỉnh sửa", desc: "Cập nhật thông tin không chính xác", color: "green" },
-              { icon: "🗑️", title: "Quyền xóa bỏ", desc: "Yêu cầu xóa thông tin cá nhân", color: "red" },
-              { icon: "↩️", title: "Rút lại đồng ý", desc: "Hủy đăng ký nhận thông tin", color: "purple" },
+              { icon: "👁️", title: "Quyền truy cập", desc: "Xem thông tin chúng tôi lưu trữ" },
+              { icon: "✏️", title: "Quyền chỉnh sửa", desc: "Cập nhật thông tin không chính xác" },
+              { icon: "🗑️", title: "Quyền xóa bỏ", desc: "Yêu cầu xóa thông tin cá nhân" },
+              { icon: "↩️", title: "Rút lại đồng ý", desc: "Hủy đăng ký nhận thông tin" },
             ].map((item, index) => (
-              <div key={index} className={`p-6 bg-${item.color}-50 rounded-2xl border border-${item.color}-200`}>
+              <div key={index} className="p-6 bg-yellow-50 rounded-2xl border border-yellow-200">
                 <span className="text-3xl block mb-3">{item.icon}</span>
-                <h4 className={`font-semibold text-${item.color}-800 mb-2`}>{item.title}</h4>
-                <p className={`text-${item.color}-600 text-sm`}>{item.desc}</p>
+                <h4 className="font-semibold text-yellow-800 mb-2">{item.title}</h4>
+                <p className="text-yellow-600 text-sm">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -199,7 +199,7 @@ export default function ContentSections() {
       <section id="contact" className="group">
         <div className="bg-gradient-to-br from-yellow-100 to-amber-100 rounded-3xl p-8 md:p-12 shadow-xl border border-yellow-200">
           <div className="flex items-center gap-4 mb-8">
-            <div className="w-12 h-12 bg-gradient-to-br from-yellow-500 to-amber-600 rounded-2xl flex items-center justify-center">
+            <div className="w-12 h-12 bg-yellow-500 rounded-2xl flex items-center justify-center">
               <span className="text-white font-bold text-lg">07</span>
             </div>
             <h2 className="text-3xl font-bold text-gray-800">Liên hệ với chúng tôi</h2>

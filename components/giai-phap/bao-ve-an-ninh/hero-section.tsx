@@ -20,17 +20,17 @@ export default function HeroSection() {
           <div className="space-y-8">
             <h1 className="text-5xl lg:text-6xl font-black leading-tight text-gray-900 mb-4">
               Tài sản lớn nhất của bạn không phải là những gì bạn thấy,<br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-600 to-orange-600">mà là những gì bạn không thấy đang bị đe dọa.</span>
+              <span className="text-[#FFD600]">mà là những gì bạn không thấy đang bị đe dọa.</span>
             </h1>
             <div className="mt-6 text-xl text-gray-700 font-medium">
               Một sự cố an ninh, dù là mất mát tài sản vật lý hay rò rỉ dữ liệu kinh doanh, đều có thể gây ra những thiệt hại không thể lường trước.<br />
               Việc chỉ lắp vài chiếc camera không thể tạo ra một hệ thống an ninh thực sự.<br />
-              <span className="font-bold text-orange-700">Tại HLCC, chúng tôi cung cấp giải pháp bảo vệ an ninh toàn diện, giúp bạn xây dựng một môi trường kinh doanh an toàn tuyệt đối từ trong ra ngoài.</span>
+              <span className="font-bold text-[#FFD600]">Tại HLCC, chúng tôi cung cấp giải pháp bảo vệ an ninh toàn diện, giúp bạn xây dựng một môi trường kinh doanh an toàn tuyệt đối từ trong ra ngoài.</span>
             </div>
             <div className="flex flex-col sm:flex-row gap-4 mt-8">
               <Button
                 size="lg"
-                className="bg-gradient-to-r from-yellow-600 to-orange-600 hover:from-yellow-700 hover:to-orange-700 text-white px-8 py-6 text-lg font-bold rounded-2xl shadow-xl hover:shadow-2xl transition-all"
+                className="bg-[#FFD600] hover:bg-yellow-400 text-black px-8 py-6 text-lg font-bold rounded-2xl shadow-xl hover:shadow-2xl transition-all"
               >
                 Yêu cầu một buổi "Khảo sát An ninh" Miễn phí
               </Button>

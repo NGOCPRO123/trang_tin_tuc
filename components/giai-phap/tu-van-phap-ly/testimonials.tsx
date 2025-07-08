@@ -48,10 +48,7 @@ export default function Testimonials() {
           </div>
 
           <h2 className="text-4xl lg:text-5xl font-bold text-slate-800 mb-4">
-            Câu chuyện
-            <span className="block bg-gradient-to-r from-amber-500 to-orange-500 bg-clip-text text-transparent">
-              Thành công
-            </span>
+            Câu chuyện <span className="bg-gradient-to-r from-amber-500 to-orange-500 bg-clip-text text-transparent">Thành công</span>
           </h2>
 
           <p className="text-xl text-slate-600 max-w-2xl mx-auto">

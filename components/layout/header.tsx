@@ -27,10 +27,14 @@ export function Header() {
           </div>
           {/* Right: Hotline */}
           <div className="flex items-center justify-center md:justify-end min-w-[200px] w-full md:w-auto">
-            <span className="bg-yellow-400 text-white font-bold rounded-xl px-6 py-3 text-lg md:text-xl shadow flex items-center gap-2">
+            <a
+              href="tel:02855558879"
+              className="bg-yellow-400 text-white font-bold rounded-xl px-6 py-3 text-lg md:text-xl shadow flex items-center gap-2 hover:bg-yellow-500 transition-colors focus:outline-none focus:ring-2 focus:ring-yellow-600"
+              style={{ textDecoration: 'none' }}
+            >
               <Phone className="w-6 h-6 mr-1" />
               Nhận tư vấn
-            </span>
+            </a>
           </div>
         </div>
       </div>
