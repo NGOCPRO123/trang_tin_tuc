@@ -29,6 +29,7 @@ import {
   X
 } from "lucide-react"
 import { useToast } from "@/hooks/use-toast"
+import { Loading } from "@/components/ui/loading"
 
 export default function AdminArticlesPage() {
   const [articles, setArticles] = useState<Article[]>([])
@@ -406,7 +407,7 @@ export default function AdminArticlesPage() {
             {loading && (
               <div className="mt-4 p-4 bg-blue-50 border border-blue-200 rounded-lg">
                 <div className="flex items-center gap-2">
-                  <div className="w-4 h-4 border-2 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
+                  <Loading size="sm" variant="spinner" className="text-blue-500" />
                   <span className="text-blue-800 font-semibold">Đang lưu...</span>
                 </div>
               </div>

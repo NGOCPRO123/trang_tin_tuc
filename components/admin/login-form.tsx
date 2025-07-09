@@ -8,6 +8,7 @@ import { Input } from "@/components/ui/input"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Alert, AlertDescription } from "@/components/ui/alert"
 import { Lock, User, Eye, EyeOff, Shield, ArrowRight } from "lucide-react"
+import { Loading } from "@/components/ui/loading"
 
 export function LoginForm() {
   const [username, setUsername] = useState("")
@@ -152,7 +153,7 @@ export function LoginForm() {
                 >
                   {isLoading ? (
                     <div className="flex items-center">
-                      <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2"></div>
+                      <Loading size="sm" variant="spinner" className="text-white mr-2" />
                       Đang đăng nhập...
                     </div>
                   ) : (

@@ -7,6 +7,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { FolderOpen } from "lucide-react"
 import useSWR from "swr"
+import { LoadingPage } from "@/components/ui/loading"
 
 // Danh mục giải pháp
 const giaiPhapCategories = [
@@ -50,17 +51,7 @@ export function CategoryPage({ category }: CategoryPageProps) {
   const { data: articles = [], isLoading } = useSWR("/api/articles", fetcher)
 
   if (isLoading) {
-    return (
-      <MainLayout>
-        <div className="py-16 bg-yellow-50">
-          <div className="container">
-            <div className="text-center">
-              <p>Đang tải dữ liệu...</p>
-            </div>
-          </div>
-        </div>
-      </MainLayout>
-    )
+    return <LoadingPage title="Đang tải dữ liệu..." subtitle="Vui lòng chờ trong giây lát" variant="minimal" />
   }
 
   // Nếu có category cụ thể, lọc bài viết theo danh mục đó

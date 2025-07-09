@@ -1,11 +1,12 @@
 import { ArticleDetailPage } from "@/components/pages/article-detail-page"
 
 interface ArticleDetailPageProps {
-  params: {
+  params: Promise<{
     slug: string
-  }
+  }>
 }
 
-export default function ArticleDetail({ params }: ArticleDetailPageProps) {
-  return <ArticleDetailPage articleId={params.slug} />
+export default async function ArticleDetail({ params }: ArticleDetailPageProps) {
+  const { slug } = await params
+  return <ArticleDetailPage articleId={slug} />
 } 

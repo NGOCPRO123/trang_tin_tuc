@@ -8,6 +8,7 @@ import { Menu, X, Bell, Settings } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Badge } from "@/components/ui/badge"
+import { LoadingPage } from "@/components/ui/loading"
 
 export default function AdminLayout({ children }: { children: ReactNode }) {
   const { isAuthenticated, isLoading, logout } = useAuth();
@@ -15,12 +16,11 @@ export default function AdminLayout({ children }: { children: ReactNode }) {
 
   if (isLoading) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-50 to-slate-100">
-        <div className="text-center">
-          <div className="w-16 h-16 border-4 border-blue-500 border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
-          <p className="text-slate-600 font-medium">Đang kiểm tra đăng nhập...</p>
-        </div>
-      </div>
+      <LoadingPage 
+        title="Đang kiểm tra đăng nhập..."
+        subtitle="Vui lòng chờ trong giây lát"
+        variant="card"
+      />
     );
   }
   

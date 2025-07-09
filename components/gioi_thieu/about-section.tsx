@@ -73,9 +73,7 @@ export function AboutSection() {
             Gặp gỡ Đội ngũ Chuyên gia HLCC
           </h2>
           <p className="text-xl text-gray-700 max-w-4xl mx-auto leading-relaxed">
-            Uy tín của HLCC được xây dựng trên nền tảng tri thức và kinh nghiệm của những con người tận tâm. 
-            Đội ngũ chuyên gia HLCC là sự kết hợp của các chuyên gia đa lĩnh vực, mang đến những góc nhìn đa chiều 
-            và sâu sắc để tạo nên giải pháp toàn diện cho khách hàng.
+          HLCC uy tín nhờ đội ngũ chuyên gia tận tâm, mang đến giải pháp toàn diện cho khách hàng
           </p>
         </motion.div>
 

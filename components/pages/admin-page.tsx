@@ -13,6 +13,7 @@ import type { Article } from "@/types/article"
 import { Input } from "@/components/ui/input"
 import { useAuth } from "@/contexts/auth-context"
 import { AdvancedArticleForm } from "@/components/admin/admin-article-form"
+import { Loading } from "@/components/ui/loading"
 
 export function AdminPage() {
   const fetcher = (url: string) => fetch(url).then((res) => res.json())
@@ -236,7 +237,7 @@ export function AdminPage() {
                     <CardContent>
                       {isLoading ? (
                         <div className="flex items-center justify-center py-12">
-                          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
+                          <Loading size="lg" variant="spinner" />
                         </div>
                       ) : filteredArticles.length === 0 ? (
                         <div className="text-center py-12">

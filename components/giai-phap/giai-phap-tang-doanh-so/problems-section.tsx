@@ -18,7 +18,7 @@ export function ProblemsSection() {
           </h2>
           <p className="text-xl text-gray-700 max-w-3xl mx-auto font-medium">
             Một doanh nghiệp không thất bại vì một lý do duy nhất. Nó sụp đổ bởi một chuỗi các vấn đề liên kết: một giải pháp tài chính tạm bợ, một quy trình kế toán lỗi thời, một chiến lược kinh doanh không còn phù hợp. Việc chỉ chữa "triệu chứng" sẽ không bao giờ giải quyết được "căn bệnh".<br/>
-            Tại HLCC, chúng tôi tiếp cận doanh nghiệp của bạn như một "hiện trường" cần được điều tra để tìm ra "hung thủ" thật sự.
+            <span className="text-yellow-600">Tại HLCC, chúng tôi tiếp cận doanh nghiệp của bạn như một "hiện trường" cần được điều tra để tìm ra "hung thủ" thật sự.</span>
           </p>
         </div>
         <div className="grid md:grid-cols-3 gap-10">

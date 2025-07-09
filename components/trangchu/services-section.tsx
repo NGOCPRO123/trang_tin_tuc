@@ -135,60 +135,75 @@ export function ServicesSection() {
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map((service, index) => (
-            <motion.div
-              key={service.id}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              viewport={{ once: true }}
-              whileHover={{ y: -5 }}
-              className="h-full"
-            >
-              <Card className="h-full hover:shadow-xl transition-all duration-300 border-0 shadow-lg bg-white group relative overflow-hidden">
-                {/* Background image */}
-                <div
-                  className="absolute inset-0 z-0 opacity-20 group-hover:opacity-30 transition-all duration-300"
-                  style={{
-                    backgroundImage: `url('${service.backgroundImage}')`,
-                    backgroundSize: "cover",
-                    backgroundPosition: "center"
-                  }}
-                />
-                {/* Overlay tối giúp nổi bật nội dung */}
-                <div className="absolute inset-0 z-10 bg-black/60 group-hover:bg-black/70 transition-all duration-300" />
-                {/* Nội dung Card */}
-                <div className="relative z-20">
-                  <CardHeader className="text-center pb-4">
-                    <div className="w-16 h-16 bg-amber-100 group-hover:bg-amber-600 rounded-full flex items-center justify-center mx-auto mb-4 transition-colors duration-300">
-                      <service.icon className="w-8 h-8 text-amber-600 group-hover:text-white transition-colors duration-300" />
-                    </div>
-                    <CardTitle className="text-xl font-bold text-white drop-shadow-lg">{service.title}</CardTitle>
-                  </CardHeader>
-                  <CardContent className="flex-1 flex flex-col justify-between">
-                    <div>
-                      <p className="text-white/90 mb-6 leading-relaxed drop-shadow">{service.description}</p>
-                      <ul className="space-y-2 mb-6">
-                        {service.features.map((feature, idx) => (
-                          <li key={idx} className="flex items-center text-sm text-white/90 drop-shadow">
-                            <div className="w-2 h-2 bg-amber-400 rounded-full mr-3"></div>
-                            {feature}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </CardContent>
-                </div>
-              </Card>
-            </motion.div>
-          ))}
+          {services.map((service, index) => {
+            // Mảng màu pastel đậm, tránh màu vàng/cam nhạt
+            const pastelColors = [
+              "bg-[#b2f2bb]", // xanh lá nhạt
+              "bg-[#a5d8ff]", // xanh dương nhạt
+              "bg-[#d0bfff]", // tím nhạt
+              "bg-[#ffb3c6]", // hồng nhạt
+              "bg-[#dee2e6]", // xám nhạt
+              "bg-[#99f6e4]", // xanh ngọc nhạt
+            ];
+            const pastelBg = pastelColors[index % pastelColors.length];
+            return (
+              <motion.div
+                key={service.id}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                whileHover={{ y: -5 }}
+                className="h-full"
+              >
+                <Card className={`h-full hover:shadow-2xl transition-all duration-300 border-0 shadow-xl group relative overflow-hidden ${pastelBg}`}>
+                  {/* Background image */}
+                  <div
+                    className="absolute inset-0 z-0 opacity-10 group-hover:opacity-20 transition-all duration-300"
+                    style={{
+                      backgroundImage: `url('${service.backgroundImage}')`,
+                      backgroundSize: "cover",
+                      backgroundPosition: "center"
+                    }}
+                  />
+                  {/* Overlay sáng hơn giúp nổi bật nội dung */}
+                  <div className="absolute inset-0 z-10 bg-white/40 group-hover:bg-white/50 transition-all duration-300" />
+                  {/* Nội dung Card */}
+                  <div className="relative z-20">
+                    <CardHeader className="text-center pb-4">
+                      <div className="w-16 h-16 bg-amber-100 group-hover:bg-amber-600 rounded-full flex items-center justify-center mx-auto mb-4 transition-colors duration-300">
+                        <service.icon className="w-8 h-8 text-amber-600 group-hover:text-white transition-colors duration-300" />
+                      </div>
+                      <CardTitle className="text-xl font-bold text-gray-800 drop-shadow-lg">{service.title}</CardTitle>
+                    </CardHeader>
+                    <CardContent className="flex-1 flex flex-col justify-between">
+                      <div>
+                        <p className="text-gray-700 mb-6 leading-relaxed drop-shadow">{service.description}</p>
+                        <ul className="space-y-2 mb-6">
+                          {service.features.map((feature, idx) => (
+                            <li key={idx} className="flex items-center text-sm text-gray-700 drop-shadow">
+                              <div className="w-2 h-2 bg-amber-400 rounded-full mr-3"></div>
+                              {feature}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </CardContent>
+                  </div>
+                </Card>
+              </motion.div>
+            );
+          })}
         </div>
-        <Button
-          onClick={() => router.push('/giai-phap')}
-          className="mt-12 px-8 py-4 bg-gradient-to-r from-yellow-400 to-orange-500 text-white font-bold rounded-full shadow-lg hover:from-yellow-500 hover:to-orange-600 transition-all text-lg"
-        >
-          Xem tất cả các dịch vụ tư vấn doanh nghiệp của HLCC →
-        </Button>
+        {/* Button xem tất cả giải pháp */}
+        <div className="flex justify-center mt-12">
+          <Button
+            onClick={() => router.push('/giai-phap')}
+            className="px-8 py-4 bg-gradient-to-r from-yellow-400 to-orange-500 text-white font-bold rounded-full shadow-lg hover:from-yellow-500 hover:to-orange-600 transition-all text-lg"
+          >
+            Xem tất cả các giải pháp tư vấn doanh nghiệp của HLCC →
+          </Button>
+        </div>
       </div>
     </section>
   )

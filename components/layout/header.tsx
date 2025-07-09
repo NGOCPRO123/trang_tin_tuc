@@ -17,9 +17,9 @@ export function Header() {
       <div className="w-full border-b bg-white">
         <div className="container mx-auto flex flex-col md:flex-row items-start justify-center pt-4 pb-0 gap-0 md:gap-0">
           {/* Left: Logo + HLCC */}
-          <div className="flex items-start gap-2 min-w-[120px] justify-center md:justify-start w-full md:w-auto m-0 p-0 self-start">
+          <Link href="/" className="flex items-start gap-2 min-w-[120px] justify-center md:justify-start w-full md:w-auto m-0 p-0 self-start">
             <Image src="/logo.png" alt="HLCC Logo" width={100} height={100} className="h-[100px] w-[100px] object-contain max-h-[100px] max-w-[100px] m-0 p-0 align-top -mt-5" />
-          </div>
+          </Link>
           {/* Center: Title + Subtitle */}
           <div className="flex flex-col items-center justify-center text-center flex-1 px-5 transform translate-x-20">
             <span className="text-2xl md:text-3xl font-bold text-black leading-tight text-center font-sans">DỊCH VỤ QUẢN TRỊ DOANH NGHIỆP</span>
@@ -115,7 +115,7 @@ export function Header() {
               </div>
             </div>
 
-            <Link href="/dich-vu" className="text-lg font-bold hover:text-yellow-600 transition-colors">
+            <Link href="/du-an-tieu-bieu" className="text-lg font-bold hover:text-yellow-600 transition-colors">
               DỰ ÁN TIÊU BIỂU
             </Link>
 
@@ -164,11 +164,11 @@ export function Header() {
                   Trang chủ
                 </Link>
                 <Link
-                  href="/dich-vu"
+                  href="/du-an-tieu-bieu"
                   className="text-sm font-medium hover:text-yellow-600 transition-colors"
                   onClick={() => setIsOpen(false)}
                 >
-                  Dịch vụ
+                  DỰ ÁN TIÊU BIỂU
                 </Link>
                 <span className="text-sm font-medium hover:text-yellow-600 transition-colors cursor-pointer select-none">Giải Pháp</span>
                 <div className="ml-4 flex flex-col space-y-2 mt-2">

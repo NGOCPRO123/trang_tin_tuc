@@ -222,39 +222,6 @@ export function ServicesSection() {
             </div>
           </div>
         </motion.div>
-
-        {/* CTA Section */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.8 }}
-          viewport={{ once: true }}
-          className="text-center"
-        >
-          <div className="bg-gradient-to-r from-yellow-500 to-orange-500 p-8 rounded-2xl text-white shadow-xl">
-            <h3 className="text-2xl font-bold mb-4">
-              Sẵn sàng xây dựng giải pháp doanh nghiệp toàn diện?
-            </h3>
-            <p className="text-lg mb-6 text-yellow-100">
-              Hãy để chúng tôi hiểu rõ thách thức của bạn và đề xuất giải pháp phù hợp nhất.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button
-                size="lg"
-                className="bg-white text-yellow-600 hover:bg-yellow-50 font-semibold px-8 py-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
-              >
-                Tư vấn miễn phí ngay
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
-              <Button
-                size="lg"
-                className="bg-white text-yellow-600 hover:bg-yellow-50 font-semibold px-8 py-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
-              >
-                Xem case study
-              </Button>
-            </div>
-          </div>
-        </motion.div>
       </div>
     </section>
   )

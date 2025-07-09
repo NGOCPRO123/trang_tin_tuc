@@ -1,7 +1,7 @@
 "use client"
 
 import { Quote, Star, Calendar } from "lucide-react"
-import { useState } from "react"
+import { useState, useMemo } from "react"
 
 const stories = [
   {
@@ -38,6 +38,13 @@ const stories = [
 
 export default function RealStories() {
   const [activeStory, setActiveStory] = useState(0)
+
+  const currentStory = useMemo(() => stories[activeStory], [activeStory])
+
+  const storyStars = useMemo(() => 
+    Array.from({ length: currentStory.rating }, (_, i) => (
+      <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+    )), [currentStory.rating])
 
   return (
     <section className="py-20 bg-gradient-to-br from-yellow-50 to-amber-100">
@@ -82,25 +89,23 @@ export default function RealStories() {
                 <div className="flex items-start space-x-4 mb-6">
                   <Quote className="w-8 h-8 text-yellow-500 flex-shrink-0 mt-1" />
                   <div>
-                    <h3 className="text-2xl font-bold text-gray-900 mb-2">{stories[activeStory].title}</h3>
+                    <h3 className="text-2xl font-bold text-gray-900 mb-2">{currentStory.title}</h3>
                     <div className="flex items-center space-x-4 text-sm text-gray-500 mb-4">
-                      <span>{stories[activeStory].client}</span>
+                      <span>{currentStory.client}</span>
                       <span>•</span>
-                      <span>{stories[activeStory].date}</span>
+                      <span>{currentStory.date}</span>
                       <div className="flex items-center space-x-1">
-                        {[...Array(stories[activeStory].rating)].map((_, i) => (
-                          <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
-                        ))}
+                        {storyStars}
                       </div>
                     </div>
                   </div>
                 </div>
 
-                <p className="text-gray-700 leading-relaxed mb-6 text-lg">{stories[activeStory].story}</p>
+                <p className="text-gray-700 leading-relaxed mb-6 text-lg">{currentStory.story}</p>
 
                 <div className="bg-gradient-to-r from-green-100 to-emerald-100 rounded-2xl p-4 border-l-4 border-green-500">
                   <h4 className="font-bold text-green-800 mb-1">Kết quả:</h4>
-                  <p className="text-green-700">{stories[activeStory].impact}</p>
+                  <p className="text-green-700">{currentStory.impact}</p>
                 </div>
               </div>
             </div>

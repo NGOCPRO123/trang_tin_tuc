@@ -39,12 +39,14 @@ export function HeroSection() {
         <div className="space-y-8">
           {/* Description Text */}
           <div className="space-y-6">
-            <p className="text-lg md:text-xl text-white leading-relaxed">
-              Hành trình của một chủ doanh nghiệp thường là một hành trình đơn độc. Chúng tôi thấu hiểu điều đó, bởi chính những nhà sáng lập <span className="font-bold text-yellow-400">HLCC</span> cũng đã từng ở vị trí của bạn.
-            </p>
-            <p className="text-lg md:text-xl text-white leading-relaxed">
-              Chúng tôi đã chứng kiến những nhà lãnh đạo tài năng phải vật lộn với gánh nặng không tên: dòng tiền, nhân sự, rủi ro pháp lý...
-            </p>
+            <div className="bg-black/40 p-6 rounded-lg">
+              <p className="text-lg md:text-xl text-white leading-relaxed">
+                Hành trình của một chủ doanh nghiệp thường là một hành trình đơn độc. Chúng tôi thấu hiểu điều đó, bởi chính những nhà sáng lập <span className="font-bold text-yellow-400">HLCC</span> cũng đã từng ở vị trí của bạn.
+              </p>
+              <p className="text-lg md:text-xl text-white leading-relaxed mt-4">
+                Chúng tôi đã chứng kiến những nhà lãnh đạo tài năng phải vật lộn với gánh nặng không tên: dòng tiền, nhân sự, rủi ro pháp lý...
+              </p>
+            </div>
             <p className="text-lg md:text-xl font-semibold text-white bg-black/40 p-6 rounded-lg border-l-4 border-yellow-400">
               <span className="text-yellow-400">HLCC</span> ra đời không phải để trở thành một nhà cung cấp dịch vụ. Chúng tôi ra đời từ chính sự thấu hiểu đó, với một khát vọng trở thành người đồng hành chiến lược, một điểm tựa vững chắc cho các doanh nghiệp Việt.
             </p>
@@ -93,15 +95,6 @@ export function HeroSection() {
           </div>
 
           {/* CTA Button */}
-          <div>
-            <Button
-              size="lg"
-              className="bg-gradient-to-r from-yellow-500 to-orange-500 hover:from-yellow-600 hover:to-orange-600 text-white px-8 py-4 text-lg rounded-xl font-semibold group shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
-            >
-              Khám phá câu chuyện của chúng tôi
-              <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-            </Button>
-          </div>
         </div>
 
         {/* Right Image - Adjusted Size */}

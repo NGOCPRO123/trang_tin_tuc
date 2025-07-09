@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button"
 import { Clock, AlertTriangle, Phone } from "lucide-react"
-import { useState, useEffect } from "react"
+import { useState, useEffect, useCallback, useMemo } from "react"
 
 export default function UrgencySection() {
   const [timeLeft, setTimeLeft] = useState({
@@ -11,22 +11,29 @@ export default function UrgencySection() {
     seconds: 30,
   })
 
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setTimeLeft((prev) => {
-        if (prev.seconds > 0) {
-          return { ...prev, seconds: prev.seconds - 1 }
-        } else if (prev.minutes > 0) {
-          return { ...prev, minutes: prev.minutes - 1, seconds: 59 }
-        } else if (prev.hours > 0) {
-          return { hours: prev.hours - 1, minutes: 59, seconds: 59 }
-        }
-        return prev
-      })
-    }, 1000)
-
-    return () => clearInterval(timer)
+  const updateTimer = useCallback(() => {
+    setTimeLeft((prev) => {
+      if (prev.seconds > 0) {
+        return { ...prev, seconds: prev.seconds - 1 }
+      } else if (prev.minutes > 0) {
+        return { ...prev, minutes: prev.minutes - 1, seconds: 59 }
+      } else if (prev.hours > 0) {
+        return { hours: prev.hours - 1, minutes: 59, seconds: 59 }
+      }
+      return prev
+    })
   }, [])
+
+  useEffect(() => {
+    const timer = setInterval(updateTimer, 1000)
+    return () => clearInterval(timer)
+  }, [updateTimer])
+
+  const formattedTime = useMemo(() => ({
+    hours: timeLeft.hours.toString().padStart(2, "0"),
+    minutes: timeLeft.minutes.toString().padStart(2, "0"),
+    seconds: timeLeft.seconds.toString().padStart(2, "0"),
+  }), [timeLeft])
 
   return (
     <section className="py-20 bg-gradient-to-br from-red-100 via-orange-100 to-yellow-100">
@@ -48,19 +55,19 @@ export default function UrgencySection() {
             <div className="flex justify-center space-x-8 mb-8">
               <div className="text-center">
                 <div className="bg-gradient-to-br from-yellow-400 to-orange-500 text-white rounded-2xl p-4 w-20 h-20 flex items-center justify-center">
-                  <span className="text-2xl font-black">{timeLeft.hours.toString().padStart(2, "0")}</span>
+                  <span className="text-2xl font-black">{formattedTime.hours}</span>
                 </div>
                 <p className="text-sm text-gray-600 mt-2">Giờ</p>
               </div>
               <div className="text-center">
                 <div className="bg-gradient-to-br from-yellow-400 to-orange-500 text-white rounded-2xl p-4 w-20 h-20 flex items-center justify-center">
-                  <span className="text-2xl font-black">{timeLeft.minutes.toString().padStart(2, "0")}</span>
+                  <span className="text-2xl font-black">{formattedTime.minutes}</span>
                 </div>
                 <p className="text-sm text-gray-600 mt-2">Phút</p>
               </div>
               <div className="text-center">
                 <div className="bg-gradient-to-br from-yellow-400 to-orange-500 text-white rounded-2xl p-4 w-20 h-20 flex items-center justify-center">
-                  <span className="text-2xl font-black">{timeLeft.seconds.toString().padStart(2, "0")}</span>
+                  <span className="text-2xl font-black">{formattedTime.seconds}</span>
                 </div>
                 <p className="text-sm text-gray-600 mt-2">Giây</p>
               </div>

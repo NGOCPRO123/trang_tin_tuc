@@ -136,30 +136,6 @@ export function IntroSection() {
             </div>
           </div>
         </motion.div>
-
-        {/* Solution Preview */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.8 }}
-          viewport={{ once: true }}
-          className="text-center mt-16"
-        >
-          <div className="bg-gradient-to-r from-yellow-500 to-orange-500 p-8 rounded-2xl text-white shadow-xl">
-            <h3 className="text-2xl font-bold mb-4">
-              Giải pháp: Một điểm đến duy nhất
-            </h3>
-            <p className="text-lg mb-6 text-yellow-100">
-              HLCC cung cấp giải pháp doanh nghiệp toàn diện, kết nối mọi mắt xích từ tài chính, pháp lý đến vận hành.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-white text-yellow-600 font-bold px-8 py-4 rounded-xl hover:bg-yellow-50 transition-all duration-300 transform hover:scale-105">
-                Khám phá giải pháp của chúng tôi
-                <ArrowRight className="ml-2 h-5 w-5 inline" />
-              </button>
-            </div>
-          </div>
-        </motion.div>
       </div>
     </section>
   )

@@ -16,6 +16,7 @@ import { Newspaper, ChevronDown, Plus } from "lucide-react"
 import useSWR from "swr"
 import { removeVietnameseTones } from "@/lib/utils"
 import { SolutionListPage } from "@/components/giai-phap/solution-list-page"
+import { LoadingPage } from "@/components/ui/loading"
 
 const fetcher = (url: string) => fetch(url).then(res => res.json())
 
@@ -75,12 +76,12 @@ export function HomePage({ type }: { type?: "giai-phap" | "kien-thuc" }) {
   const conThemMoiNhat = latestVisibleCount < tatCaTinMoiNhat.length;
 
   if (type === "giai-phap") {
-    if (isLoading) return <div className="text-center py-16">Đang tải dữ liệu...</div>;
+    if (isLoading) return <LoadingPage title="Đang tải dữ liệu..." subtitle="Vui lòng chờ trong giây lát" variant="minimal" />;
     return <SolutionListPage articles={articles.filter((a: any) => a.type === "giai-phap")} />;
   }
 
   if (type === "kien-thuc") {
-    if (isLoading) return <div className="text-center py-16">Đang tải dữ liệu...</div>;
+    if (isLoading) return <LoadingPage title="Đang tải dữ liệu..." subtitle="Vui lòng chờ trong giây lát" variant="minimal" />;
 
     // --- UI mới cho trang kiến thức ---
     return (
@@ -215,7 +216,7 @@ export function HomePage({ type }: { type?: "giai-phap" | "kien-thuc" }) {
     );
   }
 
-  if (isLoading) return <div className="text-center py-16">Đang tải dữ liệu...</div>
+  if (isLoading) return <LoadingPage title="Đang tải dữ liệu..." subtitle="Vui lòng chờ trong giây lát" variant="minimal" />
   return (
     <MainLayout>
       {/* Hero Section */}

@@ -80,23 +80,23 @@ export function TestimonialsSection() {
                   </div>
                   <div className="flex justify-between">
                     <span className="text-gray-600">Vấn đề:</span>
-                    <span className="font-semibold text-red-600">{caseStudy.problem}</span>
+                    <span className="font-semibold text-gray-900">{caseStudy.problem}</span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-gray-600">Giải pháp:</span>
-                    <span className="font-semibold text-blue-600">{caseStudy.solution}</span>
+                    <span className="font-semibold text-gray-900">{caseStudy.solution}</span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-gray-600">Kết quả:</span>
-                    <span className="font-semibold text-green-600">{caseStudy.result}</span>
+                    <span className="font-semibold text-gray-900">{caseStudy.result}</span>
                   </div>
                   <div className="flex justify-between">
                     <span className="text-gray-600">Cải thiện:</span>
-                    <span className="font-semibold text-green-600">{caseStudy.improvement}</span>
+                    <span className="font-semibold text-gray-900">{caseStudy.improvement}</span>
                   </div>
                 </div>
 
-                <Button variant="outline" className="w-full border-blue-300 text-blue-700 hover:bg-blue-50">
+                <Button variant="outline" className="w-full border-yellow-400 text-yellow-700 hover:bg-yellow-50">
                   Xem chi tiết vụ án
                   <ArrowRight className="ml-2 w-4 h-4" />
                 </Button>
@@ -137,7 +137,7 @@ export function TestimonialsSection() {
                   />
                   <div>
                     <h4 className="font-bold text-gray-800">{testimonial.name}</h4>
-                    <p className="text-blue-600 text-sm">{testimonial.title}</p>
+                    <p className="text-gray-900 text-sm">{testimonial.title}</p>
                   </div>
                 </div>
               </CardContent>

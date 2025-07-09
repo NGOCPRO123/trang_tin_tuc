@@ -5,6 +5,7 @@ import { ChevronDown, MapPin, Thermometer, Droplets, Wind, Eye, Sun, Cloud, Clou
 import { Button } from "@/components/ui/button"
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
 import { motion, AnimatePresence } from "framer-motion"
+import { Loading } from "@/components/ui/loading"
 
 const API_KEY = process.env.NEXT_PUBLIC_OPENWEATHER_API_KEY;
 
@@ -82,7 +83,7 @@ export function WeatherWidget() {
           </DropdownMenuContent>
         </DropdownMenu>
         {loading ? (
-          <div className="text-xs text-muted-foreground">Đang tải...</div>
+          <Loading size="sm" variant="dots" className="text-xs" />
         ) : error ? (
           <div className="text-xs text-red-500">{error}</div>
         ) : currentWeather ? (

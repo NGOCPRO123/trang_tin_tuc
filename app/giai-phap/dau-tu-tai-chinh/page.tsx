@@ -24,8 +24,9 @@ export default function LandingPage() {
         <TeamSection />
         <TestimonialsSection />
         <PackagesSection />
-        <CTASection />
+        
         <TrustSection />
+        <CTASection />
       </main>
       <Footer />
     </div>

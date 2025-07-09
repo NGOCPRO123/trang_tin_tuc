@@ -43,6 +43,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select"
+import { Loading } from "@/components/ui/loading"
 
 export function ContactPage() {
   const { toast } = useToast()
@@ -271,7 +272,7 @@ export function ContactPage() {
                       disabled={isLoading}
                     >
                       {isLoading ? (
-                        <Loader2 className="h-6 w-6 mr-3 animate-spin" />
+                        <Loading size="sm" variant="spinner" className="text-white mr-3" />
                       ) : (
                         <Send className="h-6 w-6 mr-3" />
                       )}

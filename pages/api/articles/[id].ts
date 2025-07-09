@@ -43,6 +43,17 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         { $inc: { viewCount: 1 } }
       )
       if (result.matchedCount === 0) return res.status(404).json({ message: "Not found" })
+      // Ghi log lượt xem vào collection views
+      try {
+        await db.collection("views").insertOne({
+          articleId: ObjectId.isValid(id as string) ? new ObjectId(id as string) : id,
+          timestamp: new Date(),
+          // Có thể bổ sung userId, ip nếu muốn
+        })
+      } catch (e) {
+        // Không làm gián đoạn nếu log view lỗi
+        console.error("Log view error", e)
+      }
       return res.status(200).json({ message: "View count incremented" })
     } catch (error) {
       return res.status(500).json({ error: (error as Error).message })

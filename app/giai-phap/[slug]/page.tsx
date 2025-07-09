@@ -9,7 +9,7 @@ import { IntroSection } from "@/components/giai-phap/sections/intro-section";
 import { ServicesSection } from "@/components/giai-phap/sections/services-section";
 
 interface Props {
-  params: { slug: string }
+  params: Promise<{ slug: string }>
 }
 
 async function getArticleBySlug(slug: string) {
@@ -20,7 +20,8 @@ async function getArticleBySlug(slug: string) {
 }
 
 export default async function GiaiPhapBySlugPage({ params }: Props) {
-  const article = await getArticleBySlug(params.slug);
+  const { slug } = await params;
+  const article = await getArticleBySlug(slug);
   return (
     <div className="min-h-screen bg-gradient-to-b from-yellow-50 to-amber-50">
       <Header />

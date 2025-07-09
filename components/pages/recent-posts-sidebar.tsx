@@ -1,6 +1,7 @@
 import useSWR from "swr";
 import Link from "next/link";
 import Image from "next/image";
+import { Loading } from "@/components/ui/loading";
 
 const fetcher = (url: string) => fetch(url).then(res => res.json());
 
@@ -11,7 +12,7 @@ export function RecentPostsSidebar() {
     .filter((a: any) => a.status === "published")
     .sort((a: any, b: any) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime())
     .slice(0, 5);
-  if (isLoading) return <div>Đang tải...</div>;
+  if (isLoading) return <Loading size="sm" variant="dots" />;
   return (
     <ul className="space-y-4">
       {recent.map((post: any) => (

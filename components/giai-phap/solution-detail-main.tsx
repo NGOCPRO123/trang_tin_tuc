@@ -16,6 +16,7 @@ import { formatRelativeTime } from "@/lib/utils"
 import { useEffect, useState } from "react"
 import { WeatherWidget } from "@/components/pages/weather-widget"
 import { usePathname } from "next/navigation"
+import { LoadingPage } from "@/components/ui/loading"
 
 interface SolutionDetailMainProps {
   articleId: string
@@ -52,13 +53,7 @@ export function SolutionDetailMain({ articleId }: SolutionDetailMainProps) {
   }
 
   if (isLoading) {
-    return (
-      <MainLayout>
-        <div className="container py-8">
-          <p>Đang tải bài viết...</p>
-        </div>
-      </MainLayout>
-    )
+    return <LoadingPage title="Đang tải bài viết..." subtitle="Vui lòng chờ trong giây lát" variant="minimal" />
   }
 
   if (error || !article) {

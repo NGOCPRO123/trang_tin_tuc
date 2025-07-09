@@ -1,6 +1,7 @@
 import Link from "next/link";
 import useSWR from "swr";
 import { Newspaper, Trophy, DollarSign } from "lucide-react";
+import { Loading } from "@/components/ui/loading";
 
 const categoryIcons = {
   "Quản trị doanh nghiệp": Newspaper,
@@ -24,7 +25,7 @@ export function KnowledgeCategoriesSidebar() {
     return acc;
   }, {} as Record<string, number>);
   const categories = Object.keys(categoryIcons);
-  if (isLoading) return <div>Đang tải...</div>;
+  if (isLoading) return <Loading size="sm" variant="dots" />;
   return (
     <ul className="space-y-3">
       {categories.map((cat) => {

@@ -19,6 +19,7 @@ import {
 } from "lucide-react"
 import { useRouter } from "next/navigation"
 import { useToast } from "@/hooks/use-toast"
+import { LoadingPage, Loading } from "@/components/ui/loading"
 
 export default function AdminDashboardPage() {
   const [success, setSuccess] = useState(false)
@@ -27,6 +28,8 @@ export default function AdminDashboardPage() {
   const [articles, setArticles] = useState<Article[]>([])
   const [activeUsers, setActiveUsers] = useState<number>(0)
   const [logs, setLogs] = useState<any[]>([])
+  const [viewsToday, setViewsToday] = useState(0)
+  const [totalPageviews, setTotalPageviews] = useState(0)
   const router = useRouter();
   const formRef = useRef<HTMLDivElement>(null);
   const { toast } = useToast();
@@ -52,14 +55,20 @@ export default function AdminDashboardPage() {
       .then(data => setLogs(data || []));
   }, []);
 
+  useEffect(() => {
+    fetch("/api/views/today")
+      .then(res => res.json())
+      .then(data => setViewsToday(data.viewsToday || 0))
+  }, [])
+
+  useEffect(() => {
+    fetch("/api/pageview/count?path=all")
+      .then(res => res.json())
+      .then(data => setTotalPageviews(data.count || 0))
+  }, [])
+
   // Tổng bài viết
   const totalArticles = articles.length
-  // Tổng lượt xem hôm nay
-  const today = new Date()
-  const viewsToday = articles.reduce((sum, a) => {
-    const d = new Date(a.publishedAt)
-    return d.toDateString() === today.toDateString() ? sum + (a.viewCount || 0) : sum
-  }, 0)
   // Bài viết tuần này
   const articlesThisWeek = articles.filter(a => {
     if (!a.publishedAt) return false;
@@ -227,16 +236,16 @@ export default function AdminDashboardPage() {
           </CardContent>
         </Card>
 
-        <Card className="bg-gradient-to-br from-orange-50 to-orange-100 border-orange-200">
+        {/* Đã xóa card tốc độ tăng trưởng */}
+
+        <Card className="bg-gradient-to-br from-yellow-50 to-yellow-100 border-yellow-200">
           <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium text-orange-700">Tốc độ tăng trưởng</CardTitle>
-            <TrendingUp className="h-4 w-4 text-orange-600" />
+            <CardTitle className="text-sm font-medium text-yellow-700">Tổng lượt truy cập</CardTitle>
+            <Eye className="h-4 w-4 text-yellow-600" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold text-orange-900">{growth.toFixed(1)}%</div>
-            <p className="text-xs text-orange-600 mt-1">
-              <span className="text-green-600">+2.1%</span> so với tháng trước
-            </p>
+            <div className="text-2xl font-bold text-yellow-900">{totalPageviews.toLocaleString()}</div>
+            <p className="text-xs text-yellow-600 mt-1">Tổng số lượt truy cập vào website</p>
           </CardContent>
         </Card>
       </div>
@@ -339,7 +348,7 @@ export default function AdminDashboardPage() {
           {loading && (
             <div className="mt-4 p-4 bg-blue-50 border border-blue-200 rounded-lg">
               <div className="flex items-center gap-2">
-                <div className="w-4 h-4 border-2 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
+                <Loading size="sm" variant="spinner" />
                 <span className="text-blue-800 font-semibold">Đang xử lý...</span>
               </div>
               <p className="text-blue-600 text-sm mt-1">Vui lòng chờ trong giây lát</p>

@@ -30,7 +30,7 @@ export function StatsSection() {
   ]
 
   return (
-    <section className="py-20 bg-gradient-to-br from-blue-50 to-indigo-50">
+    <section className="py-20 bg-gradient-to-br from-yellow-50 to-amber-50">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-3xl lg:text-4xl font-bold text-gray-800 mb-4">
@@ -43,10 +43,10 @@ export function StatsSection() {
           {stats.map((stat, index) => (
             <Card
               key={index}
-              className="border-blue-200 hover:shadow-xl transition-all duration-300 hover:-translate-y-2"
+              className="border-yellow-400 hover:shadow-xl transition-all duration-300 hover:-translate-y-2"
             >
               <CardContent className="p-8 text-center">
-                <div className="bg-gradient-to-r from-blue-500 to-indigo-500 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                <div className="bg-gradient-to-r from-yellow-500 to-amber-400 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                   <stat.icon className="w-8 h-8 text-white" />
                 </div>
                 <div className="text-3xl font-bold text-gray-800 mb-2">{stat.number}</div>
@@ -58,7 +58,7 @@ export function StatsSection() {
         </div>
 
         <div className="text-center">
-          <div className="bg-white rounded-2xl shadow-lg p-8 max-w-4xl mx-auto border border-blue-200">
+          <div className="bg-white rounded-2xl shadow-lg p-8 max-w-4xl mx-auto border border-yellow-400">
             <p className="text-2xl font-semibold text-gray-800">
               🎯 "Không cam kết lợi nhuận ảo – chỉ báo cáo thực tế có dữ liệu."
             </p>

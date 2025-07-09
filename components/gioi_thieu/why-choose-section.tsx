@@ -3,6 +3,7 @@
 import { motion } from "framer-motion"
 import { Award, Users, Shield, Zap, Target, Clock, Star, ArrowRight, CheckCircle } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { useRouter } from "next/navigation"
 
 const advantages = [
   {
@@ -38,6 +39,12 @@ const advantages = [
 ]
 
 export function WhyChooseSection() {
+  const router = useRouter()
+
+  const handleConsultationClick = () => {
+    router.push('/lien-he#contact-form')
+  }
+
   return (
     <section className="relative py-24 px-4 overflow-hidden">
       {/* Background */}
@@ -154,6 +161,7 @@ export function WhyChooseSection() {
               <Button
                 size="lg"
                 className="bg-black hover:bg-gray-900 text-yellow-400 px-8 py-4 text-lg rounded-xl font-semibold group shadow-lg hover:shadow-xl transition-all duration-300"
+                onClick={handleConsultationClick}
               >
                 Đăng Ký Tư Vấn Miễn Phí Ngay
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />

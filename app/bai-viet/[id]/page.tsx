@@ -1,12 +1,13 @@
 import { redirect } from 'next/navigation'
 
 interface ArticleDetailPageProps {
-  params: {
+  params: Promise<{
     id: string
-  }
+  }>
 }
 
-export default function ArticleDetail({ params }: ArticleDetailPageProps) {
+export default async function ArticleDetail({ params }: ArticleDetailPageProps) {
   // Redirect từ URL cũ sang URL mới
-  redirect(`/${params.id}`)
+  const { id } = await params;
+  redirect(`/${id}`)
 }

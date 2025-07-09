@@ -104,9 +104,10 @@ export function PackagesSection() {
         <div className="text-center mt-12">
           <Button
             size="lg"
-            className="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white px-8 py-4"
+            className="bg-gradient-to-r from-yellow-400 to-amber-500 hover:from-yellow-500 hover:to-amber-600 text-white px-8 py-4"
           >
-            🟢 Chọn gói phù hợp
+            <span className="inline-block w-4 h-4 rounded-full bg-yellow-300 mr-2 align-middle"></span>
+            Chọn gói phù hợp
           </Button>
         </div>
       </div>

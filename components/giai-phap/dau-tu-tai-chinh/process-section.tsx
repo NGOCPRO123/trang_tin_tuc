@@ -9,33 +9,33 @@ export function ProcessSection() {
       title: "Chẩn đoán 360°",
       description: "Lắng nghe và phân tích toàn diện để tìm ra vấn đề gốc rễ. Chúng tôi không chỉ nhìn bề nổi mà đi sâu vào từng khía cạnh của doanh nghiệp.",
       icon: Search,
-      color: "from-blue-500 to-indigo-500"
+      color: "from-yellow-500 to-amber-400"
     },
     {
       number: "02",
       title: "Xây dựng Lộ trình",
       description: "Thiết kế một lộ trình giải pháp được 'may đo' riêng cho doanh nghiệp của bạn. Không có giải pháp chung chung, chỉ có giải pháp phù hợp.",
       icon: Route,
-      color: "from-green-500 to-emerald-500"
+      color: "from-yellow-400 to-yellow-500"
     },
     {
       number: "03",
       title: "Đồng hành Triển khai",
       description: "'Xắn tay áo' cùng bạn thực thi để đảm bảo hiệu quả. Chúng tôi không chỉ tư vấn mà còn đồng hành trong mọi bước triển khai.",
       icon: Users,
-      color: "from-purple-500 to-violet-500"
+      color: "from-amber-400 to-yellow-500"
     },
     {
       number: "04",
       title: "Đo lường & Tối ưu",
       description: "Theo dõi, đánh giá và tinh chỉnh để mang lại kết quả cao nhất. Quá trình không dừng lại ở triển khai mà tiếp tục tối ưu liên tục.",
       icon: BarChart3,
-      color: "from-orange-500 to-red-500"
+      color: "from-yellow-600 to-amber-500"
     },
   ]
 
   return (
-    <section className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
+    <section className="py-20 bg-gradient-to-br from-gray-50 to-yellow-50">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-3xl lg:text-4xl font-bold text-gray-800 mb-4">
@@ -54,7 +54,7 @@ export function ProcessSection() {
                 <Card className="mb-8 border-2 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 bg-white">
                   <CardContent className="p-8">
                     <div className="flex items-start space-x-6">
-                      <div className={`bg-gradient-to-r ${step.color} text-white rounded-full w-16 h-16 flex items-center justify-center text-xl font-bold flex-shrink-0`}>
+                      <div className={`bg-gradient-to-r ${step.color} text-yellow-700 rounded-full w-16 h-16 flex items-center justify-center text-xl font-bold flex-shrink-0`}>
                         <IconComponent className="w-8 h-8" />
                       </div>
                       <div className="flex-1">
@@ -72,7 +72,7 @@ export function ProcessSection() {
 
                 {index < steps.length - 1 && (
                   <div className="flex justify-center mb-4">
-                    <div className="w-0.5 h-8 bg-gradient-to-b from-blue-500 to-green-500"></div>
+                    <div className="w-0.5 h-8 bg-gradient-to-b from-yellow-500 to-amber-400"></div>
                   </div>
                 )}
               </div>
@@ -83,7 +83,7 @@ export function ProcessSection() {
         <div className="text-center mt-12">
           <Button
             size="lg"
-            className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white px-8 py-4"
+            className="bg-gradient-to-r from-yellow-500 to-amber-400 hover:from-yellow-600 hover:to-amber-500 text-white px-8 py-4"
           >
             🔍 Bắt đầu Chẩn đoán Doanh nghiệp
             <ArrowRight className="ml-2 w-5 h-5" />
@@ -92,7 +92,7 @@ export function ProcessSection() {
 
         <div className="text-center mt-8">
           <p className="text-gray-600">
-            <span className="font-semibold text-blue-600">HLCC</span> - Chuyên gia tư vấn doanh nghiệp hàng đầu
+            <span className="font-semibold text-yellow-600">HLCC</span> - Chuyên gia tư vấn doanh nghiệp hàng đầu
           </p>
         </div>
       </div>

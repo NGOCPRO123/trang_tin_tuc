@@ -13,7 +13,7 @@ export function ContactCTASection() {
   }
 
   const handlePortfolioClick = () => {
-    router.push('/tin-tuc')
+    router.push('/giai-phap')
   }
 
   return (
@@ -66,7 +66,7 @@ export function ContactCTASection() {
                 </motion.div>
                 <div>
                   <div className="font-semibold text-gray-800">Hotline</div>
-                  <div className="text-amber-600">028.5555.8879</div>
+                  <a href="tel:02855558879" className="text-amber-600 hover:text-amber-700 transition-colors">028.5555.8879</a>
                 </div>
               </motion.div>
 
@@ -82,7 +82,7 @@ export function ContactCTASection() {
                 </motion.div>
                 <div>
                   <div className="font-semibold text-gray-800">Email</div>
-                  <div className="text-amber-600">lienhe@hlcc.group</div>
+                  <a href="mailto:lienhe@hlcc.group" className="text-amber-600 hover:text-amber-700 transition-colors">lienhe@hlcc.group</a>
                 </div>
               </motion.div>
 
@@ -98,7 +98,7 @@ export function ContactCTASection() {
                 </motion.div>
                 <div>
                   <div className="font-semibold text-gray-800">Tư vấn chuyên sâu</div>
-                  <div className="text-amber-600">Vực Dậy Tài Chính – Bứt Phá Doanh Thu</div>
+                  <a href="/lien-he#contact-form" className="text-amber-600 hover:text-amber-700 transition-colors">Vực Dậy Tài Chính – Bứt Phá Doanh Thu</a>
                 </div>
               </motion.div>
 
@@ -114,7 +114,7 @@ export function ContactCTASection() {
                 </motion.div>
                 <div>
                   <div className="font-semibold text-gray-800">Địa chỉ</div>
-                  <div className="text-amber-600">Tòa nhà SABAY – 99 Cộng Hòa, Phường 4, Quận Tân Bình, TP.HCM</div>
+                  <a href="https://maps.google.com/?q=Tòa nhà SABAY – 99 Cộng Hòa, Phường 4, Quận Tân Bình, TP.HCM" target="_blank" rel="noopener noreferrer" className="text-amber-600 hover:text-amber-700 transition-colors">Tòa nhà SABAY – 99 Cộng Hòa, Phường 4, Quận Tân Bình, TP.HCM</a>
                 </div>
               </motion.div>
             </div>

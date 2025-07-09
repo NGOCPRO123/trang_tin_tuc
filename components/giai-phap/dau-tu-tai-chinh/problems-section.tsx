@@ -28,7 +28,7 @@ export function ProblemsSection() {
             một giải pháp tài chính tạm bợ, một quy trình kế toán lỗi thời, một chiến lược kinh doanh không còn phù hợp. 
             Việc chỉ chữa "triệu chứng" sẽ không bao giờ giải quyết được "căn bệnh".
           </p>
-          <p className="text-lg text-blue-600 font-medium mt-4">
+          <p className="text-lg text-yellow-600 font-medium mt-4">
             Tại HLCC, chúng tôi tiếp cận doanh nghiệp của bạn như một "hiện trường" cần được điều tra để tìm ra "hung thủ" thật sự.
           </p>
         </div>
@@ -47,16 +47,16 @@ export function ProblemsSection() {
         </div>
 
         <div className="text-center">
-          <div className="bg-gradient-to-r from-blue-100 to-indigo-100 rounded-2xl p-8 max-w-4xl mx-auto border border-blue-200">
+          <div className="bg-gradient-to-r from-yellow-100 to-indigo-100 rounded-2xl p-8 max-w-4xl mx-auto border border-yellow-400">
             <div className="flex items-center justify-center mb-4">
-              <Search className="w-8 h-8 text-blue-600 mr-3" />
+              <Search className="w-8 h-8 text-yellow-600 mr-3" />
               <h3 className="text-2xl font-semibold text-gray-800">
                 Phương pháp "Điều tra & Giải mã" của HLCC
               </h3>
             </div>
             <div className="grid md:grid-cols-3 gap-6 mt-6">
               <div className="flex items-center space-x-3">
-                <Briefcase className="w-6 h-6 text-blue-600" />
+                <Briefcase className="w-6 h-6 text-yellow-600" />
                 <span className="text-gray-700 font-medium">Chẩn đoán 360°</span>
               </div>
               <div className="flex items-center space-x-3">

@@ -14,6 +14,9 @@ import {
   Award,
   Clock
 } from "lucide-react"
+import useSWR from "swr"
+import { NewsArticleCard } from "@/components/articles/news-article-card"
+import { useRouter } from "next/navigation"
 
 const processSteps = [
   {
@@ -74,7 +77,23 @@ const processSteps = [
   }
 ]
 
+const fetcher = (url: string) => fetch(url).then(res => res.json())
+
 export function BlogSection() {
+  const { data: articles = [], isLoading } = useSWR("/api/articles", fetcher)
+  const router = useRouter()
+
+  // Lọc bài viết kiến thức đã xuất bản
+  const thoiGianHienTai = new Date();
+  const kienThucArticles = articles.filter(
+    (baiViet: any) =>
+      baiViet.status === "published" &&
+      (!baiViet.scheduledDate || new Date(baiViet.scheduledDate) <= thoiGianHienTai) &&
+      baiViet.type === "kien-thuc"
+  )
+  .sort((a: any, b: any) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime())
+  .slice(0, 3)
+
   return (
     <section className="py-20 bg-white">
       <div className="container mx-auto px-4">
@@ -92,33 +111,20 @@ export function BlogSection() {
             Cập nhật các bài viết chuyên sâu về tư vấn doanh nghiệp, giải pháp tài chính, quản trị và phát triển bền vững từ đội ngũ chuyên gia HLCC.
           </p>
         </motion.div>
-        {/* Blog highlight section */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-          {[{
-            title: "Tái cấu trúc tài chính: Chìa khóa tăng trưởng bền vững",
-            excerpt: "Khám phá các bước tái cấu trúc tài chính giúp doanh nghiệp vượt qua khủng hoảng và phát triển ổn định.",
-            link: "/kien-thuc/tai-cau-truc-tai-chinh"
-          }, {
-            title: "Tối ưu vận hành doanh nghiệp trong thời đại số",
-            excerpt: "Những chiến lược quản trị và vận hành giúp doanh nghiệp nâng cao hiệu suất, giảm chi phí.",
-            link: "/kien-thuc/toi-uu-van-hanh"
-          }, {
-            title: "Giải pháp tài chính toàn diện cho doanh nghiệp vừa và nhỏ",
-            excerpt: "Các giải pháp tài chính phù hợp giúp doanh nghiệp SME phát triển bền vững và chủ động nguồn vốn.",
-            link: "/kien-thuc/giai-phap-tai-chinh-sme"
-          }].map((blog, idx) => (
-            <Card key={idx} className="border-0 shadow-xl hover:shadow-2xl transition-all duration-300 bg-gradient-to-br from-yellow-50 to-orange-50 border-2 border-gray-200">
-              <CardHeader className="pb-4">
-                <CardTitle className="text-2xl font-bold text-gray-900 mb-3">
-                  {blog.title}
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-gray-700 mb-6 leading-relaxed">{blog.excerpt}</p>
-                <a href={blog.link} className="text-orange-600 font-semibold hover:underline">Đọc tiếp →</a>
-              </CardContent>
-            </Card>
+        {/* Blog highlight section - Lấy từ API */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+          {kienThucArticles.map((article: any, idx: number) => (
+            <NewsArticleCard key={article._id || article.id} article={article} index={idx} />
           ))}
+        </div>
+        <div className="flex justify-center mb-12">
+          <button
+            className="bg-orange-500 hover:bg-orange-600 text-white font-bold px-8 py-4 rounded-xl transition-all duration-300"
+            onClick={() => router.push("/kien-thuc")}
+          >
+            Xem thêm bài viết
+            <ArrowRight className="ml-2 h-5 w-5 inline" />
+          </button>
         </div>
 
         {/* Process Steps */}
@@ -228,12 +234,12 @@ export function BlogSection() {
               Hãy để chúng tôi chứng minh sự khác biệt thông qua một buổi tư vấn miễn phí.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-white text-yellow-600 font-bold px-8 py-4 rounded-xl hover:bg-yellow-50 transition-all duration-300 transform hover:scale-105">
+              <button
+                className="bg-white text-yellow-600 font-bold px-8 py-4 rounded-xl hover:bg-yellow-50 transition-all duration-300 transform hover:scale-105"
+                onClick={() => router.push('/lien-he#contact-form')}
+              >
                 Đặt lịch tư vấn miễn phí
                 <ArrowRight className="ml-2 h-5 w-5 inline" />
-              </button>
-              <button className="border-2 border-white text-white font-bold px-8 py-4 rounded-xl hover:bg-white hover:text-yellow-600 transition-all duration-300 transform hover:scale-105">
-                Xem case study
               </button>
             </div>
           </div>

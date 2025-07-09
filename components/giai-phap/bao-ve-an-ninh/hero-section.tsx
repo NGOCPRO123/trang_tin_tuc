@@ -2,16 +2,9 @@
 
 import { Button } from "@/components/ui/button"
 import { Shield, Eye, ArrowRight } from "lucide-react"
-import { useState, useEffect } from "react"
+import Image from "next/image"
 
 export default function HeroSection() {
-  const [currentTime, setCurrentTime] = useState(new Date())
-
-  useEffect(() => {
-    const timer = setInterval(() => setCurrentTime(new Date()), 1000)
-    return () => clearInterval(timer)
-  }, [])
-
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-yellow-50 to-orange-100">
       <div className="relative z-10 container mx-auto px-4 py-24">
@@ -39,11 +32,18 @@ export default function HeroSection() {
           {/* Right side - Visual */}
           <div className="relative flex justify-center items-center">
             <div className="relative bg-gradient-to-br from-yellow-200 to-amber-300 rounded-3xl p-8 shadow-2xl">
-              <img
-                src="/uploads/dey24xap6oo8mj3xxf54uv2jk.png"
-                alt="Bảo vệ an ninh doanh nghiệp"
-                className="w-[480px] h-[480px] object-cover rounded-3xl border-4 border-yellow-300 shadow-2xl mx-auto"
-              />
+              <div className="relative w-[480px] h-[480px] rounded-3xl overflow-hidden border-4 border-yellow-300 shadow-2xl">
+                <Image
+                  src="/uploads/dey24xap6oo8mj3xxf54uv2jk.png"
+                  alt="Bảo vệ an ninh doanh nghiệp"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 480px"
+                  className="object-cover"
+                  priority
+                  placeholder="blur"
+                  blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAhEAACAQMDBQAAAAAAAAAAAAABAgMABAUGIWGRkqGx0f/EABUBAQEAAAAAAAAAAAAAAAAAAAMF/8QAGhEAAgIDAAAAAAAAAAAAAAAAAAECEgMRkf/aAAwDAQACEQMRAD8AltJagyeH0AthI5xdrLcNM91BF5pX2HaH9bcfaSXWGaRmknyJckliyjqTzSlT54b6bk+h0R//2Q=="
+                />
+              </div>
               <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 bg-white rounded-2xl p-4 shadow-lg mt-4">
                 <div className="text-base font-bold text-yellow-600">Bảo vệ toàn diện 24/7</div>
               </div>

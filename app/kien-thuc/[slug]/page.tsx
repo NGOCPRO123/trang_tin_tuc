@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 import { ArticleDetailPage } from "@/components/pages/article-detail-page";
 
 interface Props {
-  params: { slug: string }
+  params: Promise<{ slug: string }>
 }
 
 async function getArticleBySlug(slug: string) {
@@ -13,7 +13,8 @@ async function getArticleBySlug(slug: string) {
 }
 
 export default async function KienThucBySlugPage({ params }: Props) {
-  const article = await getArticleBySlug(params.slug);
+  const { slug } = await params;
+  const article = await getArticleBySlug(slug);
   if (!article) return notFound();
   return <ArticleDetailPage articleId={article._id || article.id} />;
 } 

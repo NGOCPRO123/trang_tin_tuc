@@ -18,6 +18,7 @@ import { WeatherWidget } from "@/components/pages/weather-widget"
 import { usePathname } from "next/navigation"
 import { KnowledgeCategoriesSidebar } from "@/components/pages/knowledge-categories-sidebar"
 import { RecentPostsSidebar } from "@/components/pages/recent-posts-sidebar"
+import { LoadingPage } from "@/components/ui/loading"
 
 interface ArticleDetailPageProps {
   articleId: string
@@ -42,6 +43,12 @@ export function ArticleDetailPage({ articleId }: ArticleDetailPageProps) {
       // Gọi API để tăng lượt xem khi vào trang bài báo chi tiết
       fetch(`/api/articles/${articleId}`, { method: "PATCH" })
         .catch(error => console.error("Error incrementing view count:", error))
+      // Gọi API log pageview
+      fetch("/api/pageview", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ path: `/bai-viet/${articleId}` })
+      }).catch(error => console.error("Error logging pageview:", error))
     }
 
     const handleScroll = () => {
@@ -57,13 +64,7 @@ export function ArticleDetailPage({ articleId }: ArticleDetailPageProps) {
   }
 
   if (isLoading) {
-    return (
-      <MainLayout>
-        <div className="container py-8">
-          <p>Đang tải bài viết...</p>
-        </div>
-      </MainLayout>
-    )
+    return <LoadingPage title="Đang tải bài viết..." subtitle="Vui lòng chờ trong giây lát" variant="minimal" />
   }
 
   if (error || !article) {

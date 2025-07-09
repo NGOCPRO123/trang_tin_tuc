@@ -79,13 +79,13 @@ const solutions = [
   }
 ]
 
-const cardGradients = [
-  "from-gray-300 to-gray-300",
-  "from-gray-300 to-gray-300",
-  "from-gray-300 to-gray-300",
-  "from-gray-300 to-gray-300",
-  "from-gray-300 to-gray-300",
-  "from-gray-300 to-gray-300",
+const pastelColors = [
+  "bg-[#b2f2bb]", // xanh lá nhạt
+  "bg-[#a5d8ff]", // xanh dương nhạt
+  "bg-[#d0bfff]", // tím nhạt
+  "bg-[#ffb3c6]", // hồng nhạt
+  "bg-[#dee2e6]", // xám nhạt
+  "bg-[#99f6e4]", // xanh ngọc nhạt
 ];
 
 export function WhyChooseUsSection() {
@@ -131,14 +131,14 @@ export function WhyChooseUsSection() {
               viewport={{ once: true }}
               whileHover={{ y: -5 }}
             >
-              <Card className={`h-full hover:shadow-xl transition-all duration-300 border-0 shadow-lg ${solution.color}`}>
+              <Card className={`h-full hover:shadow-xl transition-all duration-300 border-0 shadow-lg ${pastelColors[index % pastelColors.length]}`}>
                 <CardContent className="p-8 text-left">
-                  <div className={`w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-6 text-3xl ${solution.color}`.replace('border-l-4','') }>
+                  <div className={`w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-6 text-3xl text-gray-700 bg-white/70`}>
                     <solution.icon className="w-8 h-8" />
                   </div>
                   <h3 className="text-lg font-bold text-gray-900 mb-3 text-center">{solution.title}</h3>
-                  <p className="text-gray-600 text-sm mb-4 text-center">{solution.description}</p>
-                  <ul className="text-gray-700 text-sm list-disc pl-5 space-y-1">
+                  <p className="text-gray-700 text-sm mb-4 text-center">{solution.description}</p>
+                  <ul className="text-gray-800 text-sm list-disc pl-5 space-y-1">
                     {solution.bullets.map((item, idx) => (
                       <li key={idx}>{item}</li>
                     ))}

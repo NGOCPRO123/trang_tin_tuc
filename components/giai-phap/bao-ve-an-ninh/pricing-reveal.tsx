@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button"
 import { Check, X, Zap } from "lucide-react"
-import { useState } from "react"
+import { useState, useMemo } from "react"
 
 const comparison = [
   {
@@ -40,6 +40,24 @@ const comparison = [
 export default function PricingReveal() {
   const [showPricing, setShowPricing] = useState(false)
 
+  const comparisonRows = useMemo(() => 
+    comparison.map((item, index) => (
+      <div
+        key={index}
+        className={`grid grid-cols-3 p-4 border-b border-white/10 ${item.highlight ? "bg-yellow-500/10" : ""}`}
+      >
+        <div className="font-medium">{item.feature}</div>
+        <div className="text-center text-red-300 flex items-center justify-center">
+          <X className="w-4 h-4 mr-2" />
+          {item.others}
+        </div>
+        <div className="text-center text-green-300 flex items-center justify-center">
+          <Check className="w-4 h-4 mr-2" />
+          {item.us}
+        </div>
+      </div>
+    )), [])
+
   return (
     <section className="py-20 bg-gray-900 text-white">
       <div className="container mx-auto px-4">
@@ -59,22 +77,7 @@ export default function PricingReveal() {
               <div className="text-center text-yellow-400">Chúng tôi</div>
             </div>
 
-            {comparison.map((item, index) => (
-              <div
-                key={index}
-                className={`grid grid-cols-3 p-4 border-b border-white/10 ${item.highlight ? "bg-yellow-500/10" : ""}`}
-              >
-                <div className="font-medium">{item.feature}</div>
-                <div className="text-center text-red-300 flex items-center justify-center">
-                  <X className="w-4 h-4 mr-2" />
-                  {item.others}
-                </div>
-                <div className="text-center text-green-300 flex items-center justify-center">
-                  <Check className="w-4 h-4 mr-2" />
-                  {item.us}
-                </div>
-              </div>
-            ))}
+            {comparisonRows}
           </div>
 
           {/* Pricing reveal */}
