@@ -1,9 +1,9 @@
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/trangchu/footer";
 import { HeroSection } from "@/components/trangchu/hero-section"
-import { ServicesSection } from "@/components/trangchu/services-section"
+import { CreativeServicesSection } from "@/components/trangchu/services-section"
 import { WhyChooseUsSection } from "@/components/trangchu/why-choose-us-section"
-import { ClientTestimonialsSection } from "@/components/trangchu/client-testimonials-section"
+import { UniqueFaqSection } from "@/components/trangchu/client-testimonials-section"
 import { CompanyStatsSection } from "@/components/trangchu/company-stats-section"
 import { ContactCTASection } from "@/components/trangchu/contact-cta-section"
 import { BackToTop } from "@/components/ui/back-to-top"
@@ -15,8 +15,8 @@ export default function TrangChu1Page() {
       <main className="min-h-screen" style={{ backgroundColor: '#0B493A' }}>
         <HeroSection />
         <WhyChooseUsSection />
-        <ServicesSection />
-        <ClientTestimonialsSection />
+        <CreativeServicesSection />
+        <UniqueFaqSection />
         <CompanyStatsSection />
         <ContactCTASection />
       </main>

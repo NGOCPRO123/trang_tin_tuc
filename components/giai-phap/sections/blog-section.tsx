@@ -143,8 +143,8 @@ export function BlogSection() {
                     <div className={`bg-white text-[#CCA776] rounded-full w-12 h-12 flex items-center justify-center font-bold text-lg border-2 border-[#CCA776]`}>
                       {step.step}
                     </div>
-                    <div className={`bg-white p-3 rounded-full border-2 border-[#CCA776]`}>
-                      <step.icon className="h-6 w-6 text-[#CCA776]" />
+                    <div className={`bg-white p-3 rounded-full border-2 border-[#CCA776] shadow-lg bg-gradient-to-br from-[#CCA776] to-[#CCA776]`}>
+                      <step.icon className="h-6 w-6 text-white" />
                     </div>
                   </div>
                   <CardTitle className="text-2xl font-bold text-black mb-3">
@@ -188,29 +188,29 @@ export function BlogSection() {
           
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
             <div className="text-center">
-              <div className="bg-white p-4 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center border-2 border-[#CCA776]">
-                <Target className="h-8 w-8 text-[#CCA776]" />
+              <div className="bg-gradient-to-br from-[#CCA776] to-[#CCA776] p-4 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center shadow-lg">
+                <Target className="h-8 w-8 text-white" />
               </div>
               <h4 className="font-bold text-black mb-2">Chính xác</h4>
               <p className="text-sm text-black">Giải quyết đúng vấn đề gốc rễ</p>
             </div>
             <div className="text-center">
-              <div className="bg-white p-4 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center border-2 border-[#CCA776]">
-                <Zap className="h-8 w-8 text-[#CCA776]" />
+              <div className="bg-gradient-to-br from-[#CCA776] to-[#CCA776] p-4 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center shadow-lg">
+                <Zap className="h-8 w-8 text-white" />
               </div>
               <h4 className="font-bold text-black mb-2">Hiệu quả</h4>
               <p className="text-sm text-black">Tiết kiệm thời gian và chi phí</p>
             </div>
             <div className="text-center">
-              <div className="bg-white p-4 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center border-2 border-[#CCA776]">
-                <Award className="h-8 w-8 text-[#CCA776]" />
+              <div className="bg-gradient-to-br from-[#CCA776] to-[#CCA776] p-4 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center shadow-lg">
+                <Award className="h-8 w-8 text-white" />
               </div>
               <h4 className="font-bold text-black mb-2">Chất lượng</h4>
               <p className="text-sm text-black">Đảm bảo kết quả bền vững</p>
             </div>
             <div className="text-center">
-              <div className="bg-white p-4 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center border-2 border-[#CCA776]">
-                <Clock className="h-8 w-8 text-[#CCA776]" />
+              <div className="bg-gradient-to-br from-[#CCA776] to-[#CCA776] p-4 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center shadow-lg">
+                <Clock className="h-8 w-8 text-white" />
               </div>
               <h4 className="font-bold text-black mb-2">Đúng tiến độ</h4>
               <p className="text-sm text-black">Cam kết thời gian thực hiện</p>

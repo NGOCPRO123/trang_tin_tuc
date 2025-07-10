@@ -156,7 +156,7 @@ export function ClientsSection() {
               >
                 <Card className={`border-0 shadow-xl hover:shadow-2xl transition-all duration-300 bg-gradient-to-br ${result.bgColor} border-2 border-[#CCA776]/20`}>
                   <CardContent className="p-8 text-center">
-                    <div className={`bg-gradient-to-r ${result.color} p-4 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center`}>
+                    <div className={`bg-gradient-to-r ${result.color} p-4 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center shadow-lg`}>
                       <result.icon className="h-8 w-8 text-white" />
                     </div>
                     <h4 className="text-3xl font-bold text-black mb-2">

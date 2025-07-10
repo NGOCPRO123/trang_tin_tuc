@@ -9,35 +9,35 @@ export default function UserRightsSection() {
       </h2>
 
       <div className="prose prose-lg max-w-none text-black font-bold leading-relaxed space-y-6">
-        <p>Bạn có các quyền sau đối với thông tin cá nhân của mình:</p>
+        <p className="text-black">Bạn có các quyền sau đối với thông tin cá nhân của mình:</p>
 
         <div className="grid gap-4">
-          <div className="bg-[#CCA776]/10 rounded-lg p-6">
-            <h3 className="text-lg font-black text-[#CCA776] mb-3">Quyền truy cập:</h3>
-            <p>Bạn có quyền yêu cầu một bản sao thông tin cá nhân mà chúng tôi đang lưu trữ về bạn.</p>
+          <div className="bg-white rounded-lg p-6">
+            <h3 className="text-lg font-black text-black mb-3">Quyền truy cập:</h3>
+            <p className="text-black">Bạn có quyền yêu cầu một bản sao thông tin cá nhân mà chúng tôi đang lưu trữ về bạn.</p>
           </div>
 
-          <div className="bg-[#CCA776]/10 rounded-lg p-6">
-            <h3 className="text-lg font-black text-[#CCA776] mb-3">Quyền chỉnh sửa:</h3>
-            <p>Bạn có quyền yêu cầu chúng tôi chỉnh sửa bất kỳ thông tin nào không chính xác hoặc chưa hoàn chỉnh.</p>
+          <div className="bg-white rounded-lg p-6">
+            <h3 className="text-lg font-black text-black mb-3">Quyền chỉnh sửa:</h3>
+            <p className="text-black">Bạn có quyền yêu cầu chúng tôi chỉnh sửa bất kỳ thông tin nào không chính xác hoặc chưa hoàn chỉnh.</p>
           </div>
 
-          <div className="bg-[#CCA776]/10 rounded-lg p-6">
-            <h3 className="text-lg font-black text-[#CCA776] mb-3">Quyền xóa bỏ:</h3>
-            <p>Bạn có quyền yêu cầu chúng tôi xóa thông tin cá nhân của bạn trong một số trường hợp nhất định.</p>
+          <div className="bg-white rounded-lg p-6">
+            <h3 className="text-lg font-black text-black mb-3">Quyền xóa bỏ:</h3>
+            <p className="text-black">Bạn có quyền yêu cầu chúng tôi xóa thông tin cá nhân của bạn trong một số trường hợp nhất định.</p>
           </div>
 
-          <div className="bg-[#CCA776]/10 rounded-lg p-6">
-            <h3 className="text-lg font-black text-[#CCA776] mb-3">Quyền rút lại sự đồng ý:</h3>
-            <p>
+          <div className="bg-white rounded-lg p-6">
+            <h3 className="text-lg font-black text-black mb-3">Quyền rút lại sự đồng ý:</h3>
+            <p className="text-black">
               Nếu bạn đã đồng ý cho chúng tôi sử dụng thông tin của mình cho một mục đích cụ thể (ví dụ: nhận email
               marketing), bạn có quyền rút lại sự đồng ý đó bất cứ lúc nào.
             </p>
           </div>
         </div>
 
-        <div className="bg-[#CCA776]/20 border border-[#CCA776] rounded-lg p-4">
-          <p className="font-black text-center">
+        <div className="bg-white border border-[#CCA776] rounded-lg p-4">
+          <p className="font-black text-black text-center">
             Để thực hiện các quyền này, vui lòng liên hệ với chúng tôi qua thông tin bên dưới.
           </p>
         </div>

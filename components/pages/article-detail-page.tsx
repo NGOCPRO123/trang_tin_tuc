@@ -64,7 +64,7 @@ export function ArticleDetailPage({ articleId }: ArticleDetailPageProps) {
   }
 
   if (isLoading) {
-    return <LoadingPage title="Đang tải bài viết..." subtitle="Vui lòng chờ trong giây lát" variant="minimal" />
+    return <LoadingPage title="Đang tải bài viết..." subtitle="Vui lòng chờ trong giây lát" variant="default" />
   }
 
   if (error || !article) {
@@ -132,7 +132,7 @@ export function ArticleDetailPage({ articleId }: ArticleDetailPageProps) {
                   <Badge variant="secondary" className="mb-4">
                     {article.category}
                   </Badge>
-                  <h1 className="text-2xl md:text-3xl font-bold mb-4 leading-tight">{article.title}</h1>
+                  <h1 className="text-2xl md:text-3xl font-black mb-4 leading-tight">{article.title}</h1>
                   {article.tags && article.tags.length > 0 && (
                     <div className="mb-4 flex flex-wrap gap-2">
                       {article.tags.map((tag: string) => (
@@ -145,7 +145,7 @@ export function ArticleDetailPage({ articleId }: ArticleDetailPageProps) {
                       <Badge variant="secondary" className="text-xs">Trạng thái: {article.status}</Badge>
                     </div>
                   )}
-                  <p className="text-lg text-muted-foreground mb-6">{article.summary}</p>
+                  <p className="text-lg text-black font-bold mb-6">{article.summary}</p>
 
                   <div className="flex items-center justify-between mb-6">
                     <div className="flex items-center space-x-4 text-sm text-muted-foreground">
@@ -247,7 +247,7 @@ export function ArticleDetailPage({ articleId }: ArticleDetailPageProps) {
             <aside className="lg:col-span-3 space-y-4 sticky top-8 self-start h-fit">
               <Card>
                 <CardContent className="p-4">
-                  <div className="mb-3 text-base font-semibold text-yellow-700 flex items-center gap-2"><span>📚</span> Danh mục Kiến thức</div>
+                  <div className="mb-3 text-base font-black text-[#CCA776] flex items-center gap-2"><span>📚</span> Danh mục Kiến thức</div>
                   <KnowledgeCategoriesSidebar />
                 </CardContent>
               </Card>
@@ -270,7 +270,7 @@ export function ArticleDetailPage({ articleId }: ArticleDetailPageProps) {
           {/* Related Articles Section */}
           {related.length > 0 && (
             <div id="related" className="mt-16">
-              <h2 className="text-xl font-bold mb-6">Bài viết liên quan</h2>
+              <h2 className="text-xl font-black mb-6">Bài viết liên quan</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {related.slice(0, 6).map((rel: any) => (
                   <RelatedArticleCard key={rel._id} article={rel} />
@@ -348,8 +348,8 @@ function RelatedArticleCard({ article }: { article: any }) {
           <Badge variant="outline" className="mb-2 text-xs">
             {article.category}
           </Badge>
-          <h3 className="font-semibold text-sm line-clamp-2 mb-2">{article.title}</h3>
-          <p className="text-xs text-muted-foreground line-clamp-2 mb-3">{article.summary}</p>
+          <h3 className="font-black text-sm line-clamp-2 mb-2">{article.title}</h3>
+          <p className="text-xs text-black font-bold line-clamp-2 mb-3">{article.summary}</p>
           <div className="flex items-center justify-between text-xs text-muted-foreground">
             <div className="flex items-center space-x-1">
               <User className="h-3 w-3" />

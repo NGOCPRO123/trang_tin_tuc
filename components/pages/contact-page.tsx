@@ -139,12 +139,12 @@ export function ContactPage() {
               Kết nối với <span className="text-[#CCA776] font-black">Chuyên gia</span> của HLCC
             </h1>
             <div className="max-w-4xl mx-auto">
-              <p className="text-lg md:text-xl text-black font-bold leading-relaxed mb-8">
+              <p className="text-lg md:text-xl text-black font-black leading-relaxed mb-8">
                 Dù bạn đang đối mặt với một thách thức cụ thể hay cần một góc nhìn chiến lược, 
                 hãy bắt đầu bằng một buổi <span className="font-black text-[#CCA776] bg-[#CCA776]/10 px-2 py-1 rounded">tư vấn miễn phí</span> với chúng tôi. 
                 Đội ngũ HLCC luôn sẵn sàng lắng nghe và cùng bạn tìm ra hướng đi.
               </p>
-              <div className="flex flex-wrap justify-center gap-4 text-sm text-black font-bold">
+              <div className="flex flex-wrap justify-center gap-4 text-sm text-black font-black">
                 <div className="flex items-center">
                   <Star className="h-4 w-4 text-[#CCA776] mr-2" />
                   Chuyên nghiệp
@@ -186,7 +186,7 @@ export function ContactPage() {
                   <form onSubmit={handleSubmit} className="space-y-6">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div>
-                        <Label htmlFor="name" className="text-black font-bold text-sm">Họ và Tên *</Label>
+                        <Label htmlFor="name" className="text-black font-black text-sm">Họ và Tên *</Label>
                         <Input
                           id="name"
                           value={formData.name}
@@ -197,7 +197,7 @@ export function ContactPage() {
                         />
                       </div>
                       <div>
-                        <Label htmlFor="phone" className="text-black font-bold text-sm">Số điện thoại *</Label>
+                        <Label htmlFor="phone" className="text-black font-black text-sm">Số điện thoại *</Label>
                         <Input
                           id="phone"
                           type="tel"
@@ -212,7 +212,7 @@ export function ContactPage() {
                     
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div>
-                        <Label htmlFor="email" className="text-black font-bold text-sm">Email *</Label>
+                        <Label htmlFor="email" className="text-black font-black text-sm">Email *</Label>
                         <Input
                           id="email"
                           type="email"
@@ -224,7 +224,7 @@ export function ContactPage() {
                         />
                       </div>
                       <div>
-                        <Label htmlFor="company" className="text-black font-bold text-sm">Tên Công ty</Label>
+                        <Label htmlFor="company" className="text-black font-black text-sm">Tên Công ty</Label>
                         <Input
                           id="company"
                           value={formData.company}
@@ -236,7 +236,7 @@ export function ContactPage() {
                     </div>
 
                     <div>
-                      <Label htmlFor="service" className="text-black font-bold text-sm">Dịch vụ quan tâm</Label>
+                      <Label htmlFor="service" className="text-black font-black text-sm">Dịch vụ quan tâm</Label>
                       <Select value={formData.service} onValueChange={(value) => setFormData({ ...formData, service: value })}>
                         <SelectTrigger className="h-14 border-2 border-gray-200 focus:border-[#CCA776] focus:ring-2 focus:ring-[#CCA776]/10 transition-all duration-300 rounded-lg">
                           <SelectValue placeholder="Chọn dịch vụ bạn quan tâm" />
@@ -253,7 +253,7 @@ export function ContactPage() {
                     </div>
 
                     <div>
-                      <Label htmlFor="message" className="text-black font-bold text-sm">Nội dung tin nhắn *</Label>
+                      <Label htmlFor="message" className="text-black font-black text-sm">Nội dung tin nhắn *</Label>
                       <Textarea
                         id="message"
                         value={formData.message}
@@ -279,7 +279,7 @@ export function ContactPage() {
                       GỬI YÊU CẦU NGAY
                     </Button>
 
-                    <p className="text-xs text-black text-center mt-4 font-bold">
+                    <p className="text-xs text-black text-center mt-4 font-black">
                       Bằng việc gửi thông tin, bạn đồng ý với Chính sách Bảo mật của chúng tôi. 
                       HLCC cam kết sẽ phản hồi trong vòng 24 giờ làm việc.
                     </p>
@@ -317,7 +317,7 @@ export function ContactPage() {
                       >
                         0912.880.330
                       </a>
-                      <p className="text-black font-bold mt-2">Dành cho các yêu cầu cần hỗ trợ khẩn cấp</p>
+                      <p className="text-black font-black mt-2">Dành cho các yêu cầu cần hỗ trợ khẩn cấp</p>
                     </div>
                   </div>
                 </CardContent>
@@ -338,7 +338,7 @@ export function ContactPage() {
                       >
                         lienhe@acta.vn
                       </a>
-                      <p className="text-black font-bold mt-2">Chúng tôi sẽ phản hồi trong thời gian sớm nhất</p>
+                      <p className="text-black font-black mt-2">Chúng tôi sẽ phản hồi trong thời gian sớm nhất</p>
                     </div>
                   </div>
                 </CardContent>
@@ -361,7 +361,7 @@ export function ContactPage() {
                       >
                         HLCC Company
                       </a>
-                      <p className="text-black font-bold mt-2">Theo dõi để cập nhật các phân tích chuyên sâu</p>
+                      <p className="text-black font-black mt-2">Theo dõi để cập nhật các phân tích chuyên sâu</p>
                     </div>
                   </div>
                 </CardContent>
@@ -373,7 +373,7 @@ export function ContactPage() {
                   <Award className="mr-3 h-6 w-6 text-[#CCA776]" />
                   Tại sao chọn HLCC?
                 </h4>
-                <div className="space-y-4 text-black font-bold">
+                <div className="space-y-4 text-black font-black">
                   <div className="flex items-center p-3 bg-white rounded-lg shadow-sm">
                     <Users className="h-5 w-5 mr-3 text-[#CCA776]" />
                     <span>Đội ngũ chuyên gia giàu kinh nghiệm</span>
@@ -411,7 +411,7 @@ export function ContactPage() {
                   <AccordionTrigger className="px-8 py-6 text-left font-black text-black hover:text-[#CCA776] text-lg">
                     Buổi tư vấn miễn phí sẽ diễn ra như thế nào?
                   </AccordionTrigger>
-                  <AccordionContent className="px-8 pb-6 text-black font-bold text-base leading-relaxed">
+                  <AccordionContent className="px-8 pb-6 text-black font-black text-base leading-relaxed">
                     Đây là một buổi trao đổi 30-45 phút online hoặc qua điện thoại. Chuyên gia của chúng tôi sẽ lắng nghe vấn đề của bạn, đặt câu hỏi để làm rõ và đưa ra những nhận định sơ bộ cũng như hướng giải quyết tiềm năng. Buổi tư vấn này hoàn toàn không có bất kỳ ràng buộc nào.
                   </AccordionContent>
                 </AccordionItem>
@@ -420,7 +420,7 @@ export function ContactPage() {
                   <AccordionTrigger className="px-8 py-6 text-left font-black text-black hover:text-[#CCA776] text-lg">
                     Chi phí cho các dịch vụ của HLCC được tính như thế nào?
                   </AccordionTrigger>
-                  <AccordionContent className="px-8 pb-6 text-black font-bold text-base leading-relaxed">
+                  <AccordionContent className="px-8 pb-6 text-black font-black text-base leading-relaxed">
                     Chi phí sẽ phụ thuộc vào phạm vi và độ phức tạp của vấn đề. Sau buổi tư vấn đầu tiên, nếu hai bên cảm thấy phù hợp, chúng tôi sẽ gửi một bản đề xuất dịch vụ chi tiết kèm theo báo giá minh bạch.
                   </AccordionContent>
                 </AccordionItem>
@@ -429,7 +429,7 @@ export function ContactPage() {
                   <AccordionTrigger className="px-8 py-6 text-left font-black text-black hover:text-[#CCA776] text-lg">
                     HLCC có cam kết bảo mật thông tin của khách hàng không?
                   </AccordionTrigger>
-                  <AccordionContent className="px-8 pb-6 text-black font-bold text-base leading-relaxed">
+                  <AccordionContent className="px-8 pb-6 text-black font-black text-base leading-relaxed">
                     Tuyệt đối. Bảo mật thông tin là nguyên tắc hàng đầu của chúng tôi. Mọi thông tin bạn chia sẻ sẽ được bảo vệ nghiêm ngặt theo Chính sách Bảo mật và các thỏa thuận không tiết lộ thông tin (NDA) nếu cần.
                   </AccordionContent>
                 </AccordionItem>
@@ -463,7 +463,7 @@ export function ContactPage() {
                         </div>
                         <div>
                           <h4 className="font-black text-xl text-black mb-3">Địa chỉ văn phòng</h4>
-                          <p className="text-black font-bold text-lg leading-relaxed">
+                          <p className="text-black font-black text-lg leading-relaxed">
                             Tòa nhà SABAY – 99 Cộng Hòa, Phường 4, Quận Tân Bình, TP.HCM
                           </p>
                         </div>
@@ -475,7 +475,7 @@ export function ContactPage() {
                         </div>
                         <div>
                           <h4 className="font-black text-xl text-black mb-3">Giờ làm việc</h4>
-                          <p className="text-black font-bold text-lg">
+                          <p className="text-black font-black text-lg">
                             Thứ 2 đến thứ 6: 8:30AM - 17:30PM<br />
                             Thứ 7, chủ nhật: Nghỉ
                           </p>
@@ -488,7 +488,7 @@ export function ContactPage() {
                 {/* Thông tin bổ sung */}
                 <div className="bg-gradient-to-br from-[#CCA776]/10 to-[#CCA776]/10 p-8 rounded-2xl border-2 border-[#CCA776]/50 shadow-lg">
                   <h4 className="font-black text-xl text-black mb-6">Lưu ý khi đến văn phòng:</h4>
-                  <ul className="space-y-4 text-black font-bold">
+                  <ul className="space-y-4 text-black font-black">
                     <li className="flex items-center p-3 bg-[#CCA776]/20 rounded-lg shadow-sm border-l-4 border-[#CCA776]">
                       <CheckCircle className="h-5 w-5 mr-3 text-[#CCA776]" />
                       <span>Vui lòng đặt lịch hẹn trước qua hotline hoặc email</span>
@@ -540,7 +540,7 @@ export function ContactPage() {
             <h2 className="text-4xl md:text-5xl font-black mb-6 text-white">
               Sẵn sàng bắt đầu hành trình cùng HLCC?
             </h2>
-            <p className="text-xl md:text-2xl mb-10 text-[#CCA776] font-black max-w-3xl mx-auto">
+            <p className="text-xl md:text-2xl mb-10 text-white font-black max-w-3xl mx-auto">
               Đội ngũ chuyên gia của chúng tôi đang chờ đợi để hỗ trợ bạn. 
               Hãy liên hệ ngay để nhận tư vấn miễn phí!
             </p>

@@ -96,8 +96,8 @@ export function HeroSection() {
                     <div className="w-16 h-16 bg-gradient-to-br from-[#CCA776] to-[#CCA776] rounded-2xl flex items-center justify-center mx-auto mb-4">
                       <Sparkles className="w-8 h-8 text-white" />
                     </div>
-                    <h3 className="text-2xl font-bold text-black mb-2">Đăng Ký Tư Vấn Miễn Phí</h3>
-                    <p className="text-black font-semibold text-[#CCA776]">Nhận tư vấn từ chuyên gia trong 24h</p>
+                    <h3 className="text-2xl font-bold text-white mb-2">Đăng Ký Tư Vấn Miễn Phí</h3>
+                    <p className="text-white font-semibold">Nhận tư vấn từ chuyên gia trong 24h</p>
                   </div>
 
                   {submitted ? (
@@ -164,7 +164,7 @@ export function HeroSection() {
 
                       <Button
                         type="submit"
-                        className="w-full h-12 text-gray-900 font-bold text-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02]"
+                        className="w-full h-12 text-white font-bold text-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02]"
                         style={{
                           background: 'linear-gradient(to right, #CCA776, #CCA776)',
                           boxShadow: '0 4px 6px -1px rgba(204, 167, 118, 0.3)'
@@ -173,7 +173,7 @@ export function HeroSection() {
                         Bắt đầu Chẩn đoán Doanh nghiệp
                       </Button>
 
-                      <p className="text-xs text-[#CCA776] font-bold text-center flex items-center justify-center gap-1">
+                      <p className="text-xs text-white font-bold text-center flex items-center justify-center gap-1">
                         <CheckCircle className="w-3 h-3" />
                         Thông tin của bạn được bảo mật tuyệt đối
                       </p>

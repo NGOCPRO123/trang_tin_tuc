@@ -100,10 +100,10 @@ export function AdminPage() {
                 <FileText className="h-8 w-8 text-white" />
               </div>
               <div>
-                <h1 className="text-4xl font-bold bg-gradient-to-r from-gray-900 via-blue-800 to-indigo-800 bg-clip-text text-transparent">
+                <h1 className="text-4xl font-black bg-gradient-to-r from-gray-900 via-blue-800 to-indigo-800 bg-clip-text text-transparent">
                   Quản trị bài viết
                 </h1>
-                <p className="text-lg text-muted-foreground mt-2 max-w-2xl mx-auto">
+                <p className="text-lg font-bold text-black mt-2 max-w-2xl mx-auto">
                   Quản lý và tạo nội dung chất lượng cao cho website của bạn
                 </p>
               </div>
@@ -147,8 +147,8 @@ export function AdminPage() {
                     <CardContent className="p-6">
                       <div className="flex items-center justify-between">
                         <div>
-                          <p className="text-sm font-medium text-blue-600 mb-1">Tổng bài viết</p>
-                          <p className="text-3xl font-bold text-blue-900">{articles.length}</p>
+                          <p className="text-sm font-black text-blue-600 mb-1">Tổng bài viết</p>
+                          <p className="text-3xl font-black text-blue-900">{articles.length}</p>
                         </div>
                         <div className="w-12 h-12 bg-blue-500 rounded-xl flex items-center justify-center">
                           <FileText className="h-6 w-6 text-white" />
@@ -161,8 +161,8 @@ export function AdminPage() {
                     <CardContent className="p-6">
                       <div className="flex items-center justify-between">
                         <div>
-                          <p className="text-sm font-medium text-emerald-600 mb-1">Đã xuất bản</p>
-                          <p className="text-3xl font-bold text-emerald-900">{articles.length}</p>
+                          <p className="text-sm font-black text-emerald-600 mb-1">Đã xuất bản</p>
+                          <p className="text-3xl font-black text-emerald-900">{articles.length}</p>
                         </div>
                         <div className="w-12 h-12 bg-emerald-500 rounded-xl flex items-center justify-center">
                           <TrendingUp className="h-6 w-6 text-white" />
@@ -175,8 +175,8 @@ export function AdminPage() {
                     <CardContent className="p-6">
                       <div className="flex items-center justify-between">
                         <div>
-                          <p className="text-sm font-medium text-purple-600 mb-1">Tháng này</p>
-                          <p className="text-3xl font-bold text-purple-900">
+                          <p className="text-sm font-black text-purple-600 mb-1">Tháng này</p>
+                          <p className="text-3xl font-black text-purple-900">
                             {
                               articles.filter((article: Article) => {
                                 const publishedDate = new Date(article.publishedAt)
@@ -242,8 +242,8 @@ export function AdminPage() {
                       ) : filteredArticles.length === 0 ? (
                         <div className="text-center py-12">
                           <FileText className="h-12 w-12 text-gray-400 mx-auto mb-4" />
-                          <h3 className="text-lg font-medium text-gray-900 mb-2">Không tìm thấy bài viết nào</h3>
-                          <p className="text-gray-500 mb-6">Hãy thử từ khóa khác hoặc tạo bài viết mới</p>
+                          <h3 className="text-lg font-black text-gray-900 mb-2">Không tìm thấy bài viết nào</h3>
+                          <p className="text-black font-bold mb-6">Hãy thử từ khóa khác hoặc tạo bài viết mới</p>
                           <Button
                             onClick={() => setShowForm(true)}
                             className="bg-blue-600 hover:bg-blue-700 rounded-xl"

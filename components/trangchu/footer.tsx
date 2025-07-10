@@ -203,22 +203,6 @@ export function Footer() {
                 </Link>
               ))}
             </div>
-            <div className="bg-gray-800 rounded-lg p-3">
-              <h5 className="font-semibold mb-2 text-sm text-white">Nhận tin tức mới nhất</h5>
-              <form className="flex gap-0">
-                <input
-                  type="email"
-                  placeholder="Nhập email của bạn"
-                  className="flex-1 px-3 py-2 rounded-l bg-gray-700 text-sm text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#CCA776] border-none"
-                />
-                <button
-                  type="submit"
-                  className="px-4 py-2 rounded-r bg-[#CCA776] hover:bg-[#CCA776]/80 text-sm font-semibold text-white transition-colors"
-                >
-                  Đăng ký
-                </button>
-              </form>
-            </div>
           </motion.div>
         </div>
 

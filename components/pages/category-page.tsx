@@ -51,7 +51,7 @@ export function CategoryPage({ category }: CategoryPageProps) {
   const { data: articles = [], isLoading } = useSWR("/api/articles", fetcher)
 
   if (isLoading) {
-    return <LoadingPage title="Đang tải dữ liệu..." subtitle="Vui lòng chờ trong giây lát" variant="minimal" />
+    return <LoadingPage title="Đang tải dữ liệu..." subtitle="Vui lòng chờ trong giây lát" variant="default" />
   }
 
   // Nếu có category cụ thể, lọc bài viết theo danh mục đó
@@ -87,28 +87,28 @@ export function CategoryPage({ category }: CategoryPageProps) {
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
               {/* Page Header */}
               <div className="text-center mb-12">
-                <h1 className="text-3xl md:text-4xl font-bold mb-4">{categoryName}</h1>
-                <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                <h1 className="text-3xl md:text-4xl font-black mb-4 text-black">{categoryName}</h1>
+                <p className="text-lg text-black font-bold max-w-2xl mx-auto">
                   Tất cả bài viết thuộc danh mục {categoryName}
                 </p>
-                <div className="w-24 h-1 bg-gradient-to-r from-yellow-300 to-yellow-100 mx-auto mt-4 rounded-full"></div>
+                <div className="w-24 h-1 bg-gradient-to-r from-[#CCA776] to-[#CCA776]/30 mx-auto mt-4 rounded-full"></div>
               </div>
 
               {categoryArticles.length === 0 ? (
-                <Card className="text-center py-16 bg-yellow-50 shadow-sm">
+                <Card className="text-center py-16 bg-white shadow-sm">
                   <CardContent>
-                    <FolderOpen className="h-20 w-20 mx-auto mb-6 text-muted-foreground" />
-                    <h3 className="text-2xl font-semibold mb-4">Chưa có bài viết nào</h3>
-                    <p className="text-muted-foreground text-lg">
+                    <FolderOpen className="h-20 w-20 mx-auto mb-6 text-[#CCA776]" />
+                    <h3 className="text-2xl font-black mb-4 text-black">Chưa có bài viết nào</h3>
+                    <p className="text-black text-lg font-bold">
                       Danh mục {categoryName} chưa có bài viết nào.
                     </p>
                   </CardContent>
                 </Card>
               ) : (
-                <div className="bg-yellow-100 rounded-lg p-8 shadow-sm">
+                <div className="bg-white rounded-lg p-8 shadow-sm">
                   <div className="flex items-center justify-between mb-6">
                     <div className="flex items-center space-x-3">
-                      <h2 className="text-2xl font-bold">{categoryName}</h2>
+                      <h2 className="text-2xl font-black text-black">{categoryName}</h2>
                       <Badge variant="secondary" className="text-sm">
                         {categoryArticles.length} bài viết
                       </Badge>
@@ -145,24 +145,24 @@ export function CategoryPage({ category }: CategoryPageProps) {
 
   return (
     <MainLayout>
-      <div className="py-16 bg-yellow-50">
+      <div className="py-16 bg-white">
         <div className="container">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
             {/* Page Header */}
             <div className="text-center mb-12">
-              <h1 className="text-3xl md:text-4xl font-bold mb-4">Danh mục tin tức</h1>
-              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              <h1 className="text-3xl md:text-4xl font-black mb-4 text-black">Danh mục tin tức</h1>
+              <p className="text-lg text-black font-bold max-w-2xl mx-auto">
                 Khám phá tin tức theo từng chủ đề quan tâm của bạn
               </p>
-              <div className="w-24 h-1 bg-gradient-to-r from-yellow-300 to-yellow-100 mx-auto mt-4 rounded-full"></div>
+              <div className="w-24 h-1 bg-gradient-to-r from-[#CCA776] to-[#CCA776]/30 mx-auto mt-4 rounded-full"></div>
             </div>
 
             {articles.length === 0 ? (
-              <Card className="text-center py-16 bg-yellow-50 shadow-sm">
+              <Card className="text-center py-16 bg-white shadow-sm">
                 <CardContent>
-                  <FolderOpen className="h-20 w-20 mx-auto mb-6 text-muted-foreground" />
-                  <h3 className="text-2xl font-semibold mb-4">Chưa có bài viết nào</h3>
-                  <p className="text-muted-foreground text-lg">
+                  <FolderOpen className="h-20 w-20 mx-auto mb-6 text-[#CCA776]" />
+                  <h3 className="text-2xl font-black mb-4 text-black">Chưa có bài viết nào</h3>
+                  <p className="text-black text-lg font-bold">
                     Các danh mục sẽ hiển thị khi có bài viết được thêm vào.
                   </p>
                 </CardContent>
@@ -179,11 +179,11 @@ export function CategoryPage({ category }: CategoryPageProps) {
                       initial={{ opacity: 0, y: 30 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.6 }}
-                      className="bg-yellow-100 rounded-lg p-8 shadow-sm"
+                      className="bg-white rounded-lg p-8 shadow-sm"
                     >
                       <div className="flex items-center justify-between mb-6">
                         <div className="flex items-center space-x-3">
-                          <h2 className="text-2xl font-bold">{category}</h2>
+                          <h2 className="text-2xl font-black text-black">{category}</h2>
                           <Badge variant="secondary" className="text-sm">
                             {categoryArticles.length} bài viết
                           </Badge>

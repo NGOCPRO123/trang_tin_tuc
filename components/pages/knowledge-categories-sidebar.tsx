@@ -33,11 +33,11 @@ export function KnowledgeCategoriesSidebar() {
         const slug = categorySlugs[cat as keyof typeof categorySlugs];
         const count = categoryCounts[cat] || 0;
         return (
-          <li key={cat}>
-            <Link href={`/danh-muc/${slug}`} className="flex items-center gap-2 hover:text-yellow-700 transition font-medium">
-              <span className="inline-flex items-center justify-center w-7 h-7 rounded-full bg-yellow-100 text-yellow-700"><Icon className="w-4 h-4" /></span>
+          <li key={cat} className="border-b border-[#CCA776]/30 last:border-b-0 pb-2">
+            <Link href={`/danh-muc/${slug}`} className="flex items-center gap-2 hover:text-[#CCA776] transition font-bold text-black">
+              <span className="inline-flex items-center justify-center w-7 h-7 rounded-full bg-white border border-[#CCA776]/30"><Icon className="w-4 h-4 text-[#CCA776]" /></span>
               <span className="flex-1">{cat}</span>
-              <span className="text-xs bg-yellow-200 text-yellow-800 rounded-full px-2 py-0.5 ml-2">{count}</span>
+              <span className="text-xs bg-white border border-[#CCA776]/30 text-[#CCA776] rounded-full px-2 py-0.5 ml-2">{count}</span>
             </Link>
           </li>
         );

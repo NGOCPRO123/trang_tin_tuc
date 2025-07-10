@@ -110,7 +110,7 @@ export function HomePage({ type }: { type?: "giai-phap" | "kien-thuc" }) {
                 <h2 className="text-2xl md:text-3xl font-bold mb-2 flex items-center justify-center gap-2">
                   <span>🔥</span> Tin nổi bật
                 </h2>
-                <p className="text-gray-600">Những bài viết được quan tâm nhất trong kho kiến thức</p>
+                <p className="text-black font-bold">Những bài viết được quan tâm nhất trong kho kiến thức</p>
                 <div className="w-20 h-1 bg-gradient-to-r from-[#CCA776] to-[#CCA776]/60 mx-auto mt-3 rounded-full"></div>
               </div>
               <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
@@ -137,7 +137,7 @@ export function HomePage({ type }: { type?: "giai-phap" | "kien-thuc" }) {
                 <h2 className="text-2xl md:text-3xl font-bold mb-2 flex items-center justify-center gap-2">
                   <span>🆕</span> Tin tức mới nhất
                 </h2>
-                <p className="text-gray-600">Cập nhật mỗi ngày — chọn lọc những nội dung đáng chú ý nhất</p>
+                <p className="text-black font-bold">Cập nhật mỗi ngày — chọn lọc những nội dung đáng chú ý nhất</p>
                 <div className="w-20 h-1 bg-gradient-to-r from-[#CCA776] to-[#CCA776]/60 mx-auto mt-3 rounded-full"></div>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
@@ -160,7 +160,7 @@ export function HomePage({ type }: { type?: "giai-phap" | "kien-thuc" }) {
                     Xem thêm tin tức mới nhất
                     <ChevronDown className="ml-2 h-5 w-5 text-white" />
                   </Button>
-                  <p className="text-sm text-gray-500 mt-3">
+                  <p className="text-sm text-black font-bold mt-3">
                     Hiển thị {Math.min(latestVisibleCount, tatCaTinMoiNhat.length)} / {tatCaTinMoiNhat.length} bài viết mới nhất
                   </p>
                 </motion.div>
@@ -177,7 +177,7 @@ export function HomePage({ type }: { type?: "giai-phap" | "kien-thuc" }) {
                 <h2 className="text-2xl md:text-3xl font-bold mb-2 flex items-center justify-center gap-2">
                   <span>📚</span> Tất cả các bài viết
                 </h2>
-                <p className="text-gray-600">Danh sách toàn bộ bài viết trong kho kiến thức</p>
+                <p className="text-black font-bold">Danh sách toàn bộ bài viết trong kho kiến thức</p>
                 <div className="w-20 h-1 bg-gradient-to-r from-[#CCA776] to-[#CCA776]/60 mx-auto mt-3 rounded-full"></div>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
@@ -200,7 +200,7 @@ export function HomePage({ type }: { type?: "giai-phap" | "kien-thuc" }) {
                     Xem thêm bài viết
                     <ChevronDown className="ml-2 h-5 w-5 text-white" />
                   </Button>
-                  <p className="text-sm text-gray-500 mt-3">
+                  <p className="text-sm text-black font-bold mt-3">
                     Hiển thị {Math.min(allVisibleCount, baiVietDaXuatBan.length)} / {baiVietDaXuatBan.length} bài viết
                   </p>
                 </motion.div>
@@ -238,8 +238,8 @@ export function HomePage({ type }: { type?: "giai-phap" | "kien-thuc" }) {
                 <Card className="text-center py-16 bg-[#CCA776]/5 border-dashed border-2 border-[#CCA776]/30">
                   <CardContent>
                     <Newspaper className="h-20 w-20 mx-auto mb-6 text-gray-400" />
-                    <h3 className="text-2xl font-semibold mb-4 text-gray-600">Chưa có bài viết nào</h3>
-                    <p className="text-gray-500 text-lg mb-6 max-w-md mx-auto">
+                    <h3 className="text-2xl font-black mb-4 text-black">Chưa có bài viết nào</h3>
+                    <p className="text-black text-lg font-bold mb-6 max-w-md mx-auto">
                       Hãy vào trang quản trị để thêm những bài viết đầu tiên và tạo nên trang tin tức chuyên nghiệp!
                     </p>
                     <Button asChild size="lg">
@@ -258,7 +258,7 @@ export function HomePage({ type }: { type?: "giai-phap" | "kien-thuc" }) {
                   <div className="mb-16" id="featured-section">
                     <div className="text-center mb-8">
                       <h2 className="text-2xl md:text-3xl font-bold mb-2">🔥 Tin nổi bật</h2>
-                      <p className="text-gray-600">Những tin tức được quan tâm nhất hiện tại</p>
+                      <p className="text-black">Những tin tức được quan tâm nhất hiện tại</p>
                       <div className="w-20 h-1 bg-gradient-to-r from-[#CCA776] to-[#CCA776]/60 mx-auto mt-3 rounded-full"></div>
                     </div>
                     <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
@@ -281,7 +281,7 @@ export function HomePage({ type }: { type?: "giai-phap" | "kien-thuc" }) {
                   <div>
                     <div className="text-center mb-8">
                       <h2 className="text-2xl md:text-3xl font-bold mb-2">🆕 Tin tức mới nhất</h2>
-                      <p className="text-gray-600">Cập nhật mỗi ngày — chọn lọc những nội dung đáng chú ý nhất</p>
+                      <p className="text-black">Cập nhật mỗi ngày — chọn lọc những nội dung đáng chú ý nhất</p>
                       <div className="w-20 h-1 bg-gradient-to-r from-[#CCA776] to-[#CCA776]/60 mx-auto mt-3 rounded-full"></div>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
@@ -304,7 +304,7 @@ export function HomePage({ type }: { type?: "giai-phap" | "kien-thuc" }) {
                           Xem thêm tin tức mới nhất
                           <ChevronDown className="ml-2 h-5 w-5 text-white" />
                         </Button>
-                        <p className="text-sm text-gray-500 mt-3">
+                        <p className="text-sm text-black font-bold mt-3">
                           Hiển thị {Math.min(latestVisibleCount, tatCaTinMoiNhat.length)} / {tatCaTinMoiNhat.length} bài viết mới nhất
                         </p>
                       </motion.div>
@@ -317,7 +317,7 @@ export function HomePage({ type }: { type?: "giai-phap" | "kien-thuc" }) {
                   <div id="all-articles-section">
                     <div className="text-center mb-8">
                       <h2 className="text-2xl md:text-3xl font-bold mb-2">📚 Tất cả các bài viết</h2>
-                      <p className="text-gray-600">Danh sách toàn bộ bài viết trên hệ thống</p>
+                      <p className="text-black font-bold">Danh sách toàn bộ bài viết trên hệ thống</p>
                       <div className="w-20 h-1 bg-gradient-to-r from-[#CCA776] to-[#CCA776]/60 mx-auto mt-3 rounded-full"></div>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
@@ -340,7 +340,7 @@ export function HomePage({ type }: { type?: "giai-phap" | "kien-thuc" }) {
                           Xem thêm bài viết
                           <ChevronDown className="ml-2 h-5 w-5 text-white" />
                         </Button>
-                        <p className="text-sm text-gray-500 mt-3">
+                        <p className="text-sm text-black font-bold mt-3">
                           Hiển thị {Math.min(allVisibleCount, articles.length)} / {articles.length} bài viết
                         </p>
                       </motion.div>

@@ -30,7 +30,7 @@ export function HeroSection() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="inline-flex items-center gap-2 bg-gradient-to-r from-[#CCA776] to-[#CCA776] text-white rounded-full px-6 py-3 text-sm font-semibold shadow-lg"
             >
-              <Puzzle className="w-4 h-4" />
+              <span className="bg-white/20 rounded-full p-2 shadow-lg flex items-center justify-center"><Puzzle className="w-4 h-4 text-white" /></span>
               <span>Giải pháp doanh nghiệp toàn diện</span>
             </motion.div>
 
@@ -68,15 +68,15 @@ export function HeroSection() {
               className="grid grid-cols-1 md:grid-cols-3 gap-4"
             >
               <div className="flex items-center gap-3 text-black bg-white p-4 rounded-lg shadow-sm">
-                <Target className="w-5 h-5 text-[#CCA776]" />
+                <span className="bg-[#CCA776] rounded-full p-2 shadow-lg flex items-center justify-center"><Target className="w-5 h-5 text-white" /></span>
                 <span className="text-sm font-medium">Giải pháp toàn diện</span>
               </div>
               <div className="flex items-center gap-3 text-black bg-white p-4 rounded-lg shadow-sm">
-                <Zap className="w-5 h-5 text-[#CCA776]" />
+                <span className="bg-[#CCA776] rounded-full p-2 shadow-lg flex items-center justify-center"><Zap className="w-5 h-5 text-white" /></span>
                 <span className="text-sm font-medium">Từ gốc rễ</span>
               </div>
               <div className="flex items-center gap-3 text-black bg-white p-4 rounded-lg shadow-sm">
-                <Shield className="w-5 h-5 text-[#CCA776]" />
+                <span className="bg-[#CCA776] rounded-full p-2 shadow-lg flex items-center justify-center"><Shield className="w-5 h-5 text-white" /></span>
                 <span className="text-sm font-medium">Bền vững</span>
               </div>
             </motion.div>
