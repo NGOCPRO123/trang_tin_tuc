@@ -29,9 +29,9 @@ const solutions = [
       "Xây dựng kế hoạch tài chính",
       "Kết nối nguồn vốn chiến lược"
     ],
-    color: "from-green-400 to-emerald-500",
-    bgColor: "from-green-50 to-emerald-50",
-    borderColor: "border-green-200",
+    color: "from-[#CCA776] to-[#CCA776]",
+    bgColor: "from-[#CCA776] to-[#CCA776]",
+    borderColor: "border-[#CCA776]",
     link: "/giai-phap/dau-tu-tai-chinh"
   },
   {
@@ -44,9 +44,9 @@ const solutions = [
       "Đảm bảo tuân thủ pháp luật",
       "Báo cáo tài chính minh bạch"
     ],
-    color: "from-blue-400 to-indigo-500",
-    bgColor: "from-blue-50 to-indigo-50",
-    borderColor: "border-blue-200",
+    color: "from-[#CCA776] to-[#CCA776]",
+    bgColor: "from-[#CCA776] to-[#CCA776]",
+    borderColor: "border-[#CCA776]",
     link: "/giai-phap/nghiep-vu-ke-toan-thue"
   },
   {
@@ -59,9 +59,9 @@ const solutions = [
       "Quản trị rủi ro pháp lý",
       "Giải quyết tranh chấp"
     ],
-    color: "from-purple-400 to-pink-500",
-    bgColor: "from-purple-50 to-pink-50",
-    borderColor: "border-purple-200",
+    color: "from-[#CCA776] to-[#CCA776]",
+    bgColor: "from-[#CCA776] to-[#CCA776]",
+    borderColor: "border-[#CCA776]",
     link: "/giai-phap/tu-van-phap-ly"
   },
   {
@@ -74,9 +74,9 @@ const solutions = [
       "Marketing thực chiến",
       "Tăng trưởng doanh số bền vững"
     ],
-    color: "from-yellow-400 to-orange-500",
-    bgColor: "from-yellow-50 to-orange-50",
-    borderColor: "border-yellow-200",
+    color: "from-[#CCA776] to-[#CCA776]",
+    bgColor: "from-[#CCA776] to-[#CCA776]",
+    borderColor: "border-[#CCA776]",
     link: "/giai-phap/giai-phap-tang-doanh-so"
   },
   {
@@ -89,9 +89,9 @@ const solutions = [
       "Hệ thống quản trị hiệu quả",
       "Tự động hóa vận hành"
     ],
-    color: "from-gray-400 to-slate-500",
-    bgColor: "from-gray-50 to-slate-50",
-    borderColor: "border-gray-200",
+    color: "from-[#CCA776] to-[#CCA776]",
+    bgColor: "from-[#CCA776] to-[#CCA776]",
+    borderColor: "border-[#CCA776]",
     link: "/giai-phap/xu-ly-cong-no"
   },
   {
@@ -104,16 +104,16 @@ const solutions = [
       "Văn hóa doanh nghiệp",
       "Thu hút và giữ chân nhân tài"
     ],
-    color: "from-pink-400 to-rose-500",
-    bgColor: "from-pink-50 to-rose-50",
-    borderColor: "border-pink-200",
+    color: "from-[#CCA776] to-[#CCA776]",
+    bgColor: "from-[#CCA776] to-[#CCA776]",
+    borderColor: "border-[#CCA776]",
     link: "/giai-phap/bao-ve-an-ninh"
   }
 ]
 
 export function ServicesSection() {
   return (
-    <section className="py-20 bg-gradient-to-br from-gray-50 to-yellow-50">
+    <section className="py-20 bg-gradient-to-br from-gray-50 to-[#CCA776]/10">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -122,10 +122,10 @@ export function ServicesSection() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-black mb-6">
             Các Mảnh ghép Giải pháp của HLCC
           </h2>
-          <p className="text-xl text-gray-700 max-w-4xl mx-auto leading-relaxed">
+          <p className="text-xl text-black max-w-4xl mx-auto leading-relaxed">
             Chúng tôi không chỉ cung cấp dịch vụ đơn lẻ, mà mang đến giải pháp doanh nghiệp toàn diện, 
             kết nối mọi mắt xích để tạo ra sự phát triển bền vững.
           </p>
@@ -146,10 +146,10 @@ export function ServicesSection() {
                   <div className={`bg-gradient-to-r ${solution.color} p-4 rounded-full w-16 h-16 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}>
                     <solution.icon className="h-8 w-8 text-white" />
                   </div>
-                  <CardTitle className="text-xl font-bold text-gray-900 mb-3">
+                  <CardTitle className="text-xl font-bold text-black mb-3">
                     {solution.title}
                   </CardTitle>
-                  <p className="text-gray-700 leading-relaxed">
+                  <p className="text-black leading-relaxed">
                     {solution.description}
                   </p>
                 </CardHeader>
@@ -157,8 +157,8 @@ export function ServicesSection() {
                   <div className="space-y-3 mb-6">
                     {solution.features.map((feature, featureIdx) => (
                       <div key={featureIdx} className="flex items-center gap-3">
-                        <CheckCircle className="h-4 w-4 text-green-500 flex-shrink-0" />
-                        <span className="text-sm text-gray-600">{feature}</span>
+                        <CheckCircle className="h-4 w-4 text-white flex-shrink-0" />
+                        <span className="text-sm text-black">{feature}</span>
                       </div>
                     ))}
                   </div>
@@ -181,43 +181,51 @@ export function ServicesSection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
           viewport={{ once: true }}
-          className="bg-gradient-to-br from-yellow-50 to-orange-50 p-8 rounded-2xl border-2 border-yellow-200 shadow-lg mb-12"
+          className="bg-gradient-to-br from-[#CCA776] to-[#CCA776] p-8 rounded-2xl border-2 border-[#CCA776] shadow-lg mb-12"
         >
           <div className="text-center mb-8">
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">
+            <h3 className="text-2xl font-bold text-black mb-4">
               Tại sao chọn giải pháp doanh nghiệp của HLCC?
             </h3>
-            <p className="text-lg text-gray-700">
+            <p className="text-lg text-black">
               Chúng tôi không chỉ giải quyết vấn đề, mà còn xây dựng nền tảng vững chắc cho sự phát triển bền vững.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
             <div className="flex items-center gap-4 p-4 bg-white rounded-lg shadow-sm">
-              <Target className="h-8 w-8 text-yellow-600" />
+              <div className="bg-[#CCA776] p-2 rounded-full">
+                <Target className="h-6 w-6 text-white" />
+              </div>
               <div>
-                <h4 className="font-semibold text-gray-900">Giải pháp toàn diện</h4>
-                <p className="text-sm text-gray-600">Kết nối mọi mắt xích</p>
+                <h4 className="font-semibold text-black">Giải pháp toàn diện</h4>
+                <p className="text-sm text-black">Kết nối mọi mắt xích</p>
               </div>
             </div>
             <div className="flex items-center gap-4 p-4 bg-white rounded-lg shadow-sm">
-              <Zap className="h-8 w-8 text-yellow-600" />
+              <div className="bg-[#CCA776] p-2 rounded-full">
+                <Zap className="h-6 w-6 text-white" />
+              </div>
               <div>
-                <h4 className="font-semibold text-gray-900">Thực chiến</h4>
-                <p className="text-sm text-gray-600">Dựa trên kinh nghiệm thực tế</p>
+                <h4 className="font-semibold text-black">Thực chiến</h4>
+                <p className="text-sm text-black">Dựa trên kinh nghiệm thực tế</p>
               </div>
             </div>
             <div className="flex items-center gap-4 p-4 bg-white rounded-lg shadow-sm">
-              <Award className="h-8 w-8 text-yellow-600" />
+              <div className="bg-[#CCA776] p-2 rounded-full">
+                <Award className="h-6 w-6 text-white" />
+              </div>
               <div>
-                <h4 className="font-semibold text-gray-900">Cam kết kết quả</h4>
-                <p className="text-sm text-gray-600">Đo lường được và bền vững</p>
+                <h4 className="font-semibold text-black">Cam kết kết quả</h4>
+                <p className="text-sm text-black">Đo lường được và bền vững</p>
               </div>
             </div>
             <div className="flex items-center gap-4 p-4 bg-white rounded-lg shadow-sm">
-              <Lightbulb className="h-8 w-8 text-yellow-600" />
+              <div className="bg-[#CCA776] p-2 rounded-full">
+                <Lightbulb className="h-6 w-6 text-white" />
+              </div>
               <div>
-                <h4 className="font-semibold text-gray-900">Sáng tạo</h4>
-                <p className="text-sm text-gray-600">Giải pháp độc đáo</p>
+                <h4 className="font-semibold text-black">Sáng tạo</h4>
+                <p className="text-sm text-black">Giải pháp độc đáo</p>
               </div>
             </div>
           </div>

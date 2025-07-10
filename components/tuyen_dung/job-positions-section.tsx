@@ -100,16 +100,13 @@ const jobPositions = [
 
 export default function JobPositionsSection() {
   return (
-    <section id="job-positions" className="py-24 bg-gradient-to-br from-gray-50 to-amber-50/30">
+    <section id="job-positions" className="py-24 bg-gradient-to-br from-gray-50 to-[#CCA776]/30">
       <div className="container mx-auto px-4">
         <div className="text-center mb-20">
-          <div className="inline-flex items-center px-4 py-2 bg-amber-100 text-amber-800 rounded-full text-sm font-medium mb-6">
+          <div className="inline-flex items-center px-4 py-2 bg-[#CCA776]/20 text-[#CCA776] rounded-full text-sm font-medium mb-6">
             🎯 Cơ hội nghề nghiệp
           </div>
-          <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-            Tìm kiếm những
-            <span className="text-amber-600 block mt-2">"Chuyên gia Giải mã" tiếp theo</span>
-          </h2>
+          <h2 className="text-3xl font-black text-black mb-8">Vị trí đang tuyển dụng</h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Nếu bạn đã sẵn sàng cho những thử thách lớn, hãy xem các vị trí mà chúng tôi đang tìm kiếm.
           </p>
@@ -123,7 +120,7 @@ export default function JobPositionsSection() {
                 value={job.id}
                 className="bg-white rounded-2xl shadow-lg border-0 overflow-hidden"
               >
-                <AccordionTrigger className="px-8 py-6 hover:no-underline hover:bg-amber-50/50 transition-colors">
+                <AccordionTrigger className="px-8 py-6 hover:no-underline hover:bg-[#CCA776]/10 transition-colors">
                   <JobCard job={job} />
                 </AccordionTrigger>
                 <AccordionContent className="px-8 pb-8">
@@ -131,28 +128,28 @@ export default function JobPositionsSection() {
                     <div className="md:col-span-2 space-y-6">
                       <div className="bg-gray-50 rounded-xl p-6">
                         <h4 className="font-bold text-gray-900 mb-4 flex items-center">
-                          <span className="w-2 h-2 bg-amber-500 rounded-full mr-3"></span>
+                          <span className="w-2 h-2 bg-[#CCA776] rounded-full mr-3"></span>
                           Mô tả công việc:
                         </h4>
                         <ul className="space-y-2 text-gray-700">
                           {job.jobDescription.map((desc, index) => (
                             <li key={index} className="flex items-start">
-                              <div className="w-2 h-2 bg-amber-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                              <div className="w-2 h-2 bg-[#CCA776] rounded-full mt-2 mr-3 flex-shrink-0"></div>
                               {desc}
                             </li>
                           ))}
                         </ul>
                       </div>
 
-                      <div className="bg-amber-50 rounded-xl p-6">
+                      <div className="bg-[#CCA776]/10 rounded-xl p-6">
                         <h4 className="font-bold text-gray-900 mb-4 flex items-center">
-                          <span className="w-2 h-2 bg-amber-500 rounded-full mr-3"></span>
+                          <span className="w-2 h-2 bg-[#CCA776] rounded-full mr-3"></span>
                           Yêu cầu ứng viên:
                         </h4>
                         <ul className="space-y-2 text-gray-700">
                           {job.requirements.map((req, index) => (
                             <li key={index} className="flex items-start">
-                              <div className="w-2 h-2 bg-amber-500 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                              <div className="w-2 h-2 bg-[#CCA776] rounded-full mt-2 mr-3 flex-shrink-0"></div>
                               {req}
                             </li>
                           ))}
@@ -162,7 +159,7 @@ export default function JobPositionsSection() {
 
                     <div className="space-y-6">
                       {job.benefits && (
-                        <div className="bg-gradient-to-br from-amber-500 to-yellow-600 text-white rounded-xl p-6">
+                        <div className="bg-gradient-to-br from-[#CCA776] to-[#CCA776] text-white rounded-xl p-6">
                           <h4 className="font-bold mb-4 flex items-center">
                             <span className="w-2 h-2 bg-white rounded-full mr-3"></span>
                             Quyền lợi:
@@ -175,7 +172,7 @@ export default function JobPositionsSection() {
                         </div>
                       )}
 
-                      <button className="w-full bg-amber-500 hover:bg-amber-600 text-white py-4 text-lg shadow-lg hover:shadow-xl transition-all duration-300 rounded-lg">
+                      <button className="w-full bg-[#CCA776] hover:bg-[#CCA776]/80 text-white py-4 text-lg shadow-lg hover:shadow-xl transition-all duration-300 rounded-lg">
                         Ứng tuyển ngay
                       </button>
                     </div>

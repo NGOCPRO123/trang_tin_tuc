@@ -25,23 +25,22 @@ const securityHoles = [
 
 export default function SecurityHolesSection() {
   return (
-    <section className="py-20 bg-gradient-to-br from-orange-50 to-yellow-50">
+    <section className="py-20 bg-[#CCA776]/10">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-black text-gray-900 mb-4">
-              Pháo đài của bạn có đang tồn tại những "cửa hậu" nguy hiểm này?
-            </h2>
+            <h2 className="text-3xl font-black text-black mb-4">Vấn đề & Giải pháp</h2>
+            <p className="text-xl text-black font-bold mb-8">Nhận diện đúng vấn đề – Đưa ra giải pháp tối ưu</p>
           </div>
           <div className="space-y-8">
             {securityHoles.map((item, idx) => (
               <div key={idx} className="flex items-start space-x-4 bg-white/80 p-6 rounded-2xl shadow-md">
-                <div className="w-12 h-12 flex items-center justify-center bg-orange-100 rounded-full text-orange-600 font-bold text-2xl">
+                <div className="w-12 h-12 flex items-center justify-center bg-[#CCA776]/30 rounded-full text-[#CCA776] font-bold text-2xl">
                   {idx + 1}
                 </div>
                 <div>
-                  <div className="font-bold text-lg text-gray-900 mb-1">{item.title}</div>
-                  <div className="text-gray-700">{item.desc}</div>
+                  <h3 className="font-black text-[#CCA776] mb-2">{item.title}</h3>
+                  <p className="text-black font-bold">{item.desc}</p>
                 </div>
               </div>
             ))}

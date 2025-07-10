@@ -6,24 +6,24 @@ const processSteps = [
     title: "Nộp hồ sơ",
     description: 'Gửi CV và thư ứng tuyển của bạn qua form "Ứng tuyển ngay" hoặc email tuyển dụng.',
     icon: FileText,
-    bgColor: "bg-blue-100",
-    iconColor: "text-blue-600",
+    bgColor: "bg-[#CCA776]/20",
+    iconColor: "text-[#CCA776]",
   },
   {
     step: 2,
     title: "Phỏng vấn với HR",
     description: "Một buổi trao đổi ngắn để chúng tôi hiểu hơn về bạn và bạn hiểu hơn về văn hóa HLCC.",
     icon: MessageCircle,
-    bgColor: "bg-green-100",
-    iconColor: "text-green-600",
+    bgColor: "bg-[#CCA776]/20",
+    iconColor: "text-[#CCA776]",
   },
   {
     step: 3,
     title: "Phỏng vấn Chuyên môn",
     description: "Trao đổi sâu về kỹ năng và kinh nghiệm với Trưởng bộ phận hoặc thành viên Ban Giám đốc.",
     icon: UserCheck,
-    bgColor: "bg-yellow-100",
-    iconColor: "text-yellow-600",
+    bgColor: "bg-[#CCA776]/20",
+    iconColor: "text-[#CCA776]",
   },
   {
     step: 4,
@@ -31,8 +31,8 @@ const processSteps = [
     description:
       "Nếu phù hợp, bạn sẽ nhận được thư mời làm việc và chính thức trở thành một phần của đội ngũ chúng tôi.",
     icon: CheckCircle,
-    bgColor: "bg-purple-100",
-    iconColor: "text-purple-600",
+    bgColor: "bg-[#CCA776]/20",
+    iconColor: "text-[#CCA776]",
   },
 ]
 
@@ -41,9 +41,7 @@ export default function RecruitmentProcessSection() {
     <section className="py-20 bg-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-            Hành trình trở thành một thành viên của HLCC
-          </h2>
+          <h2 className="text-3xl font-black text-black mb-8">Quy trình tuyển dụng</h2>
           <p className="text-lg text-gray-600">
             Chúng tôi tin vào sự minh bạch. Đây là quy trình tuyển dụng của chúng tôi để bạn có thể chuẩn bị tốt nhất.
           </p>
@@ -57,9 +55,9 @@ export default function RecruitmentProcessSection() {
                   <step.icon className={`h-8 w-8 ${step.iconColor}`} />
                 </div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                  {step.step}. {step.title}
+                  {step.step}. <span className="text-[#CCA776] font-black">{step.title}</span>
                 </h3>
-                <p className="text-gray-600">{step.description}</p>
+                <p className="text-black font-bold">{step.description}</p>
               </div>
             ))}
           </div>

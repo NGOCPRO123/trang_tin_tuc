@@ -43,16 +43,16 @@ export default function RealStories() {
 
   const storyStars = useMemo(() => 
     Array.from({ length: currentStory.rating }, (_, i) => (
-      <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+      <Star key={i} className="w-4 h-4 fill-[#CCA776] text-[#CCA776]" />
     )), [currentStory.rating])
 
   return (
-    <section className="py-20 bg-gradient-to-br from-yellow-50 to-amber-100">
+    <section className="py-20 bg-[#CCA776]/10">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-black text-gray-900 mb-4">Câu chuyện có thật, không phải quảng cáo</h2>
-            <p className="text-xl text-gray-600">Khi chuyên nghiệp thể hiện qua hành động cụ thể</p>
+            <h2 className="text-3xl font-black text-black mb-4">Câu chuyện thực tế</h2>
+            <p className="text-xl text-black font-bold mb-8">Kết quả thực – Không chỉ là lý thuyết</p>
           </div>
 
           <div className="grid lg:grid-cols-3 gap-8">
@@ -63,7 +63,7 @@ export default function RealStories() {
                   key={index}
                   className={`p-4 rounded-2xl cursor-pointer transition-all ${
                     activeStory === index
-                      ? "bg-white shadow-lg border-2 border-yellow-400"
+                      ? "bg-white shadow-lg border-2 border-[#CCA776]"
                       : "bg-white/70 hover:bg-white hover:shadow-md"
                   }`}
                   onClick={() => setActiveStory(index)}
@@ -71,7 +71,8 @@ export default function RealStories() {
                   <div className="flex items-center space-x-3 mb-2">
                     <span className="text-2xl">{story.avatar}</span>
                     <div>
-                      <h3 className="font-bold text-gray-900 text-sm">{story.client}</h3>
+                      <h3 className="font-black text-[#CCA776] mb-2">{story.title}</h3>
+                      <p className="text-black font-bold">{story.description}</p>
                       <div className="flex items-center space-x-1 text-xs text-gray-500">
                         <Calendar className="w-3 h-3" />
                         <span>{story.date}</span>
@@ -87,7 +88,7 @@ export default function RealStories() {
             <div className="lg:col-span-2">
               <div className="bg-white rounded-3xl p-8 shadow-xl">
                 <div className="flex items-start space-x-4 mb-6">
-                  <Quote className="w-8 h-8 text-yellow-500 flex-shrink-0 mt-1" />
+                  <Quote className="w-8 h-8 text-[#CCA776] flex-shrink-0 mt-1" />
                   <div>
                     <h3 className="text-2xl font-bold text-gray-900 mb-2">{currentStory.title}</h3>
                     <div className="flex items-center space-x-4 text-sm text-gray-500 mb-4">
@@ -103,9 +104,9 @@ export default function RealStories() {
 
                 <p className="text-gray-700 leading-relaxed mb-6 text-lg">{currentStory.story}</p>
 
-                <div className="bg-gradient-to-r from-green-100 to-emerald-100 rounded-2xl p-4 border-l-4 border-green-500">
-                  <h4 className="font-bold text-green-800 mb-1">Kết quả:</h4>
-                  <p className="text-green-700">{currentStory.impact}</p>
+                <div className="bg-[#CCA776]/10 rounded-2xl p-4 border-l-4 border-[#CCA776]">
+                  <h4 className="font-bold text-[#CCA776] mb-1">Kết quả:</h4>
+                  <p className="text-[#CCA776]">{currentStory.impact}</p>
                 </div>
               </div>
             </div>

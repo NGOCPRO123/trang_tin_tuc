@@ -19,20 +19,19 @@ export default function TableOfContents() {
   }
 
   return (
-    <nav className="bg-white/90 backdrop-blur-sm rounded-xl shadow-md p-6 mb-8 border border-yellow-200">
+    <nav className="bg-white/90 backdrop-blur-sm rounded-xl shadow-md p-6 mb-8 border border-[#CCA776]/50">
       <h2 className="text-xl font-semibold text-gray-800 mb-4">Mục lục</h2>
-      <ul className="space-y-2">
+      <nav className="space-y-2">
         {sections.map((section) => (
-          <li key={section.id}>
-            <button
-              onClick={() => scrollToSection(section.id)}
-              className="text-left w-full p-2 rounded-lg hover:bg-yellow-100 transition-colors duration-200 text-gray-700 hover:text-gray-900"
-            >
-              {section.title}
-            </button>
-          </li>
+          <a
+            key={section.id}
+            href={`#${section.id}`}
+            className="block px-4 py-2 rounded-lg font-bold text-black hover:bg-[#CCA776]/10 hover:text-[#CCA776] transition-colors"
+          >
+            {section.title}
+          </a>
         ))}
-      </ul>
+      </nav>
     </nav>
   )
 }

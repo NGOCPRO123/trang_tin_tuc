@@ -36,17 +36,17 @@ export function SolutionsSection() {
   ]
 
   return (
-    <section className="relative py-24 bg-gradient-to-b from-yellow-50 via-amber-50 to-yellow-100 overflow-hidden">
+    <section className="relative py-24 bg-[#CCA776]/10 overflow-hidden">
       {/* Decorative Blobs */}
-      <div className="absolute -top-32 right-0 w-[400px] h-[400px] bg-yellow-200 rounded-full blur-3xl opacity-40 animate-pulse" />
-      <div className="absolute bottom-0 left-0 w-[350px] h-[200px] bg-gradient-to-r from-yellow-300 via-amber-200 to-yellow-100 rounded-full blur-2xl opacity-40" />
+      <div className="absolute -top-32 right-0 w-[400px] h-[400px] bg-[#CCA776] rounded-full blur-3xl opacity-40 animate-pulse" />
+      <div className="absolute bottom-0 left-0 w-[350px] h-[200px] bg-[#CCA776] rounded-full blur-2xl opacity-40" />
       <div className="container mx-auto px-6 relative z-10">
         <div className="text-center mb-16">
-          <Badge className="bg-gradient-to-r from-yellow-400 to-amber-300 text-yellow-900 px-4 py-2 mb-6 shadow-md rounded-xl">💡 Hệ thống tăng trưởng toàn diện</Badge>
-          <h2 className="text-5xl lg:text-6xl font-extrabold text-gray-900 mb-6">
-            Chiến lược thông minh giúp doanh nghiệp phát triển <span className="bg-gradient-to-r from-yellow-600 to-amber-500 bg-clip-text text-transparent">bền vững</span>
+          <Badge className="bg-[#CCA776] text-white px-4 py-2 mb-6 shadow-md rounded-xl">💡 Hệ thống tăng trưởng toàn diện</Badge>
+          <h2 className="text-5xl lg:text-6xl font-extrabold text-black mb-6">
+            Chiến lược thông minh giúp doanh nghiệp phát triển <span className="text-[#CCA776]">bền vững</span>
           </h2>
-          <p className="text-xl text-gray-700 max-w-3xl mx-auto font-medium">
+          <p className="text-xl text-black max-w-3xl mx-auto font-medium">
             Chúng tôi kiến tạo một hệ thống tăng trưởng toàn diện, gồm 4 mảnh ghép cốt lõi:
           </p>
         </div>
@@ -58,14 +58,14 @@ export function SolutionsSection() {
           className="max-w-4xl mx-auto"
         >
           <Tabs defaultValue="1" className="w-full">
-            <TabsList className="grid grid-cols-2 md:grid-cols-4 gap-2 mb-8 bg-white/60 backdrop-blur-xl rounded-2xl border border-yellow-200/60 shadow-lg">
-              <TabsTrigger value="1" className="text-yellow-700 data-[state=active]:bg-gradient-to-r data-[state=active]:from-yellow-400 data-[state=active]:to-amber-300 data-[state=active]:text-white data-[state=active]:shadow-md rounded-xl font-semibold text-lg py-3 transition-all">Phân tích thị trường</TabsTrigger>
-              <TabsTrigger value="2" className="text-yellow-700 data-[state=active]:bg-gradient-to-r data-[state=active]:from-yellow-400 data-[state=active]:to-amber-300 data-[state=active]:text-white data-[state=active]:shadow-md rounded-xl font-semibold text-lg py-3 transition-all">Chiến lược Marketing</TabsTrigger>
-              <TabsTrigger value="3" className="text-yellow-700 data-[state=active]:bg-gradient-to-r data-[state=active]:from-yellow-400 data-[state=active]:to-amber-300 data-[state=active]:text-white data-[state=active]:shadow-md rounded-xl font-semibold text-lg py-3 transition-all">Tối ưu bán hàng</TabsTrigger>
-              <TabsTrigger value="4" className="text-yellow-700 data-[state=active]:bg-gradient-to-r data-[state=active]:from-yellow-400 data-[state=active]:to-amber-300 data-[state=active]:text-white data-[state=active]:shadow-md rounded-xl font-semibold text-lg py-3 transition-all">Affiliate Thực Chiến</TabsTrigger>
+            <TabsList className="grid grid-cols-2 md:grid-cols-4 gap-2 mb-8 bg-white/60 backdrop-blur-xl rounded-2xl border border-[#CCA776]/60 shadow-lg">
+              <TabsTrigger value="1" className="text-[#CCA776] data-[state=active]:bg-[#CCA776] data-[state=active]:text-white data-[state=active]:shadow-md rounded-xl font-semibold text-lg py-3 transition-all">Phân tích thị trường</TabsTrigger>
+              <TabsTrigger value="2" className="text-[#CCA776] data-[state=active]:bg-[#CCA776] data-[state=active]:text-white data-[state=active]:shadow-md rounded-xl font-semibold text-lg py-3 transition-all">Chiến lược Marketing</TabsTrigger>
+              <TabsTrigger value="3" className="text-[#CCA776] data-[state=active]:bg-[#CCA776] data-[state=active]:text-white data-[state=active]:shadow-md rounded-xl font-semibold text-lg py-3 transition-all">Tối ưu bán hàng</TabsTrigger>
+              <TabsTrigger value="4" className="text-[#CCA776] data-[state=active]:bg-[#CCA776] data-[state=active]:text-white data-[state=active]:shadow-md rounded-xl font-semibold text-lg py-3 transition-all">Affiliate Thực Chiến</TabsTrigger>
             </TabsList>
             <TabsContent value="1">
-              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="bg-white/60 backdrop-blur-xl rounded-2xl border border-yellow-200/60 shadow-lg p-8">
+              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="bg-white/60 backdrop-blur-xl rounded-2xl border border-[#CCA776]/60 shadow-lg p-8">
                 <Accordion type="single" collapsible defaultValue="a1">
                   <AccordionItem value="a1">
                     <AccordionTrigger>Nghiên cứu hành vi & xu hướng</AccordionTrigger>
@@ -89,7 +89,7 @@ export function SolutionsSection() {
               </motion.div>
             </TabsContent>
             <TabsContent value="2">
-              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="bg-white/60 backdrop-blur-xl rounded-2xl border border-yellow-200/60 shadow-lg p-8">
+              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="bg-white/60 backdrop-blur-xl rounded-2xl border border-[#CCA776]/60 shadow-lg p-8">
                 <Accordion type="single" collapsible defaultValue="b1">
                   <AccordionItem value="b1">
                     <AccordionTrigger>Digital Marketing thực chiến</AccordionTrigger>
@@ -113,7 +113,7 @@ export function SolutionsSection() {
               </motion.div>
             </TabsContent>
             <TabsContent value="3">
-              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="bg-white/60 backdrop-blur-xl rounded-2xl border border-yellow-200/60 shadow-lg p-8">
+              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="bg-white/60 backdrop-blur-xl rounded-2xl border border-[#CCA776]/60 shadow-lg p-8">
                 <Accordion type="single" collapsible defaultValue="c1">
                   <AccordionItem value="c1">
                     <AccordionTrigger>Xây dựng "cỗ máy" bán hàng</AccordionTrigger>
@@ -137,7 +137,7 @@ export function SolutionsSection() {
               </motion.div>
             </TabsContent>
             <TabsContent value="4">
-              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="bg-white/60 backdrop-blur-xl rounded-2xl border border-yellow-200/60 shadow-lg p-8">
+              <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5 }} className="bg-white/60 backdrop-blur-xl rounded-2xl border border-[#CCA776]/60 shadow-lg p-8">
                 <Accordion type="single" collapsible defaultValue="d1">
                   <AccordionItem value="d1">
                     <AccordionTrigger>Khai thác sức mạnh cộng đồng</AccordionTrigger>

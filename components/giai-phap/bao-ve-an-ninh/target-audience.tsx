@@ -25,17 +25,18 @@ const audiences = [
 
 export default function TargetAudience() {
   return (
-    <section className="py-20 bg-yellow-50">
+    <section className="py-20 bg-[#CCA776]/10">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">🎯 Ai cần dịch vụ này?</h2>
+          <h2 className="text-3xl font-black text-black mb-4">Ai nên sử dụng dịch vụ này?</h2>
+          <p className="text-xl text-black font-bold mb-8">Dành cho doanh nghiệp muốn an toàn tuyệt đối</p>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           {audiences.map((audience, index) => (
             <div key={index} className="bg-white rounded-lg p-6 shadow-lg hover:shadow-xl transition-shadow">
               <div className="flex justify-center mb-4">
-                <audience.icon className="w-12 h-12 text-yellow-600" />
+                <audience.icon className="w-12 h-12 text-[#CCA776]" />
               </div>
               <h3 className="text-xl font-semibold text-gray-800 mb-3 text-center">{audience.title}</h3>
               <p className="text-gray-600 text-center">{audience.description}</p>
@@ -44,7 +45,7 @@ export default function TargetAudience() {
         </div>
 
         <div className="text-center">
-          <p className="text-lg text-gray-700 font-medium bg-yellow-100 p-4 rounded-lg inline-block">
+          <p className="text-lg text-gray-700 font-medium bg-[#CCA776]/30 p-4 rounded-lg inline-block">
             👉 Nếu bạn cần sự ổn định, kỷ luật và có phương án xử lý rõ ràng – bạn cần chúng tôi.
           </p>
         </div>

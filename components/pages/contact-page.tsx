@@ -118,11 +118,11 @@ export function ContactPage() {
   return (
     <MainLayout>
       {/* Section 1: Tiêu đề chính và Lời kêu gọi */}
-      <section className="bg-gradient-to-br from-yellow-50 via-amber-50 to-orange-50 pt-20 pb-16 relative overflow-hidden">
+      <section className="bg-gradient-to-br from-[#CCA776]/10 via-[#CCA776]/10 to-[#CCA776]/10 pt-20 pb-16 relative overflow-hidden">
         {/* Background decoration */}
-        <div className="absolute inset-0 bg-gradient-to-r from-yellow-100/20 to-orange-100/20"></div>
-        <div className="absolute top-10 right-10 w-32 h-32 bg-yellow-200 rounded-full opacity-20"></div>
-        <div className="absolute bottom-10 left-10 w-24 h-24 bg-orange-200 rounded-full opacity-20"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-[#CCA776]/20 to-[#CCA776]/20"></div>
+        <div className="absolute top-10 right-10 w-32 h-32 bg-[#CCA776]/20 rounded-full opacity-20"></div>
+        <div className="absolute bottom-10 left-10 w-24 h-24 bg-[#CCA776]/20 rounded-full opacity-20"></div>
         
         <div className="container mx-auto text-center px-4 relative z-10">
           <motion.div
@@ -131,30 +131,30 @@ export function ContactPage() {
             transition={{ duration: 0.8 }}
           >
             <div className="flex justify-center mb-6">
-              <div className="bg-gradient-to-r from-yellow-400 to-orange-500 p-3 rounded-full">
+              <div className="bg-gradient-to-r from-[#CCA776] to-[#CCA776] p-3 rounded-full">
                 <MessageCircle className="h-8 w-8 text-white" />
               </div>
             </div>
-            <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
-              Kết nối với <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-600 to-orange-600">Chuyên gia</span> của HLCC
+            <h1 className="text-4xl md:text-6xl font-black text-black mb-6">
+              Kết nối với <span className="text-[#CCA776] font-black">Chuyên gia</span> của HLCC
             </h1>
             <div className="max-w-4xl mx-auto">
-              <p className="text-lg md:text-xl text-gray-700 leading-relaxed mb-8">
+              <p className="text-lg md:text-xl text-black font-bold leading-relaxed mb-8">
                 Dù bạn đang đối mặt với một thách thức cụ thể hay cần một góc nhìn chiến lược, 
-                hãy bắt đầu bằng một buổi <span className="font-bold text-yellow-600 bg-yellow-100 px-2 py-1 rounded">tư vấn miễn phí</span> với chúng tôi. 
+                hãy bắt đầu bằng một buổi <span className="font-black text-[#CCA776] bg-[#CCA776]/10 px-2 py-1 rounded">tư vấn miễn phí</span> với chúng tôi. 
                 Đội ngũ HLCC luôn sẵn sàng lắng nghe và cùng bạn tìm ra hướng đi.
               </p>
-              <div className="flex flex-wrap justify-center gap-4 text-sm text-gray-600">
+              <div className="flex flex-wrap justify-center gap-4 text-sm text-black font-bold">
                 <div className="flex items-center">
-                  <Star className="h-4 w-4 text-yellow-500 mr-2" />
+                  <Star className="h-4 w-4 text-[#CCA776] mr-2" />
                   Chuyên nghiệp
                 </div>
                 <div className="flex items-center">
-                  <Award className="h-4 w-4 text-yellow-500 mr-2" />
+                  <Award className="h-4 w-4 text-[#CCA776] mr-2" />
                   Uy tín
                 </div>
                 <div className="flex items-center">
-                  <Zap className="h-4 w-4 text-yellow-500 mr-2" />
+                  <Zap className="h-4 w-4 text-[#CCA776] mr-2" />
                   Hiệu quả
                 </div>
               </div>
@@ -174,37 +174,37 @@ export function ContactPage() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              <Card className="border-0 shadow-2xl bg-gradient-to-br from-white to-yellow-50">
-                <CardHeader className="bg-gradient-to-r from-yellow-500 to-orange-500 text-white rounded-t-lg">
+              <Card className="border-0 shadow-2xl bg-gradient-to-br from-white to-[#CCA776]/10">
+                <CardHeader className="bg-gradient-to-r from-[#CCA776] to-[#CCA776] text-white rounded-t-lg">
                   <CardTitle className="text-2xl font-bold flex items-center">
                     <MessageCircle className="mr-3 h-7 w-7" />
                     Gửi yêu cầu Tư vấn Miễn phí
                   </CardTitle>
-                  <p className="text-yellow-100 text-sm mt-2">HLCC cam kết phản hồi trong 24 giờ</p>
+                  <p className="text-[#CCA776]/80 text-sm mt-2">HLCC cam kết phản hồi trong 24 giờ</p>
                 </CardHeader>
                 <CardContent className="p-8">
                   <form onSubmit={handleSubmit} className="space-y-6">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div>
-                        <Label htmlFor="name" className="text-gray-700 font-semibold text-sm">Họ và Tên *</Label>
+                        <Label htmlFor="name" className="text-black font-bold text-sm">Họ và Tên *</Label>
                         <Input
                           id="name"
                           value={formData.name}
                           onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                           placeholder="Nhập họ và tên"
-                          className="h-14 border-2 border-gray-200 focus:border-yellow-400 focus:ring-2 focus:ring-yellow-100 transition-all duration-300 rounded-lg"
+                          className="h-14 border-2 border-gray-200 focus:border-[#CCA776] focus:ring-2 focus:ring-[#CCA776]/10 transition-all duration-300 rounded-lg"
                           required
                         />
                       </div>
                       <div>
-                        <Label htmlFor="phone" className="text-gray-700 font-semibold text-sm">Số điện thoại *</Label>
+                        <Label htmlFor="phone" className="text-black font-bold text-sm">Số điện thoại *</Label>
                         <Input
                           id="phone"
                           type="tel"
                           value={formData.phone}
                           onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                           placeholder="Nhập số điện thoại"
-                          className="h-14 border-2 border-gray-200 focus:border-yellow-400 focus:ring-2 focus:ring-yellow-100 transition-all duration-300 rounded-lg"
+                          className="h-14 border-2 border-gray-200 focus:border-[#CCA776] focus:ring-2 focus:ring-[#CCA776]/10 transition-all duration-300 rounded-lg"
                           required
                         />
                       </div>
@@ -212,33 +212,33 @@ export function ContactPage() {
                     
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       <div>
-                        <Label htmlFor="email" className="text-gray-700 font-semibold text-sm">Email *</Label>
+                        <Label htmlFor="email" className="text-black font-bold text-sm">Email *</Label>
                         <Input
                           id="email"
                           type="email"
                           value={formData.email}
                           onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                           placeholder="Nhập email"
-                          className="h-14 border-2 border-gray-200 focus:border-yellow-400 focus:ring-2 focus:ring-yellow-100 transition-all duration-300 rounded-lg"
+                          className="h-14 border-2 border-gray-200 focus:border-[#CCA776] focus:ring-2 focus:ring-[#CCA776]/10 transition-all duration-300 rounded-lg"
                           required
                         />
                       </div>
                       <div>
-                        <Label htmlFor="company" className="text-gray-700 font-semibold text-sm">Tên Công ty</Label>
+                        <Label htmlFor="company" className="text-black font-bold text-sm">Tên Công ty</Label>
                         <Input
                           id="company"
                           value={formData.company}
                           onChange={(e) => setFormData({ ...formData, company: e.target.value })}
                           placeholder="Nhập tên công ty"
-                          className="h-14 border-2 border-gray-200 focus:border-yellow-400 focus:ring-2 focus:ring-yellow-100 transition-all duration-300 rounded-lg"
+                          className="h-14 border-2 border-gray-200 focus:border-[#CCA776] focus:ring-2 focus:ring-[#CCA776]/10 transition-all duration-300 rounded-lg"
                         />
                       </div>
                     </div>
 
                     <div>
-                      <Label htmlFor="service" className="text-gray-700 font-semibold text-sm">Dịch vụ quan tâm</Label>
+                      <Label htmlFor="service" className="text-black font-bold text-sm">Dịch vụ quan tâm</Label>
                       <Select value={formData.service} onValueChange={(value) => setFormData({ ...formData, service: value })}>
-                        <SelectTrigger className="h-14 border-2 border-gray-200 focus:border-yellow-400 focus:ring-2 focus:ring-yellow-100 transition-all duration-300 rounded-lg">
+                        <SelectTrigger className="h-14 border-2 border-gray-200 focus:border-[#CCA776] focus:ring-2 focus:ring-[#CCA776]/10 transition-all duration-300 rounded-lg">
                           <SelectValue placeholder="Chọn dịch vụ bạn quan tâm" />
                         </SelectTrigger>
                         <SelectContent>
@@ -253,21 +253,21 @@ export function ContactPage() {
                     </div>
 
                     <div>
-                      <Label htmlFor="message" className="text-gray-700 font-semibold text-sm">Nội dung tin nhắn *</Label>
+                      <Label htmlFor="message" className="text-black font-bold text-sm">Nội dung tin nhắn *</Label>
                       <Textarea
                         id="message"
                         value={formData.message}
                         onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                         placeholder="Vui lòng mô tả ngắn gọn về vấn đề của bạn..."
                         rows={5}
-                        className="border-2 border-gray-200 focus:border-yellow-400 focus:ring-2 focus:ring-yellow-100 transition-all duration-300 resize-none rounded-lg"
+                        className="border-2 border-gray-200 focus:border-[#CCA776] focus:ring-2 focus:ring-[#CCA776]/10 transition-all duration-300 resize-none rounded-lg"
                         required
                       />
                     </div>
 
                     <Button 
                       type="submit" 
-                      className="w-full h-16 bg-gradient-to-r from-yellow-500 to-orange-500 hover:from-yellow-600 hover:to-orange-600 text-white font-bold text-lg shadow-lg transition-all duration-300 rounded-lg transform hover:scale-105" 
+                      className="w-full h-16 bg-gradient-to-r from-[#CCA776] to-[#CCA776] hover:from-[#CCA776]/80 hover:to-[#CCA776]/80 text-white font-bold text-lg shadow-lg transition-all duration-300 rounded-lg transform hover:scale-105" 
                       size="lg"
                       disabled={isLoading}
                     >
@@ -279,7 +279,7 @@ export function ContactPage() {
                       GỬI YÊU CẦU NGAY
                     </Button>
 
-                    <p className="text-xs text-gray-500 text-center mt-4">
+                    <p className="text-xs text-black text-center mt-4 font-bold">
                       Bằng việc gửi thông tin, bạn đồng ý với Chính sách Bảo mật của chúng tôi. 
                       HLCC cam kết sẽ phản hồi trong vòng 24 giờ làm việc.
                     </p>
@@ -296,95 +296,95 @@ export function ContactPage() {
               className="space-y-8"
             >
               <div>
-                <h3 className="text-3xl font-bold text-gray-900 mb-8 flex items-center">
-                  <Phone className="mr-4 h-8 w-8 text-yellow-500" />
+                <h3 className="text-3xl font-black text-black mb-8 flex items-center">
+                  <Phone className="mr-4 h-8 w-8 text-[#CCA776]" />
                   Hoặc kết nối trực tiếp với chúng tôi:
                 </h3>
               </div>
 
               {/* Hotline */}
-              <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 bg-gradient-to-r from-yellow-50 to-orange-50 border-l-4 border-yellow-400">
+              <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 bg-gradient-to-r from-[#CCA776]/10 to-[#CCA776]/10 border-l-4 border-[#CCA776]">
                 <CardContent className="p-8">
                   <div className="flex items-start space-x-6">
-                    <div className="bg-gradient-to-r from-yellow-400 to-orange-500 p-4 rounded-full shadow-lg">
+                    <div className="bg-gradient-to-r from-[#CCA776] to-[#CCA776] p-4 rounded-full shadow-lg">
                       <Phone className="h-8 w-8 text-white" />
                     </div>
                     <div className="flex-1">
-                      <h4 className="font-bold text-xl text-gray-900 mb-2">Hotline Tư vấn 24/7</h4>
+                      <h4 className="font-black text-xl text-black mb-2">Hotline Tư vấn 24/7</h4>
                       <a 
                         href="tel:0912880330" 
-                        className="text-2xl font-bold text-yellow-600 hover:text-orange-700 transition-colors"
+                        className="text-2xl font-black text-[#CCA776] hover:text-[#CCA776]/80 transition-colors"
                       >
                         0912.880.330
                       </a>
-                      <p className="text-gray-600 mt-2">Dành cho các yêu cầu cần hỗ trợ khẩn cấp</p>
+                      <p className="text-black font-bold mt-2">Dành cho các yêu cầu cần hỗ trợ khẩn cấp</p>
                     </div>
                   </div>
                 </CardContent>
               </Card>
 
               {/* Email */}
-              <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 bg-gradient-to-r from-yellow-50 to-orange-50 border-l-4 border-yellow-400">
+              <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 bg-gradient-to-r from-[#CCA776]/10 to-[#CCA776]/10 border-l-4 border-[#CCA776]">
                 <CardContent className="p-8">
                   <div className="flex items-start space-x-6">
-                    <div className="bg-gradient-to-r from-yellow-400 to-orange-500 p-4 rounded-full shadow-lg">
+                    <div className="bg-gradient-to-r from-[#CCA776] to-[#CCA776] p-4 rounded-full shadow-lg">
                       <Mail className="h-8 w-8 text-white" />
                     </div>
                     <div className="flex-1">
-                      <h4 className="font-bold text-xl text-gray-900 mb-2">Email Hỗ trợ</h4>
+                      <h4 className="font-black text-xl text-black mb-2">Email Hỗ trợ</h4>
                       <a 
                         href="mailto:lienhe@acta.vn" 
-                        className="text-xl font-semibold text-yellow-600 hover:text-orange-700 transition-colors"
+                        className="text-xl font-black text-[#CCA776] hover:text-[#CCA776]/80 transition-colors"
                       >
                         lienhe@acta.vn
                       </a>
-                      <p className="text-gray-600 mt-2">Chúng tôi sẽ phản hồi trong thời gian sớm nhất</p>
+                      <p className="text-black font-bold mt-2">Chúng tôi sẽ phản hồi trong thời gian sớm nhất</p>
                     </div>
                   </div>
                 </CardContent>
               </Card>
 
               {/* LinkedIn */}
-              <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 bg-gradient-to-r from-yellow-50 to-orange-50 border-l-4 border-yellow-400">
+              <Card className="border-0 shadow-lg hover:shadow-xl transition-all duration-300 bg-gradient-to-r from-[#CCA776]/10 to-[#CCA776]/10 border-l-4 border-[#CCA776]">
                 <CardContent className="p-8">
                   <div className="flex items-start space-x-6">
-                    <div className="bg-gradient-to-r from-yellow-400 to-orange-500 p-4 rounded-full shadow-lg">
+                    <div className="bg-gradient-to-r from-[#CCA776] to-[#CCA776] p-4 rounded-full shadow-lg">
                       <Linkedin className="h-8 w-8 text-white" />
                     </div>
                     <div className="flex-1">
-                      <h4 className="font-bold text-xl text-gray-900 mb-2">Kết nối trên LinkedIn</h4>
+                      <h4 className="font-black text-xl text-black mb-2">Kết nối trên LinkedIn</h4>
                       <a 
                         href="https://linkedin.com/company/hlcc" 
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-xl font-semibold text-yellow-600 hover:text-orange-700 transition-colors"
+                        className="text-xl font-black text-[#CCA776] hover:text-[#CCA776]/80 transition-colors"
                       >
                         HLCC Company
                       </a>
-                      <p className="text-gray-600 mt-2">Theo dõi để cập nhật các phân tích chuyên sâu</p>
+                      <p className="text-black font-bold mt-2">Theo dõi để cập nhật các phân tích chuyên sâu</p>
                     </div>
                   </div>
                 </CardContent>
               </Card>
 
               {/* Thông tin bổ sung */}
-              <div className="bg-gradient-to-br from-yellow-50 to-orange-50 p-8 rounded-2xl border-2 border-yellow-200 shadow-lg">
-                <h4 className="font-bold text-xl text-gray-900 mb-6 flex items-center">
-                  <Award className="mr-3 h-6 w-6 text-yellow-600" />
+              <div className="bg-gradient-to-br from-[#CCA776]/10 to-[#CCA776]/10 p-8 rounded-2xl border-2 border-[#CCA776]/50 shadow-lg">
+                <h4 className="font-black text-xl text-black mb-6 flex items-center">
+                  <Award className="mr-3 h-6 w-6 text-[#CCA776]" />
                   Tại sao chọn HLCC?
                 </h4>
-                <div className="space-y-4 text-gray-700">
+                <div className="space-y-4 text-black font-bold">
                   <div className="flex items-center p-3 bg-white rounded-lg shadow-sm">
-                    <Users className="h-5 w-5 mr-3 text-yellow-600" />
-                    <span className="font-medium">Đội ngũ chuyên gia giàu kinh nghiệm</span>
+                    <Users className="h-5 w-5 mr-3 text-[#CCA776]" />
+                    <span>Đội ngũ chuyên gia giàu kinh nghiệm</span>
                   </div>
                   <div className="flex items-center p-3 bg-white rounded-lg shadow-sm">
-                    <Shield className="h-5 w-5 mr-3 text-yellow-600" />
-                    <span className="font-medium">Cam kết bảo mật thông tin tuyệt đối</span>
+                    <Shield className="h-5 w-5 mr-3 text-[#CCA776]" />
+                    <span>Cam kết bảo mật thông tin tuyệt đối</span>
                   </div>
                   <div className="flex items-center p-3 bg-white rounded-lg shadow-sm">
-                    <Calendar className="h-5 w-5 mr-3 text-yellow-600" />
-                    <span className="font-medium">Tư vấn miễn phí không ràng buộc</span>
+                    <Calendar className="h-5 w-5 mr-3 text-[#CCA776]" />
+                    <span>Tư vấn miễn phí không ràng buộc</span>
                   </div>
                 </div>
               </div>
@@ -394,42 +394,42 @@ export function ContactPage() {
       </section>
 
       {/* Section 3: Câu hỏi Thường gặp (FAQ) */}
-      <section className="bg-gradient-to-br from-gray-50 to-yellow-50 py-20">
+      <section className="bg-gradient-to-br from-gray-50 to-[#CCA776]/10 py-20">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
           >
-            <h2 className="text-4xl font-bold text-center text-gray-900 mb-16">
+            <h2 className="text-4xl font-black text-center text-black mb-16">
               Một số câu hỏi thường gặp trước khi bắt đầu
             </h2>
             
             <div className="max-w-5xl mx-auto">
               <Accordion type="single" collapsible className="space-y-6">
                 <AccordionItem value="item-1" className="bg-white rounded-xl border-0 shadow-lg">
-                  <AccordionTrigger className="px-8 py-6 text-left font-bold text-gray-900 hover:text-yellow-600 text-lg">
+                  <AccordionTrigger className="px-8 py-6 text-left font-black text-black hover:text-[#CCA776] text-lg">
                     Buổi tư vấn miễn phí sẽ diễn ra như thế nào?
                   </AccordionTrigger>
-                  <AccordionContent className="px-8 pb-6 text-gray-700 text-base leading-relaxed">
+                  <AccordionContent className="px-8 pb-6 text-black font-bold text-base leading-relaxed">
                     Đây là một buổi trao đổi 30-45 phút online hoặc qua điện thoại. Chuyên gia của chúng tôi sẽ lắng nghe vấn đề của bạn, đặt câu hỏi để làm rõ và đưa ra những nhận định sơ bộ cũng như hướng giải quyết tiềm năng. Buổi tư vấn này hoàn toàn không có bất kỳ ràng buộc nào.
                   </AccordionContent>
                 </AccordionItem>
 
                 <AccordionItem value="item-2" className="bg-white rounded-xl border-0 shadow-lg">
-                  <AccordionTrigger className="px-8 py-6 text-left font-bold text-gray-900 hover:text-yellow-600 text-lg">
+                  <AccordionTrigger className="px-8 py-6 text-left font-black text-black hover:text-[#CCA776] text-lg">
                     Chi phí cho các dịch vụ của HLCC được tính như thế nào?
                   </AccordionTrigger>
-                  <AccordionContent className="px-8 pb-6 text-gray-700 text-base leading-relaxed">
+                  <AccordionContent className="px-8 pb-6 text-black font-bold text-base leading-relaxed">
                     Chi phí sẽ phụ thuộc vào phạm vi và độ phức tạp của vấn đề. Sau buổi tư vấn đầu tiên, nếu hai bên cảm thấy phù hợp, chúng tôi sẽ gửi một bản đề xuất dịch vụ chi tiết kèm theo báo giá minh bạch.
                   </AccordionContent>
                 </AccordionItem>
 
                 <AccordionItem value="item-3" className="bg-white rounded-xl border-0 shadow-lg">
-                  <AccordionTrigger className="px-8 py-6 text-left font-bold text-gray-900 hover:text-yellow-600 text-lg">
+                  <AccordionTrigger className="px-8 py-6 text-left font-black text-black hover:text-[#CCA776] text-lg">
                     HLCC có cam kết bảo mật thông tin của khách hàng không?
                   </AccordionTrigger>
-                  <AccordionContent className="px-8 pb-6 text-gray-700 text-base leading-relaxed">
+                  <AccordionContent className="px-8 pb-6 text-black font-bold text-base leading-relaxed">
                     Tuyệt đối. Bảo mật thông tin là nguyên tắc hàng đầu của chúng tôi. Mọi thông tin bạn chia sẻ sẽ được bảo vệ nghiêm ngặt theo Chính sách Bảo mật và các thỏa thuận không tiết lộ thông tin (NDA) nếu cần.
                   </AccordionContent>
                 </AccordionItem>
@@ -447,35 +447,35 @@ export function ContactPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.8 }}
           >
-            <h2 className="text-4xl font-bold text-center text-gray-900 mb-16">
+            <h2 className="text-4xl font-black text-center text-black mb-16">
               Gặp gỡ chúng tôi tại Văn phòng
             </h2>
             
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
               {/* Thông tin địa chỉ */}
               <div className="space-y-8">
-                <Card className="border-0 shadow-2xl bg-gradient-to-br from-yellow-50 to-orange-50 border-l-4 border-yellow-400">
+                <Card className="border-0 shadow-2xl bg-gradient-to-br from-[#CCA776]/10 to-[#CCA776]/10 border-l-4 border-[#CCA776]">
                   <CardContent className="p-8">
                     <div className="space-y-8">
                       <div className="flex items-start space-x-6">
-                        <div className="bg-gradient-to-r from-yellow-400 to-orange-500 p-4 rounded-full shadow-lg">
+                        <div className="bg-gradient-to-r from-[#CCA776] to-[#CCA776] p-4 rounded-full shadow-lg">
                           <MapPin className="h-8 w-8 text-white" />
                         </div>
                         <div>
-                          <h4 className="font-bold text-xl text-gray-900 mb-3">Địa chỉ văn phòng</h4>
-                          <p className="text-gray-700 text-lg leading-relaxed">
+                          <h4 className="font-black text-xl text-black mb-3">Địa chỉ văn phòng</h4>
+                          <p className="text-black font-bold text-lg leading-relaxed">
                             Tòa nhà SABAY – 99 Cộng Hòa, Phường 4, Quận Tân Bình, TP.HCM
                           </p>
                         </div>
                       </div>
                       
                       <div className="flex items-start space-x-6">
-                        <div className="bg-gradient-to-r from-yellow-400 to-orange-500 p-4 rounded-full shadow-lg">
+                        <div className="bg-gradient-to-r from-[#CCA776] to-[#CCA776] p-4 rounded-full shadow-lg">
                           <Clock className="h-8 w-8 text-white" />
                         </div>
                         <div>
-                          <h4 className="font-bold text-xl text-gray-900 mb-3">Giờ làm việc</h4>
-                          <p className="text-gray-700 text-lg">
+                          <h4 className="font-black text-xl text-black mb-3">Giờ làm việc</h4>
+                          <p className="text-black font-bold text-lg">
                             Thứ 2 đến thứ 6: 8:30AM - 17:30PM<br />
                             Thứ 7, chủ nhật: Nghỉ
                           </p>
@@ -486,20 +486,20 @@ export function ContactPage() {
                 </Card>
 
                 {/* Thông tin bổ sung */}
-                <div className="bg-gradient-to-br from-yellow-50 to-orange-50 p-8 rounded-2xl border-2 border-yellow-200 shadow-lg">
-                  <h4 className="font-bold text-xl text-gray-900 mb-6">Lưu ý khi đến văn phòng:</h4>
-                  <ul className="space-y-4 text-gray-700">
-                    <li className="flex items-center p-3 bg-yellow-200 rounded-lg shadow-sm border-l-4 border-yellow-400">
-                      <CheckCircle className="h-5 w-5 mr-3 text-yellow-600" />
-                      <span className="font-medium">Vui lòng đặt lịch hẹn trước qua hotline hoặc email</span>
+                <div className="bg-gradient-to-br from-[#CCA776]/10 to-[#CCA776]/10 p-8 rounded-2xl border-2 border-[#CCA776]/50 shadow-lg">
+                  <h4 className="font-black text-xl text-black mb-6">Lưu ý khi đến văn phòng:</h4>
+                  <ul className="space-y-4 text-black font-bold">
+                    <li className="flex items-center p-3 bg-[#CCA776]/20 rounded-lg shadow-sm border-l-4 border-[#CCA776]">
+                      <CheckCircle className="h-5 w-5 mr-3 text-[#CCA776]" />
+                      <span>Vui lòng đặt lịch hẹn trước qua hotline hoặc email</span>
                     </li>
-                    <li className="flex items-center p-3 bg-yellow-200 rounded-lg shadow-sm border-l-4 border-yellow-400">
-                      <CheckCircle className="h-5 w-5 mr-3 text-yellow-600" />
-                      <span className="font-medium">Có bãi đỗ xe miễn phí cho khách hàng</span>
+                    <li className="flex items-center p-3 bg-[#CCA776]/20 rounded-lg shadow-sm border-l-4 border-[#CCA776]">
+                      <CheckCircle className="h-5 w-5 mr-3 text-[#CCA776]" />
+                      <span>Có bãi đỗ xe miễn phí cho khách hàng</span>
                     </li>
-                    <li className="flex items-center p-3 bg-yellow-200 rounded-lg shadow-sm border-l-4 border-yellow-400">
-                      <CheckCircle className="h-5 w-5 mr-3 text-yellow-600" />
-                      <span className="font-medium">Thang máy và cơ sở vật chất hiện đại</span>
+                    <li className="flex items-center p-3 bg-[#CCA776]/20 rounded-lg shadow-sm border-l-4 border-[#CCA776]">
+                      <CheckCircle className="h-5 w-5 mr-3 text-[#CCA776]" />
+                      <span>Thang máy và cơ sở vật chất hiện đại</span>
                     </li>
                   </ul>
                 </div>
@@ -525,11 +525,11 @@ export function ContactPage() {
       </section>
 
       {/* Call To Action Section */}
-      <section className="bg-gradient-to-r from-yellow-500 to-orange-500 py-20 relative overflow-hidden">
+      <section className="bg-gradient-to-r from-[#CCA776] to-[#CCA776] py-20 relative overflow-hidden">
         {/* Background decoration */}
-        <div className="absolute inset-0 bg-gradient-to-r from-yellow-400/20 to-orange-400/20"></div>
-        <div className="absolute top-10 left-10 w-32 h-32 bg-yellow-300 rounded-full opacity-20"></div>
-        <div className="absolute bottom-10 right-10 w-24 h-24 bg-orange-300 rounded-full opacity-20"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-[#CCA776]/20 to-[#CCA776]/20"></div>
+        <div className="absolute top-10 left-10 w-32 h-32 bg-[#CCA776]/30 rounded-full opacity-20"></div>
+        <div className="absolute bottom-10 right-10 w-24 h-24 bg-[#CCA776]/30 rounded-full opacity-20"></div>
         
         <div className="container mx-auto text-center text-white px-4 relative z-10">
           <motion.div
@@ -537,22 +537,22 @@ export function ContactPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1 }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+            <h2 className="text-4xl md:text-5xl font-black mb-6 text-white">
               Sẵn sàng bắt đầu hành trình cùng HLCC?
             </h2>
-            <p className="text-xl md:text-2xl mb-10 text-yellow-100 max-w-3xl mx-auto">
+            <p className="text-xl md:text-2xl mb-10 text-[#CCA776] font-black max-w-3xl mx-auto">
               Đội ngũ chuyên gia của chúng tôi đang chờ đợi để hỗ trợ bạn. 
               Hãy liên hệ ngay để nhận tư vấn miễn phí!
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
               <Button 
-                className="bg-white text-yellow-600 font-bold px-10 py-5 hover:bg-yellow-50 text-xl rounded-xl shadow-2xl transform hover:scale-105 transition-all duration-300" 
+                className="bg-white text-[#CCA776] font-black px-10 py-5 hover:bg-[#CCA776]/10 text-xl rounded-xl shadow-2xl transform hover:scale-105 transition-all duration-300" 
                 onClick={() => document.getElementById('contact-form')?.scrollIntoView({behavior: 'smooth'})}
               >
                 Gửi yêu cầu tư vấn
               </Button>
               <Button 
-                className="bg-white text-yellow-600 font-bold px-10 py-5 border-2 border-yellow-400 hover:bg-yellow-50 hover:text-orange-600 text-xl rounded-xl shadow-2xl transform hover:scale-105 transition-all duration-300"
+                className="bg-white text-[#CCA776] font-black px-10 py-5 border-2 border-[#CCA776] hover:bg-[#CCA776]/10 hover:text-[#CCA776]/80 text-xl rounded-xl shadow-2xl transform hover:scale-105 transition-all duration-300"
                 onClick={() => window.open('tel:0912880330', '_self')}
               >
                 Gọi hotline ngay
@@ -567,14 +567,14 @@ export function ContactPage() {
         <div className="border-t pt-8 mt-8 flex flex-col md:flex-row gap-4 md:gap-8 justify-center items-center text-center">
           <a
             href="/lien-he/tuyen-dung"
-            className="text-lg text-amber-700 hover:underline font-medium"
+            className="text-lg text-[#CCA776] hover:underline font-black"
           >
             Tuyển dụng
           </a>
-          <span className="hidden md:inline-block text-gray-400">|</span>
+          <span className="hidden md:inline-block text-black">|</span>
           <a
             href="/lien-he/chinh-sach-bao-mat-dieu-khoan"
-            className="text-lg text-amber-700 hover:underline font-medium"
+            className="text-lg text-[#CCA776] hover:underline font-black"
           >
             Chính sách Bảo mật, Điều khoản
           </a>

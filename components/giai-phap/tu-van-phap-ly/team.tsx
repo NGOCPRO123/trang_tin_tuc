@@ -10,7 +10,7 @@ const lawyers = [
     quote: "Pháp luật là vũ khí bảo vệ khách hàng của tôi.",
     image: "/placeholder.svg?height=400&width=400",
     achievements: ["Thạc sĩ Luật", "100+ vụ thành công", "Chuyên gia dân sự"],
-    color: "from-blue-400 to-indigo-500",
+    color: "from-[#CCA776] to-[#CCA776]",
   },
   {
     name: "Luật sư Trần Thị B",
@@ -18,7 +18,7 @@ const lawyers = [
     quote: "Công lý không chỉ là mục tiêu, mà là sứ mệnh của tôi.",
     image: "/placeholder.svg?height=400&width=400",
     achievements: ["Tiến sĩ Luật", "80+ vụ bào chữa", "Chuyên gia hình sự"],
-    color: "from-rose-400 to-pink-500",
+    color: "from-[#CCA776] to-[#CCA776]",
   },
 ]
 
@@ -27,23 +27,23 @@ export default function Team() {
     <section className="py-20 bg-white relative overflow-hidden">
       {/* Background elements */}
       <div className="absolute inset-0">
-        <div className="absolute top-10 left-1/4 w-32 h-32 bg-gradient-to-br from-amber-200/20 to-orange-300/20 rounded-full blur-xl"></div>
-        <div className="absolute bottom-10 right-1/4 w-40 h-40 bg-gradient-to-br from-blue-200/20 to-indigo-300/20 rounded-full blur-xl"></div>
+        <div className="absolute top-10 left-1/4 w-32 h-32 bg-[#CCA776]/20 rounded-full blur-xl"></div>
+        <div className="absolute bottom-10 right-1/4 w-40 h-40 bg-[#CCA776]/20 rounded-full blur-xl"></div>
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
         {/* Section header */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 bg-gradient-to-r from-amber-100 to-orange-100 rounded-full px-6 py-2 border border-amber-200 mb-6">
-            <Award className="w-4 h-4 text-amber-600" />
-            <span className="text-sm font-medium text-amber-800">Đội ngũ chuyên gia</span>
+          <div className="inline-flex items-center gap-2 bg-[#CCA776]/30 rounded-full px-6 py-2 border border-[#CCA776]/40 mb-6">
+            <Award className="w-4 h-4 text-[#CCA776]" />
+            <span className="text-sm font-medium text-[#CCA776]">Đội ngũ chuyên gia</span>
           </div>
 
-          <h2 className="text-4xl lg:text-5xl font-bold text-slate-800 mb-4">
-            Luật sư <span className="bg-gradient-to-r from-amber-500 to-orange-500 bg-clip-text text-transparent">Tiêu biểu</span>
+          <h2 className="text-4xl lg:text-5xl font-extrabold text-black mb-4">
+            Luật sư <span className="text-[#CCA776] font-black">Tiêu biểu</span>
           </h2>
 
-          <p className="text-xl text-slate-600 max-w-2xl mx-auto">
+          <p className="text-xl text-black font-bold max-w-2xl mx-auto">
             Đội ngũ luật sư giàu kinh nghiệm, tận tâm và chuyên nghiệp
           </p>
         </div>
@@ -56,7 +56,7 @@ export default function Team() {
             >
               {/* Decorative elements */}
               <div
-                className={`absolute top-0 right-0 w-32 h-32 bg-gradient-to-br ${lawyer.color} opacity-10 rounded-full blur-2xl group-hover:opacity-20 transition-opacity duration-500`}
+                className={`absolute top-0 right-0 w-32 h-32 bg-[#CCA776] opacity-10 rounded-full blur-2xl group-hover:opacity-20 transition-opacity duration-500`}
               ></div>
 
               <div className="relative z-10">
@@ -64,7 +64,7 @@ export default function Team() {
                 <div className="flex flex-col items-center text-center mb-6">
                   <div className="relative mb-6">
                     <div
-                      className={`absolute inset-0 bg-gradient-to-br ${lawyer.color} rounded-3xl blur-lg opacity-30 group-hover:opacity-50 transition-opacity duration-300`}
+                      className={`absolute inset-0 bg-[#CCA776] rounded-3xl blur-lg opacity-30 group-hover:opacity-50 transition-opacity duration-300`}
                     ></div>
                     <Image
                       src={lawyer.image || "/placeholder.svg"}
@@ -76,13 +76,13 @@ export default function Team() {
 
                     {/* Floating badge */}
                     <div className="absolute -bottom-4 -right-4 bg-white rounded-2xl p-3 shadow-lg border border-slate-200">
-                      <Star className={`w-6 h-6 text-amber-500`} fill="currentColor" />
+                      <Star className={`w-6 h-6 text-[#CCA776]`} fill="currentColor" />
                     </div>
                   </div>
 
-                  <h3 className="text-2xl font-bold text-slate-800 mb-2">{lawyer.name}</h3>
+                  <h3 className="text-2xl font-extrabold text-black mb-2">{lawyer.name}</h3>
                   <p
-                    className={`text-lg font-medium bg-gradient-to-r ${lawyer.color} bg-clip-text text-transparent mb-4`}
+                    className={`text-lg font-black text-[#CCA776] mb-4`}
                   >
                     {lawyer.specialty}
                   </p>
@@ -92,7 +92,7 @@ export default function Team() {
                     {lawyer.achievements.map((achievement, idx) => (
                       <span
                         key={idx}
-                        className="px-3 py-1 bg-slate-100 text-slate-700 text-sm rounded-full border border-slate-200"
+                        className="px-3 py-1 bg-slate-100 text-black font-bold text-sm rounded-full border border-slate-200"
                       >
                         {achievement}
                       </span>
@@ -106,7 +106,7 @@ export default function Team() {
                     <Quote className={`w-8 h-8 text-slate-300`} />
                   </div>
 
-                  <blockquote className="text-lg text-slate-700 italic leading-relaxed pl-6 border-l-4 border-gradient-to-b from-amber-400 to-orange-500">
+                  <blockquote className="text-lg text-black italic leading-relaxed pl-6 border-l-4 border-[#CCA776] font-bold">
                     {lawyer.quote}
                   </blockquote>
                 </div>

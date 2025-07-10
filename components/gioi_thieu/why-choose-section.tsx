@@ -48,9 +48,9 @@ export function WhyChooseSection() {
   return (
     <section className="relative py-24 px-4 overflow-hidden">
       {/* Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-gray-50 via-white to-yellow-50"></div>
-      <div className="absolute top-0 left-1/4 w-72 h-72 bg-yellow-400/10 rounded-full blur-3xl animate-pulse"></div>
-      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-orange-400/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-gray-50 via-white to-[#CCA776]/10"></div>
+      <div className="absolute top-0 left-1/4 w-72 h-72 bg-[#CCA776]/10 rounded-full blur-3xl animate-pulse"></div>
+      <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-[#CCA776]/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
       
       <div className="container mx-auto max-w-7xl relative z-10">
         {/* Header */}
@@ -66,7 +66,7 @@ export function WhyChooseSection() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
-            className="inline-flex items-center gap-3 bg-gradient-to-r from-yellow-400 to-orange-500 text-black px-6 py-3 rounded-full text-sm font-semibold shadow-lg mb-8"
+            className="inline-flex items-center gap-3 bg-gradient-to-r from-[#CCA776] to-[#CCA776] text-white px-6 py-3 rounded-full text-sm font-semibold shadow-lg mb-8"
           >
             <Star className="w-4 h-4" />
             <span>TẠI SAO CHỌN HLCC?</span>
@@ -77,11 +77,11 @@ export function WhyChooseSection() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
             viewport={{ once: true }}
-            className="text-5xl md:text-6xl font-bold text-gray-900 leading-tight mb-8"
+            className="text-5xl md:text-6xl font-bold text-black leading-tight mb-8"
           >
             <span>
               Cam Kết Vượt Trội{' '}
-              <span className="bg-gradient-to-r from-yellow-500 via-orange-500 to-red-500 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-[#CCA776] to-[#CCA776] bg-clip-text text-transparent font-black drop-shadow">
                 Cho Doanh Nghiệp Bạn
               </span>
             </span>
@@ -92,7 +92,7 @@ export function WhyChooseSection() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.5 }}
             viewport={{ once: true }}
-            className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed"
+            className="text-xl text-black max-w-4xl mx-auto leading-relaxed"
           >
             Chọn HLCC là quyết định chiến lược để nhận cam kết & lợi thế cạnh tranh vượt trội.
           </motion.p>
@@ -111,27 +111,27 @@ export function WhyChooseSection() {
             >
               {/* Icon Section */}
               <div className="flex-shrink-0 relative">
-                <div className="w-24 h-24 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-full flex items-center justify-center shadow-2xl">
-                  <advantage.icon className="w-12 h-12 text-black" />
+                <div className="w-24 h-24 bg-gradient-to-br from-[#CCA776] to-[#CCA776] rounded-full flex items-center justify-center shadow-2xl">
+                  <advantage.icon className="w-12 h-12 text-white" />
                 </div>
-                <div className="absolute -top-2 -right-2 w-8 h-8 bg-yellow-400 rounded-full flex items-center justify-center text-black font-bold text-sm">
+                <div className="absolute -top-2 -right-2 w-8 h-8 bg-[#CCA776] rounded-full flex items-center justify-center text-white font-bold text-sm">
                   {index + 1}
                 </div>
               </div>
 
               {/* Content Section */}
               <div className="flex-1 space-y-4">
-                <h3 className="text-3xl font-bold text-gray-900 group-hover:text-yellow-600 transition-colors duration-300">
+                <h3 className="text-3xl font-bold text-black group-hover:text-[#CCA776] transition-colors duration-300">
                   {advantage.title}
                 </h3>
-                <p className="text-xl text-gray-600 leading-relaxed">
+                <p className="text-xl text-black leading-relaxed">
                   {advantage.description}
                 </p>
               </div>
 
               {/* Decorative Line */}
               <div className="hidden lg:block flex-1">
-                <div className="h-1 bg-gradient-to-r from-yellow-500/50 to-transparent rounded-full"></div>
+                <div className="h-1 bg-gradient-to-r from-[#CCA776]/50 to-transparent rounded-full"></div>
               </div>
             </motion.div>
           ))}
@@ -145,7 +145,7 @@ export function WhyChooseSection() {
           viewport={{ once: true }}
           className="relative"
         >
-          <div className="bg-gradient-to-r from-yellow-400 to-orange-500 rounded-3xl p-12 relative overflow-hidden">
+          <div className="bg-gradient-to-r from-[#CCA776] to-[#CCA776] rounded-3xl p-12 relative overflow-hidden">
             {/* Background Pattern */}
             <div className="absolute inset-0 bg-black/10"></div>
             <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -translate-y-16 translate-x-16"></div>
@@ -160,7 +160,7 @@ export function WhyChooseSection() {
               </p>
               <Button
                 size="lg"
-                className="bg-black hover:bg-gray-900 text-yellow-400 px-8 py-4 text-lg rounded-xl font-semibold group shadow-lg hover:shadow-xl transition-all duration-300"
+                className="bg-black hover:bg-gray-900 text-[#CCA776] px-8 py-4 text-lg rounded-xl font-semibold group shadow-lg hover:shadow-xl transition-all duration-300"
                 onClick={handleConsultationClick}
               >
                 Đăng Ký Tư Vấn Miễn Phí Ngay

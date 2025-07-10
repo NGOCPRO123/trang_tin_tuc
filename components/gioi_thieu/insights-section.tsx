@@ -40,9 +40,9 @@ export function InsightsSection() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <div className="text-sm font-medium text-yellow-600 mb-4 uppercase tracking-wide">TIN TỨC VÀ INSIGHTS</div>
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Our Insights</h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <div className="text-sm font-semibold text-[#CCA776] mb-4 uppercase tracking-wide drop-shadow">TIN TỨC VÀ INSIGHTS</div>
+          <h2 className="text-3xl md:text-4xl font-bold text-black mb-6">Our Insights</h2>
+          <p className="text-xl text-black max-w-3xl mx-auto">
             Cập nhật những xu hướng mới nhất và chia sẻ kiến thức chuyên sâu từ đội ngũ chuyên gia của chúng tôi.
           </p>
         </motion.div>
@@ -55,7 +55,7 @@ export function InsightsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-md transition-shadow group"
+              className="bg-white rounded-xl shadow-sm border border-[#CCA776]/20 overflow-hidden hover:shadow-md transition-shadow group"
             >
               <div className="relative h-48 overflow-hidden">
                 <Image
@@ -66,11 +66,11 @@ export function InsightsSection() {
                 />
               </div>
               <div className="p-6">
-                <h3 className="text-lg font-semibold text-gray-900 mb-3 line-clamp-2 group-hover:text-yellow-600 transition-colors">
+                <h3 className="text-lg font-semibold text-black mb-3 line-clamp-2 group-hover:text-[#CCA776] transition-colors">
                   {insight.title}
                 </h3>
-                <p className="text-gray-600 mb-4 line-clamp-2">{insight.excerpt}</p>
-                <div className="flex items-center justify-between text-sm text-gray-500">
+                <p className="text-black mb-4 line-clamp-2">{insight.excerpt}</p>
+                <div className="flex items-center justify-between text-sm text-black">
                   <div className="flex items-center space-x-4">
                     <div className="flex items-center">
                       <Calendar className="w-4 h-4 mr-1" />
@@ -94,7 +94,7 @@ export function InsightsSection() {
           viewport={{ once: true }}
           className="text-center"
         >
-          <Button variant="outline" size="lg" className="group bg-transparent">
+          <Button variant="outline" size="lg" className="group bg-transparent border-[#CCA776] text-[#CCA776] hover:bg-[#CCA776]/10">
             Xem tất cả
             <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </Button>

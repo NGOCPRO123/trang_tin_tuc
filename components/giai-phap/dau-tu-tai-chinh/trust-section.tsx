@@ -23,10 +23,10 @@ export function TrustSection() {
   ]
 
   return (
-    <section className="py-20 bg-gradient-to-br from-yellow-50 to-amber-100">
+    <section className="py-20 bg-[#CCA776]/10">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-3xl lg:text-4xl font-bold text-yellow-700 mb-4">
+          <h2 className="text-3xl lg:text-4xl font-bold text-[#CCA776] mb-4">
             Sự khác biệt của chúng tôi
           </h2>
         </div>
@@ -35,14 +35,14 @@ export function TrustSection() {
           {differences.map((item, index) => (
             <div
               key={index}
-              className={`relative bg-white border-2 border-yellow-200 rounded-2xl shadow-2xl p-10 text-center flex flex-col items-center transition-all duration-300 z-${10 + index * 10} ${index === 1 ? 'lg:-mt-16' : ''} ${index === 2 ? 'lg:-mt-32' : ''}`}
+              className={`relative bg-white border-2 border-[#CCA776] rounded-2xl shadow-2xl p-10 text-center flex flex-col items-center transition-all duration-300 z-${10 + index * 10} ${index === 1 ? 'lg:-mt-16' : ''} ${index === 2 ? 'lg:-mt-32' : ''}`}
               style={{ left: index === 1 ? '0px' : index === 2 ? '-40px' : '0px', marginRight: index === 0 ? '-40px' : '0px' }}
             >
-              <div className="bg-gradient-to-r from-yellow-400 to-amber-400 w-20 h-20 rounded-full flex items-center justify-center mb-6 shadow-lg">
-                <item.icon className="w-10 h-10 text-yellow-700" />
+              <div className="bg-[#CCA776] w-20 h-20 rounded-full flex items-center justify-center mb-6 shadow-lg">
+                <item.icon className="w-10 h-10 text-white" />
               </div>
-              <h3 className="text-xl font-bold text-yellow-800 mb-4">{item.title}</h3>
-              <p className="text-yellow-900 leading-relaxed">{item.description}</p>
+              <h3 className="text-xl font-bold text-[#CCA776] mb-4">{item.title}</h3>
+              <p className="text-black leading-relaxed">{item.description}</p>
             </div>
           ))}
         </div>

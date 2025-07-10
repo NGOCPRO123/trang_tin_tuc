@@ -48,38 +48,22 @@ export default function SidebarNavigation() {
       <div className="bg-white/60 backdrop-blur-xl rounded-2xl p-6 shadow-xl border border-white/20">
         <h3 className="text-lg font-semibold text-gray-800 mb-6">Nội dung</h3>
 
-        <div className="space-y-2">
+        <nav className="space-y-2">
           {sections.map((section) => (
-            <button
+            <a
               key={section.id}
-              onClick={() => scrollToSection(section.id)}
-              className={`w-full text-left p-3 rounded-xl transition-all duration-300 group ${
-                activeSection === section.id
-                  ? "bg-gradient-to-r from-yellow-400/20 to-amber-400/20 border-l-4 border-yellow-500"
-                  : "hover:bg-yellow-50/50"
-              }`}
+              href={`#${section.id}`}
+              className={`block px-4 py-2 rounded-lg font-bold transition-colors flex items-center gap-2
+                ${activeSection === section.id
+                  ? "bg-[#CCA776]/20 text-[#CCA776]"
+                  : "text-black hover:bg-[#CCA776]/10 hover:text-[#CCA776]"}
+              `}
             >
-              <div className="flex items-center gap-3">
-                <span
-                  className={`text-xs font-bold px-2 py-1 rounded-full transition-colors ${
-                    activeSection === section.id
-                      ? "bg-yellow-500 text-white"
-                      : "bg-gray-200 text-gray-600 group-hover:bg-yellow-200"
-                  }`}
-                >
-                  {section.number}
-                </span>
-                <span
-                  className={`text-sm font-medium transition-colors ${
-                    activeSection === section.id ? "text-yellow-700" : "text-gray-600"
-                  }`}
-                >
-                  {section.title}
-                </span>
-              </div>
-            </button>
+              <span className="inline-block w-8 h-8 flex items-center justify-center rounded-full bg-[#CCA776]/20 text-[#CCA776] font-black mr-2">{section.number}</span>
+              {section.title}
+            </a>
           ))}
-        </div>
+        </nav>
       </div>
     </nav>
   )

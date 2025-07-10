@@ -29,14 +29,14 @@ export default function SolutionSection() {
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
-            <div className="inline-block bg-yellow-100 rounded-full px-6 py-2 mb-6">
-              <span className="text-yellow-800 font-semibold">Chúng tôi làm gì?</span>
+            <div className="inline-block bg-[#CCA776]/30 rounded-full px-6 py-2 mb-6">
+              <span className="text-[#CCA776] font-semibold">Chúng tôi làm gì?</span>
             </div>
 
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
-              <span className="text-yellow-600">"</span>Chúng tôi không làm phép.
+            <h2 className="text-3xl lg:text-4xl font-extrabold text-black mb-6">
+              <span className="text-[#CCA776] font-black">"</span>Chúng tôi không làm phép.
               <br />
-              Chúng tôi làm việc.<span className="text-yellow-600">"</span>
+              Chúng tôi làm việc.<span className="text-[#CCA776] font-black">"</span>
             </h2>
           </div>
 
@@ -46,17 +46,17 @@ export default function SolutionSection() {
               return (
                 <div
                   key={index}
-                  className="bg-white/80 rounded-2xl p-8 border border-yellow-200 shadow-sm hover:shadow-md transition-shadow"
+                  className="bg-white/80 rounded-2xl p-8 border border-[#CCA776]/30 shadow-sm hover:shadow-md transition-shadow"
                 >
                   <div className="flex items-start space-x-4">
                     <div className="flex-shrink-0">
-                      <div className="w-14 h-14 bg-yellow-100 rounded-xl flex items-center justify-center">
-                        <IconComponent className="w-7 h-7 text-yellow-600" />
+                      <div className="w-14 h-14 bg-[#CCA776]/30 rounded-xl flex items-center justify-center">
+                        <IconComponent className="w-7 h-7 text-[#CCA776]" />
                       </div>
                     </div>
                     <div>
-                      <h3 className="text-xl font-bold text-gray-900 mb-3">{solution.title}</h3>
-                      <p className="text-gray-700 leading-relaxed">{solution.description}</p>
+                      <h3 className="text-xl font-black text-black mb-3">{solution.title}</h3>
+                      <p className="text-black font-bold leading-relaxed">{solution.description}</p>
                     </div>
                   </div>
                 </div>
@@ -64,16 +64,16 @@ export default function SolutionSection() {
             })}
           </div>
 
-          <div className="bg-gradient-to-r from-yellow-50 to-amber-50 rounded-2xl p-8 border-l-4 border-yellow-400">
+          <div className="bg-[#CCA776]/10 rounded-2xl p-8 border-l-4 border-[#CCA776]">
             <div className="flex items-start space-x-4">
               <div className="flex-shrink-0">
-                <CheckCircle className="w-8 h-8 text-yellow-600" />
+                <CheckCircle className="w-8 h-8 text-[#CCA776]" />
               </div>
               <div>
-                <p className="text-lg text-gray-800 font-semibold mb-2">Lưu ý quan trọng:</p>
-                <p className="text-gray-700">
+                <p className="text-lg text-black font-bold mb-2">Lưu ý quan trọng:</p>
+                <p className="text-black font-bold">
                   Chúng tôi chỉ làm nợ thật – có chứng từ – có căn cứ.
-                  <span className="font-semibold"> Không xử lý các khoản mập mờ.</span>
+                  <span className="font-black"> Không xử lý các khoản mập mờ.</span>
                 </p>
               </div>
             </div>

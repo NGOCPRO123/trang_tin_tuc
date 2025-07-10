@@ -31,24 +31,23 @@ const layers = [
 
 export default function MultiLayerSecuritySection() {
   return (
-    <section className="py-20 bg-gradient-to-br from-yellow-50 to-orange-50">
+    <section className="py-20 bg-[#CCA776]/10">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-black text-[#1a1a1a] mb-4">
-              Quản lý và Bảo vệ Tài sản Vật lý: Từ Phòng ngừa đến Ứng phó
-            </h2>
+            <h2 className="text-3xl font-black text-black mb-4">Dịch vụ nổi bật</h2>
+            <p className="text-xl text-black font-bold mb-8">Đáp ứng mọi nhu cầu bảo vệ an ninh doanh nghiệp</p>
           </div>
           <Accordion type="single" collapsible className="space-y-4">
             {layers.map((item, idx) => (
               <AccordionItem key={idx} value={String(idx)}>
-                <AccordionTrigger className="text-lg font-bold text-[#1a1a1a]">
-                  <CheckCircle className="inline-block mr-2 text-[#1a1a1a]" />
+                <AccordionTrigger className="text-lg font-bold text-[#CCA776]">
+                  <CheckCircle className="inline-block mr-2 text-[#CCA776]" />
                   {item.title}
                 </AccordionTrigger>
                 <AccordionContent>
                   <div className="text-gray-800 mb-2">{item.desc}</div>
-                  <div className="text-[#1a1a1a] font-semibold">Lợi ích: {item.benefit}</div>
+                  <div className="text-[#CCA776] font-semibold">Lợi ích: {item.benefit}</div>
                 </AccordionContent>
               </AccordionItem>
             ))}

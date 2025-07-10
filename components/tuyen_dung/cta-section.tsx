@@ -15,16 +15,12 @@ export default function CTASection() {
   }
 
   return (
-    <section className="py-24 bg-gradient-to-br from-amber-500 via-yellow-500 to-orange-500 relative overflow-hidden">
+    <section className="py-24 bg-gradient-to-br from-[#CCA776] via-[#CCA776] to-[#CCA776] relative overflow-hidden">
       <div className="absolute inset-0 bg-[url('/placeholder.svg?height=600&width=1200')] bg-cover bg-center opacity-10"></div>
       <div className="container mx-auto px-4 text-center relative z-10">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">Chưa tìm thấy vị trí phù hợp?</h2>
-          <p className="text-xl text-amber-100 mb-12 leading-relaxed">
-            Chúng tôi luôn tìm kiếm những tài năng xuất sắc. Nếu bạn tin rằng kỹ năng và đam mê của mình phù hợp với sứ
-            mệnh của HLCC, đừng ngần ngại gửi CV của bạn cho chúng tôi. Chúng tôi sẽ lưu lại hồ sơ và liên hệ ngay khi
-            có vị trí thích hợp.
-          </p>
+          <h2 className="text-3xl font-black text-black mb-4">Sẵn sàng ứng tuyển?</h2>
+          <p className="text-xl text-black font-bold mb-8">Gửi CV hoặc liên hệ để được tư vấn về vị trí phù hợp</p>
 
           <div className="bg-white rounded-2xl p-10 max-w-2xl mx-auto shadow-2xl">
             <h3 className="text-2xl font-bold text-gray-900 mb-6">Gửi hồ sơ của bạn</h3>
@@ -54,7 +50,7 @@ export default function CTASection() {
               />
               <Button
                 type="submit"
-                className="w-full bg-amber-500 hover:bg-amber-600 text-white py-4 text-lg shadow-lg hover:shadow-xl transition-all duration-300"
+                className="w-full bg-[#CCA776] hover:bg-[#CCA776]/80 text-white py-4 text-lg shadow-lg hover:shadow-xl transition-all duration-300"
               >
                 <Mail className="mr-2 h-5 w-5" />
                 Gửi hồ sơ cho chúng tôi

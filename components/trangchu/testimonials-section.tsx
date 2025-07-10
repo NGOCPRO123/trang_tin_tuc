@@ -42,7 +42,7 @@ const testimonials = [
 
 export function TestimonialsSection() {
   return (
-    <section className="py-20 px-4 bg-gradient-to-br from-yellow-50 to-orange-50">
+    <section className="py-20 px-4 bg-gradient-to-br from-[#CCA776]/10 to-[#CCA776]/5">
       <div className="container mx-auto max-w-7xl">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -51,8 +51,8 @@ export function TestimonialsSection() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-5xl font-bold text-gray-800 mb-6">Cảm nhận từ cộng đồng</h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <h2 className="text-3xl md:text-5xl font-bold text-black mb-6">Cảm nhận từ cộng đồng</h2>
+          <p className="text-xl text-black max-w-3xl mx-auto font-medium">
             Những chia sẻ chân thành từ các thành viên, đối tác và người thụ hưởng trong cộng đồng
           </p>
         </motion.div>
@@ -69,12 +69,12 @@ export function TestimonialsSection() {
             >
               <Card className="h-full hover:shadow-xl transition-all duration-300 border-0 shadow-lg bg-white/80 backdrop-blur-sm">
                 <CardContent className="p-8">
-                  <Quote className="w-8 h-8 text-orange-500 mb-4" />
-                  <p className="text-gray-700 leading-relaxed mb-6 text-lg italic">"{testimonial.quote}"</p>
+                  <Quote className="w-8 h-8 text-[#CCA776] mb-4" />
+                  <p className="text-black leading-relaxed mb-6 text-lg italic font-medium">"{testimonial.quote}"</p>
                   <div className="flex items-center gap-4">
                     <Avatar className="w-12 h-12">
                       <AvatarImage src={testimonial.avatar || "/placeholder.svg"} alt={testimonial.name} />
-                      <AvatarFallback className="bg-orange-100 text-orange-600 font-semibold">
+                      <AvatarFallback className="bg-[#CCA776]/20 text-[#CCA776] font-semibold">
                         {testimonial.name
                           .split(" ")
                           .map((n) => n[0])
@@ -82,8 +82,8 @@ export function TestimonialsSection() {
                       </AvatarFallback>
                     </Avatar>
                     <div>
-                      <h4 className="font-semibold text-gray-800">{testimonial.name}</h4>
-                      <p className="text-sm text-gray-600">{testimonial.role}</p>
+                      <h4 className="font-semibold text-black">{testimonial.name}</h4>
+                      <p className="text-sm text-black font-medium">{testimonial.role}</p>
                     </div>
                   </div>
                 </CardContent>

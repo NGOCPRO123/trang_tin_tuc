@@ -23,11 +23,11 @@ export function CreativeHeader() {
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-3">
             <div className="relative">
-              <div className="w-12 h-12 bg-gradient-to-br from-amber-400 via-yellow-500 to-orange-500 rounded-2xl rotate-12 shadow-lg"></div>
+              <div className="w-12 h-12 bg-gradient-to-br from-[#CCA776] via-[#CCA776]/90 to-[#CCA776]/80 rounded-2xl rotate-12 shadow-lg"></div>
               <TrendingUp className="absolute inset-0 m-auto w-6 h-6 text-white -rotate-12" />
             </div>
             <div>
-              <h1 className="text-2xl font-black bg-gradient-to-r from-amber-600 to-orange-600 bg-clip-text text-transparent">
+              <h1 className="text-2xl font-black bg-gradient-to-r from-[#CCA776] to-[#CCA776]/80 bg-clip-text text-transparent">
                 WEALTH.CRAFT
               </h1>
               <p className="text-xs text-gray-500 font-medium tracking-wider">INVESTMENT ARTISTRY</p>
@@ -35,11 +35,11 @@ export function CreativeHeader() {
           </div>
 
           <div className="hidden md:flex items-center space-x-8">
-            <div className="text-sm text-gray-600">
-              <span className="font-semibold">Hotline:</span>
+            <div className="text-sm text-black">
+              <span className="font-bold">Hotline:</span>
               <span className="ml-2 font-mono">0901.234.567</span>
             </div>
-            <Button className="bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white rounded-full px-6 shadow-lg hover:shadow-xl transition-all duration-300">
+            <Button className="bg-gradient-to-r from-[#CCA776] to-[#CCA776]/80 hover:from-[#CCA776]/80 hover:to-[#CCA776] text-white rounded-full px-6 shadow-lg hover:shadow-xl transition-all duration-300">
               <MessageCircle className="w-4 h-4 mr-2" />
               Trò chuyện ngay
             </Button>

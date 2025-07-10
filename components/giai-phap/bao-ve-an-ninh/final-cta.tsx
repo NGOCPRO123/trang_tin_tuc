@@ -12,27 +12,23 @@ export default function FinalCTA() {
             {/* Left side - Final pitch */}
             <div className="space-y-8">
               <div>
-                <h2 className="text-4xl font-black mb-6">
-                  Đừng để <span className="text-red-400">1 giây chần chừ</span>
-                  <br />
-                  thành <span className="text-red-400">1 đời hối hận</span>
-                </h2>
-                <p className="text-xl text-gray-300">Khi nguy hiểm xảy ra, bạn sẽ không có cơ hội thứ 2</p>
+                <h2 className="text-3xl font-black text-black mb-4">Sẵn sàng bảo vệ doanh nghiệp của bạn?</h2>
+                <p className="text-xl text-black font-bold mb-8">Liên hệ ngay để nhận tư vấn miễn phí từ chuyên gia</p>
               </div>
 
               <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
-                <h3 className="text-xl font-bold mb-4 text-yellow-400">Cam kết của chúng tôi:</h3>
+                <h3 className="text-xl font-bold mb-4 text-[#CCA776]">Cam kết của chúng tôi:</h3>
                 <div className="space-y-3">
                   <div className="flex items-center space-x-3">
-                    <Shield className="w-5 h-5 text-green-400" />
+                    <Shield className="w-5 h-5 text-[#CCA776]" />
                     <span>Triển khai trong 2 giờ hoặc MIỄN PHÍ tháng đầu</span>
                   </div>
                   <div className="flex items-center space-x-3">
-                    <Shield className="w-5 h-5 text-green-400" />
+                    <Shield className="w-5 h-5 text-[#CCA776]" />
                     <span>Không hài lòng = hoàn tiền 100%</span>
                   </div>
                   <div className="flex items-center space-x-3">
-                    <Shield className="w-5 h-5 text-green-400" />
+                    <Shield className="w-5 h-5 text-[#CCA776]" />
                     <span>Bảo hiểm trách nhiệm 10 tỷ đồng</span>
                   </div>
                 </div>
@@ -41,7 +37,7 @@ export default function FinalCTA() {
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button
                   size="lg"
-                  className="bg-gradient-to-r from-red-600 to-orange-600 hover:from-red-700 hover:to-orange-700 text-white px-8 py-6 text-lg font-bold rounded-2xl flex-1"
+                  className="bg-[#CCA776] hover:bg-[#CCA776] text-white px-8 py-6 text-lg font-bold rounded-2xl flex-1"
                 >
                   <Phone className="w-5 h-5 mr-2" />
                   GỌI NGAY: 0999.888.777
@@ -49,7 +45,7 @@ export default function FinalCTA() {
                 <Button
                   size="lg"
                   variant="outline"
-                  className="border-2 border-yellow-400 text-yellow-400 hover:bg-yellow-400 hover:text-black px-8 py-6 text-lg font-bold rounded-2xl bg-transparent"
+                  className="border-2 border-[#CCA776] text-[#CCA776] hover:bg-[#CCA776] hover:text-white px-8 py-6 text-lg font-bold rounded-2xl bg-transparent"
                 >
                   Chat Zalo
                 </Button>
@@ -87,7 +83,7 @@ export default function FinalCTA() {
                   />
                 </div>
 
-                <Button className="w-full bg-gradient-to-r from-yellow-500 to-orange-500 hover:from-yellow-600 hover:to-orange-600 text-white py-4 text-lg font-bold rounded-2xl">
+                <Button className="w-full bg-[#CCA776] hover:bg-[#CCA776] text-white py-4 text-lg font-bold rounded-2xl">
                   Nhận tư vấn miễn phí ngay
                 </Button>
               </form>
@@ -102,28 +98,28 @@ export default function FinalCTA() {
           <div className="mt-16 pt-8 border-t border-white/20">
             <div className="grid md:grid-cols-4 gap-6 text-center">
               <div className="flex flex-col items-center space-y-2">
-                <Phone className="w-8 h-8 text-yellow-400" />
+                <Phone className="w-8 h-8 text-[#CCA776]" />
                 <div>
                   <p className="font-semibold">Hotline 24/7</p>
                   <p className="text-gray-300">0999.888.777</p>
                 </div>
               </div>
               <div className="flex flex-col items-center space-y-2">
-                <Mail className="w-8 h-8 text-yellow-400" />
+                <Mail className="w-8 h-8 text-[#CCA776]" />
                 <div>
                   <p className="font-semibold">Email</p>
                   <p className="text-gray-300">info@securepro.vn</p>
                 </div>
               </div>
               <div className="flex flex-col items-center space-y-2">
-                <MapPin className="w-8 h-8 text-yellow-400" />
+                <MapPin className="w-8 h-8 text-[#CCA776]" />
                 <div>
                   <p className="font-semibold">Văn phòng</p>
                   <p className="text-gray-300">123 Nguyễn Huệ, Q1, HCM</p>
                 </div>
               </div>
               <div className="flex flex-col items-center space-y-2">
-                <Clock className="w-8 h-8 text-yellow-400" />
+                <Clock className="w-8 h-8 text-[#CCA776]" />
                 <div>
                   <p className="font-semibold">Phản ứng</p>
                   <p className="text-gray-300">Trung bình 2.3 giây</p>

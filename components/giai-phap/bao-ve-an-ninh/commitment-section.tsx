@@ -17,13 +17,14 @@ const commitments = [
 
 export default function CommitmentSection() {
   return (
-    <section className="py-20 bg-gradient-to-r from-yellow-100 to-amber-100">
+    <section className="py-20 bg-[#CCA776]/10">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-12 text-center">🔒 Cam kết rõ ràng</h2>
+          <h2 className="text-3xl font-black text-black mb-4">Cam kết của chúng tôi</h2>
+          <p className="text-xl text-black font-bold mb-8">An toàn tuyệt đối – Bảo mật tối đa</p>
 
           <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-            <div className="bg-yellow-600 text-white p-4">
+            <div className="bg-[#CCA776] text-white p-4">
               <div className="grid md:grid-cols-2 gap-4 font-semibold">
                 <div>✅ Cam kết</div>
                 <div>Nội dung</div>
@@ -35,10 +36,10 @@ export default function CommitmentSection() {
                 <div key={index} className="p-6">
                   <div className="grid md:grid-cols-2 gap-4 items-start">
                     <div className="flex items-start space-x-3">
-                      <CheckCircle className="w-6 h-6 text-green-600 mt-1 flex-shrink-0" />
-                      <h3 className="font-semibold text-gray-800">{commitment.title}</h3>
+                      <CheckCircle className="w-6 h-6 text-[#CCA776] mt-1 flex-shrink-0" />
+                      <h3 className="font-black text-[#CCA776] mb-2">{commitment.title}</h3>
                     </div>
-                    <p className="text-gray-600">{commitment.description}</p>
+                    <p className="text-black font-bold">{commitment.description}</p>
                   </div>
                 </div>
               ))}

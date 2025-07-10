@@ -89,7 +89,7 @@ export function ServicesSection() {
   }
 
   return (
-    <section className="py-24 px-4 bg-gradient-to-br from-yellow-50 via-amber-50 to-orange-50 relative overflow-hidden">
+    <section className="py-24 px-4 relative overflow-hidden" style={{ backgroundColor: '#fff' }}>
       {/* Background decorative elements */}
       <div className="absolute inset-0 opacity-20">
         <motion.div
@@ -102,7 +102,7 @@ export function ServicesSection() {
             repeat: Number.POSITIVE_INFINITY,
             ease: "linear",
           }}
-          className="absolute top-32 left-32 w-96 h-96 bg-gradient-to-br from-amber-300 to-yellow-400 rounded-full blur-3xl"
+          className="absolute top-32 left-32 w-96 h-96 bg-gradient-to-br from-[#CCA776] to-[#CCA776] rounded-full blur-3xl"
         />
         <motion.div
           animate={{
@@ -114,7 +114,7 @@ export function ServicesSection() {
             repeat: Number.POSITIVE_INFINITY,
             ease: "linear",
           }}
-          className="absolute bottom-32 right-32 w-80 h-80 bg-gradient-to-br from-orange-300 to-amber-400 rounded-full blur-3xl"
+          className="absolute bottom-32 right-32 w-80 h-80 bg-gradient-to-br from-[#CCA776] to-[#CCA776] rounded-full blur-3xl"
         />
       </div>
       <div className="container mx-auto max-w-7xl relative">
@@ -126,10 +126,10 @@ export function ServicesSection() {
           className="text-center mb-16"
         >
          
-          <motion.h2 className="text-4xl md:text-6xl font-bold font-heading text-gray-800 mt-4 mb-8 relative">
+          <motion.h2 className="text-4xl md:text-6xl font-black text-black mt-4 mb-8 relative">
             Bộ công cụ của Chuyên gia Giải mã
           </motion.h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-black max-w-3xl mx-auto font-bold">
             Mỗi doanh nghiệp là một "vụ án" riêng biệt. HLCC cung cấp các giải pháp tư vấn doanh nghiệp toàn diện, đặc biệt nhấn mạnh giải pháp tài chính, giúp bạn xây dựng nền tảng vững chắc cho tăng trưởng bền vững.
           </p>
         </motion.div>
@@ -138,12 +138,12 @@ export function ServicesSection() {
           {services.map((service, index) => {
             // Mảng màu pastel đậm, tránh màu vàng/cam nhạt
             const pastelColors = [
-              "bg-[#b2f2bb]", // xanh lá nhạt
-              "bg-[#a5d8ff]", // xanh dương nhạt
-              "bg-[#d0bfff]", // tím nhạt
-              "bg-[#ffb3c6]", // hồng nhạt
-              "bg-[#dee2e6]", // xám nhạt
-              "bg-[#99f6e4]", // xanh ngọc nhạt
+              "bg-[#CCA776]", // màu vàng nâu nhạt (Light Brownish Yellow)
+              "bg-[#CCA776]", // màu vàng nâu nhạt (Light Brownish Yellow)
+              "bg-[#CCA776]", // màu vàng nâu nhạt (Light Brownish Yellow)
+              "bg-[#CCA776]", // màu vàng nâu nhạt (Light Brownish Yellow)
+              "bg-[#CCA776]", // màu vàng nâu nhạt (Light Brownish Yellow)
+              "bg-[#CCA776]", // màu vàng nâu nhạt (Light Brownish Yellow)
             ];
             const pastelBg = pastelColors[index % pastelColors.length];
             return (
@@ -171,18 +171,18 @@ export function ServicesSection() {
                   {/* Nội dung Card */}
                   <div className="relative z-20">
                     <CardHeader className="text-center pb-4">
-                      <div className="w-16 h-16 bg-amber-100 group-hover:bg-amber-600 rounded-full flex items-center justify-center mx-auto mb-4 transition-colors duration-300">
-                        <service.icon className="w-8 h-8 text-amber-600 group-hover:text-white transition-colors duration-300" />
+                      <div className="w-16 h-16 bg-[#CCA776] group-hover:bg-[#CCA776]/80 rounded-full flex items-center justify-center mx-auto mb-4 transition-colors duration-300">
+                        <service.icon className="w-8 h-8 text-white group-hover:text-white transition-colors duration-300" />
                       </div>
-                      <CardTitle className="text-xl font-bold text-gray-800 drop-shadow-lg">{service.title}</CardTitle>
+                      <CardTitle className="text-xl font-black text-black drop-shadow-lg">{service.title}</CardTitle>
                     </CardHeader>
                     <CardContent className="flex-1 flex flex-col justify-between">
                       <div>
-                        <p className="text-gray-700 mb-6 leading-relaxed drop-shadow">{service.description}</p>
+                        <p className="text-black mb-6 leading-relaxed drop-shadow font-bold">{service.description}</p>
                         <ul className="space-y-2 mb-6">
                           {service.features.map((feature, idx) => (
-                            <li key={idx} className="flex items-center text-sm text-gray-700 drop-shadow">
-                              <div className="w-2 h-2 bg-amber-400 rounded-full mr-3"></div>
+                            <li key={idx} className="flex items-center text-sm text-black drop-shadow font-bold">
+                              <div className="w-2 h-2 bg-[#CCA776] rounded-full mr-3"></div>
                               {feature}
                             </li>
                           ))}
@@ -199,7 +199,7 @@ export function ServicesSection() {
         <div className="flex justify-center mt-12">
           <Button
             onClick={() => router.push('/giai-phap')}
-            className="px-8 py-4 bg-gradient-to-r from-yellow-400 to-orange-500 text-white font-bold rounded-full shadow-lg hover:from-yellow-500 hover:to-orange-600 transition-all text-lg"
+            className="px-8 py-4 bg-gradient-to-r from-[#CCA776] to-[#CCA776] text-white font-bold rounded-full shadow-lg hover:from-[#CCA776]/80 hover:to-[#CCA776] transition-all text-lg"
           >
             Xem tất cả các giải pháp tư vấn doanh nghiệp của HLCC →
           </Button>

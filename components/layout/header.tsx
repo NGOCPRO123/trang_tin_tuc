@@ -23,14 +23,18 @@ export function Header() {
           {/* Center: Title + Subtitle */}
           <div className="flex flex-col items-center justify-center text-center flex-1 px-5 transform translate-x-20">
             <span className="text-2xl md:text-3xl font-bold text-black leading-tight text-center font-sans">DỊCH VỤ QUẢN TRỊ DOANH NGHIỆP</span>
-            <span className="text-lg md:text-2xl font-extrabold text-yellow-700 mt-4 text-center drop-shadow-lg bg-gradient-to-r from-yellow-400 via-yellow-600 to-yellow-800 bg-clip-text text-transparent font-sans" style={{textShadow: '1px 2px 8px rgba(0,0,0,0.12)'}}>VỰC DẬY TÀI CHÍNH - BỨT PHÁ DOANH THU</span>
+            <span className="text-lg md:text-2xl font-extrabold text-[#CCA776] mt-4 text-center drop-shadow-lg font-sans" style={{textShadow: '1px 2px 8px rgba(0,0,0,0.12)'}}>VỰC DẬY TÀI CHÍNH - BỨT PHÁ DOANH THU</span>
           </div>
           {/* Right: Hotline */}
           <div className="flex items-center justify-center md:justify-end min-w-[200px] w-full md:w-auto">
             <a
               href="tel:02855558879"
-              className="bg-yellow-400 text-white font-bold rounded-xl px-6 py-3 text-lg md:text-xl shadow flex items-center gap-2 hover:bg-yellow-500 transition-colors focus:outline-none focus:ring-2 focus:ring-yellow-600"
-              style={{ textDecoration: 'none' }}
+              className="text-white font-bold rounded-xl px-6 py-3 text-lg md:text-xl shadow flex items-center gap-2 transition-colors focus:outline-none focus:ring-2 focus:ring-[#CCA776]"
+              style={{ 
+                textDecoration: 'none',
+                backgroundColor: '#CCA776',
+                boxShadow: '0 4px 6px -1px rgba(204, 167, 118, 0.3)'
+              }}
             >
               <Phone className="w-6 h-6 mr-1" />
               Nhận tư vấn

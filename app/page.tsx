@@ -12,7 +12,7 @@ export default function TrangChu1Page() {
   return (
     <>
       <Header />
-      <main className="min-h-screen bg-gradient-to-b from-blue-50 to-gray-50">
+      <main className="min-h-screen" style={{ backgroundColor: '#0B493A' }}>
         <HeroSection />
         <WhyChooseUsSection />
         <ServicesSection />

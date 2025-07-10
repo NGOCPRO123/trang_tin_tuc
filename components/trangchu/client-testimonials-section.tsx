@@ -34,7 +34,7 @@ const faqs = [
 
 export function ClientTestimonialsSection() {
   return (
-    <section className="py-24 px-4 bg-gradient-to-br from-gray-50 to-blue-50">
+    <section className="py-24 px-4 bg-white">
       <div className="container mx-auto max-w-6xl">
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
@@ -43,8 +43,8 @@ export function ClientTestimonialsSection() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Câu Hỏi Thường Gặp</h2>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+          <h2 className="text-4xl md:text-5xl font-bold text-black mb-6">Câu Hỏi Thường Gặp</h2>
+          <p className="text-lg text-black max-w-3xl mx-auto font-medium">
             Những thắc mắc phổ biến về giải pháp và cách thức hoạt động của HLCC
           </p>
         </motion.div>
@@ -59,15 +59,15 @@ export function ClientTestimonialsSection() {
               viewport={{ once: true }}
               whileHover={{ y: -8, scale: 1.02 }}
             >
-              <Card className="h-full hover:shadow-2xl transition-all duration-500 border-0 shadow-lg bg-white/80 backdrop-blur-sm border-l-4 border-amber-400">
+              <Card className="h-full hover:shadow-2xl transition-all duration-500 border-0 shadow-lg bg-[#CCA776] border-l-4 border-[#CCA776]">
                 <CardContent className="p-8">
                   <div className="flex items-start space-x-6">
-                    <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-amber-400 to-yellow-500 flex items-center justify-center flex-shrink-0 shadow-lg">
+                    <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-[#CCA776] to-[#CCA776] flex items-center justify-center flex-shrink-0 shadow-lg">
                       <faq.icon className="w-7 h-7 text-white" />
                     </div>
                     <div className="flex-1">
-                      <h3 className="font-bold text-xl mb-4 text-gray-900 leading-tight">{faq.question}</h3>
-                      <p className="text-gray-600 leading-relaxed text-base">{faq.answer}</p>
+                      <h3 className="font-black text-xl mb-4 text-black leading-tight">{faq.question}</h3>
+                      <p className="text-black leading-relaxed text-base font-bold">{faq.answer}</p>
                     </div>
                   </div>
                 </CardContent>

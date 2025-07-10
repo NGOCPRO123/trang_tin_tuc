@@ -76,26 +76,26 @@ export function HomePage({ type }: { type?: "giai-phap" | "kien-thuc" }) {
   const conThemMoiNhat = latestVisibleCount < tatCaTinMoiNhat.length;
 
   if (type === "giai-phap") {
-    if (isLoading) return <LoadingPage title="Đang tải dữ liệu..." subtitle="Vui lòng chờ trong giây lát" variant="minimal" />;
+    if (isLoading) return <LoadingPage title="Đang tải dữ liệu..." subtitle="Vui lòng chờ trong giây lát" />;
     return <SolutionListPage articles={articles.filter((a: any) => a.type === "giai-phap")} />;
   }
 
   if (type === "kien-thuc") {
-    if (isLoading) return <LoadingPage title="Đang tải dữ liệu..." subtitle="Vui lòng chờ trong giây lát" variant="minimal" />;
+    if (isLoading) return <LoadingPage title="Đang tải dữ liệu..." subtitle="Vui lòng chờ trong giây lát" />;
 
     // --- UI mới cho trang kiến thức ---
     return (
       <MainLayout>
         {/* Hero Section riêng cho kiến thức */}
-        <section className="relative min-h-[40vh] py-10 bg-yellow-50 overflow-hidden flex items-center">
+        <section className="relative min-h-[40vh] py-10 bg-[#CCA776]/10 overflow-hidden flex items-center">
           <div className="container relative z-10 flex flex-col justify-center items-center h-full">
             <div className="max-w-3xl mx-auto text-center">
               <motion.h1 initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}
-                className="text-3xl md:text-4xl font-extrabold text-yellow-800 mb-3 flex items-center justify-center gap-2 text-center">
+                className="text-3xl md:text-4xl font-extrabold text-[#CCA776] mb-3 flex items-center justify-center gap-2 text-center">
                 <span>📚</span> Kho Kiến Thức Doanh Nghiệp
               </motion.h1>
               <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.3, duration: 0.7 }}
-                className="text-base md:text-lg text-yellow-700 mb-4 max-w-2xl mx-auto text-center">
+                className="text-base md:text-lg text-[#CCA776]/80 mb-4 max-w-2xl mx-auto text-center">
                 Tổng hợp các bài viết, chủ đề hữu ích giúp doanh nghiệp và cá nhân phát triển bền vững.
               </motion.p>
             </div>
@@ -111,7 +111,7 @@ export function HomePage({ type }: { type?: "giai-phap" | "kien-thuc" }) {
                   <span>🔥</span> Tin nổi bật
                 </h2>
                 <p className="text-gray-600">Những bài viết được quan tâm nhất trong kho kiến thức</p>
-                <div className="w-20 h-1 bg-gradient-to-r from-yellow-300 to-yellow-100 mx-auto mt-3 rounded-full"></div>
+                <div className="w-20 h-1 bg-gradient-to-r from-[#CCA776] to-[#CCA776]/60 mx-auto mt-3 rounded-full"></div>
               </div>
               <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
                 {/* Spotlight lớn cho bài đầu */}
@@ -131,14 +131,14 @@ export function HomePage({ type }: { type?: "giai-phap" | "kien-thuc" }) {
 
         {/* Section: Tin mới nhất */}
         {tinMoiNhat.length > 0 && (
-          <section className="py-10 bg-yellow-50">
+          <section className="py-10 bg-[#CCA776]/5">
             <div className="container">
               <div className="text-center mb-8">
                 <h2 className="text-2xl md:text-3xl font-bold mb-2 flex items-center justify-center gap-2">
                   <span>🆕</span> Tin tức mới nhất
                 </h2>
                 <p className="text-gray-600">Cập nhật mỗi ngày — chọn lọc những nội dung đáng chú ý nhất</p>
-                <div className="w-20 h-1 bg-gradient-to-r from-yellow-300 to-yellow-100 mx-auto mt-3 rounded-full"></div>
+                <div className="w-20 h-1 bg-gradient-to-r from-[#CCA776] to-[#CCA776]/60 mx-auto mt-3 rounded-full"></div>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
                 {tinMoiNhat.map((article: any, index: number) => (
@@ -155,10 +155,10 @@ export function HomePage({ type }: { type?: "giai-phap" | "kien-thuc" }) {
                   <Button
                     onClick={loadMoreLatest}
                     size="lg"
-                    className="px-8 py-3 text-base font-semibold bg-yellow-400 hover:bg-yellow-500 text-yellow-900"
+                    className="px-8 py-3 text-base font-semibold bg-[#CCA776] hover:bg-[#CCA776]/80 text-white"
                   >
                     Xem thêm tin tức mới nhất
-                    <ChevronDown className="ml-2 h-5 w-5 text-yellow-700" />
+                    <ChevronDown className="ml-2 h-5 w-5 text-white" />
                   </Button>
                   <p className="text-sm text-gray-500 mt-3">
                     Hiển thị {Math.min(latestVisibleCount, tatCaTinMoiNhat.length)} / {tatCaTinMoiNhat.length} bài viết mới nhất
@@ -178,7 +178,7 @@ export function HomePage({ type }: { type?: "giai-phap" | "kien-thuc" }) {
                   <span>📚</span> Tất cả các bài viết
                 </h2>
                 <p className="text-gray-600">Danh sách toàn bộ bài viết trong kho kiến thức</p>
-                <div className="w-20 h-1 bg-gradient-to-r from-yellow-300 to-yellow-100 mx-auto mt-3 rounded-full"></div>
+                <div className="w-20 h-1 bg-gradient-to-r from-[#CCA776] to-[#CCA776]/60 mx-auto mt-3 rounded-full"></div>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
                 {tatCaBaiVietHienThi.map((article: any, index: number) => (
@@ -195,10 +195,10 @@ export function HomePage({ type }: { type?: "giai-phap" | "kien-thuc" }) {
                   <Button
                     onClick={loadMoreAll}
                     size="lg"
-                    className="px-8 py-3 text-base font-semibold bg-yellow-400 hover:bg-yellow-500 text-yellow-900"
+                    className="px-8 py-3 text-base font-semibold bg-[#CCA776] hover:bg-[#CCA776]/80 text-white"
                   >
                     Xem thêm bài viết
-                    <ChevronDown className="ml-2 h-5 w-5 text-yellow-700" />
+                    <ChevronDown className="ml-2 h-5 w-5 text-white" />
                   </Button>
                   <p className="text-sm text-gray-500 mt-3">
                     Hiển thị {Math.min(allVisibleCount, baiVietDaXuatBan.length)} / {baiVietDaXuatBan.length} bài viết
@@ -216,7 +216,7 @@ export function HomePage({ type }: { type?: "giai-phap" | "kien-thuc" }) {
     );
   }
 
-  if (isLoading) return <LoadingPage title="Đang tải dữ liệu..." subtitle="Vui lòng chờ trong giây lát" variant="minimal" />
+  if (isLoading) return <LoadingPage title="Đang tải dữ liệu..." subtitle="Vui lòng chờ trong giây lát" />
   return (
     <MainLayout>
       {/* Hero Section */}
@@ -229,13 +229,13 @@ export function HomePage({ type }: { type?: "giai-phap" | "kien-thuc" }) {
       <FeaturesSection />
 
       {/* News Section */}
-      <section id="news-section" className="py-16 bg-yellow-50">
+      <section id="news-section" className="py-16 bg-[#CCA776]/5">
         <div className="container">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
             {articles.length === 0 ? (
               <div className="text-center">
                 <h2 className="text-2xl md:text-3xl font-bold mb-8">📰 Tin tức mới nhất</h2>
-                <Card className="text-center py-16 bg-yellow-50 border-dashed border-2">
+                <Card className="text-center py-16 bg-[#CCA776]/5 border-dashed border-2 border-[#CCA776]/30">
                   <CardContent>
                     <Newspaper className="h-20 w-20 mx-auto mb-6 text-gray-400" />
                     <h3 className="text-2xl font-semibold mb-4 text-gray-600">Chưa có bài viết nào</h3>
@@ -259,7 +259,7 @@ export function HomePage({ type }: { type?: "giai-phap" | "kien-thuc" }) {
                     <div className="text-center mb-8">
                       <h2 className="text-2xl md:text-3xl font-bold mb-2">🔥 Tin nổi bật</h2>
                       <p className="text-gray-600">Những tin tức được quan tâm nhất hiện tại</p>
-                      <div className="w-20 h-1 bg-gradient-to-r from-yellow-300 to-yellow-100 mx-auto mt-3 rounded-full"></div>
+                      <div className="w-20 h-1 bg-gradient-to-r from-[#CCA776] to-[#CCA776]/60 mx-auto mt-3 rounded-full"></div>
                     </div>
                     <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
                       {/* Spotlight lớn cho bài đầu */}
@@ -282,7 +282,7 @@ export function HomePage({ type }: { type?: "giai-phap" | "kien-thuc" }) {
                     <div className="text-center mb-8">
                       <h2 className="text-2xl md:text-3xl font-bold mb-2">🆕 Tin tức mới nhất</h2>
                       <p className="text-gray-600">Cập nhật mỗi ngày — chọn lọc những nội dung đáng chú ý nhất</p>
-                      <div className="w-20 h-1 bg-gradient-to-r from-yellow-300 to-yellow-100 mx-auto mt-3 rounded-full"></div>
+                      <div className="w-20 h-1 bg-gradient-to-r from-[#CCA776] to-[#CCA776]/60 mx-auto mt-3 rounded-full"></div>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
                       {tinMoiNhat.map((article: any, index: number) => (
@@ -299,10 +299,10 @@ export function HomePage({ type }: { type?: "giai-phap" | "kien-thuc" }) {
                         <Button
                           onClick={loadMoreLatest}
                           size="lg"
-                          className="px-8 py-3 text-base font-semibold bg-yellow-400 hover:bg-yellow-500 text-yellow-900"
+                          className="px-8 py-3 text-base font-semibold bg-[#CCA776] hover:bg-[#CCA776]/80 text-white"
                         >
                           Xem thêm tin tức mới nhất
-                          <ChevronDown className="ml-2 h-5 w-5 text-yellow-700" />
+                          <ChevronDown className="ml-2 h-5 w-5 text-white" />
                         </Button>
                         <p className="text-sm text-gray-500 mt-3">
                           Hiển thị {Math.min(latestVisibleCount, tatCaTinMoiNhat.length)} / {tatCaTinMoiNhat.length} bài viết mới nhất
@@ -318,7 +318,7 @@ export function HomePage({ type }: { type?: "giai-phap" | "kien-thuc" }) {
                     <div className="text-center mb-8">
                       <h2 className="text-2xl md:text-3xl font-bold mb-2">📚 Tất cả các bài viết</h2>
                       <p className="text-gray-600">Danh sách toàn bộ bài viết trên hệ thống</p>
-                      <div className="w-20 h-1 bg-gradient-to-r from-yellow-300 to-yellow-100 mx-auto mt-3 rounded-full"></div>
+                      <div className="w-20 h-1 bg-gradient-to-r from-[#CCA776] to-[#CCA776]/60 mx-auto mt-3 rounded-full"></div>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
                       {tatCaBaiVietHienThi.map((article: any, index: number) => (
@@ -335,10 +335,10 @@ export function HomePage({ type }: { type?: "giai-phap" | "kien-thuc" }) {
                         <Button
                           onClick={loadMoreAll}
                           size="lg"
-                          className="px-8 py-3 text-base font-semibold bg-yellow-400 hover:bg-yellow-500 text-yellow-900"
+                          className="px-8 py-3 text-base font-semibold bg-[#CCA776] hover:bg-[#CCA776]/80 text-white"
                         >
                           Xem thêm bài viết
-                          <ChevronDown className="ml-2 h-5 w-5 text-yellow-700" />
+                          <ChevronDown className="ml-2 h-5 w-5 text-white" />
                         </Button>
                         <p className="text-sm text-gray-500 mt-3">
                           Hiển thị {Math.min(allVisibleCount, articles.length)} / {articles.length} bài viết

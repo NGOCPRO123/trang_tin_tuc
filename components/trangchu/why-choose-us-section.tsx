@@ -15,7 +15,7 @@ const solutions = [
       "Gia tăng giá trị",
       "Thu hút nhà đầu tư"
     ],
-    color: "bg-green-100 text-green-500 border-l-4 border-green-200"
+    color: "bg-[#CCA776]/20 text-[#CCA776] border-l-4 border-[#CCA776]"
   },
   {
     icon: BarChart2,
@@ -27,7 +27,7 @@ const solutions = [
       "Chiến lược kinh doanh",
       "Tăng trưởng bền vững"
     ],
-    color: "bg-orange-100 text-orange-500 border-l-4 border-orange-200"
+    color: "bg-[#CCA776]/20 text-[#CCA776] border-l-4 border-[#CCA776]"
   },
   {
     icon: Scale,
@@ -39,7 +39,7 @@ const solutions = [
       "Quản lý rủi ro pháp lý",
       "Tư vấn hợp đồng"
     ],
-    color: "bg-purple-100 text-purple-500 border-l-4 border-purple-200"
+    color: "bg-[#CCA776]/20 text-[#CCA776] border-l-4 border-[#CCA776]"
   },
   {
     icon: Calculator,
@@ -51,7 +51,7 @@ const solutions = [
       "Tuân thủ quy định kế toán",
       "Báo cáo thuế chính xác"
     ],
-    color: "bg-red-100 text-red-500 border-l-4 border-red-200"
+    color: "bg-[#CCA776]/20 text-[#CCA776] border-l-4 border-[#CCA776]"
   },
   {
     icon: Handshake,
@@ -63,7 +63,7 @@ const solutions = [
       "Quản lý dòng tiền",
       "Tối ưu hóa vốn lưu động"
     ],
-    color: "bg-amber-100 text-amber-500 border-l-4 border-amber-200"
+    color: "bg-[#CCA776]/20 text-[#CCA776] border-l-4 border-[#CCA776]"
   },
   {
     icon: Eye,
@@ -75,33 +75,33 @@ const solutions = [
       "Bảo vệ tài sản doanh nghiệp",
       "An ninh thông tin"
     ],
-    color: "bg-indigo-100 text-indigo-500 border-l-4 border-indigo-200"
+    color: "bg-[#CCA776]/20 text-[#CCA776] border-l-4 border-[#CCA776]"
   }
 ]
 
 const pastelColors = [
-  "bg-[#b2f2bb]", // xanh lá nhạt
-  "bg-[#a5d8ff]", // xanh dương nhạt
-  "bg-[#d0bfff]", // tím nhạt
-  "bg-[#ffb3c6]", // hồng nhạt
-  "bg-[#dee2e6]", // xám nhạt
-  "bg-[#99f6e4]", // xanh ngọc nhạt
+  "bg-[#CCA776]", // màu vàng nâu nhạt (Light Brownish Yellow)
+  "bg-[#CCA776]", // màu vàng nâu nhạt (Light Brownish Yellow)
+  "bg-[#CCA776]", // màu vàng nâu nhạt (Light Brownish Yellow)
+  "bg-[#CCA776]", // màu vàng nâu nhạt (Light Brownish Yellow)
+  "bg-[#CCA776]", // màu vàng nâu nhạt (Light Brownish Yellow)
+  "bg-[#CCA776]", // màu vàng nâu nhạt (Light Brownish Yellow)
 ];
 
 export function WhyChooseUsSection() {
   return (
-    <section className="py-24 px-4 bg-gradient-to-br from-amber-100 via-yellow-100 to-orange-100 relative overflow-hidden">
+    <section className="py-24 px-4 bg-white relative overflow-hidden">
       {/* Background decorative elements */}
       <div className="absolute inset-0 opacity-30">
         <motion.div
           animate={{ rotate: [0, 360] }}
           transition={{ duration: 50, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
-          className="absolute top-20 left-20 w-72 h-72 bg-gradient-to-br from-amber-200 to-yellow-300 rounded-full blur-3xl"
+          className="absolute top-20 left-20 w-72 h-72 bg-gradient-to-br from-[#CCA776] to-[#CCA776] rounded-full blur-3xl"
         />
         <motion.div
           animate={{ rotate: [360, 0] }}
           transition={{ duration: 60, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
-          className="absolute bottom-20 right-20 w-64 h-64 bg-gradient-to-br from-orange-200 to-amber-300 rounded-full blur-3xl"
+          className="absolute bottom-20 right-20 w-64 h-64 bg-gradient-to-br from-[#CCA776] to-[#CCA776] rounded-full blur-3xl"
         />
       </div>
       <div className="container mx-auto max-w-7xl relative">
@@ -113,10 +113,10 @@ export function WhyChooseUsSection() {
           className="text-center mb-16"
         >
           
-          <h2 className="text-3xl md:text-5xl font-bold text-gray-800 mt-2 mb-6">
-            Giải Pháp Quản Trị Doanh Nghiệp <span className="text-amber-600">Cốt Lõi Từ HLCC</span>
+          <h2 className="text-3xl md:text-5xl font-bold text-black mt-2 mb-6">
+            Giải Pháp Quản Trị Doanh Nghiệp <span className="text-[#CCA776] font-bold">Cốt Lõi Từ HLCC</span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-4xl mx-auto">
+          <p className="text-xl text-black max-w-4xl mx-auto font-medium">
             HLCC với đội ngũ chuyên gia 10+ năm kinh nghiệm, không chỉ tư vấn mà trực tiếp tham gia giải quyết vấn đề, mang lại giá trị thực tiễn cao nhất.
           </p>
         </motion.div>
@@ -133,12 +133,12 @@ export function WhyChooseUsSection() {
             >
               <Card className={`h-full hover:shadow-xl transition-all duration-300 border-0 shadow-lg ${pastelColors[index % pastelColors.length]}`}>
                 <CardContent className="p-8 text-left">
-                  <div className={`w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-6 text-3xl text-gray-700 bg-white/70`}>
+                  <div className={`w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-6 text-3xl text-black bg-white/70`}>
                     <solution.icon className="w-8 h-8" />
                   </div>
-                  <h3 className="text-lg font-bold text-gray-900 mb-3 text-center">{solution.title}</h3>
-                  <p className="text-gray-700 text-sm mb-4 text-center">{solution.description}</p>
-                  <ul className="text-gray-800 text-sm list-disc pl-5 space-y-1">
+                  <h3 className="text-lg font-bold text-black mb-3 text-center">{solution.title}</h3>
+                  <p className="text-black text-sm mb-4 text-center font-medium">{solution.description}</p>
+                  <ul className="text-black text-sm list-disc pl-5 space-y-1 font-medium">
                     {solution.bullets.map((item, idx) => (
                       <li key={idx}>{item}</li>
                     ))}
@@ -158,24 +158,15 @@ export function WhyChooseUsSection() {
           className="mt-28 text-center"
         >
           <motion.div
-            className="relative rounded-3xl p-14 text-white shadow-2xl overflow-hidden"
+            className="relative rounded-3xl p-14 text-black shadow-2xl overflow-hidden"
+            style={{ backgroundColor: '#CCA776', boxShadow: "0 0 50px rgba(100, 116, 139, 0.3)" }}
             whileHover={{ scale: 1.02 }}
             transition={{ duration: 0.3 }}
-            style={{
-              boxShadow: "0 0 50px rgba(100, 116, 139, 0.3)",
-            }}
           >
-            {/* Background image + overlay */}
-            <div className="absolute inset-0 z-0" style={{
-              backgroundImage: "url('https://i.pinimg.com/736x/20/9c/4e/209c4e859fc5f57842e1470ec8b77c56.jpg')",
-              backgroundSize: "cover",
-              backgroundPosition: "center"
-            }} />
-            <div className="absolute inset-0 z-10 bg-black/60" />
             {/* Nội dung */}
             <div className="relative z-20">
-              <h3 className="text-4xl font-bold mb-6">Sứ Mệnh Cốt Lõi: Kiến Tạo Tương Lai Bền Vững Cùng HLCC</h3>
-              <p className="text-lg md:text-xl text-blue-100 mx-auto text-center max-w-2xl px-2 leading-relaxed">
+              <h3 className="text-4xl font-black mb-6 text-black">Sứ Mệnh Cốt Lõi: Kiến Tạo Tương Lai Bền Vững Cùng HLCC</h3>
+              <p className="text-lg md:text-xl text-black mx-auto text-center max-w-2xl px-2 leading-relaxed font-black">
                 <strong>HLCC</strong> với sứ mệnh <strong>Vực Dậy Tài Chính – Bứt Phá Doanh Thu</strong>. Đối tác chiến lược mang đến giải pháp chuyên sâu giúp tối ưu tài chính và nâng cao năng lực cạnh tranh.
               </p>
             </div>

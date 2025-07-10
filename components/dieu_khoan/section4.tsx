@@ -2,13 +2,13 @@ export default function Section4() {
   return (
     <section className="space-y-8">
       <div className="flex items-center gap-4">
-        <div className="w-12 h-12 bg-amber-100 rounded-xl flex items-center justify-center">
-          <span className="text-xl font-bold text-amber-700">04</span>
+        <div className="w-12 h-12 bg-[#CCA776]/20 rounded-xl flex items-center justify-center">
+          <span className="text-xl font-bold text-[#CCA776]">04</span>
         </div>
-        <h2 className="text-3xl font-light text-gray-900">Các hành vi bị cấm</h2>
+        <h2 className="text-2xl font-black text-black mb-4">4. Quyền và trách nhiệm của HLCC</h2>
       </div>
 
-      <div className="space-y-6 ml-16">
+      <div className="text-black font-bold leading-relaxed space-y-4">
         <p className="text-gray-600 leading-relaxed text-lg">
           Khi sử dụng Website, bạn đồng ý sẽ không thực hiện các hành vi sau:
         </p>
@@ -40,7 +40,7 @@ export default function Section4() {
               className="border border-gray-200 rounded-xl p-6 hover:shadow-md transition-shadow duration-300"
             >
               <h3 className="font-semibold text-gray-900 mb-2 flex items-center gap-2">
-                <div className="w-2 h-2 bg-red-400 rounded-full"></div>
+                <div className="w-2 h-2 bg-[#CCA776] rounded-full"></div>
                 {item.title}
               </h3>
               <p className="text-gray-600 text-sm leading-relaxed">{item.description}</p>

@@ -45,13 +45,13 @@ export default function ProcessTimeline() {
       <div className="container mx-auto px-4">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-16">
-            <div className="inline-block bg-yellow-100 text-yellow-800 px-6 py-2 rounded-full text-sm font-semibold mb-6">
+            <div className="inline-block bg-[#CCA776]/30 text-[#CCA776] px-6 py-2 rounded-full text-sm font-semibold mb-6">
               Quy trình 5 Bước "Phẫu thuật" Công nợ của HLCC
             </div>
-            <h2 className="text-3xl lg:text-4xl font-black text-gray-900 mb-6">
+            <h2 className="text-3xl lg:text-4xl font-black text-black mb-6">
               Giải pháp của chúng tôi: Quy trình Thu hồi Công nợ Thông minh & Bài bản
             </h2>
-            <p className="text-xl text-gray-700 max-w-2xl mx-auto">
+            <p className="text-xl text-black font-bold max-w-2xl mx-auto">
               Chúng tôi áp dụng một quy trình đa tầng, từ mềm dẻo đến cứng rắn, nhằm tối đa hóa khả năng thu hồi nợ và giảm thiểu xung đột.
             </p>
           </div>
@@ -59,22 +59,22 @@ export default function ProcessTimeline() {
             <TabsList className="grid grid-cols-2 md:grid-cols-5 gap-2 mb-8 bg-white/90">
               {steps.map((step, idx) => (
                 <TabsTrigger key={idx} value={String(idx)} className="flex flex-col items-center text-xs md:text-sm">
-                  <step.icon className="h-7 w-7 mb-1 text-yellow-600" />
+                  <step.icon className="h-7 w-7 mb-1 text-[#CCA776]" />
                   Bước {idx + 1}
                 </TabsTrigger>
               ))}
             </TabsList>
             {steps.map((step, idx) => (
               <TabsContent key={idx} value={String(idx)}>
-                <div className="bg-white rounded-2xl shadow-xl border-l-4 border-yellow-400 p-8 md:p-12 flex flex-col md:flex-row gap-8 items-center">
-                  <div className="flex-shrink-0 flex items-center justify-center w-20 h-20 rounded-full bg-yellow-100 mb-4 md:mb-0">
-                    <step.icon className="h-10 w-10 text-yellow-600" />
+                <div className="bg-white rounded-2xl shadow-xl border-l-4 border-[#CCA776] p-8 md:p-12 flex flex-col md:flex-row gap-8 items-center">
+                  <div className="flex-shrink-0 flex items-center justify-center w-20 h-20 rounded-full bg-[#CCA776]/30 mb-4 md:mb-0">
+                    <step.icon className="h-10 w-10 text-[#CCA776]" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold mb-2 text-yellow-700">{step.title}</h3>
-                    <p className="text-gray-800 mb-4 text-base md:text-lg">{step.description}</p>
-                    <div className="bg-gradient-to-r from-yellow-50 to-orange-50 rounded-xl p-4 border-l-4 border-yellow-400">
-                      <span className="text-yellow-700 font-semibold">Kết quả:</span> {step.result}
+                    <h3 className="text-xl font-black mb-2 text-[#CCA776]">{step.title}</h3>
+                    <p className="text-black mb-4 text-base md:text-lg font-bold">{step.description}</p>
+                    <div className="bg-[#CCA776]/10 rounded-xl p-4 border-l-4 border-[#CCA776]">
+                      <span className="text-[#CCA776] font-black">Kết quả:</span> {step.result}
                     </div>
                   </div>
                 </div>

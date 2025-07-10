@@ -22,22 +22,22 @@ export default function ContactSection() {
   }
 
   return (
-    <section id="lien-he" className="py-20 bg-gradient-to-br from-yellow-50 via-orange-50 to-red-50">
+    <section id="lien-he" className="py-20 bg-[#CCA776]/10">
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl lg:text-4xl font-black text-yellow-700 mb-6">
+            <h2 className="text-3xl lg:text-4xl font-black text-[#CCA776] mb-6">
               Đừng để Công nợ Khó đòi "Ăn mòn" Lợi nhuận của bạn
             </h2>
-            <p className="text-xl text-gray-700 mb-4">
+            <p className="text-xl text-black font-bold mb-4">
               Mỗi ngày trôi qua, khả năng thu hồi một khoản nợ quá hạn lại càng giảm đi. Hãy hành động ngay hôm nay. Để lại thông tin để nhận một buổi đánh giá sơ bộ về các khoản nợ của bạn và tư vấn hướng xử lý từ các chuyên gia của HLCC.
             </p>
           </div>
-          <div className="bg-white/90 rounded-2xl p-8 lg:p-12 border border-yellow-200 shadow-xl">
+          <div className="bg-white/90 rounded-2xl p-8 lg:p-12 border border-[#CCA776]/30 shadow-xl">
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-semibold text-gray-700 mb-2">
+                  <label htmlFor="name" className="block text-sm font-bold text-black mb-2">
                     Họ và Tên
                   </label>
                   <Input
@@ -51,7 +51,7 @@ export default function ContactSection() {
                   />
                 </div>
                 <div>
-                  <label htmlFor="phone" className="block text-sm font-semibold text-gray-700 mb-2">
+                  <label htmlFor="phone" className="block text-sm font-bold text-black mb-2">
                     Số điện thoại
                   </label>
                   <Input
@@ -66,7 +66,7 @@ export default function ContactSection() {
                 </div>
               </div>
               <div>
-                <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-2">
+                <label htmlFor="email" className="block text-sm font-bold text-black mb-2">
                   Email
                 </label>
                 <Input
@@ -79,7 +79,7 @@ export default function ContactSection() {
                 />
               </div>
               <div>
-                <label htmlFor="amount" className="block text-sm font-semibold text-gray-700 mb-2">
+                <label htmlFor="amount" className="block text-sm font-bold text-black mb-2">
                   Tổng giá trị công nợ (ước tính)
                 </label>
                 <Input
@@ -92,7 +92,7 @@ export default function ContactSection() {
                 />
               </div>
               <div>
-                <label htmlFor="description" className="block text-sm font-semibold text-gray-700 mb-2">
+                <label htmlFor="description" className="block text-sm font-bold text-black mb-2">
                   Mô tả ngắn
                 </label>
                 <Textarea
@@ -108,7 +108,7 @@ export default function ContactSection() {
                 <Button
                   type="submit"
                   size="lg"
-                  className="bg-yellow-600 hover:bg-yellow-700 text-white px-12 py-4 text-xl font-bold rounded-xl shadow-lg hover:shadow-xl transition-all"
+                  className="bg-[#CCA776] hover:bg-[#CCA776] text-white px-12 py-4 text-xl font-bold rounded-xl shadow-lg hover:shadow-xl transition-all"
                 >
                   YÊU CẦU TƯ VẤN THU HỒI CÔNG NỢ
                   <Send className="w-5 h-5 ml-2" />

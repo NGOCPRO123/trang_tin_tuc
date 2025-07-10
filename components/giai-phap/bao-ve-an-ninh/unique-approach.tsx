@@ -26,14 +26,15 @@ export default function UniqueApproach() {
     <section className="py-20 bg-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-black text-gray-900 mb-4">Sự khác biệt của chúng tôi</h2>
+          <h2 className="text-3xl font-black text-black mb-4">Cách tiếp cận độc đáo</h2>
+          <p className="text-xl text-black font-bold mb-8">Không chỉ là bảo vệ – là chủ động phòng ngừa</p>
         </div>
         <div className="grid md:grid-cols-3 gap-8">
           {differences.map((item, idx) => (
-            <div key={idx} className="bg-yellow-50 rounded-2xl p-8 shadow-md flex flex-col items-center text-center">
+            <div key={idx} className="bg-[#CCA776]/10 rounded-2xl p-8 shadow-md flex flex-col items-center text-center">
               <div className="text-5xl mb-4">{item.icon}</div>
-              <div className="font-bold text-xl mb-2 text-gray-900">{item.title}</div>
-              <div className="text-gray-700">{item.desc}</div>
+              <h3 className="font-black text-[#CCA776] mb-2">{item.title}</h3>
+              <p className="text-black font-bold">{item.desc}</p>
             </div>
           ))}
         </div>

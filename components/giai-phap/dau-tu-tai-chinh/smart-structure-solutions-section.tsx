@@ -37,19 +37,19 @@ const solutions = [
 export function SmartStructureSolutionsSection() {
   const [open, setOpen] = useState<string | null>(solutions[0].key)
   return (
-    <section className="py-20 bg-gradient-to-br from-yellow-50 to-amber-100">
+    <section className="py-20 bg-gradient-to-br from-[#CCA776]/10 to-[#CCA776]/5">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-3xl lg:text-4xl font-bold text-yellow-700 mb-4">
+          <h2 className="text-3xl lg:text-4xl font-bold text-[#CCA776] mb-4">
             Tối ưu hóa Tài chính – Củng cố Quyền kiểm soát – Đẩy mạnh Tăng trưởng
           </h2>
-          <p className="text-xl text-yellow-900 max-w-3xl mx-auto">
+          <p className="text-xl text-black max-w-3xl mx-auto">
             Chúng tôi cung cấp một bộ giải pháp tài chính toàn diện, được "may đo" cho từng giai đoạn và mục tiêu của bạn.
           </p>
         </div>
         {/* Stepper dọc */}
         <div className="flex flex-col gap-10 max-w-2xl mx-auto relative">
-          <div className="absolute left-8 top-0 bottom-0 w-1 bg-gradient-to-b from-yellow-300 via-amber-300 to-yellow-400 rounded-full z-0" />
+          <div className="absolute left-8 top-0 bottom-0 w-1 bg-gradient-to-b from-[#CCA776] via-[#CCA776]/80 to-[#CCA776]/60 rounded-full z-0" />
           {solutions.map((sol, idx) => {
             const Icon = sol.icon
             const isOpen = open === sol.key
@@ -59,18 +59,18 @@ export function SmartStructureSolutionsSection() {
               >
                 {/* Số thứ tự và icon */}
                 <div className="flex flex-col items-center z-10">
-                  <div className={`w-14 h-14 rounded-full flex items-center justify-center shadow-lg border-4 ${isOpen ? 'bg-gradient-to-br from-yellow-200 to-amber-300 border-yellow-400' : 'bg-yellow-100 border-yellow-200'}`}>
-                    <Icon className="w-8 h-8 text-yellow-700" />
+                  <div className={`w-14 h-14 rounded-full flex items-center justify-center shadow-lg border-4 ${isOpen ? 'bg-gradient-to-br from-[#CCA776]/20 to-[#CCA776]/40 border-[#CCA776]' : 'bg-[#CCA776]/10 border-[#CCA776]/30'}`}>
+                    <Icon className="w-8 h-8 text-[#CCA776]" />
                   </div>
-                  <span className="mt-2 text-yellow-700 font-bold text-lg">{idx + 1}</span>
+                  <span className="mt-2 text-[#CCA776] font-bold text-lg">{idx + 1}</span>
                 </div>
                 {/* Card nội dung */}
                 <div
-                  className={`flex-1 bg-white border-2 border-yellow-200 rounded-xl shadow-xl px-8 py-6 cursor-pointer transition-all duration-300 ${isOpen ? 'shadow-amber-200' : ''}`}
+                  className={`flex-1 bg-white border-2 border-[#CCA776] rounded-xl shadow-xl px-8 py-6 cursor-pointer transition-all duration-300 ${isOpen ? 'shadow-[#CCA776]' : ''}`}
                   onClick={() => setOpen(isOpen ? null : sol.key)}
                 >
-                  <h3 className="text-xl font-bold text-yellow-800 mb-2">{sol.title}</h3>
-                  <ul className={`text-yellow-900 space-y-2 text-base transition-all duration-300 ${isOpen ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0 overflow-hidden'}`}
+                  <h3 className="text-xl font-bold text-[#CCA776] mb-2">{sol.title}</h3>
+                  <ul className={`text-black space-y-2 text-base transition-all duration-300 ${isOpen ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0 overflow-hidden'}`}
                     style={{ transition: 'all 0.4s cubic-bezier(.4,2,.6,1)' }}
                   >
                     {sol.details.map((d, i) => <li key={i}>{d}</li>)}

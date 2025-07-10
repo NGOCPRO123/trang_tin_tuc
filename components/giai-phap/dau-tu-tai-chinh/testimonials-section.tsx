@@ -45,13 +45,13 @@ export function TestimonialsSection() {
   ]
 
   return (
-    <section className="py-20 bg-gradient-to-br from-blue-50 to-indigo-50">
+    <section className="py-20 bg-[#CCA776]/10">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-3xl lg:text-4xl font-bold text-gray-800 mb-4">
+          <h2 className="text-3xl lg:text-4xl font-bold text-black mb-4">
             🏆 Hồ sơ Vụ án: Những Câu chuyện Thành công
           </h2>
-          <p className="text-xl text-gray-600">
+          <p className="text-xl text-black">
             Bằng chứng thực tế về khả năng giải quyết vấn đề doanh nghiệp của HLCC
           </p>
         </div>
@@ -61,42 +61,42 @@ export function TestimonialsSection() {
           {caseStudies.map((caseStudy, index) => (
             <Card
               key={index}
-              className="border-2 border-blue-200 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 bg-white"
+              className="border-2 border-[#CCA776] hover:shadow-xl transition-all duration-300 hover:-translate-y-1 bg-white"
             >
               <CardContent className="p-8">
                 <div className="flex items-center mb-4">
-                  <Building2 className="w-6 h-6 text-blue-600 mr-2" />
-                  <h3 className="text-xl font-bold text-gray-800">{caseStudy.title}</h3>
+                  <Building2 className="w-6 h-6 text-[#CCA776] mr-2" />
+                  <h3 className="text-xl font-bold text-[#CCA776]">{caseStudy.title}</h3>
                 </div>
                 
                 <div className="space-y-3 mb-6">
                   <div className="flex justify-between">
-                    <span className="text-gray-600">Công ty:</span>
-                    <span className="font-semibold">{caseStudy.company}</span>
+                    <span className="text-black">Công ty:</span>
+                    <span className="font-semibold text-black">{caseStudy.company}</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-gray-600">Ngành:</span>
-                    <span className="font-semibold">{caseStudy.industry}</span>
+                    <span className="text-black">Ngành:</span>
+                    <span className="font-semibold text-black">{caseStudy.industry}</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-gray-600">Vấn đề:</span>
-                    <span className="font-semibold text-gray-900">{caseStudy.problem}</span>
+                    <span className="text-black">Vấn đề:</span>
+                    <span className="font-semibold text-black">{caseStudy.problem}</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-gray-600">Giải pháp:</span>
-                    <span className="font-semibold text-gray-900">{caseStudy.solution}</span>
+                    <span className="text-black">Giải pháp:</span>
+                    <span className="font-semibold text-black">{caseStudy.solution}</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-gray-600">Kết quả:</span>
-                    <span className="font-semibold text-gray-900">{caseStudy.result}</span>
+                    <span className="text-black">Kết quả:</span>
+                    <span className="font-semibold text-black">{caseStudy.result}</span>
                   </div>
                   <div className="flex justify-between">
-                    <span className="text-gray-600">Cải thiện:</span>
-                    <span className="font-semibold text-gray-900">{caseStudy.improvement}</span>
+                    <span className="text-black">Cải thiện:</span>
+                    <span className="font-semibold text-black">{caseStudy.improvement}</span>
                   </div>
                 </div>
 
-                <Button variant="outline" className="w-full border-yellow-400 text-yellow-700 hover:bg-yellow-50">
+                <Button variant="outline" className="w-full border-[#CCA776] text-[#CCA776] hover:bg-[#CCA776] hover:text-white font-bold">
                   Xem chi tiết vụ án
                   <ArrowRight className="ml-2 w-4 h-4" />
                 </Button>
@@ -107,7 +107,7 @@ export function TestimonialsSection() {
 
         {/* Testimonials */}
         <div className="text-center mb-12">
-          <h3 className="text-2xl font-bold text-gray-800 mb-4">
+          <h3 className="text-2xl font-bold text-black mb-4">
             💬 Những Đối tác đã Tin tưởng và Cùng HLCC Giải mã
           </h3>
         </div>
@@ -116,16 +116,16 @@ export function TestimonialsSection() {
           {testimonials.map((testimonial, index) => (
             <Card
               key={index}
-              className="border-blue-200 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 bg-white"
+              className="border-[#CCA776] hover:shadow-xl transition-all duration-300 hover:-translate-y-1 bg-white"
             >
               <CardContent className="p-8">
                 <div className="flex items-center mb-4">
                   {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
+                    <Star key={i} className="w-5 h-5 text-[#CCA776] fill-current" />
                   ))}
                 </div>
 
-                <blockquote className="text-gray-700 mb-6 leading-relaxed">"{testimonial.content}"</blockquote>
+                <blockquote className="text-black mb-6 leading-relaxed font-medium">"{testimonial.content}"</blockquote>
 
                 <div className="flex items-center">
                   <Image
@@ -133,11 +133,11 @@ export function TestimonialsSection() {
                     alt={testimonial.name}
                     width={80}
                     height={80}
-                    className="rounded-full mr-4 border-2 border-blue-200"
+                    className="rounded-full mr-4 border-2 border-[#CCA776]"
                   />
                   <div>
-                    <h4 className="font-bold text-gray-800">{testimonial.name}</h4>
-                    <p className="text-gray-900 text-sm">{testimonial.title}</p>
+                    <h4 className="font-bold text-[#CCA776]">{testimonial.name}</h4>
+                    <p className="text-black text-sm font-semibold">{testimonial.title}</p>
                   </div>
                 </div>
               </CardContent>
@@ -147,20 +147,20 @@ export function TestimonialsSection() {
 
         {/* Logo Section */}
         <div className="text-center mt-16">
-          <h3 className="text-xl font-semibold text-gray-800 mb-8">
+          <h3 className="text-xl font-semibold text-[#CCA776] mb-8">
             Đối tác tin tưởng HLCC
           </h3>
-          <div className="flex justify-center items-center space-x-8 opacity-60">
-            <div className="w-24 h-12 bg-gray-200 rounded flex items-center justify-center">
+          <div className="flex justify-center items-center space-x-8">
+            <div className="w-24 h-12 bg-[#CCA776] rounded flex items-center justify-center text-white font-bold">
               Logo 1
             </div>
-            <div className="w-24 h-12 bg-gray-200 rounded flex items-center justify-center">
+            <div className="w-24 h-12 bg-[#CCA776] rounded flex items-center justify-center text-white font-bold">
               Logo 2
             </div>
-            <div className="w-24 h-12 bg-gray-200 rounded flex items-center justify-center">
+            <div className="w-24 h-12 bg-[#CCA776] rounded flex items-center justify-center text-white font-bold">
               Logo 3
             </div>
-            <div className="w-24 h-12 bg-gray-200 rounded flex items-center justify-center">
+            <div className="w-24 h-12 bg-[#CCA776] rounded flex items-center justify-center text-white font-bold">
               Logo 4
             </div>
           </div>

@@ -30,12 +30,12 @@ export function RealityCheckSection() {
     <section className="py-32 bg-gradient-to-br from-gray-900 via-gray-800 to-black text-white relative overflow-hidden">
       {/* Background pattern */}
       <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-amber-500/20 to-orange-500/20"></div>
+        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-[#CCA776]/20 to-[#CCA776]/10"></div>
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="text-center mb-16">
-          <AlertTriangle className="w-16 h-16 text-amber-400 mx-auto mb-6" />
+          <AlertTriangle className="w-16 h-16 text-[#CCA776] mx-auto mb-6" />
           <h2 className="text-4xl lg:text-6xl font-black mb-8">
             <span className="text-red-400">THỰC TẾ</span>
             <span className="text-white"> PHŨ PHÀNG</span>
@@ -98,12 +98,12 @@ export function RealityCheckSection() {
           </div>
 
           <div className="text-center mt-16">
-            <div className="bg-gradient-to-r from-amber-500/20 to-orange-500/20 rounded-3xl p-8 border border-amber-500/30 max-w-4xl mx-auto">
-              <h3 className="text-3xl font-bold text-amber-400 mb-4">Bạn muốn tiếp tục TIN THEO ĐÔNG?</h3>
+            <div className="bg-gradient-to-r from-[#CCA776]/20 to-[#CCA776]/10 rounded-3xl p-8 border border-[#CCA776]/30 max-w-4xl mx-auto">
+              <h3 className="text-3xl font-bold text-[#CCA776] mb-4">Bạn muốn tiếp tục TIN THEO ĐÔNG?</h3>
               <p className="text-xl text-gray-300 mb-6">Hay sẵn sàng học cách những người giàu có thực sự đầu tư?</p>
               <Button
                 size="lg"
-                className="bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white px-8 py-4 text-lg rounded-2xl shadow-xl"
+                className="bg-gradient-to-r from-[#CCA776] to-[#CCA776]/80 hover:from-[#CCA776]/80 hover:to-[#CCA776] text-white px-8 py-4 text-lg rounded-2xl shadow-xl"
               >
                 Tôi muốn học cách đúng
               </Button>

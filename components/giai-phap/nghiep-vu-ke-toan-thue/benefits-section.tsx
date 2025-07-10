@@ -26,19 +26,19 @@ export function BenefitsSection() {
     <section className="py-20 bg-white">
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">Sự khác biệt của chúng tôi</h2>
+          <h2 className="text-3xl font-extrabold text-black mb-4">Sự khác biệt của chúng tôi</h2>
         </div>
         <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
           {benefits.map((benefit, index) => (
             <div
               key={index}
-              className="bg-gradient-to-br from-amber-50 to-yellow-50 border border-amber-100 rounded-xl p-8 hover:shadow-lg transition-all hover:scale-105 flex flex-col items-center text-center"
+              className="bg-[#CCA776]/10 border border-[#CCA776]/30 rounded-xl p-8 hover:shadow-lg transition-all hover:scale-105 flex flex-col items-center text-center"
             >
-              <div className="bg-amber-100 p-4 rounded-full mb-4">
-                <benefit.icon className="h-10 w-10 text-amber-600" />
+              <div className="bg-[#CCA776]/30 p-4 rounded-full mb-4">
+                <benefit.icon className="h-10 w-10 text-[#CCA776]" />
               </div>
-              <h3 className="font-semibold text-gray-900 mb-3 text-lg">{benefit.title}</h3>
-              <p className="text-gray-700 text-base leading-relaxed">{benefit.description}</p>
+              <h3 className="font-extrabold text-black mb-3 text-lg">{benefit.title}</h3>
+              <p className="text-black text-base font-bold leading-relaxed">{benefit.description}</p>
             </div>
           ))}
         </div>

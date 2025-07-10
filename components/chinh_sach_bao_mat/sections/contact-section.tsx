@@ -1,26 +1,26 @@
 export default function ContactSection() {
   return (
-    <section id="contact" className="bg-white/90 backdrop-blur-sm rounded-xl shadow-md p-8 border border-yellow-200">
-      <h2 className="text-2xl font-bold text-gray-800 mb-6 border-b-2 border-yellow-300 pb-2">
+    <section id="contact" className="bg-white/90 backdrop-blur-sm rounded-xl shadow-md p-8 border border-[#CCA776]/50">
+      <h2 className="text-2xl font-black text-black mb-6 border-b-2 border-[#CCA776] pb-2">
         7. Liên hệ với chúng tôi
       </h2>
 
-      <div className="prose prose-lg max-w-none text-gray-700 leading-relaxed space-y-6">
+      <div className="prose prose-lg max-w-none text-black font-bold leading-relaxed space-y-6">
         <p>
           Nếu bạn có bất kỳ câu hỏi, thắc mắc hoặc yêu cầu nào liên quan đến Chính sách Bảo mật này, vui lòng liên hệ
           với chúng tôi qua:
         </p>
 
-        <div className="bg-gradient-to-r from-yellow-100 to-amber-100 rounded-xl p-8 border border-yellow-300">
-          <h3 className="text-xl font-bold text-gray-800 mb-6 text-center">
+        <div className="bg-gradient-to-r from-[#CCA776]/20 to-[#CCA776]/20 rounded-xl p-8 border border-[#CCA776]">
+          <h3 className="text-xl font-black text-[#CCA776] mb-6 text-center">
             Công ty Cổ phần Cộng Đồng Sống Hạnh Phúc (HLCC)
           </h3>
 
           <div className="grid md:grid-cols-2 gap-6">
             <div className="space-y-4">
               <div className="flex items-start space-x-3">
-                <div className="bg-yellow-200 rounded-full p-2 mt-1">
-                  <svg className="w-5 h-5 text-yellow-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="bg-[#CCA776]/20 rounded-full p-2 mt-1">
+                  <svg className="w-5 h-5 text-[#CCA776]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path
                       strokeLinecap="round"
                       strokeLinejoin="round"
@@ -36,14 +36,14 @@ export default function ContactSection() {
                   </svg>
                 </div>
                 <div>
-                  <p className="font-semibold text-gray-800">Địa chỉ:</p>
-                  <p className="text-gray-700">[Địa chỉ công ty của bạn]</p>
+                  <p className="font-black">Địa chỉ:</p>
+                  <p className="font-bold">[Địa chỉ công ty của bạn]</p>
                 </div>
               </div>
 
               <div className="flex items-start space-x-3">
-                <div className="bg-yellow-200 rounded-full p-2 mt-1">
-                  <svg className="w-5 h-5 text-yellow-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="bg-[#CCA776]/20 rounded-full p-2 mt-1">
+                  <svg className="w-5 h-5 text-[#CCA776]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path
                       strokeLinecap="round"
                       strokeLinejoin="round"
@@ -53,16 +53,16 @@ export default function ContactSection() {
                   </svg>
                 </div>
                 <div>
-                  <p className="font-semibold text-gray-800">Email:</p>
-                  <p className="text-gray-700">legal@hlcc.com.vn</p>
+                  <p className="font-black">Email:</p>
+                  <p className="font-bold">legal@hlcc.com.vn</p>
                 </div>
               </div>
             </div>
 
             <div className="space-y-4">
               <div className="flex items-start space-x-3">
-                <div className="bg-yellow-200 rounded-full p-2 mt-1">
-                  <svg className="w-5 h-5 text-yellow-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="bg-[#CCA776]/20 rounded-full p-2 mt-1">
+                  <svg className="w-5 h-5 text-[#CCA776]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path
                       strokeLinecap="round"
                       strokeLinejoin="round"
@@ -72,8 +72,8 @@ export default function ContactSection() {
                   </svg>
                 </div>
                 <div>
-                  <p className="font-semibold text-gray-800">Số điện thoại:</p>
-                  <p className="text-gray-700">[Số điện thoại công ty]</p>
+                  <p className="font-black">Số điện thoại:</p>
+                  <p className="font-bold">[Số điện thoại công ty]</p>
                 </div>
               </div>
             </div>

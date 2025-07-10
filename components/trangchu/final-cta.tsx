@@ -17,7 +17,7 @@ export function FinalCTA() {
   }
 
   return (
-    <section className="py-20 px-4 bg-gradient-to-br from-orange-500 via-yellow-500 to-green-500 relative overflow-hidden">
+    <section className="py-20 px-4 bg-gradient-to-br from-[#CCA776] via-[#CCA776]/90 to-[#CCA776]/80 relative overflow-hidden">
       {/* Background decorations */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-10 left-10 w-32 h-32 bg-white rounded-full"></div>
@@ -38,7 +38,7 @@ export function FinalCTA() {
           <h2 className="text-3xl md:text-5xl font-bold mb-6 leading-tight">
             Doanh nghiệp của bạn đã sẵn sàng cho một cuộc "Chẩn đoán"?
           </h2>
-          <p className="text-xl md:text-2xl mb-12 opacity-90 max-w-3xl mx-auto">
+          <p className="text-xl md:text-2xl mb-12 text-white font-medium max-w-3xl mx-auto">
             Vấn đề sẽ không tự biến mất. Hãy để các chuyên gia tư vấn doanh nghiệp của HLCC cùng bạn tìm ra nguyên nhân gốc rễ và xây dựng một lộ trình phát triển vững chắc với giải pháp tài chính toàn diện.
           </p>
 
@@ -51,7 +51,7 @@ export function FinalCTA() {
           >
             <Button
               size="lg"
-              className="bg-white text-orange-600 hover:bg-gray-100 px-10 py-4 text-lg rounded-full shadow-lg hover:shadow-xl transition-all duration-300 font-semibold"
+              className="bg-white text-[#CCA776] hover:bg-gray-100 px-10 py-4 text-lg rounded-full shadow-lg hover:shadow-xl transition-all duration-300 font-semibold"
               onClick={handleExploreProgramsClick}
             >
               <Users className="mr-2 w-5 h-5" />
@@ -60,7 +60,7 @@ export function FinalCTA() {
             </Button>
             <Button
               size="lg"
-              className="bg-white text-orange-600 hover:bg-gray-100 px-10 py-4 text-lg rounded-full shadow-lg hover:shadow-xl transition-all duration-300 font-semibold"
+              className="bg-white text-[#CCA776] hover:bg-gray-100 px-10 py-4 text-lg rounded-full shadow-lg hover:shadow-xl transition-all duration-300 font-semibold"
               onClick={handleBecomePartnerClick}
             >
               Bắt đầu Giải mã Doanh nghiệp của bạn

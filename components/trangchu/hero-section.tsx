@@ -54,15 +54,15 @@ export function HeroSection() {
             className="absolute inset-0 bg-cover bg-center bg-no-repeat"
             style={{
           backgroundImage:
-            "url('/anh_trangchu.jpg')",
+            "url('https://i.pinimg.com/1200x/ad/39/ec/ad39ec70d8057d9815a4aa6a91043321.jpg')",
         }}
       />
       {/* Xóa lớp phủ màu xanh, chỉ giữ lại hình nền với blur */}
 
       {/* Decorative elements */}
-      <div className="absolute top-20 left-10 w-20 h-20 bg-yellow-400/20 rounded-full blur-xl animate-pulse" />
-      <div className="absolute bottom-20 right-10 w-32 h-32 bg-blue-400/20 rounded-full blur-xl animate-pulse delay-1000" />
-      <div className="absolute top-1/2 left-1/4 w-16 h-16 bg-purple-400/20 rounded-full blur-xl animate-pulse delay-500" />
+      <div className="absolute top-20 left-10 w-20 h-20 bg-[#CCA776]/30 rounded-full blur-xl animate-pulse" />
+      <div className="absolute bottom-20 right-10 w-32 h-32 bg-[#CCA776]/20 rounded-full blur-xl animate-pulse delay-1000" />
+      <div className="absolute top-1/2 left-1/4 w-16 h-16 bg-[#CCA776]/25 rounded-full blur-xl animate-pulse delay-500" />
 
       <div className="container mx-auto relative z-10 px-4 py-2 lg:py-3">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
@@ -73,8 +73,8 @@ export function HeroSection() {
             <h1 className="text-4xl md:text-5xl lg:text-5xl font-bold text-white mb-2 tracking-wide font-sans">
               Doanh thu tăng, lợi nhuận không về. CEO luôn phải "chữa cháy".
             </h1>
-            {/* Subheadline vàng/cam */}
-            <h2 className="text-xl md:text-2xl lg:text-2xl font-bold text-yellow-400 mb-4 tracking-wide font-sans">
+            {/* Subheadline màu nâu vàng */}
+            <h2 className="text-xl md:text-2xl lg:text-2xl font-bold text-[#CCA776] mb-4 tracking-wide font-sans drop-shadow-lg">
               HLCC – Giải mã gốc rễ, kiến tạo tăng trưởng bền vững.
             </h2>
             {/* Gạch ngang */}
@@ -93,11 +93,11 @@ export function HeroSection() {
                 <div className="absolute inset-0 bg-black/30 rounded-3xl pointer-events-none" />
                 <div className="relative z-10">
                   <div className="text-center mb-8">
-                    <div className="w-16 h-16 bg-gradient-to-br from-yellow-400 to-yellow-500 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                    <div className="w-16 h-16 bg-gradient-to-br from-[#CCA776] to-[#CCA776] rounded-2xl flex items-center justify-center mx-auto mb-4">
                       <Sparkles className="w-8 h-8 text-white" />
                     </div>
-                    <h3 className="text-2xl font-bold text-gray-900 mb-2">Đăng Ký Tư Vấn Miễn Phí</h3>
-                    <p className="text-gray-600 text-yellow-500">Nhận tư vấn từ chuyên gia trong 24h</p>
+                    <h3 className="text-2xl font-bold text-black mb-2">Đăng Ký Tư Vấn Miễn Phí</h3>
+                    <p className="text-black font-semibold text-[#CCA776]">Nhận tư vấn từ chuyên gia trong 24h</p>
                   </div>
 
                   {submitted ? (
@@ -105,8 +105,8 @@ export function HeroSection() {
                       <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
                         <CheckCircle className="w-8 h-8 text-green-600" />
                       </div>
-                      <h4 className="text-xl font-semibold text-green-600 mb-2 text-yellow-500">Đăng ký thành công!</h4>
-                      <p className="text-gray-600 text-yellow-500">Chúng tôi sẽ liên hệ với bạn trong thời gian sớm nhất.</p>
+                      <h4 className="text-xl font-semibold text-[#CCA776] mb-2 font-bold">Đăng ký thành công!</h4>
+                      <p className="text-black font-semibold text-[#CCA776]">Chúng tôi sẽ liên hệ với bạn trong thời gian sớm nhất.</p>
                     </div>
                   ) : (
                     <form className="space-y-4" onSubmit={handleSubmit}>
@@ -118,7 +118,7 @@ export function HeroSection() {
                           required
                           value={form.name}
                           onChange={handleChange}
-                          className="h-12 bg-gray-50 border-gray-200 focus:border-yellow-500 focus:ring-yellow-500"
+                          className="h-12 bg-gray-50 border-gray-200 focus:border-[#CCA776] focus:ring-[#CCA776]"
                         />
                         <Input
                           type="tel"
@@ -127,7 +127,7 @@ export function HeroSection() {
                           required
                           value={form.phone}
                           onChange={handleChange}
-                          className="h-12 bg-gray-50 border-gray-200 focus:border-yellow-500 focus:ring-yellow-500"
+                          className="h-12 bg-gray-50 border-gray-200 focus:border-[#CCA776] focus:ring-[#CCA776]"
                         />
                         <Input
                           type="email"
@@ -136,7 +136,7 @@ export function HeroSection() {
                           required
                           value={form.email}
                           onChange={handleChange}
-                          className="h-12 bg-gray-50 border-gray-200 focus:border-yellow-500 focus:ring-yellow-500"
+                          className="h-12 bg-gray-50 border-gray-200 focus:border-[#CCA776] focus:ring-[#CCA776]"
                         />
                         <Input
                           type="text"
@@ -144,10 +144,10 @@ export function HeroSection() {
                           placeholder="Tên công ty"
                           value={form.company}
                           onChange={handleChange}
-                          className="h-12 bg-gray-50 border-gray-200 focus:border-yellow-500 focus:ring-yellow-500"
+                          className="h-12 bg-gray-50 border-gray-200 focus:border-[#CCA776] focus:ring-[#CCA776]"
                         />
                         <Select value={form.service} onValueChange={handleSelectChange}>
-                          <SelectTrigger className="h-12 bg-gray-50 border-gray-200 focus:border-yellow-500 focus:ring-yellow-500">
+                          <SelectTrigger className="h-12 bg-gray-50 border-gray-200 focus:border-[#CCA776] focus:ring-[#CCA776]">
                             <SelectValue placeholder="Chọn dịch vụ quan tâm *" />
                           </SelectTrigger>
                           <SelectContent>
@@ -164,12 +164,16 @@ export function HeroSection() {
 
                       <Button
                         type="submit"
-                        className="w-full h-12 bg-gradient-to-r from-yellow-400 to-yellow-500 hover:from-yellow-500 hover:to-yellow-600 text-gray-900 font-bold text-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02]"
+                        className="w-full h-12 text-gray-900 font-bold text-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-[1.02]"
+                        style={{
+                          background: 'linear-gradient(to right, #CCA776, #CCA776)',
+                          boxShadow: '0 4px 6px -1px rgba(204, 167, 118, 0.3)'
+                        }}
                       >
                         Bắt đầu Chẩn đoán Doanh nghiệp
                       </Button>
 
-                      <p className="text-xs text-yellow-500 text-center flex items-center justify-center gap-1">
+                      <p className="text-xs text-[#CCA776] font-bold text-center flex items-center justify-center gap-1">
                         <CheckCircle className="w-3 h-3" />
                         Thông tin của bạn được bảo mật tuyệt đối
                       </p>

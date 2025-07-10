@@ -36,11 +36,11 @@ export function TeamSection() {
   ]
 
   return (
-    <section className="py-20 bg-gradient-to-b from-amber-50 to-yellow-50">
+    <section className="py-20 bg-[#CCA776]/10">
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">Đội "Siêu Anh Hùng" Tài Chính</h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <h2 className="text-3xl font-extrabold text-black mb-4">Đội "Siêu Anh Hùng" Tài Chính</h2>
+          <p className="text-xl text-black font-bold max-w-3xl mx-auto">
             Không phải nhân viên thông thường - đây là những "siêu anh hùng" với năng lực đặc biệt
           </p>
         </div>
@@ -54,7 +54,7 @@ export function TeamSection() {
               <div className="relative">
                 <img src={expert.image || "/placeholder.svg"} alt={expert.name} className="w-full h-64 object-cover" />
                 <div className="absolute top-4 right-4">
-                  <Badge className="bg-gradient-to-r from-amber-500 to-orange-500 text-white">
+                  <Badge className="bg-[#CCA776] text-white">
                     {expert.experience}
                   </Badge>
                 </div>
@@ -66,8 +66,8 @@ export function TeamSection() {
               <CardContent className="p-6">
                 <div className="space-y-4">
                   <div>
-                    <h3 className="text-xl font-bold text-gray-900">{expert.name}</h3>
-                    <p className="text-amber-600 font-medium">{expert.title}</p>
+                    <h3 className="text-xl font-black text-black">{expert.name}</h3>
+                    <p className="text-[#CCA776] font-black">{expert.title}</p>
                   </div>
 
                   <div className="flex flex-wrap gap-2">
@@ -75,7 +75,7 @@ export function TeamSection() {
                       <Badge
                         key={certIndex}
                         variant="outline"
-                        className="text-xs bg-gradient-to-r from-blue-50 to-indigo-50"
+                        className="text-xs bg-[#CCA776]/10 text-black font-bold"
                       >
                         {cert}
                       </Badge>
@@ -83,12 +83,12 @@ export function TeamSection() {
                   </div>
 
                   <div>
-                    <p className="text-sm text-gray-600 mb-2">
+                    <p className="text-sm text-black font-bold mb-2">
                       <strong>Chuyên trị:</strong> {expert.specialization}
                     </p>
                   </div>
 
-                  <blockquote className="border-l-4 border-amber-500 pl-4 italic text-gray-700 text-sm bg-amber-50 p-3 rounded-r-lg">
+                  <blockquote className="border-l-4 border-[#CCA776] pl-4 italic text-black text-sm bg-[#CCA776]/10 p-3 rounded-r-lg font-bold">
                     💬 "{expert.quote}"
                   </blockquote>
                 </div>
@@ -99,9 +99,11 @@ export function TeamSection() {
 
         <div className="text-center mt-12">
           <div className="inline-flex items-center bg-white rounded-full px-6 py-3 shadow-md">
-            <span className="text-gray-700 font-medium">
-              Tổng cộng <span className="text-amber-600 font-bold">37 năm kinh nghiệm</span> +{" "}
-              <span className="text-blue-600 font-bold">∞ đam mê</span>
+            <span className="text-black font-bold">
+              Tổng cộng <span className="text-[#CCA776] font-black">37 năm kinh nghiệm</span> +{" "}
+              <span className="text-[#CCA776] font-black">
+                ∞ đam mê
+              </span>
             </span>
           </div>
         </div>

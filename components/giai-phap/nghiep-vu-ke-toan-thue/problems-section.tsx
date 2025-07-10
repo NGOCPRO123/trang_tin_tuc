@@ -36,9 +36,9 @@ export function ProblemsSection() {
     <section className="py-20 bg-white">
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-extrabold text-red-700 mb-4">Bạn có đang phớt lờ những tín hiệu nguy hiểm này?</h2>
-          <p className="text-2xl text-gray-600 max-w-3xl mx-auto">
-            Nếu bạn thấy những dấu hiệu này, hệ thống kế toán - thuế của bạn đang cần được <span className="font-bold text-red-600">"cấp cứu"</span>!
+          <h2 className="text-4xl font-extrabold text-[#CCA776] mb-4">Bạn có đang phớt lờ những tín hiệu nguy hiểm này?</h2>
+          <p className="text-2xl text-black font-bold max-w-3xl mx-auto">
+            Nếu bạn thấy những dấu hiệu này, hệ thống kế toán - thuế của bạn đang cần được <span className="font-black text-[#CCA776]">"cấp cứu"</span>!
           </p>
         </div>
         <div className="flex flex-col items-center gap-8 w-full">
@@ -46,18 +46,18 @@ export function ProblemsSection() {
             {topProblems.map((problem, index) => (
               <div
                 key={index}
-                className="bg-gradient-to-br from-red-50 to-pink-50 border border-red-100 rounded-xl p-6 hover:shadow-lg transition-all hover:scale-105 w-full sm:w-[340px] max-w-full"
+                className="bg-[#CCA776]/10 border border-[#CCA776]/30 rounded-xl p-6 hover:shadow-lg transition-all hover:scale-105 w-full sm:w-[340px] max-w-full"
               >
                 <div className="flex items-start gap-4">
-                  <div className="bg-red-100 p-3 rounded-lg flex-shrink-0">
-                    <problem.icon className="h-6 w-6 text-red-600" />
+                  <div className="bg-[#CCA776]/30 p-3 rounded-lg flex-shrink-0">
+                    <problem.icon className="h-6 w-6 text-[#CCA776]" />
                   </div>
                   <div>
-                    <h3 className="font-bold text-lg md:text-xl text-gray-900 mb-2 flex items-center">
-                      <span className="text-red-500 mr-2">⚠️</span>
+                    <h3 className="font-extrabold text-lg md:text-xl text-black mb-2 flex items-center">
+                      <span className="text-[#CCA776] mr-2">⚠️</span>
                       {problem.title}
                     </h3>
-                    <p className="text-gray-600 text-sm leading-relaxed">{problem.description}</p>
+                    <p className="text-black text-sm font-bold leading-relaxed">{problem.description}</p>
                   </div>
                 </div>
               </div>
@@ -67,18 +67,18 @@ export function ProblemsSection() {
             {bottomProblems.map((problem, index) => (
               <div
                 key={index}
-                className="bg-gradient-to-br from-red-50 to-pink-50 border border-red-100 rounded-xl p-6 hover:shadow-lg transition-all hover:scale-105 w-full sm:w-[340px] max-w-full"
+                className="bg-[#CCA776]/10 border border-[#CCA776]/30 rounded-xl p-6 hover:shadow-lg transition-all hover:scale-105 w-full sm:w-[340px] max-w-full"
               >
                 <div className="flex items-start gap-4">
-                  <div className="bg-red-100 p-3 rounded-lg flex-shrink-0">
-                    <problem.icon className="h-6 w-6 text-red-600" />
+                  <div className="bg-[#CCA776]/30 p-3 rounded-lg flex-shrink-0">
+                    <problem.icon className="h-6 w-6 text-[#CCA776]" />
                   </div>
                   <div>
-                    <h3 className="font-bold text-lg md:text-xl text-gray-900 mb-2 flex items-center">
-                      <span className="text-red-500 mr-2">⚠️</span>
+                    <h3 className="font-extrabold text-lg md:text-xl text-black mb-2 flex items-center">
+                      <span className="text-[#CCA776] mr-2">⚠️</span>
                       {problem.title}
                     </h3>
-                    <p className="text-gray-600 text-sm leading-relaxed">{problem.description}</p>
+                    <p className="text-black text-sm font-bold leading-relaxed">{problem.description}</p>
                   </div>
                 </div>
               </div>
@@ -86,7 +86,7 @@ export function ProblemsSection() {
           </div>
         </div>
         <div className="text-center mt-12">
-          <div className="inline-flex items-center bg-gradient-to-r from-amber-100 to-yellow-100 text-amber-800 px-6 py-3 rounded-full font-medium">
+          <div className="inline-flex items-center bg-[#CCA776]/30 text-[#CCA776] px-6 py-3 rounded-full font-medium">
             <span className="mr-2">💡</span>
             Đừng lo - HLCC sẽ giúp bạn "giải cứu" hệ thống kế toán - thuế!
           </div>

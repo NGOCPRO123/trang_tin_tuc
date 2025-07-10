@@ -27,8 +27,8 @@ export function VideoSection() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-5xl font-bold text-gray-800 mb-6">Hành trình truyền cảm hứng</h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <h2 className="text-3xl md:text-5xl font-bold text-black mb-6">Hành trình truyền cảm hứng</h2>
+          <p className="text-xl text-black max-w-3xl mx-auto font-medium">
             Khám phá những câu chuyện đầy cảm hứng và những khoảnh khắc ý nghĩa trong hành trình xây dựng cộng đồng
           </p>
         </motion.div>
@@ -59,14 +59,14 @@ export function VideoSection() {
               className="absolute inset-0 flex items-center justify-center"
             >
               <div className="w-20 h-20 bg-white/90 rounded-full flex items-center justify-center shadow-lg group-hover:bg-white transition-all duration-300">
-                <Play className="w-8 h-8 text-orange-500 ml-1" fill="currentColor" />
+                <Play className="w-8 h-8 text-[#CCA776] ml-1" fill="currentColor" />
               </div>
             </motion.div>
 
             {/* Video title overlay */}
             <div className="absolute bottom-6 left-6 right-6">
               <h3 className="text-white text-2xl font-bold mb-2">Cộng đồng Hạnh phúc - Hành trình 2024</h3>
-              <p className="text-white/90">Những khoảnh khắc đáng nhớ trong hành trình xây dựng cộng đồng tử tế</p>
+              <p className="text-white font-medium">Những khoảnh khắc đáng nhớ trong hành trình xây dựng cộng đồng tử tế</p>
             </div>
           </div>
         </motion.div>
@@ -80,7 +80,7 @@ export function VideoSection() {
         >
           <Button
             size="lg"
-            className="bg-red-600 hover:bg-red-700 text-white px-8 py-4 text-lg rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
+            className="bg-[#CCA776] hover:bg-[#CCA776]/80 text-white px-8 py-4 text-lg rounded-full shadow-lg hover:shadow-xl transition-all duration-300"
             onClick={handleYouTubeClick}
           >
             <Youtube className="mr-2 w-5 h-5" />
@@ -89,7 +89,7 @@ export function VideoSection() {
           <Button
             variant="outline"
             size="lg"
-            className="border-2 border-orange-500 text-orange-600 hover:bg-orange-50 px-8 py-4 text-lg rounded-full shadow-lg hover:shadow-xl transition-all duration-300 bg-transparent"
+            className="border-2 border-[#CCA776] text-[#CCA776] hover:bg-[#CCA776]/10 px-8 py-4 text-lg rounded-full shadow-lg hover:shadow-xl transition-all duration-300 bg-transparent"
             onClick={handleExploreJourneyClick}
           >
             Khám phá hành trình

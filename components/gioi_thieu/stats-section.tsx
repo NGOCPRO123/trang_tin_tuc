@@ -7,17 +7,17 @@ const stats = [
   {
     number: "+4,360",
     label: "Khách hàng Hài Lòng",
-    color: "text-orange-500",
+    color: "text-[#CCA776]",
   },
   {
     number: "+321",
     label: "Dự Án Hoàn Thành",
-    color: "text-blue-500",
+    color: "text-[#CCA776]",
   },
   {
     number: "+637",
     label: "Doanh Nghiệp EOI",
-    color: "text-orange-500",
+    color: "text-[#CCA776]",
   },
 ]
 
@@ -46,7 +46,7 @@ const partners = [
 
 export function StatsSection() {
   return (
-    <section className="py-16 px-4 bg-yellow-50">
+    <section className="py-16 px-4 bg-[#CCA776]/10">
       <div className="container mx-auto max-w-7xl">
         {/* Stats */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
@@ -59,8 +59,8 @@ export function StatsSection() {
               viewport={{ once: true }}
               className="text-center"
             >
-              <div className={`text-4xl md:text-5xl font-bold mb-2 ${stat.color}`}>{stat.number}</div>
-              <div className="text-gray-600 font-medium text-lg">{stat.label}</div>
+              <div className={`text-4xl md:text-5xl font-bold mb-2 text-[#CCA776] font-black drop-shadow`}>{stat.number}</div>
+              <div className="text-black font-medium text-lg">{stat.label}</div>
             </motion.div>
           ))}
         </div>
@@ -71,7 +71,7 @@ export function StatsSection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
           viewport={{ once: true }}
-          className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100"
+          className="bg-white rounded-2xl p-8 shadow-sm border border-[#CCA776]/20"
         >
           <div className="grid grid-cols-2 md:grid-cols-5 gap-8 items-center">
             {partners.map((partner, index) => (

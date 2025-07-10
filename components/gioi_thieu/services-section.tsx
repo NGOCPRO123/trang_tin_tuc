@@ -28,7 +28,7 @@ const approachMethods = [
       "Xác định nguyên nhân gốc rễ",
       "Đánh giá tác động đa chiều"
     ],
-    color: "from-blue-400 to-indigo-500"
+    color: "from-[#CCA776] to-[#CCA776]"
   },
   {
     icon: Users,
@@ -39,7 +39,7 @@ const approachMethods = [
       "Hỗ trợ triển khai thực tế",
       "Cam kết kết quả dài hạn"
     ],
-    color: "from-green-400 to-emerald-500"
+    color: "from-[#CCA776] to-[#CCA776]"
   },
   {
     icon: Zap,
@@ -50,7 +50,7 @@ const approachMethods = [
       "Tùy chỉnh theo đặc thù",
       "Tính khả thi cao"
     ],
-    color: "from-yellow-400 to-orange-500"
+    color: "from-[#CCA776] to-[#CCA776]"
   }
 ]
 
@@ -92,10 +92,10 @@ export function ServicesSection() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-black mb-6">
             Cách chúng tôi tạo ra sự khác biệt
           </h2>
-          <p className="text-xl text-gray-700 max-w-4xl mx-auto leading-relaxed">
+          <p className="text-xl text-black max-w-4xl mx-auto leading-relaxed">
             HLCC không chỉ cung cấp dịch vụ tư vấn thông thường. Chúng tôi áp dụng phương pháp tiếp cận độc đáo 
             kết hợp giữa kinh nghiệm thực tế và tư duy chiến lược để mang đến kết quả vượt trội.
           </p>
@@ -113,13 +113,13 @@ export function ServicesSection() {
             >
               <Card className="border-0 shadow-xl hover:shadow-2xl transition-all duration-300 h-full bg-gradient-to-br from-white to-gray-50 group">
                 <CardHeader className="pb-4">
-                  <div className={`bg-gradient-to-r ${method.color} p-4 rounded-full w-16 h-16 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}>
+                  <div className={`bg-gradient-to-r from-[#CCA776] to-[#CCA776] p-4 rounded-full w-16 h-16 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}>
                     <method.icon className="h-8 w-8 text-white" />
                   </div>
-                  <CardTitle className="text-2xl font-bold text-gray-900 mb-3">
+                  <CardTitle className="text-2xl font-bold text-black mb-3">
                     {method.title}
                   </CardTitle>
-                  <p className="text-gray-700 leading-relaxed">
+                  <p className="text-black leading-relaxed">
                     {method.description}
                   </p>
                 </CardHeader>
@@ -127,8 +127,8 @@ export function ServicesSection() {
                   <div className="space-y-3">
                     {method.features.map((feature, featureIdx) => (
                       <div key={featureIdx} className="flex items-center gap-3">
-                        <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0" />
-                        <span className="text-sm text-gray-600">{feature}</span>
+                        <CheckCircle className="h-5 w-5 text-[#CCA776] flex-shrink-0" />
+                        <span className="text-sm text-black">{feature}</span>
                       </div>
                     ))}
                   </div>
@@ -146,7 +146,7 @@ export function ServicesSection() {
           viewport={{ once: true }}
           className="mb-20"
         >
-          <h3 className="text-3xl font-bold text-center text-gray-900 mb-12">
+          <h3 className="text-3xl font-bold text-center text-black mb-12">
             Quy trình làm việc của HLCC
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -159,23 +159,23 @@ export function ServicesSection() {
                 viewport={{ once: true }}
                 className="text-center relative"
               >
-                <div className="bg-gradient-to-br from-yellow-50 to-orange-50 p-6 rounded-2xl border-2 border-yellow-200 shadow-lg hover:shadow-xl transition-all duration-300">
-                  <div className="bg-gradient-to-r from-yellow-400 to-orange-500 text-white rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-4 font-bold text-lg">
+                <div className="bg-gradient-to-br from-[#CCA776]/10 to-[#CCA776]/10 p-6 rounded-2xl border-2 border-[#CCA776] shadow-lg hover:shadow-xl transition-all duration-300">
+                  <div className="bg-gradient-to-r from-[#CCA776] to-[#CCA776] text-white rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-4 font-bold text-lg">
                     {step.step}
                   </div>
-                  <div className="bg-gradient-to-r from-yellow-400 to-orange-500 p-3 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
+                  <div className="bg-gradient-to-r from-[#CCA776] to-[#CCA776] p-3 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
                     <step.icon className="h-8 w-8 text-white" />
                   </div>
-                  <h4 className="text-xl font-bold text-gray-900 mb-3">
+                  <h4 className="text-xl font-bold text-black mb-3">
                     {step.title}
                   </h4>
-                  <p className="text-gray-600 text-sm leading-relaxed">
+                  <p className="text-black text-sm leading-relaxed">
                     {step.description}
                   </p>
                 </div>
                 {/* Connector line */}
                 {idx < processSteps.length - 1 && (
-                  <div className="hidden lg:block absolute top-1/2 -right-4 w-8 h-0.5 bg-gradient-to-r from-yellow-400 to-orange-500 transform -translate-y-1/2"></div>
+                  <div className="hidden lg:block absolute top-1/2 -right-4 w-8 h-0.5 bg-gradient-to-r from-[#CCA776] to-[#CCA776] transform -translate-y-1/2"></div>
                 )}
               </motion.div>
             ))}
@@ -188,36 +188,36 @@ export function ServicesSection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1 }}
           viewport={{ once: true }}
-          className="bg-gradient-to-br from-yellow-50 to-orange-50 p-8 rounded-2xl border-2 border-yellow-200 shadow-lg mb-12"
+          className="bg-gradient-to-br from-[#CCA776]/10 to-[#CCA776]/10 p-8 rounded-2xl border-2 border-[#CCA776] shadow-lg mb-12"
         >
           <div className="text-center mb-8">
-            <h3 className="text-3xl font-bold text-gray-900 mb-4">
+            <h3 className="text-3xl font-bold text-black mb-4">
               Tại sao doanh nghiệp chọn HLCC?
             </h3>
-            <p className="text-lg text-gray-700 max-w-3xl mx-auto">
+            <p className="text-lg text-black max-w-3xl mx-auto">
               Chúng tôi không chỉ là nhà tư vấn, mà là người đồng hành tin cậy trong hành trình phát triển của doanh nghiệp.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="flex items-center gap-4 p-4 bg-white rounded-lg shadow-sm">
-              <Award className="h-8 w-8 text-yellow-600" />
+              <Award className="h-8 w-8 text-[#CCA776]" />
               <div>
-                <h4 className="font-semibold text-gray-900">Kinh nghiệm thực tế</h4>
-                <p className="text-sm text-gray-600">15+ năm trong lĩnh vực tư vấn</p>
+                <h4 className="font-semibold text-black">Kinh nghiệm thực tế</h4>
+                <p className="text-sm text-black">15+ năm trong lĩnh vực tư vấn</p>
               </div>
             </div>
             <div className="flex items-center gap-4 p-4 bg-white rounded-lg shadow-sm">
-              <Shield className="h-8 w-8 text-yellow-600" />
+              <Shield className="h-8 w-8 text-[#CCA776]" />
               <div>
-                <h4 className="font-semibold text-gray-900">Cam kết kết quả</h4>
-                <p className="text-sm text-gray-600">Đảm bảo hiệu quả thực tế</p>
+                <h4 className="font-semibold text-black">Cam kết kết quả</h4>
+                <p className="text-sm text-black">Đảm bảo hiệu quả thực tế</p>
               </div>
             </div>
             <div className="flex items-center gap-4 p-4 bg-white rounded-lg shadow-sm">
-              <Heart className="h-8 w-8 text-yellow-600" />
+              <Heart className="h-8 w-8 text-[#CCA776]" />
               <div>
-                <h4 className="font-semibold text-gray-900">Tận tâm phục vụ</h4>
-                <p className="text-sm text-gray-600">Đặt lợi ích khách hàng lên đầu</p>
+                <h4 className="font-semibold text-black">Tận tâm phục vụ</h4>
+                <p className="text-sm text-black">Đặt lợi ích khách hàng lên đầu</p>
               </div>
             </div>
           </div>
@@ -243,22 +243,23 @@ export function ServicesSection() {
               <h3 className="text-2xl font-bold mb-4">
                 Sẵn sàng bắt đầu hành trình cùng HLCC?
               </h3>
-              <p className="text-lg mb-6 text-yellow-100">
+              <p className="text-lg mb-6 text-[#CCA776] font-semibold drop-shadow">
                 Hãy để chúng tôi hiểu rõ thách thức của bạn và đề xuất giải pháp phù hợp nhất.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button
                   size="lg"
-                  className="bg-white text-yellow-600 hover:bg-yellow-50 font-semibold px-8 py-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+                  className="bg-gradient-to-r from-[#CCA776] to-[#CCA776] hover:from-[#CCA776]/80 hover:to-[#CCA776] text-white px-8 py-4 text-lg rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
                 >
-                  Tư vấn miễn phí ngay
+                  Tư vấn miễn phí
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
                 <Button
                   size="lg"
-                  className="bg-white text-yellow-600 hover:bg-yellow-50 font-semibold px-8 py-4 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+                  variant="outline"
+                  className="border-2 border-white text-white hover:bg-white hover:text-black px-8 py-4 text-lg rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
                 >
-                  Xem các dự án tiêu biểu
+                  Xem case study
                 </Button>
               </div>
             </div>

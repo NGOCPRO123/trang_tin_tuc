@@ -26,8 +26,8 @@ export default function CommitmentSection() {
     <section className="py-20 bg-white">
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-16">
-          <h2 className="text-3xl font-black text-gray-900 mb-4">Tại sao nên Ủy thác việc Xử lý Công nợ cho HLCC?</h2>
-          <p className="text-xl text-gray-700 max-w-2xl mx-auto">
+          <h2 className="text-3xl font-black text-black mb-4">Tại sao nên Ủy thác việc Xử lý Công nợ cho HLCC?</h2>
+          <p className="text-xl text-black font-bold max-w-2xl mx-auto">
             Sự khác biệt của chúng tôi
           </p>
         </div>
@@ -37,13 +37,13 @@ export default function CommitmentSection() {
             return (
               <div
                 key={index}
-                className="bg-gradient-to-br from-yellow-50 to-yellow-50 border border-yellow-100 rounded-xl p-8 hover:shadow-lg transition-all hover:scale-105 flex flex-col items-center text-center"
+                className="bg-[#CCA776]/10 border border-[#CCA776]/30 rounded-xl p-8 hover:shadow-lg transition-all hover:scale-105 flex flex-col items-center text-center"
               >
-                <div className="bg-yellow-100 p-4 rounded-full mb-4">
-                  <Icon className="h-10 w-10 text-yellow-600" />
+                <div className="bg-[#CCA776]/30 p-4 rounded-full mb-4">
+                  <Icon className="h-10 w-10 text-[#CCA776]" />
                 </div>
-                <h3 className="font-semibold text-gray-900 mb-3 text-lg">{benefit.title}</h3>
-                <p className="text-gray-700 text-base leading-relaxed">{benefit.description}</p>
+                <h3 className="font-black text-black mb-3 text-lg">{benefit.title}</h3>
+                <p className="text-black font-bold text-base leading-relaxed">{benefit.description}</p>
               </div>
             )
           })}

@@ -2,17 +2,17 @@ export default function Section5() {
   return (
     <section className="space-y-8">
       <div className="flex items-center gap-4">
-        <div className="w-12 h-12 bg-amber-100 rounded-xl flex items-center justify-center">
-          <span className="text-xl font-bold text-amber-700">05</span>
+        <div className="w-12 h-12 bg-[#CCA776]/20 rounded-xl flex items-center justify-center">
+          <span className="text-xl font-bold text-[#CCA776]">05</span>
         </div>
-        <h2 className="text-3xl font-light text-gray-900">Miễn trừ và Giới hạn Trách nhiệm</h2>
+        <h2 className="text-2xl font-black text-black mb-4">5. Chính sách bảo mật thông tin</h2>
       </div>
 
-      <div className="space-y-6 ml-16">
+      <div className="text-black font-bold leading-relaxed space-y-4">
         <div className="space-y-6">
           <div className="border border-gray-200 rounded-xl p-6">
             <h3 className="font-semibold text-gray-900 mb-3 flex items-center gap-2">
-              <div className="w-2 h-2 bg-amber-400 rounded-full"></div>
+              <div className="w-2 h-2 bg-[#CCA776] rounded-full"></div>
               Về tính chính xác
             </h3>
             <p className="text-gray-600 leading-relaxed">
@@ -24,7 +24,7 @@ export default function Section5() {
 
           <div className="border border-gray-200 rounded-xl p-6">
             <h3 className="font-semibold text-gray-900 mb-3 flex items-center gap-2">
-              <div className="w-2 h-2 bg-amber-400 rounded-full"></div>
+              <div className="w-2 h-2 bg-[#CCA776] rounded-full"></div>
               Miễn trừ trách nhiệm
             </h3>
             <p className="text-gray-600 leading-relaxed mb-4">
@@ -41,7 +41,7 @@ export default function Section5() {
 
           <div className="border border-gray-200 rounded-xl p-6">
             <h3 className="font-semibold text-gray-900 mb-3 flex items-center gap-2">
-              <div className="w-2 h-2 bg-amber-400 rounded-full"></div>
+              <div className="w-2 h-2 bg-[#CCA776] rounded-full"></div>
               Liên kết của bên thứ ba
             </h3>
             <p className="text-gray-600 leading-relaxed">

@@ -65,30 +65,30 @@ export function Footer() {
             </div>
             <div className="space-y-3 text-sm text-gray-400">
               <div className="flex items-center gap-3">
-                <MapPin className="w-4 h-4 text-amber-400" style={{ minWidth: '1rem', minHeight: '1rem' }} />
+                <MapPin className="w-4 h-4 text-[#CCA776]" style={{ minWidth: '1rem', minHeight: '1rem' }} />
                 <a 
                   href="https://maps.google.com/?q=213+Điện+Biên+Phủ,+Phường+Võ+Thị+Sáu,+Quận+3,+Tp.+HCM" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="hover:text-amber-400 transition-colors duration-200"
+                  className="hover:text-[#CCA776]/80 transition-colors duration-200"
                 >
                   Tòa nhà Sabay, 99 Cộng Hòa, Phường 4, Quận Tân Bình, TPHCM
                 </a>
               </div>
               <div className="flex items-center gap-3">
-                <Phone className="w-4 h-4 text-amber-400" style={{ minWidth: '1rem', minHeight: '1rem' }} />
+                <Phone className="w-4 h-4 text-[#CCA776]" style={{ minWidth: '1rem', minHeight: '1rem' }} />
                 <a 
                   href="tel:+84123456789" 
-                  className="hover:text-amber-400 transition-colors duration-200"
+                  className="hover:text-[#CCA776]/80 transition-colors duration-200"
                 >
                028.5555.8879
                 </a>
               </div>
               <div className="flex items-center gap-3">
-                <Mail className="w-4 h-4 text-amber-400" style={{ minWidth: '1rem', minHeight: '1rem' }} />
+                <Mail className="w-4 h-4 text-[#CCA776]" style={{ minWidth: '1rem', minHeight: '1rem' }} />
                 <a 
                   href="mailto:contact@company.com" 
-                  className="hover:text-amber-400 transition-colors duration-200"
+                  className="hover:text-[#CCA776]/80 transition-colors duration-200"
                 >
                   lienhe@hlcc.group
                 </a>
@@ -109,7 +109,7 @@ export function Footer() {
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="text-gray-300 hover:text-amber-400 transition-colors duration-200 hover:translate-x-1 inline-block"
+                    className="text-gray-300 hover:text-[#CCA776]/80 transition-colors duration-200 hover:translate-x-1 inline-block"
                   >
                     {link.name}
                   </Link>
@@ -131,7 +131,7 @@ export function Footer() {
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="text-gray-300 hover:text-amber-400 transition-colors duration-200 hover:translate-x-1 inline-block"
+                    className="text-gray-300 hover:text-[#CCA776]/80 transition-colors duration-200 hover:translate-x-1 inline-block"
                   >
                     {link.name}
                   </Link>
@@ -153,7 +153,7 @@ export function Footer() {
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="text-gray-300 hover:text-amber-400 transition-colors duration-200 hover:translate-x-1 inline-block"
+                    className="text-gray-300 hover:text-[#CCA776]/80 transition-colors duration-200 hover:translate-x-1 inline-block"
                   >
                     {link.name}
                   </Link>
@@ -175,7 +175,7 @@ export function Footer() {
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="text-gray-300 hover:text-amber-400 transition-colors duration-200 hover:translate-x-1 inline-block"
+                    className="text-gray-300 hover:text-[#CCA776]/80 transition-colors duration-200 hover:translate-x-1 inline-block"
                   >
                     {link.name}
                   </Link>
@@ -197,7 +197,7 @@ export function Footer() {
                 <Link
                   key={social.name}
                   href={social.href}
-                  className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-amber-600 transition-all duration-300 hover:scale-110 hover:shadow-lg"
+                  className="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-[#CCA776]/80 transition-all duration-300 hover:scale-110 hover:shadow-lg"
                 >
                   <social.icon className="w-5 h-5" />
                 </Link>
@@ -209,11 +209,11 @@ export function Footer() {
                 <input
                   type="email"
                   placeholder="Nhập email của bạn"
-                  className="flex-1 px-3 py-2 rounded-l bg-gray-700 text-sm text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-amber-500 border-none"
+                  className="flex-1 px-3 py-2 rounded-l bg-gray-700 text-sm text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#CCA776] border-none"
                 />
                 <button
                   type="submit"
-                  className="px-4 py-2 rounded-r bg-amber-600 hover:bg-amber-700 text-sm font-semibold text-white transition-colors"
+                  className="px-4 py-2 rounded-r bg-[#CCA776] hover:bg-[#CCA776]/80 text-sm font-semibold text-white transition-colors"
                 >
                   Đăng ký
                 </button>

@@ -48,8 +48,8 @@ export function ProgramsSection() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-5xl font-bold text-gray-800 mb-6">Quy trình "Điều tra & Giải mã" của HLCC</h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <h2 className="text-3xl md:text-5xl font-bold text-black mb-6">Quy trình "Điều tra & Giải mã" của HLCC</h2>
+          <p className="text-xl text-black max-w-3xl mx-auto font-medium">
             HLCC áp dụng quy trình tư vấn doanh nghiệp chuyên sâu, giúp bạn tìm ra gốc rễ vấn đề, xây dựng lộ trình giải pháp tài chính và vận hành tối ưu.
           </p>
         </motion.div>
@@ -75,19 +75,19 @@ export function ProgramsSection() {
                     className="w-full h-48 object-cover transition-transform duration-300 hover:scale-105"
                   />
                   <div className="absolute top-4 left-4 bg-white/90 p-2 rounded-full">
-                    <program.icon className="w-6 h-6 text-orange-500" />
+                    <program.icon className="w-6 h-6 text-[#CCA776]" />
                   </div>
                 </div>
                 <CardHeader>
-                  <CardTitle className="text-xl font-bold text-gray-800">{program.title}</CardTitle>
+                  <CardTitle className="text-xl font-bold text-black">{program.title}</CardTitle>
                 </CardHeader>
                 <CardContent className="flex-1 flex flex-col justify-between">
-                  <CardDescription className="text-gray-600 mb-6 leading-relaxed">
+                  <CardDescription className="text-black mb-6 leading-relaxed font-medium">
                     {program.description}
                   </CardDescription>
                   <Button
                     variant="outline"
-                    className="w-full border-orange-500 text-orange-600 hover:bg-orange-50 group bg-transparent"
+                    className="w-full border-[#CCA776] text-[#CCA776] hover:bg-[#CCA776]/10 group bg-transparent"
                   >
                     Xem chi tiết
                     <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />

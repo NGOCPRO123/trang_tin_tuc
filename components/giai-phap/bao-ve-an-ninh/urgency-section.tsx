@@ -36,14 +36,15 @@ export default function UrgencySection() {
   }), [timeLeft])
 
   return (
-    <section className="py-20 bg-gradient-to-br from-red-100 via-orange-100 to-yellow-100">
+    <section className="py-20 bg-[#CCA776]/10">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center">
           {/* Urgency header */}
           <div className="bg-red-500 text-white rounded-2xl p-6 mb-12">
             <div className="flex items-center justify-center space-x-3 mb-4">
               <AlertTriangle className="w-8 h-8" />
-              <h2 className="text-3xl font-black">CẢNH BÁO KHẨN CẤP</h2>
+              <h2 className="text-3xl font-black text-black mb-4">Tính cấp thiết</h2>
+              <p className="text-xl text-black font-bold mb-8">Mỗi phút chậm trễ là một rủi ro tiềm ẩn</p>
             </div>
             <p className="text-xl">Tháng 12 là mùa cao điểm tội phạm - số vụ trộm tăng 340%</p>
           </div>
@@ -54,26 +55,26 @@ export default function UrgencySection() {
 
             <div className="flex justify-center space-x-8 mb-8">
               <div className="text-center">
-                <div className="bg-gradient-to-br from-yellow-400 to-orange-500 text-white rounded-2xl p-4 w-20 h-20 flex items-center justify-center">
+                <div className="bg-[#CCA776] text-white rounded-2xl p-4 w-20 h-20 flex items-center justify-center">
                   <span className="text-2xl font-black">{formattedTime.hours}</span>
                 </div>
                 <p className="text-sm text-gray-600 mt-2">Giờ</p>
               </div>
               <div className="text-center">
-                <div className="bg-gradient-to-br from-yellow-400 to-orange-500 text-white rounded-2xl p-4 w-20 h-20 flex items-center justify-center">
+                <div className="bg-[#CCA776] text-white rounded-2xl p-4 w-20 h-20 flex items-center justify-center">
                   <span className="text-2xl font-black">{formattedTime.minutes}</span>
                 </div>
                 <p className="text-sm text-gray-600 mt-2">Phút</p>
               </div>
               <div className="text-center">
-                <div className="bg-gradient-to-br from-yellow-400 to-orange-500 text-white rounded-2xl p-4 w-20 h-20 flex items-center justify-center">
+                <div className="bg-[#CCA776] text-white rounded-2xl p-4 w-20 h-20 flex items-center justify-center">
                   <span className="text-2xl font-black">{formattedTime.seconds}</span>
                 </div>
                 <p className="text-sm text-gray-600 mt-2">Giây</p>
               </div>
             </div>
 
-            <div className="bg-yellow-100 rounded-2xl p-6 mb-8">
+            <div className="bg-[#CCA776]/30 rounded-2xl p-6 mb-8">
               <h4 className="text-xl font-bold text-gray-900 mb-4">🎁 Ưu đãi đặc biệt:</h4>
               <div className="grid md:grid-cols-2 gap-4 text-left">
                 <div className="flex items-center space-x-2">

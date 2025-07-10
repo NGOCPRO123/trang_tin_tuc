@@ -34,17 +34,17 @@ export function TeamSection() {
     <section className="py-20 bg-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-3xl lg:text-4xl font-bold text-gray-800 mb-4">
+          <h2 className="text-3xl lg:text-4xl font-bold text-black mb-4">
             👩‍💼 Đội ngũ cố vấn đầu tư – thật, có chuyên môn
           </h2>
-          <p className="text-xl text-gray-600">Đội ngũ chuyên gia giàu kinh nghiệm, được chứng nhận quốc tế</p>
+          <p className="text-xl text-black">Đội ngũ chuyên gia giàu kinh nghiệm, được chứng nhận quốc tế</p>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {team.map((member, index) => (
             <Card
               key={index}
-              className="border-gray-200 hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+              className="border-[#CCA776]/40 hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
             >
               <CardContent className="p-8 text-center">
                 <div className="mb-6">
@@ -53,23 +53,23 @@ export function TeamSection() {
                     alt={member.name}
                     width={200}
                     height={200}
-                    className="rounded-full mx-auto mb-4 border-4 border-yellow-200"
+                    className="rounded-full mx-auto mb-4 border-4 border-[#CCA776]/40"
                   />
                 </div>
 
-                <h3 className="text-xl font-bold text-gray-800 mb-2">{member.name}</h3>
-                <p className="text-yellow-600 font-semibold mb-2">{member.title}</p>
-                <p className="text-gray-600 mb-4">{member.experience}</p>
+                <h3 className="text-xl font-bold text-[#CCA776] mb-2">{member.name}</h3>
+                <p className="text-[#CCA776] font-semibold mb-2">{member.title}</p>
+                <p className="text-black mb-4">{member.experience}</p>
 
                 <div className="flex flex-wrap justify-center gap-2 mb-4">
                   {member.credentials.map((credential, idx) => (
-                    <Badge key={idx} variant="secondary" className="bg-yellow-100 text-yellow-800">
+                    <Badge key={idx} variant="secondary" className="bg-[#CCA776]/10 text-[#CCA776] font-bold">
                       {credential}
                     </Badge>
                   ))}
                 </div>
 
-                <blockquote className="text-gray-700 italic border-l-4 border-yellow-400 pl-4">
+                <blockquote className="text-black italic border-l-4 border-[#CCA776] pl-4 font-medium">
                   "{member.quote}"
                 </blockquote>
               </CardContent>

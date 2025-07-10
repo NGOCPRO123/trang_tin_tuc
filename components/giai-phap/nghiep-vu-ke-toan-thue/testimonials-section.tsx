@@ -39,11 +39,11 @@ export function TestimonialsSection() {
   ]
 
   return (
-    <section className="py-20 bg-gradient-to-b from-amber-50 to-yellow-50">
+    <section className="py-20 bg-[#CCA776]/10">
       <div className="container mx-auto px-4 md:px-6">
         <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">Những Câu Chuyện "Có Thật"</h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <h2 className="text-3xl font-extrabold text-black mb-4">Những Câu Chuyện "Có Thật"</h2>
+          <p className="text-xl text-black font-bold max-w-3xl mx-auto">
             Không phải review dàn dựng - đây là những chia sẻ chân thành từ trái tim
           </p>
         </div>
@@ -56,39 +56,39 @@ export function TestimonialsSection() {
                   {/* Header */}
                   <div className="flex items-start justify-between">
                     <div className="flex items-center gap-3">
-                      <div className="w-12 h-12 rounded-full bg-gradient-to-br from-amber-100 to-yellow-100 flex items-center justify-center text-2xl">
+                      <div className="w-12 h-12 rounded-full bg-[#CCA776]/30 flex items-center justify-center text-2xl">
                         {testimonial.mood}
                       </div>
                       <div>
-                        <div className="font-semibold text-gray-900 text-sm">{testimonial.company}</div>
-                        <div className="text-xs text-gray-600">{testimonial.industry}</div>
+                        <div className="font-black text-black text-sm">{testimonial.company}</div>
+                        <div className="text-xs text-black font-bold">{testimonial.industry}</div>
                       </div>
                     </div>
-                    <Quote className="h-6 w-6 text-amber-400 flex-shrink-0" />
+                    <Quote className="h-6 w-6 text-[#CCA776] flex-shrink-0" />
                   </div>
 
                   {/* Rating */}
                   <div className="flex items-center gap-1">
                     {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="h-4 w-4 fill-yellow-400 text-yellow-400" />
+                      <Star key={i} className="h-4 w-4 fill-[#CCA776] text-[#CCA776]" />
                     ))}
-                    <span className="text-xs text-gray-500 ml-2">Hài lòng 100%</span>
+                    <span className="text-xs text-black font-bold ml-2">Hài lòng 100%</span>
                   </div>
 
                   {/* Feedback */}
-                  <blockquote className="text-gray-700 text-sm leading-relaxed italic bg-gray-50 p-3 rounded-lg">
+                  <blockquote className="text-black text-sm font-bold leading-relaxed italic bg-gray-50 p-3 rounded-lg">
                     "{testimonial.feedback}"
                   </blockquote>
 
                   {/* Customer info */}
-                  <div className="text-sm text-gray-600">
+                  <div className="text-sm text-black font-bold">
                     <strong>{testimonial.customerName}</strong>
                   </div>
 
                   {/* Results */}
-                  <div className="bg-gradient-to-r from-green-50 to-emerald-50 border border-green-100 rounded-lg p-3">
-                    <div className="text-xs text-green-700 font-medium">THÀNH QUẢ THỰC TẾ:</div>
-                    <div className="text-sm text-green-800 font-semibold">{testimonial.results}</div>
+                  <div className="bg-[#CCA776]/10 border border-[#CCA776]/30 rounded-lg p-3">
+                    <div className="text-xs text-[#CCA776] font-medium">THÀNH QUẢ THỰC TẾ:</div>
+                    <div className="text-sm text-[#CCA776] font-semibold">{testimonial.results}</div>
                   </div>
                 </div>
               </CardContent>
@@ -98,9 +98,9 @@ export function TestimonialsSection() {
 
         <div className="text-center mt-12">
           <div className="inline-flex items-center bg-white rounded-full px-6 py-3 shadow-md">
-            <Star className="h-5 w-5 text-yellow-400 mr-2" />
-            <span className="text-gray-700 font-medium">
-              Điểm hài lòng <span className="text-amber-600 font-bold">4.9/5</span> từ 600+ "người bạn" doanh nghiệp
+            <Star className="h-5 w-5 text-[#CCA776] mr-2" />
+            <span className="text-black font-bold">
+              Điểm hài lòng <span className="text-[#CCA776] font-black">4.9/5</span> từ 600+ "người bạn" doanh nghiệp
             </span>
           </div>
         </div>

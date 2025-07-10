@@ -20,7 +20,7 @@ export function InteractiveProcessSection() {
         "Xác định mục tiêu thực tế",
         "Đánh giá tình hình tài chính hiện tại",
       ],
-      color: "from-purple-500 to-indigo-500",
+      color: "from-[#CCA776] to-[#CCA776]/80",
     },
     {
       icon: Target,
@@ -33,7 +33,7 @@ export function InteractiveProcessSection() {
         "Thiết lập mốc thời gian cụ thể",
         "Xây dựng kế hoạch B khi thị trường biến động",
       ],
-      color: "from-blue-500 to-cyan-500",
+      color: "from-[#CCA776] to-[#CCA776]/80",
     },
     {
       icon: Shield,
@@ -46,7 +46,7 @@ export function InteractiveProcessSection() {
         "Dự phòng cho các tình huống xấu",
         "Kiểm tra và điều chỉnh định kỳ",
       ],
-      color: "from-green-500 to-emerald-500",
+      color: "from-[#CCA776] to-[#CCA776]/80",
     },
     {
       icon: TrendingUp,
@@ -60,7 +60,7 @@ export function InteractiveProcessSection() {
         "Điều chỉnh khi cần thiết",
         "Tư vấn tâm lý khi thị trường biến động",
       ],
-      color: "from-orange-500 to-red-500",
+      color: "from-[#CCA776] to-[#CCA776]/80",
     },
     {
       icon: Eye,
@@ -73,21 +73,23 @@ export function InteractiveProcessSection() {
         "So sánh với chỉ số thị trường",
         "Tư vấn tối ưu hóa liên tục",
       ],
-      color: "from-amber-500 to-yellow-500",
+      color: "from-[#CCA776] to-[#CCA776]/80",
     },
   ]
+
+  const Icon = steps[activeStep].icon;
 
   return (
     <section className="py-32 bg-gradient-to-b from-white to-gray-50">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-6xl font-black text-gray-800 mb-8">
+          <h2 className="text-4xl lg:text-6xl font-black text-black mb-8">
             HỆ THỐNG
-            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-orange-500">
+            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-[#CCA776] to-[#CCA776]/80">
               5 BƯỚC VÀNG
             </span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-black max-w-3xl mx-auto">
             Không phải magic, không phải may mắn. Chỉ là khoa học và kỷ luật.
           </p>
         </div>
@@ -102,7 +104,7 @@ export function InteractiveProcessSection() {
                 className={`rounded-full px-6 py-3 transition-all duration-300 ${
                   activeStep === index
                     ? `bg-gradient-to-r ${step.color} text-white shadow-lg scale-105`
-                    : "bg-white text-gray-600 hover:text-gray-800 border border-gray-200"
+                    : "bg-white text-black hover:text-black border border-gray-200"
                 }`}
               >
                 {step.icon && <step.icon className="w-5 h-5 mr-2" />}
@@ -116,16 +118,16 @@ export function InteractiveProcessSection() {
             <div className="space-y-8">
               <div>
                 <div className={`inline-flex items-center space-x-3 bg-gradient-to-r ${steps[activeStep].color} text-white px-6 py-3 rounded-full mb-6`}>
-                  {steps[activeStep].icon && <steps[activeStep].icon className="w-6 h-6" />}
+                  <Icon className="w-6 h-6" />
                   <span className="font-bold">BƯỚC {activeStep + 1}</span>
                 </div>
-                <h3 className="text-3xl lg:text-4xl font-black text-gray-800 mb-4">
+                <h3 className="text-3xl lg:text-4xl font-black text-black mb-4">
                   {steps[activeStep].title}
                 </h3>
-                <p className="text-xl text-amber-600 font-semibold mb-6">
+                <p className="text-xl text-[#CCA776] font-semibold mb-6">
                   {steps[activeStep].subtitle}
                 </p>
-                <p className=\"text-lg text-gray-600 leading-relaxed">
+                <p className="text-lg text-black leading-relaxed">
                   {steps[activeStep].description}
                 </p>
               </div>
@@ -133,8 +135,8 @@ export function InteractiveProcessSection() {
               <div className="space-y-4">
                 {steps[activeStep].details.map((detail, index) => (
                   <div key={index} className="flex items-center space-x-3">
-                    <ChevronRight className="w-5 h-5 text-amber-500" />
-                    <span className="text-gray-700">{detail}</span>
+                    <ChevronRight className="w-5 h-5 text-[#CCA776]" />
+                    <span className="text-black">{detail}</span>
                   </div>
                 ))}
               </div>
@@ -144,18 +146,18 @@ export function InteractiveProcessSection() {
               <Card className="border-none shadow-2xl bg-white">
                 <CardContent className="p-8">
                   <div className={`w-full h-64 bg-gradient-to-br ${steps[activeStep].color} rounded-2xl flex items-center justify-center mb-6`}>
-                    {steps[activeStep].icon && <steps[activeStep].icon className="w-24 h-24 text-white" />}
+                    <Icon className="w-24 h-24 text-white" />
                   </div>
                   <div className="text-center">
-                    <h4 className="text-xl font-bold text-gray-800 mb-2">
+                    <h4 className="text-xl font-bold text-black mb-2">
                       {steps[activeStep].title}
                     </h4>
-                    <p className="text-gray-600">
+                    <p className="text-black">
                       {steps[activeStep].subtitle}
                     </p>
                   </div>
-                </CardContent>\
-              </Card>\
+                </CardContent>
+              </Card>
             </div>
           </div>
         </div>

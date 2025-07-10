@@ -74,7 +74,7 @@ export function TransparentResultsSection() {
                   onClick={() => setSelectedPeriod(period)}
                   className={`rounded-full px-6 py-2 transition-all duration-300 ${
                     selectedPeriod === period
-                      ? "bg-green-500 text-white shadow-lg"
+                      ? "bg-[#CCA776] text-white shadow-lg"
                       : "bg-transparent text-gray-400 hover:text-white"
                   }`}
                 >
@@ -147,14 +147,14 @@ export function TransparentResultsSection() {
           </Card>
 
           <div className="text-center mt-16">
-            <div className="bg-gradient-to-r from-amber-500/20 to-orange-500/20 rounded-3xl p-8 border border-amber-500/30 max-w-4xl mx-auto">
-              <h3 className="text-3xl font-bold text-amber-400 mb-4">Bạn có muốn kết quả tương tự?</h3>
+            <div className="bg-gradient-to-r from-[#CCA776]/20 to-[#CCA776]/10 rounded-3xl p-8 border border-[#CCA776]/30 max-w-4xl mx-auto">
+              <h3 className="text-3xl font-bold text-[#CCA776] mb-4">Bạn có muốn kết quả tương tự?</h3>
               <p className="text-xl text-gray-300 mb-6">
                 Đây không phải may mắn. Đây là kết quả của hệ thống và kỷ luật.
               </p>
               <Button
                 size="lg"
-                className="bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600 text-white px-8 py-4 text-lg rounded-2xl shadow-xl"
+                className="bg-gradient-to-r from-[#CCA776] to-[#CCA776]/80 hover:from-[#CCA776]/80 hover:to-[#CCA776] text-white px-8 py-4 text-lg rounded-2xl shadow-xl"
               >
                 Tôi muốn bắt đầu ngay
               </Button>
