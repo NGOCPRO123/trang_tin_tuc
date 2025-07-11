@@ -2,7 +2,7 @@ import { AlertTriangle, DollarSign, Clock } from "lucide-react"
 
 export default function TruthSection() {
   return (
-    <section className="py-20 relative overflow-hidden text-white" style={{ backgroundImage: 'url(/homepage.jpg)', backgroundSize: 'cover', backgroundPosition: 'center' }}>
+    <section className="py-20 relative overflow-hidden text-white" style={{ backgroundImage: 'url(https://i.pinimg.com/1200x/d8/5f/5d/d85f5d360237adaa9429bc867872ffab.jpg)', backgroundSize: 'cover', backgroundPosition: 'center' }}>
       <div className="absolute inset-0 bg-black/70 z-0" />
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto">

@@ -2,7 +2,7 @@ import { TrendingDown, Clock, DollarSign } from "lucide-react"
 
 export default function RealityCheck() {
   return (
-    <section className="py-20 relative overflow-hidden text-white" style={{ backgroundImage: 'url(/homepage.jpg)', backgroundSize: 'cover', backgroundPosition: 'center' }}>
+    <section className="py-20 relative overflow-hidden text-white" style={{ backgroundImage: 'url(https://i.pinimg.com/1200x/6f/0d/08/6f0d0817ee02f16de3489aeee9566ddd.jpg)', backgroundSize: 'cover', backgroundPosition: 'center' }}>
       {/* Overlay tối để chữ rõ */}
       <div className="absolute inset-0 bg-black/70 z-0" />
       {/* Background Pattern */}

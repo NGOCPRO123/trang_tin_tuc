@@ -64,12 +64,12 @@ export default function ValuesSection() {
             >
               <CardHeader className="pb-4">
                 <div
-                  className={`mx-auto w-20 h-20 bg-gradient-to-br ${value.bgColor} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}
+                  className={`mx-auto w-20 h-20 bg-gradient-to-br ${value.bgColor} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 border-4 border-[#CCA776] shadow-lg`}
                 >
-                  <value.icon className={`h-10 w-10 ${value.iconColor}`} />
+                  <value.icon className={`h-12 w-12 ${value.iconColor} font-black`} />
                 </div>
-                <CardTitle className="text-xl font-bold text-black mb-3">
-                  <span className="text-[#CCA776] font-black">{value.title}</span>
+                <CardTitle className="text-2xl font-black text-[#CCA776] mb-3">
+                  {value.title}
                 </CardTitle>
               </CardHeader>
               <CardContent>

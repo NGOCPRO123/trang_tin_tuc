@@ -2,7 +2,7 @@ import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/trangchu/footer";
 import { HeroSection } from "@/components/trangchu/hero-section"
 import { CreativeServicesSection } from "@/components/trangchu/services-section"
-import { WhyChooseUsSection } from "@/components/trangchu/why-choose-us-section"
+import { UnconventionalWhyChooseUsSection as WhyChooseUsSection } from "@/components/trangchu/why-choose-us-section"
 import { UniqueFaqSection } from "@/components/trangchu/client-testimonials-section"
 import { CompanyStatsSection } from "@/components/trangchu/company-stats-section"
 import { ContactCTASection } from "@/components/trangchu/contact-cta-section"

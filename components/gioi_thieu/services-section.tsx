@@ -357,7 +357,7 @@ export function CreativeServicesSection() {
           <div className="relative rounded-[3rem] overflow-hidden shadow-2xl">
             <div className="absolute inset-0">
               <img
-                src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1200&q=80"
+                src="https://i.pinimg.com/1200x/94/9a/47/949a47c254fbe113257b29d2c50d8720.jpg"
                 alt="Business background"
                 className="w-full h-full object-cover object-center"
               />
@@ -371,9 +371,9 @@ export function CreativeServicesSection() {
                 transition={{ duration: 0.8 }}
                 className="mb-8"
               >
-                <h3 className="text-4xl font-black text-black mb-6 leading-tight">
+                <h3 className="text-4xl font-black text-white mb-6 leading-tight">
                   Sẵn sàng bắt đầu
-                  <span className="block text-black text-5xl">hành trình cùng HLCC?</span>
+                  <span className="block text-white text-5xl">hành trình cùng HLCC?</span>
                 </h3>
                 <p className="text-2xl text-white font-semibold max-w-3xl mx-auto">
                   Hãy để chúng tôi hiểu rõ thách thức của bạn và đề xuất giải pháp phù hợp nhất.
